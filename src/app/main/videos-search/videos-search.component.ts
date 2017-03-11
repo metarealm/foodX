@@ -25,7 +25,7 @@ export class VideosSearchComponent {
 		private youtubeService: YoutubeApiService,
 		private youtubePlayer: YoutubePlayerService,
 		private notificationService: NotificationService) {
-		this.youtubeService.searchVideos('')
+		this.youtubeService.searchVideos('indian recipe')
 			.then(data => {
 				this.videosUpdated.emit(data);
 			})

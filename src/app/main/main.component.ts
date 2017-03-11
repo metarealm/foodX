@@ -37,6 +37,7 @@ export class MainComponent {
 
 	handleSearchVideo(videos: Array<any>): void {
 		this.videoList = videos;
+		console.log(this.videoList);
 	}
 
 	checkAddToPlaylist(video: any): void {
@@ -167,7 +168,7 @@ export class MainComponent {
 	}
 
 	exportPlaylist(): void {
-		if(this.videoPlaylist.length < 1) { 
+		if(this.videoPlaylist.length < 1) {
 			this.notificationService.showNotification("Nothing to export.");
 			return;
 		}

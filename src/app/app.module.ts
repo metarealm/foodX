@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 // Components
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./main/main.component";
@@ -25,7 +26,8 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 	imports: [
 		BrowserModule,
 		HttpModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MaterialModule
 	],
 	declarations: [
 		AppComponent,
@@ -40,7 +42,7 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		VideoLikesPipe,
 		VideoViewsPipe,
 		PlaylistItemNamePipe,
-		
+
 		LazyScroll
 	],
 	bootstrap: [
