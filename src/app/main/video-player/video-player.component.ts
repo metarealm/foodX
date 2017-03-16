@@ -38,7 +38,7 @@ export class VideoPlayerComponent implements AfterContentInit {
     playerApi.type = 'text/javascript';
     playerApi.src = 'https://www.youtube.com/iframe_api';
     doc.body.appendChild(playerApi);
-
+		this.superMinPlayer = !this.superMinPlayer;
 		this.youtubePlayer.createPlayer();
 	}
 
@@ -49,6 +49,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 		let width = this.fullscreenActive ? window.innerWidth - 70: 440;
 		let height = this.fullscreenActive ? window.innerHeight - 120: 250;
 		this.youtubePlayer.resizePlayer(width, height);
+
 	}
 
 	playPause(event: string): void {
@@ -126,7 +127,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 				me.notificationService.showNotification("Playlist not valid.");
 				return;
 			}
-			if(list.length < 1) { 
+			if(list.length < 1) {
 				me.notificationService.showNotification("Nothing to import.");
 				return;
 			}

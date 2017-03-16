@@ -11,12 +11,12 @@
 }
 
 .demo-card-square.mdl-card {
-  height: 210px;
+  height: 300;
   width: 100%;
 }
 
 .custom-cell.mdl-cell--2-col {
-  width: calc(20% - 16px);
+  width: calc(25% - 25px);
 }
 
 .custom-cell {

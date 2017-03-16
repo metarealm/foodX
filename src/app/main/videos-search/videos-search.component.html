@@ -1,6 +1,6 @@
 <form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="off">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" formControlName="query" type="text" id="query" autocomplete="on">
     <label class="mdl-textfield__label" for="query">Search</label>
   </div>
   <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">

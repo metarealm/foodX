@@ -69,7 +69,7 @@ export class MainComponent {
 		this.playlistToggle = !this.playlistToggle;
 		setTimeout(() => {
 			this.playlistNames = !this.playlistNames;
-		}, 200);
+		}, 100);
 	}
 
 	searchMore(): void {

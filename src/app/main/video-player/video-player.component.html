@@ -43,8 +43,8 @@
   </div>
   <div class="player-containter" [ngClass]="{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}">
     <div class="player-view-controls">
-      <i class="material-icons" *ngIf="!minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_down</i>
-      <i class="material-icons" *ngIf="minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_up</i>
+      <!-- <i class="material-icons" *ngIf="!minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_down</i>
+      <i class="material-icons" *ngIf="minPlayer && !superMinPlayer && !fullscreenActive" (click)="togglePlayer()">arrow_drop_up</i> -->
       <i class="material-icons minimize" *ngIf="!superMinPlayer && !fullscreenActive" (click)="minimizePlayer()">remove</i>
     </div>
     <div class="main-yt-player-block">
@@ -53,15 +53,15 @@
     </div>
   </div>
 
-  <button id="demo-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon playlist-drop-button" (click)="openClosedPlaylist()">
-		<i class="material-icons">more_vert</i>
-	</button>
+
+  <!-- <button id="demo-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon playlist-drop-button" (click)="openClosedPlaylist()">
+    <i class="material-icons">more_vert</i>
+  </button>
 
   <ul class="mdl-menu mdl-menu--top-right mdl-js-menu" data-mdl-for="demo-menu-top-right">
     <li class="mdl-menu__item" (click)="exportPlaylistAction()">Export playlist</li>
     <li class="mdl-menu__item" (click)="importPlaylistAction()">Import playlist</li>
     <li class="mdl-menu__item" (click)="clearPlaylistAction()">Clear playlist</li>
   </ul>
-
-  <input id="import_button" style="display: none;" type="file" name="file" accept=".json, .txt" (change)="handleInputChange($event)">
+  <input id="import_button" style="display: none;" type="file" name="file" accept=".json, .txt" (change)="handleInputChange($event)"> -->
 </div>

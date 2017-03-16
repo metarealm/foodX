@@ -62,7 +62,7 @@ var MainComponent = (function () {
         this.playlistToggle = !this.playlistToggle;
         setTimeout(function () {
             _this.playlistNames = !_this.playlistNames;
-        }, 200);
+        }, 100);
     };
     MainComponent.prototype.searchMore = function () {
         var _this = this;
