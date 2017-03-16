@@ -8,8 +8,12 @@
   /*background-color: rgb(204, 204, 204);*/
 }
 
-.mdl-layout__tab-bar {
-  
+.mdl-layout__tab-bar{
+  height: 75%;
+  vertical-align : text-top;
+}
+.mdl-layout__tab{
+    font-size: 10px;
 }
 
 .mdl-layout__content {

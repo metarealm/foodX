@@ -26,7 +26,8 @@
       <span class="mdl-layout-title">Title</span>
     </div> -->
 
-  <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist>
+  <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
+ <filters></filters>
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
     <div class="page-content" [ngClass]="{'mdl-layout__content_moved': playlistToggle}">

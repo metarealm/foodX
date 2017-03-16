@@ -10,6 +10,7 @@ import { VideosListComponent } from "./main/videos-list/videos-list.component";
 import { VideosPlaylistComponent } from "./main/videos-playlist/videos-playlist.component";
 import { VideosSearchComponent } from "./main/videos-search/videos-search.component";
 import { VideoPlayerComponent } from "./main/video-player/video-player.component";
+import { FilterComponent} from "./main/filter/filter.component";
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
 import { YoutubePlayerService } from "./shared/services/youtube-player.service";
@@ -43,7 +44,10 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		VideoViewsPipe,
 		PlaylistItemNamePipe,
 
-		LazyScroll
+		LazyScroll,
+
+		FilterComponent
+
 	],
 	bootstrap: [
 		AppComponent
