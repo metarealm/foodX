@@ -1,15 +1,14 @@
 # FoodX
-[![Dependencies][dependencies]][dependencies-url]
-[![Dev Dependencies][dev-dependencies]][dev-dependencies-url]
 
 > FoodX app built with Angular 2 
 
 
-## Quickstart
+## set up
 
 **Note**: Require Node 4+ together with Npm 3+, also be sure to install 
 
-**1- Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0-rc.1) :**
+**1-(If you already have Angular Cli Installed You can skip this step)
+Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0-rc.1) :**
 
 ```bash
 $ npm install -g @angular/cli@latest
