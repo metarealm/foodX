@@ -4,7 +4,6 @@
 
 > FoodX app built with Angular 2 
 
-[Demo](https://samirhodzic.github.io/ngx-youtube-player)
 
 ## Quickstart
 
