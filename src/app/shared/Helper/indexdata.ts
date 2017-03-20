@@ -1,13 +1,13 @@
 
 
-interface IindexedData {
+export class IndexedData {
     id: string;
     title: string;
 
 }
 
-Injectable()
-export const indexDatas: IindexedData[] = [
+
+export const indexDatas: IndexedData[] = [
 
     {
         id: 'wGUqCDzmSwY',

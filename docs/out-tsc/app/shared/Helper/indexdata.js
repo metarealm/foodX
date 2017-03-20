@@ -1,4 +1,9 @@
-Injectable();
+var IndexedData = (function () {
+    function IndexedData() {
+    }
+    return IndexedData;
+}());
+export { IndexedData };
 export var indexDatas = [
     {
         id: 'wGUqCDzmSwY',

@@ -3,7 +3,7 @@ import { YoutubePlayerService } from "../../shared/services/youtube-player.servi
 import { PlaylistStoreService } from "../../shared/services/playlist-store.service";
 
 @Component({
-	selector: 'videos-list',
+	selector: 'videos-list_orig',
 	templateUrl: 'videos-list.component.html',
 	styleUrls: ['videos-list.component.css']
 })

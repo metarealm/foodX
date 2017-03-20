@@ -22,6 +22,7 @@ var MainComponent = (function () {
         this.videoPlaylist = [];
         this.loadingInProgress = false;
         this.playlistToggle = false;
+        this.filterToggle = false;
         this.playlistNames = false;
         this.pageLoadingFinished = false;
         this.repeat = false;
@@ -63,6 +64,9 @@ var MainComponent = (function () {
         setTimeout(function () {
             _this.playlistNames = !_this.playlistNames;
         }, 100);
+    };
+    MainComponent.prototype.toggleFilter = function () {
+        this.filterToggle = !this.filterToggle;
     };
     MainComponent.prototype.searchMore = function () {
         var _this = this;

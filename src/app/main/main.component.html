@@ -6,7 +6,8 @@
         <!--img src="assets/logo.png" style="height: 35px;"-->
       </div>
       <nav class="mdl-navigation" style="width: 100%;">
-        <videos-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></videos-search>
+        <!-- <videos-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></videos-search> -->
+        <solr-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
       </nav>
 
     </div>
@@ -19,7 +20,7 @@
 
   </header>
 
-  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="togglePlaylist()">
+  <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="toggleFilter()">
     <i class="material-icons"></i>
   </div>
   <!-- <div class="mdl-layout__drawer">
@@ -27,10 +28,10 @@
     </div> -->
 
   <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
- <filters></filters>
+ <filters [playlistToggle]="filterToggle"></filters>
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
-    <div class="page-content" [ngClass]="{'mdl-layout__content_moved': playlistToggle}">
+    <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
       <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress"></videos-list>
       <div class="loader loader-video" *ngIf="!videoList.length">
         <div class="loading"></div>

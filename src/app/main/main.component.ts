@@ -5,6 +5,7 @@ import { PlaylistStoreService } from "../shared/services/playlist-store.service"
 import { window } from '@angular/platform-browser/src/facade/browser';
 import { NotificationService } from '../shared/services/notification.service';
 
+
 @Component({
 	selector: 'main-list',
 	templateUrl: 'main.component.html',
@@ -16,6 +17,7 @@ export class MainComponent {
 	public videoPlaylist = [];
 	public loadingInProgress: boolean = false;
 	public playlistToggle: boolean = false;
+	public filterToggle:boolean = false;
 	public playlistNames: boolean = false;
 	private pageLoadingFinished: boolean = false;
 	public repeat: boolean = false;
@@ -72,6 +74,9 @@ export class MainComponent {
 		}, 100);
 	}
 
+	toggleFilter(): void {
+		this.filterToggle = !this.filterToggle;
+	}
 	searchMore(): void {
 		if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) return;
 		this.loadingInProgress = true;

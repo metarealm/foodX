@@ -13,12 +13,14 @@
   vertical-align : text-top;
 }
 .mdl-layout__tab{
+  height: 99%;
     font-size: 10px;
 }
 
 .mdl-layout__content {
-  width: 95%;
+  width: 97%;
   margin-left: 3%;
+  margin-top: 1%;
 }
 
 .mdl-layout__header-row {

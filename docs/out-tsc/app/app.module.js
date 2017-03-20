@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { HttpModule } from "@angular/http";
+import { HttpModule, JsonpModule } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from "./app.component";
@@ -16,10 +16,12 @@ import { VideosPlaylistComponent } from "./main/videos-playlist/videos-playlist.
 import { VideosSearchComponent } from "./main/videos-search/videos-search.component";
 import { VideoPlayerComponent } from "./main/video-player/video-player.component";
 import { FilterComponent } from "./main/filter/filter.component";
+import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
 import { YoutubePlayerService } from "./shared/services/youtube-player.service";
 import { PlaylistStoreService } from "./shared/services/playlist-store.service";
 import { NotificationService } from "./shared/services/notification.service";
+import { IndexDataService } from './shared/services/indexDataService';
 import { VideoDurationPipe } from "./shared/pipes/video-duration.pipe";
 import { VideoLikesPipe } from "./shared/pipes/video-likes.pipe";
 import { VideoViewsPipe } from "./shared/pipes/video-views.pipe";
@@ -36,7 +38,8 @@ AppModule = __decorate([
             BrowserModule,
             HttpModule,
             ReactiveFormsModule,
-            MaterialModule
+            MaterialModule,
+            JsonpModule
         ],
         declarations: [
             AppComponent,
@@ -50,7 +53,8 @@ AppModule = __decorate([
             VideoViewsPipe,
             PlaylistItemNamePipe,
             LazyScroll,
-            FilterComponent
+            FilterComponent,
+            SolrSearchComponent
         ],
         bootstrap: [
             AppComponent
@@ -59,7 +63,8 @@ AppModule = __decorate([
             YoutubeApiService,
             YoutubePlayerService,
             PlaylistStoreService,
-            NotificationService
+            NotificationService,
+            IndexDataService,
         ]
     })
 ], AppModule);
