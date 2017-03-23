@@ -46,6 +46,7 @@ var SolrSearchComponent = (function () {
     };
     SolrSearchComponent.prototype.search = function (term) {
         this.items = this.indexDataService.search(term);
+        console.log(this.items);
     };
     return SolrSearchComponent;
 }());

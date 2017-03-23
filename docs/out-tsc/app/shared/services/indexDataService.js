@@ -18,12 +18,14 @@ var IndexDataService = (function () {
         return Promise.resolve(indexDatas);
     };
     IndexDataService.prototype.search = function (term) {
-        var solrUrl = 'http://10.0.0.16:8983/solr/#/foodX/';
+        var solrUrl = 'http://10.0.0.16:8983/solr/foodX/suggest';
         var params = new URLSearchParams();
-        params.set('search', term);
-        params.set('action', 'opensearch');
-        params.set('format', 'json');
-        params.set('callback', 'JSONP_CALLBACK');
+        params.set('suggest', 'true');
+        params.set('suggest.build', 'true');
+        params.set('suggest.dictionary', 'mySuggester');
+        params.set('wt', 'json');
+        params.set('suggest.q', term);
+        params.set('json.wrf', 'JSONP_CALLBACK');
         return this.jsonp
             .get(solrUrl, { search: params })
             .map(function (response) { return response.json()[1]; });

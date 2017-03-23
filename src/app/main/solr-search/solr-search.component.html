@@ -1,6 +1,43 @@
 
-<p>Search after each keystroke</p>
-    <input #term (keyup)="search(term.value)"/>
-    <ul>
-      <li *ngFor="let item of items | async">{{item}}</li>
-    </ul>
+  
+  
+  
+  
+  
+  <form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
+
+
+    <!--<div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input"  formControlName="query" type="text" id="query" autocomplete="off">
+      <label class="mdl-textfield__label" for="query">Search</label>
+    </div>
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
+		<i class="material-icons">search</i>
+	</button>
+    </div>-->
+
+
+<div class="mdl-select mdl-js-select mdl-select--floating-label">
+  <input class="mdl-textfield__input"  #term (keyup)="search(term.value)" formControlName="query" 
+    type="text" id="query" autocomplete="off" for="professsion">
+        <select class="mdl-select__input" id="professsion" name="professsion">
+          <option *ngFor="let item of items" value="{{item}}">{{item}}</option>
+          <!--<option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>-->
+        </select>
+
+        <!--<label class="mdl-select__label" for="professsion">Profession</label>-->
+      </div>
+
+  </form>
+
+<!--<p-autoComplete #term [suggestions]="items" (keyup)="search(term.value)"></p-autoComplete>-->
+<!--<input #term (keyup)="search(term.value)" />
+<ul>
+  <li *ngFor="let item of items | async">{{item}}</li>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>-->
