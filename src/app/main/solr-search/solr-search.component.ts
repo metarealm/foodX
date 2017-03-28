@@ -12,43 +12,46 @@ import { Observable } from 'rxjs/Observable';
     styleUrls: ['solr-search.component.css'],
     providers: [IndexDataService]
 })
-
 export class SolrSearchComponent {
 
     // items: Observable<string[]>;
     items: string[];
     @Output() videosUpdated = new EventEmitter();
     @Input() loadingInProgress;
-
     private last_search: string;
-
     public searchForm = this.fb.group({
         query: ["", Validators.required]
     });
+
     constructor(private solrService: IndexDataService,
         public fb: FormBuilder,
         private youtubeService: YoutubeApiService,
         private youtubePlayer: YoutubePlayerService,
-        private notificationService: NotificationService) {
+        private notificationService: NotificationService) 
+        {
         this.youtubeService.searchVideos('indian recipe')
-            .then(data => {
-                this.videosUpdated.emit(data);
-            })
+            .then(data => {this.videosUpdated.emit(data);});
+
     }
     search(term: string) {
-        this.solrService.search(term).then(items => {
+       
+        this.solrService.search(term).then(items => { 
             this.items = items;
         });
 
     }
 
+
     doSearch(event): void {
+        // console.log('inside the doSearch ');
+        // console.log('loadingInProgress'+ this.loadingInProgress);
         if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
             (this.last_search && this.last_search === this.searchForm.value.query)) return;
 
         this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
-
+        this.last_search = this.last_search+' recipe';
+        console.log('last_search is '+ this.last_search);
         this.youtubeService.searchVideos(this.last_search)
             .then(data => {
                 if (data.length < 1) this.notificationService.showNotification("No matches found.")
@@ -56,3 +59,4 @@ export class SolrSearchComponent {
             })
     }
 }
+

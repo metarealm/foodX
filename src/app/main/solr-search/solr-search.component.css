@@ -1,4 +1,6 @@
-
+select-dropdown .highlighted {
+    color: black;
+}
 
 .mdl-select {
     position: relative;
@@ -156,4 +158,9 @@
 
 .mdl-textfield {
   width: 45%;
+}
+
+
+.mdl-textfield{
+    color:black;
 }

@@ -31,17 +31,20 @@ export class VideosSearchComponent {
 			})
 	}
 
-	doSearch(event): void {
-		if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
-			(this.last_search && this.last_search === this.searchForm.value.query)) return;
+	 doSearch(event): void {
+        console.log('inside the doSearch ');
+        console.log('loadingInProgress'+ this.loadingInProgress);
+        console.log('this.searchfrom.value.query' + this.searchForm.value.query);
+        if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
+            (this.last_search && this.last_search === this.searchForm.value.query)) return;
 
-		this.videosUpdated.emit([]);
-		this.last_search = this.searchForm.value.query;
-
-		this.youtubeService.searchVideos(this.last_search)
-			.then(data => {
-				if (data.length < 1) this.notificationService.showNotification("No matches found.")
-				this.videosUpdated.emit(data);
-			})
-	}
+        this.videosUpdated.emit([]);
+        this.last_search = this.searchForm.value.query;
+        console.log('last_search is '+ this.last_search);
+        this.youtubeService.searchVideos(this.last_search)
+            .then(data => {
+                if (data.length < 1) this.notificationService.showNotification("No matches found.")
+                this.videosUpdated.emit(data);
+            })
+    }
 }

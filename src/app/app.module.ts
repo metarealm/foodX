@@ -32,7 +32,7 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		HttpModule,
 		ReactiveFormsModule,
 		MaterialModule,
-		JsonpModule,
+		JsonpModule
 	],
 	declarations: [
 		AppComponent,
