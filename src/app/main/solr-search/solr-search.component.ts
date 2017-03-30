@@ -27,36 +27,49 @@ export class SolrSearchComponent {
         public fb: FormBuilder,
         private youtubeService: YoutubeApiService,
         private youtubePlayer: YoutubePlayerService,
-        private notificationService: NotificationService) 
-        {
+        private notificationService: NotificationService) {
         this.youtubeService.searchVideos('indian recipe')
-            .then(data => {this.videosUpdated.emit(data);});
+            .then(data => { this.videosUpdated.emit(data); });
 
     }
-    search(term: string) {
-       
-        this.solrService.search(term).then(items => { 
+    suggest(term: string) {
+
+        this.solrService.suggest(term).then(items => {
             this.items = items;
         });
 
     }
 
-
     doSearch(event): void {
-        // console.log('inside the doSearch ');
-        // console.log('loadingInProgress'+ this.loadingInProgress);
         if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
             (this.last_search && this.last_search === this.searchForm.value.query)) return;
-
-        this.videosUpdated.emit([]);
+            this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
         this.last_search = this.last_search+' recipe';
         console.log('last_search is '+ this.last_search);
-        this.youtubeService.searchVideos(this.last_search)
+        this.solrService.searchVideos(this.last_search)
             .then(data => {
                 if (data.length < 1) this.notificationService.showNotification("No matches found.")
                 this.videosUpdated.emit(data);
             })
     }
+
+
+    // doSearch(event): void {
+    //     // console.log('inside the doSearch ');
+    //     // console.log('loadingInProgress'+ this.loadingInProgress);
+    //     if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
+    //         (this.last_search && this.last_search === this.searchForm.value.query)) return;
+
+    //     this.videosUpdated.emit([]);
+    //     this.last_search = this.searchForm.value.query;
+    //     this.last_search = this.last_search+' recipe';
+    //     console.log('last_search is '+ this.last_search);
+    //     this.youtubeService.searchVideos(this.last_search)
+    //         .then(data => {
+    //             if (data.length < 1) this.notificationService.showNotification("No matches found.")
+    //             this.videosUpdated.emit(data);
+    //         })
+    // }
 }
 

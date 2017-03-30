@@ -6,18 +6,15 @@
         <!--img src="assets/logo.png" style="height: 35px;"-->
       </div>
       <nav class="mdl-navigation" style="width: 100%;">
-         <!--<videos-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></videos-search> -->
-       <solr-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
-
-        </nav>
-      
+        <solr-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
+      </nav>
     </div>
 
-    <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a  class="mdl-layout__tab is-active"> video </a>
-        <a class="mdl-layout__tab">blog</a>
-        <a class="mdl-layout__tab">audo</a>
-    </div>-->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a class="mdl-layout__tab is-active"> video </a>
+      <a class="mdl-layout__tab">blog</a>
+      <a class="mdl-layout__tab">audo</a>
+    </div>
 
   </header>
 
@@ -29,11 +26,12 @@
     </div> -->
 
   <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
- <filters [playlistToggle]="filterToggle"></filters>
+  <filters [playlistToggle]="filterToggle"></filters>
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
     <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
-      <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList" [loadingInProgress]="loadingInProgress"></videos-list>
+      <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList"
+        [loadingInProgress]="loadingInProgress"></videos-list>
       <div class="loader loader-video" *ngIf="!videoList.length">
         <div class="loading"></div>
       </div>
@@ -41,7 +39,8 @@
   </main>
 </div>
 
-<video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()" (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
+<video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()"
+  (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
   (nextVideoEvent)="nextVideo($event)" (prevVideoEvent)="prevVideo($event)"></video-player>
 
 <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">

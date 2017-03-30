@@ -48,11 +48,13 @@ export class MainComponent {
 			this.playlistService.addToPlaylist(video);
 
 			let inPlaylist = this.videoPlaylist.length - 1;
-
 			setTimeout(() => {
-				let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
+				try{let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
 				let playlistEl = document.getElementById('playlist');
 				playlistEl.scrollTop = topPos - 100;
+				}catch(exp){
+					console.log("ignor this error until implementing the playlist");
+				}
 			});
 		}
 	}

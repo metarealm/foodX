@@ -19,6 +19,7 @@ export class VideosListComponent {
 	) { }
 
 	play(video: any): void {
+		console.log(video);
 		this.youtubePlayer.playVideo(video.id);
 		this.addToPlaylist(video);
 	}
