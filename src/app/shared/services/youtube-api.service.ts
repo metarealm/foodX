@@ -3,12 +3,10 @@ import { Http, Response } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import { NotificationService } from './notification.service';
-import { YOUTUBE_API_KEY } from '../constants';
+import { AppSettings } from '../constants';
 
 @Injectable()
 export class YoutubeApiService {
-	base_url: string = 'https://www.googleapis.com/youtube/v3/';
-	max_results: number = 50;
 
 	public nextToken: string;
 	public lastQuery: string;
@@ -19,7 +17,7 @@ export class YoutubeApiService {
 	{ }
 
 	searchVideos(query: string): Promise<any> {
-		return this.http.get(this.base_url + 'search?q=' + query + '&maxResults=' + this.max_results + '&type=video&part=snippet,id&key=' + YOUTUBE_API_KEY + '&videoEmbeddable=true')
+		return this.http.get(AppSettings.base_url + 'search?q=' + query + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,id&key=' + AppSettings.YOUTUBE_API_KEY + '&videoEmbeddable=true')
 			.map(response => {
 				let jsonRes = response.json();
 				let res = jsonRes['items'];
@@ -39,7 +37,7 @@ export class YoutubeApiService {
 	}
 
 	searchNext(): Promise<any> {
-		return this.http.get(this.base_url + 'search?q=' + this.lastQuery + '&pageToken=' + this.nextToken + '&maxResults=' + this.max_results + '&type=video&part=snippet,id&key=' + YOUTUBE_API_KEY + '&videoEmbeddable=true')
+		return this.http.get(AppSettings.base_url + 'search?q=' + this.lastQuery + '&pageToken=' + this.nextToken + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,id&key=' + AppSettings.YOUTUBE_API_KEY + '&videoEmbeddable=true')
 			.map(response => {
 				let jsonRes = response.json();
 				let res = jsonRes['items'];
@@ -57,7 +55,7 @@ export class YoutubeApiService {
 	}
 
 	getVideos(ids): Promise<any> {
-		return this.http.get(this.base_url + 'videos?id=' + ids.join(',') + '&maxResults=' + this.max_results + '&type=video&part=snippet,contentDetails,statistics&key=' + YOUTUBE_API_KEY)
+		return this.http.get(AppSettings.base_url + 'videos?id=' + ids.join(',') + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,contentDetails,statistics&key=' + AppSettings.YOUTUBE_API_KEY)
 			.map(results => {
 				return results.json()['items'];
 			})
