@@ -16,43 +16,23 @@ export class YoutubeApiService {
 		private notificationService: NotificationService)
 	{ }
 
-	searchVideos(query: string): Promise<any> {
-		return this.http.get(AppSettings.base_url + 'search?q=' + query + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,id&key=' + AppSettings.YOUTUBE_API_KEY + '&videoEmbeddable=true')
-			.map(response => {
-				let jsonRes = response.json();
-				let res = jsonRes['items'];
-				this.lastQuery = query;
-				this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
+	// searchNext(): Promise<any> {
+	// 	return this.http.get(AppSettings.base_url + 'search?q=' + this.lastQuery + '&pageToken=' + this.nextToken + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,id&key=' + AppSettings.YOUTUBE_API_KEY + '&videoEmbeddable=true')
+	// 		.map(response => {
+	// 			let jsonRes = response.json();
+	// 			let res = jsonRes['items'];
+	// 			this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
+	// 			let ids = [];
 
-				let ids = [];
+	// 			res.forEach((item) => {
+	// 				ids.push(item.id.videoId);
+	// 			});
 
-				res.forEach((item) => {
-					ids.push(item.id.videoId);
-				});
-
-				return this.getVideos(ids);
-			})
-			.toPromise()
-			.catch(this.handleError)
-	}
-
-	searchNext(): Promise<any> {
-		return this.http.get(AppSettings.base_url + 'search?q=' + this.lastQuery + '&pageToken=' + this.nextToken + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,id&key=' + AppSettings.YOUTUBE_API_KEY + '&videoEmbeddable=true')
-			.map(response => {
-				let jsonRes = response.json();
-				let res = jsonRes['items'];
-				this.nextToken = jsonRes['nextPageToken'] ? jsonRes['nextPageToken'] : undefined;
-				let ids = [];
-
-				res.forEach((item) => {
-					ids.push(item.id.videoId);
-				});
-
-				return this.getVideos(ids);
-			})
-			.toPromise()
-			.catch(this.handleError)
-	}
+	// 			return this.getVideos(ids);
+	// 		})
+	// 		.toPromise()
+	// 		.catch(this.handleError)
+	// }
 
 	getVideos(ids): Promise<any> {
 		return this.http.get(AppSettings.base_url + 'videos?id=' + ids.join(',') + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,contentDetails,statistics&key=' + AppSettings.YOUTUBE_API_KEY)

@@ -5,6 +5,7 @@ import { YoutubePlayerService } from "../../shared/services/youtube-player.servi
 import { NotificationService } from '../../shared/services/notification.service';
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { Observable } from 'rxjs/Observable';
+import { SearchObject } from '../../shared/searchObject';
 
 @Component({
     selector: 'solr-search',
@@ -19,16 +20,17 @@ export class SolrSearchComponent {
     @Output() videosUpdated = new EventEmitter();
     @Input() loadingInProgress;
     private last_search: string;
+    private pagenum: number = 0;
+    private searObject : SearchObject = new SearchObject(0,'indian');
     public searchForm = this.fb.group({
         query: ["", Validators.required]
     });
 
     constructor(private solrService: IndexDataService,
         public fb: FormBuilder,
-        private youtubeService: YoutubeApiService,
         private youtubePlayer: YoutubePlayerService,
         private notificationService: NotificationService) {
-        this.youtubeService.searchVideos('indian recipe')
+        this.solrService.searchVideos(this.searObject)
             .then(data => { this.videosUpdated.emit(data); });
 
     }
@@ -43,12 +45,13 @@ export class SolrSearchComponent {
     doSearch(event): void {
         if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
             (this.last_search && this.last_search === this.searchForm.value.query)) return;
-            this.videosUpdated.emit([]);
+        this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
-        this.last_search = this.last_search+' recipe';
-        console.log('last_search is '+ this.last_search);
-        this.solrService.searchVideos(this.last_search)
+        this.last_search = this.last_search + ' recipe';
+        console.log('last_search is ' + this.last_search);
+        this.solrService.searchVideos(this.searObject)
             .then(data => {
+                this.pagenum = this.pagenum + 1;
                 if (data.length < 1) this.notificationService.showNotification("No matches found.")
                 this.videosUpdated.emit(data);
             })

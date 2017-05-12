@@ -4,6 +4,7 @@ import { YoutubePlayerService } from "../shared/services/youtube-player.service"
 import { PlaylistStoreService } from "../shared/services/playlist-store.service";
 import { window } from '@angular/platform-browser/src/facade/browser';
 import { NotificationService } from '../shared/services/notification.service';
+import { IndexDataService } from '../shared/services/indexDataService';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class MainComponent {
 		private youtubeService: YoutubeApiService,
 		private youtubePlayer: YoutubePlayerService,
 		private playlistService: PlaylistStoreService,
-		private notificationService: NotificationService
+		private notificationService: NotificationService,
+		private indexDataService:IndexDataService,
 	) {
 		this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
 	}
@@ -82,7 +84,7 @@ export class MainComponent {
 	searchMore(): void {
 		if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) return;
 		this.loadingInProgress = true;
-		this.youtubeService.searchNext()
+		this.indexDataService.searchNext({'test':'test'})
 			.then(data => {
 				this.loadingInProgress = false;
 				if (data.length < 1 || data.status === 400) {

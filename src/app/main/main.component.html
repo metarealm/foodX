@@ -6,7 +6,7 @@
         <!--img src="assets/logo.png" style="height: 35px;"-->
       </div>
       <nav class="mdl-navigation" style="width: 100%;">
-        <solr-search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
+        <solr-search #search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
       </nav>
     </div>
 
@@ -27,6 +27,12 @@
 
   <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
   <filters [playlistToggle]="filterToggle"></filters>
+
+ <nav>
+    <a routerLink="/video" routerLinkActive="active">video</a>
+    <a routerLink="/audio" routerLinkActive="active">audio</a>
+  </nav>
+  <router-outlet></router-outlet>
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
     <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
