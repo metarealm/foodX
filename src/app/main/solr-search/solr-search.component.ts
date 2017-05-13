@@ -21,7 +21,7 @@ export class SolrSearchComponent {
     @Input() loadingInProgress;
     private last_search: string;
     private pagenum: number = 0;
-    private searObject : SearchObject = new SearchObject(0,'indian');
+    private searObject: SearchObject = new SearchObject(0, 'indian');
     public searchForm = this.fb.group({
         query: ["", Validators.required]
     });
@@ -30,11 +30,10 @@ export class SolrSearchComponent {
         public fb: FormBuilder,
         private youtubePlayer: YoutubePlayerService,
         private notificationService: NotificationService) {
-        this.solrService.searchVideos(this.searObject)
-            .then(data => { this.videosUpdated.emit(data); });
+        this.search().then(data => { this.videosUpdated.emit(data); });
 
     }
-    suggest(term: string) {
+    public suggest(term: string) {
 
         this.solrService.suggest(term).then(items => {
             this.items = items;
@@ -42,12 +41,14 @@ export class SolrSearchComponent {
 
     }
 
-    doSearch(event): void {
+    public doSearch(): void {
         if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
             (this.last_search && this.last_search === this.searchForm.value.query)) return;
         this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
-        this.last_search = this.last_search + ' recipe';
+        // this.last_search = this.last_search + ' recipe';
+        this.searObject.pageNum=0;
+        this.searObject.searchTerm=this.last_search;
         console.log('last_search is ' + this.last_search);
         this.solrService.searchVideos(this.searObject)
             .then(data => {
@@ -57,22 +58,15 @@ export class SolrSearchComponent {
             })
     }
 
+    public search():Promise<any>  {
+        this.searObject.pageNum = this.pagenum;
+        return this.solrService.searchVideos(this.searObject)
+            .then(data => {
+                this.pagenum = this.pagenum + 1;
+                if (data.length < 1) this.notificationService.showNotification("No matches found.");
+                return data;
+            })
+    }
 
-    // doSearch(event): void {
-    //     // console.log('inside the doSearch ');
-    //     // console.log('loadingInProgress'+ this.loadingInProgress);
-    //     if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
-    //         (this.last_search && this.last_search === this.searchForm.value.query)) return;
-
-    //     this.videosUpdated.emit([]);
-    //     this.last_search = this.searchForm.value.query;
-    //     this.last_search = this.last_search+' recipe';
-    //     console.log('last_search is '+ this.last_search);
-    //     this.youtubeService.searchVideos(this.last_search)
-    //         .then(data => {
-    //             if (data.length < 1) this.notificationService.showNotification("No matches found.")
-    //             this.videosUpdated.emit(data);
-    //         })
-    // }
 }
 

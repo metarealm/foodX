@@ -1,6 +1,3 @@
-
-
-
 export class SearchObject {
     private _pageNum : number =0;
     private _searchTerm : string;
@@ -10,7 +7,13 @@ export class SearchObject {
         this._pageNum = pageNum;
         this._searchTerm = searchTerm;
     }
-    get pageNum(){
+    set pageNum(pageNum : number){
+        this._pageNum=pageNum;
+    }
+    set searchTerm(searchTerm : string){
+        this._searchTerm=searchTerm;
+    }
+    get pageNum():number{
         return this._pageNum;
     }
     get searchTerm(){

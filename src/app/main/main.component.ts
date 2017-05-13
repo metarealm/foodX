@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { AfterViewInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { SolrSearchComponent } from './solr-search/solr-search.component';
 import { YoutubeApiService } from "../shared/services/youtube-api.service";
 import { YoutubePlayerService } from "../shared/services/youtube-player.service";
 import { PlaylistStoreService } from "../shared/services/playlist-store.service";
@@ -14,11 +16,15 @@ import { IndexDataService } from '../shared/services/indexDataService';
 })
 
 export class MainComponent {
+
+	@ViewChild(SolrSearchComponent)
+	private solrSearch: SolrSearchComponent;
+
 	public videoList = [];
 	public videoPlaylist = [];
 	public loadingInProgress: boolean = false;
 	public playlistToggle: boolean = false;
-	public filterToggle:boolean = false;
+	public filterToggle: boolean = false;
 	public playlistNames: boolean = false;
 	private pageLoadingFinished: boolean = false;
 	public repeat: boolean = false;
@@ -30,7 +36,7 @@ export class MainComponent {
 		private youtubePlayer: YoutubePlayerService,
 		private playlistService: PlaylistStoreService,
 		private notificationService: NotificationService,
-		private indexDataService:IndexDataService,
+		private indexDataService: IndexDataService,
 	) {
 		this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
 	}
@@ -51,10 +57,11 @@ export class MainComponent {
 
 			let inPlaylist = this.videoPlaylist.length - 1;
 			setTimeout(() => {
-				try{let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
-				let playlistEl = document.getElementById('playlist');
-				playlistEl.scrollTop = topPos - 100;
-				}catch(exp){
+				try {
+					let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
+					let playlistEl = document.getElementById('playlist');
+					playlistEl.scrollTop = topPos - 100;
+				} catch (exp) {
 					console.log("ignor this error until implementing the playlist");
 				}
 			});
@@ -84,24 +91,25 @@ export class MainComponent {
 	searchMore(): void {
 		if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) return;
 		this.loadingInProgress = true;
-		this.indexDataService.searchNext({'test':'test'})
+		// this.indexDataService.searchNext({'test':'test'})
+		this.solrSearch.search()
 			.then(data => {
-				this.loadingInProgress = false;
-				if (data.length < 1 || data.status === 400) {
+			this.loadingInProgress = false;
+			if (data.length < 1 || data.status === 400) {
+				setTimeout(() => {
+					this.pageLoadingFinished = true;
 					setTimeout(() => {
-						this.pageLoadingFinished = true;
-						setTimeout(() => {
-							this.pageLoadingFinished = false;
-						}, 10000);
-					})
-					return;
-				}
-				data.forEach((val) => {
-					this.videoList.push(val);
-				});
-			}).catch(error => {
-				this.loadingInProgress = false;
-			})
+						this.pageLoadingFinished = false;
+					}, 10000);
+				})
+				return;
+			}
+			data.forEach((val) => {
+				this.videoList.push(val);
+			});
+		}).catch(error => {
+			this.loadingInProgress = false;
+		})
 	}
 
 	nextVideo(): void {
@@ -162,7 +170,7 @@ export class MainComponent {
 
 	getShuffled(index: number): number {
 		let i = Math.floor(Math.random() * this.videoPlaylist.length);
-		return i !== index ? i: this.getShuffled(index);
+		return i !== index ? i : this.getShuffled(index);
 	}
 
 	closePlaylist(): void {
@@ -177,16 +185,16 @@ export class MainComponent {
 	}
 
 	exportPlaylist(): void {
-		if(this.videoPlaylist.length < 1) {
+		if (this.videoPlaylist.length < 1) {
 			this.notificationService.showNotification("Nothing to export.");
 			return;
 		}
 		let data = JSON.stringify(this.videoPlaylist);
 		let a = document.createElement("a");
-    let file = new Blob([data], {type: "text/json"});
-    a.href = URL.createObjectURL(file);
-    a.download = "playlist.json";
-    a.click();
+		let file = new Blob([data], { type: "text/json" });
+		a.href = URL.createObjectURL(file);
+		a.download = "playlist.json";
+		a.click();
 		this.notificationService.showNotification("Playlist exported.");
 	}
 

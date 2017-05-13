@@ -6,5 +6,6 @@ import { Component, Input, AfterContentInit, Output, EventEmitter } from "@angul
 	styleUrls: ['audio-view.component.css']
 })
 
-export class AudioComponent  {
+export class AudioComponent  implements OnInit{
+	Oninti
 }

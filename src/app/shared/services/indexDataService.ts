@@ -49,7 +49,9 @@ export class IndexDataService {
         params.set('rows' , ''+ args.noOfRow);
         params.set('q', 'RecipeTitle:' + args.searchTerm);
         params.set('json.wrf', 'JSONP_CALLBACK');
-        console.log('going to search for '+ args);
+        params.set('start',''+args.pageNum*args.noOfRow); 
+        console.log('going to search for ');
+        console.log(args)
         return this.jsonp
             .get(solrUrl, { search: params })
             .map((response) => {
