@@ -2,7 +2,7 @@
   <header class="mdl-layout__header">
 
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title" style="width: 20%;">
+      <div class="mdl-layout-title" style="width: 15%;">
         <!--img src="assets/logo.png" style="height: 35px;"-->
       </div>
       <nav class="mdl-navigation" style="width: 100%;">
@@ -10,29 +10,21 @@
       </nav>
     </div>
 
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+    <!--<nav class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a class="mdl-layout__tab is-active" routerLink="/video" routerLinkActive="active"> video </a>
-      <a class="mdl-layout__tab">blog</a>
-      <a class="mdl-layout__tab" routerLink="/audio" routerLinkActive="active">audo</a>
-    </div>
+      <a class="mdl-layout__tab" routerLink="/audio" routerLinkActive="active">audio</a>
+    </nav>-->
 
   </header>
 
   <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="toggleFilter()">
     <i class="material-icons"></i>
   </div>
-  <!-- <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Title</span>
-    </div> -->
 
   <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
   <filters [playlistToggle]="filterToggle"></filters>
 
- <nav>
-    <a routerLink="/video" routerLinkActive="active">video</a>
-    <a routerLink="/audio" routerLinkActive="active">audio</a>
-  </nav>
-  <router-outlet></router-outlet>
+  <!--<router-outlet></router-outlet>-->
 
   <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
     <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">

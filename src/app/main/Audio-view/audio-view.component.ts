@@ -1,11 +1,13 @@
-import { Component, Input, AfterContentInit, Output, EventEmitter } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
-	selector: 'audio-view',
-	templateUrl: 'audio-view.component.html',
-	styleUrls: ['audio-view.component.css']
+  template: `
+    <h2>CRISIS CENTER</h2>
+    <p>Get your crisis here</p>`
 })
 
 export class AudioComponent  implements OnInit{
-	Oninti
+	ngOnInit(){
+		console.log('audio component initiated');
+	}
 }

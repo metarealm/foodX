@@ -50,10 +50,11 @@ export class IndexDataService {
         params.set('q', 'RecipeTitle:' + args.searchTerm);
         params.set('json.wrf', 'JSONP_CALLBACK');
         params.set('start',''+args.pageNum*args.noOfRow); 
+        params.set('json.facet','{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
         console.log('going to search for ');
         console.log(args)
         return this.jsonp
-            .get(solrUrl, { search: params })
+            .get(solrUrl, { search: params , body : 'json.facet={likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}'})
             .map((response) => {
                 
                 let jsonRes = response.json();

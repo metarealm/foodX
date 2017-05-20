@@ -5,6 +5,7 @@
 
 .mdl-layout__header {
   height: 75px;
+  width : 100%;
   /*background-color: rgb(204, 204, 204);*/
 }
 
@@ -24,7 +25,8 @@
 }
 
 .mdl-layout__header-row {
-  padding: 0 40px 0 16px;
+  width : 100%;
+  /*padding: 0 40px 0 16px;*/
 }
 
 .mdl-layout__drawer-button {
