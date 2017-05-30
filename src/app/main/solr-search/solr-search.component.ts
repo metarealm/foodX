@@ -6,6 +6,8 @@ import { NotificationService } from '../../shared/services/notification.service'
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { Observable } from 'rxjs/Observable';
 import { SearchObject } from '../../shared/searchObject';
+import {MdSelectModule} from '@angular/material';
+import { FacetService} from '../../shared/services/facetService';
 
 @Component({
     selector: 'solr-search',
@@ -29,7 +31,8 @@ export class SolrSearchComponent {
     constructor(private solrService: IndexDataService,
         public fb: FormBuilder,
         private youtubePlayer: YoutubePlayerService,
-        private notificationService: NotificationService) {
+        private notificationService: NotificationService,
+        private facetService : FacetService) {
         this.search().then(data => { this.videosUpdated.emit(data); });
 
     }
@@ -47,9 +50,8 @@ export class SolrSearchComponent {
         this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
         // this.last_search = this.last_search + ' recipe';
-        this.searObject.pageNum=0;
-        this.searObject.searchTerm=this.last_search;
-        console.log('last_search is ' + this.last_search);
+        this.searObject.pageNum = 0;
+        this.searObject.searchTerm = this.last_search;
         this.solrService.searchVideos(this.searObject)
             .then(data => {
                 this.pagenum = this.pagenum + 1;
@@ -58,7 +60,7 @@ export class SolrSearchComponent {
             })
     }
 
-    public search():Promise<any>  {
+    public search(): Promise<any> {
         this.searObject.pageNum = this.pagenum;
         return this.solrService.searchVideos(this.searObject)
             .then(data => {

@@ -4,6 +4,8 @@ import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
+import {MdSelectModule} from '@angular/material';
+
 // Components
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./main/main.component";
@@ -17,7 +19,8 @@ import { YoutubeApiService } from "./shared/services/youtube-api.service";
 import { YoutubePlayerService } from "./shared/services/youtube-player.service";
 import { PlaylistStoreService } from "./shared/services/playlist-store.service";
 import { NotificationService } from "./shared/services/notification.service";
-import { IndexDataService } from './shared/services/indexDataService'
+import { IndexDataService } from './shared/services/indexDataService';
+import { FacetService } from './shared/services/facetService'
 // Pipes
 import { VideoDurationPipe } from "./shared/pipes/video-duration.pipe";
 import { VideoLikesPipe } from "./shared/pipes/video-likes.pipe";
@@ -61,6 +64,7 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		PlaylistStoreService,
 		NotificationService,
 		IndexDataService,
+		FacetService,
 
 	]
 })

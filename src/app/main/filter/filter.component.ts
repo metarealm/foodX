@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { indexDatas, IndexedData } from '../../shared/Helper/indexdata';
-import { IndexDataService } from '../../shared/services/indexDataService'
+import { IndexDataService } from '../../shared/services/indexDataService';
+import { FacetService } from '../../shared/services/facetService';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'filters',
@@ -10,14 +12,22 @@ import { IndexDataService } from '../../shared/services/indexDataService'
 })
 
 export class FilterComponent implements OnInit {
-	@Input() playlistToggle;
+    @Input() playlistToggle;
     videos: IndexedData[];
     selectedVideo: IndexedData;
+    likefacets: any;
+    subscription: Subscription;
 
-    constructor(private dataService: IndexDataService) { }
+    constructor(private dataService: FacetService) {
+        this.subscription = this.dataService.facet$.subscribe(message => {
+                            console.log(' facet data ');
+                            console.log( message['likes']['buckets']);
+                            this.likefacets=message['likes']['buckets'];
+        });
+
+    }
 
     getFilterVideos(): void {
-        this.dataService.getIndexedData().then(indexedVideos => this.videos = indexedVideos);
     }
     ngOnInit(): void {
         this.getFilterVideos();
@@ -25,4 +35,5 @@ export class FilterComponent implements OnInit {
     onSelect(video: IndexedData): void {
         this.selectedVideo = video;
     }
+
 }

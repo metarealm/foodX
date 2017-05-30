@@ -2,25 +2,32 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Jsonp, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 import { indexDatas, IndexedData } from '../Helper/indexdata';
 import { AppSettings } from '../constants';
 import { NotificationService } from './notification.service';
-import { SearchObject } from '../../shared/searchObject';
-
+import { SearchObject } from '../searchObject';
+import { FacetService } from './facetService';
 
 @Injectable()
 export class IndexDataService {
 
-    	public nextToken: string;
-	public lastQuery: string;
+    public nextToken: string;
+    public lastQuery: string;
+
 
     getIndexedData(): Promise<IndexedData[]> {
         return Promise.resolve(indexDatas);
     }
 
-    constructor(private jsonp: Jsonp, private http: Http, private notificationService: NotificationService) { }
+    constructor(private jsonp: Jsonp, private http: Http,
+        private notificationService: NotificationService,
+        private facetService: FacetService
+    ) {
+    }
     suggest(term: string) {
-        let solrUrl = AppSettings.SOLR_SERVER_PATH+'foodx/suggest';
+        let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
         let params = new URLSearchParams();
         params.set('suggest', 'true'); // the user's search value
         params.set('suggest.build', 'true');
@@ -42,25 +49,26 @@ export class IndexDataService {
     }
 
 
-    searchVideos(args: SearchObject) : Promise<any>{
+    searchVideos(args: SearchObject): Promise<any> {
         let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
         let params = new URLSearchParams();
         params.set('wt', 'json');
-        params.set('rows' , ''+ args.noOfRow);
+        params.set('rows', '' + args.noOfRow);
         params.set('q', 'RecipeTitle:' + args.searchTerm);
         params.set('json.wrf', 'JSONP_CALLBACK');
-        params.set('start',''+args.pageNum*args.noOfRow); 
-        params.set('json.facet','{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
+        params.set('start', '' + args.pageNum * args.noOfRow);
+        params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
         console.log('going to search for ');
         console.log(args)
         return this.jsonp
-            .get(solrUrl, { search: params , body : 'json.facet={likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}'})
+            .get(solrUrl, { search: params, body: 'json.facet={likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}' })
             .map((response) => {
-                
+
                 let jsonRes = response.json();
                 let suggestions = [];
                 let suggestionObject = jsonRes['response']['docs'];
-                console.log('number of search result for '+ args.searchTerm+ '=' + suggestionObject.length);
+                this.facetService.setFaets(jsonRes['facets']);
+                console.log('number of search result for ' + args.searchTerm + '=' + suggestionObject.length);
                 let ids = [];
 
                 suggestionObject.forEach((item) => {
@@ -71,31 +79,32 @@ export class IndexDataService {
             }).toPromise().catch(this.handleError);
     }
 
-	searchNext(args:any): Promise<any> {
+    searchNext(args: any): Promise<any> {
         let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
         let params = new URLSearchParams();
-         params.set('rows' , ''+AppSettings.max_results);
-         params.set('start',''+args['pagenum']*AppSettings.max_results); 
+        params.set('rows', '' + AppSettings.max_results);
+        params.set('start', '' + args['pagenum'] * AppSettings.max_results);
         params.set('wt', 'json');
         params.set('q', 'RecipeTitle:' + args['term']);
+        params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
         params.set('json.wrf', 'JSONP_CALLBACK');
 
-		return this.http.get(solrUrl, { search: params })
-			.map(response => {
+        return this.http.get(solrUrl, { search: params })
+            .map(response => {
                 let jsonRes = response.json();
                 let suggestions = [];
                 let suggestionObject = jsonRes['response']['docs'];
                 let ids = [];
-
+                this.facetService.setFaets('facets');
                 suggestionObject.forEach((item) => {
                     ids.push(item.youtubevideoID);
                 });
 
                 return this.getVideos(ids);
-			})
-			.toPromise()
-			.catch(this.handleError)
-	}
+            })
+            .toPromise()
+            .catch(this.handleError)
+    }
 
     getVideos(ids): Promise<any> {
         return this.http.get(AppSettings.base_url + 'videos?id=' + ids.join(',') + '&maxResults=' + AppSettings.max_results + '&type=video&part=snippet,contentDetails,statistics&key=' + AppSettings.YOUTUBE_API_KEY)
@@ -116,7 +125,9 @@ export class IndexDataService {
             errMsg = error.message ? error.message : error.toString();
         }
 
-        this.notificationService.showNotification(errMsg);
+        // this.notificationService.showNotification(errMsg);
         return Promise.reject(errMsg);
     }
+
+
 }
