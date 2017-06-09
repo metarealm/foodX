@@ -1,19 +1,83 @@
 <div class="container-fluid filterlist" [ngClass]="{'opened': playlistToggle}">
-    <div class="row">
+	<div class="row">
 		<div class="col-xs-6 col-sm-3">
 			<div id="accordion" class="panel panel-primary behclick-panel">
-				<div class="panel-body" >
+				<div class="panel-body">
 
 
-					<div class="panel-heading " >
+					<div class="panel-heading ">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse0">
+								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> ingredients
+							</a>
+						</h4>
+					</div>
+					<div id="collapse0" class="panel-collapse collapse in">
+						<ul class="list-group">
+							<li class="list-group-item" *ngFor="let facet of  contenttypefacets">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="">
+										{{facet.val}}-({{facet.count}})
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+
+					<div class="panel-heading ">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse0">
+								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> ingredients
+							</a>
+						</h4>
+					</div>
+					<div id="collapse0" class="panel-collapse collapse in">
+						<ul class="list-group">
+							<li class="list-group-item" *ngFor="let facet of  ingredientfacets">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="">
+										{{facet.val}}-({{facet.count}})
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+
+
+					<div class="panel-heading ">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse0">
+								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> recipie country
+							</a>
+						</h4>
+					</div>
+					<div id="collapse0" class="panel-collapse collapse in">
+						<ul class="list-group">
+							<li class="list-group-item" *ngFor="let facet of  locationfacets">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" value="">
+										{{facet.val}}-({{facet.count}})
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+
+					<div class="panel-heading ">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" href="#collapse0">
 								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> likes
 							</a>
 						</h4>
 					</div>
-                    <div id="collapse0" class="panel-collapse collapse in"  >
-						<ul class="list-group" >
+					<div id="collapse0" class="panel-collapse collapse in">
+						<ul class="list-group">
 							<li class="list-group-item" *ngFor="let facet of  likefacets">
 								<div class="checkbox">
 									<label>
@@ -23,7 +87,7 @@
 								</div>
 							</li>
 						</ul>
-                    </div>
+					</div>
 
 				</div>
 			</div>

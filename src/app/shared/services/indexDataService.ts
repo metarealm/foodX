@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Jsonp, URLSearchParams } from '@angular/http';
+import { Http, Response, Jsonp, URLSearchParams, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
@@ -36,7 +36,7 @@ export class IndexDataService {
         params.set('json.wrf', 'JSONP_CALLBACK');
 
         return this.jsonp
-            .get(solrUrl, { search: params })
+            .request(solrUrl, { search: params })
             .map((response) => {
                 let jsonRes = response.json();
                 let suggestions = [];
@@ -56,12 +56,14 @@ export class IndexDataService {
         params.set('rows', '' + args.noOfRow);
         params.set('q', 'RecipeTitle:' + args.searchTerm);
         params.set('json.wrf', 'JSONP_CALLBACK');
+        params.set('fl','youtubevideoID');
         params.set('start', '' + args.pageNum * args.noOfRow);
-        params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
+        params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
         console.log(args)
+
         return this.jsonp
-            .get(solrUrl, { search: params, body: 'json.facet={likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}' })
+            .request(solrUrl, { search: params })
             .map((response) => {
 
                 let jsonRes = response.json();
@@ -86,7 +88,7 @@ export class IndexDataService {
         params.set('start', '' + args['pagenum'] * AppSettings.max_results);
         params.set('wt', 'json');
         params.set('q', 'RecipeTitle:' + args['term']);
-        params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
+        // params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
         params.set('json.wrf', 'JSONP_CALLBACK');
 
         return this.http.get(solrUrl, { search: params })
