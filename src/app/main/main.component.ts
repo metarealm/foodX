@@ -1,10 +1,9 @@
-import { AfterViewInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Component } from '@angular/core';
 import { SolrSearchComponent } from './solr-search/solr-search.component';
 import { YoutubeApiService } from "../shared/services/youtube-api.service";
 import { YoutubePlayerService } from "../shared/services/youtube-player.service";
 import { PlaylistStoreService } from "../shared/services/playlist-store.service";
-import { window } from '@angular/platform-browser/src/facade/browser';
 import { NotificationService } from '../shared/services/notification.service';
 import { IndexDataService } from '../shared/services/indexDataService';
 
@@ -12,7 +11,8 @@ import { IndexDataService } from '../shared/services/indexDataService';
 @Component({
 	selector: 'main-list',
 	templateUrl: 'main.component.html',
-	styleUrls: ['main.component.css']
+	styleUrls: ['main.component.css'],
+	encapsulation: ViewEncapsulation.None,
 })
 
 export class MainComponent {
@@ -39,6 +39,9 @@ export class MainComponent {
 		private indexDataService: IndexDataService,
 	) {
 		this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
+	}
+
+	ngAfterViewInit() {
 	}
 
 	playFirstInPlaylist(): void {
@@ -94,22 +97,22 @@ export class MainComponent {
 		// this.indexDataService.searchNext({'test':'test'})
 		this.solrSearch.search()
 			.then(data => {
-			this.loadingInProgress = false;
-			if (data.length < 1 || data.status === 400) {
-				setTimeout(() => {
-					this.pageLoadingFinished = true;
+				this.loadingInProgress = false;
+				if (data.length < 1 || data.status === 400) {
 					setTimeout(() => {
-						this.pageLoadingFinished = false;
-					}, 10000);
-				})
-				return;
-			}
-			data.forEach((val) => {
-				this.videoList.push(val);
-			});
-		}).catch(error => {
-			this.loadingInProgress = false;
-		})
+						this.pageLoadingFinished = true;
+						setTimeout(() => {
+							this.pageLoadingFinished = false;
+						}, 10000);
+					})
+					return;
+				}
+				data.forEach((val) => {
+					this.videoList.push(val);
+				});
+			}).catch(error => {
+				this.loadingInProgress = false;
+			})
 	}
 
 	nextVideo(): void {

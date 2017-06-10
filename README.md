@@ -1,41 +1,31 @@
-# FoodX
+# RecipiePlayer
 
-> FoodX app built with Angular 2 
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## set up
+## Code scaffolding
 
-**Note**: Require Node 4+ together with Npm 3+, also be sure to install 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-**1-(If you already have Angular Cli Installed You can skip this step)
-Install [Angular-CLI](https://github.com/angular/angular-cli) (latest 1.0.0-rc.1) :**
+## Build
 
-```bash
-$ npm install -g @angular/cli@latest
-```
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-**2- Clone the project:**
+## Running unit tests
 
-```bash
-$	git clone https://github.com/metarealm/foodX.git
-$	cd foodX
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-**3- Install the npm packages described in the package.json :**
+## Running end-to-end tests
 
-```bash
-$ npm install
-```
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-**4- Transpile typescript into javascript, host the app and monitor the changes :**
+## Deploying to GitHub Pages
 
-```bash
-$ ng serve
-```
+Run `ng github-pages:deploy` to deploy to GitHub Pages.
 
-Visit http://localhost:4200 and enjoy!
+## Further help
 
-## Dependencies
-- [Angular 2](https://angular.io/) with [Typescript](https://www.typescriptlang.org/)
-- [Angular CLI](https://cli.angular.io/)
-- [Material Design Lite](https://github.com/google/material-design-lite/)
+To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
