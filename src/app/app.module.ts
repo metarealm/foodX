@@ -2,10 +2,8 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
 import { MdlModule } from '@angular-mdl/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MdSelectModule} from '@angular/material';
 
 // Components
 import { AppComponent } from "./app.component";

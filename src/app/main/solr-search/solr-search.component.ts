@@ -6,7 +6,6 @@ import { NotificationService } from '../../shared/services/notification.service'
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { Observable } from 'rxjs/Observable';
 import { SearchObject } from '../../shared/searchObject';
-import {MdSelectModule} from '@angular/material';
 import { FacetService} from '../../shared/services/facetService';
 
 @Component({
