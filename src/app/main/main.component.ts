@@ -12,10 +12,11 @@ import { IndexDataService } from '../shared/services/indexDataService';
 	selector: 'main-list',
 	templateUrl: 'main.component.html',
 	styleUrls: ['main.component.css'],
-	encapsulation: ViewEncapsulation.None,
 })
 
 export class MainComponent {
+
+	public componentHandler: any;
 
 	@ViewChild(SolrSearchComponent)
 	private solrSearch: SolrSearchComponent;
@@ -41,8 +42,9 @@ export class MainComponent {
 		this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
 	}
 
-	ngAfterViewInit() {
-	}
+	AfterViewInit(){
+        this.componentHandler.upgradeAllRegistered();
+    }
 
 	playFirstInPlaylist(): void {
 		if (this.videoPlaylist[0]) this.youtubePlayer.playVideo(this.videoPlaylist[0].id);

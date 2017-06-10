@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { MdlModule } from '@angular-mdl/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MdSelectModule} from '@angular/material';
 
@@ -34,7 +35,7 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		BrowserModule,
 		HttpModule,
 		ReactiveFormsModule,
-		// MaterialModule,
+		MdlModule,
 		JsonpModule,
 		YoutubePlayerModule
 	],
