@@ -18,6 +18,9 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
           "mobile": false,
+      "styles": [
+        "styles.css"
+      ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
