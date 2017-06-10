@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { MdlModule } from '@angular-mdl/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MdSelectModule} from '@angular/material';
 
@@ -14,6 +15,7 @@ import { VideosPlaylistComponent } from "./main/videos-playlist/videos-playlist.
 import { VideoPlayerComponent } from "./main/video-player/video-player.component";
 import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
+import { YoutubePlayerModule } from 'ng2-youtube-player';
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
 import { YoutubePlayerService } from "./shared/services/youtube-player.service";
@@ -28,14 +30,14 @@ import { VideoViewsPipe } from "./shared/pipes/video-views.pipe";
 import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
 
-
 @NgModule({
 	imports: [
 		BrowserModule,
 		HttpModule,
 		ReactiveFormsModule,
-		// MaterialModule,
-		JsonpModule
+		MdlModule,
+		JsonpModule,
+		YoutubePlayerModule
 	],
 	declarations: [
 		AppComponent,

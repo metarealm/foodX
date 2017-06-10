@@ -34,10 +34,10 @@ export class VideoPlayerComponent implements AfterContentInit {
 
 	ngAfterContentInit() {
 		let doc = window.document;
-    let playerApi = doc.createElement('script');
-    playerApi.type = 'text/javascript';
-    playerApi.src = 'https://www.youtube.com/iframe_api';
-    doc.body.appendChild(playerApi);
+		let playerApi = doc.createElement('script');
+		playerApi.type = 'text/javascript';
+		playerApi.src = 'https://www.youtube.com/iframe_api';
+		doc.body.appendChild(playerApi);
 		this.superMinPlayer = !this.superMinPlayer;
 		this.youtubePlayer.createPlayer();
 	}
@@ -46,19 +46,19 @@ export class VideoPlayerComponent implements AfterContentInit {
 		this.minPlayer = false;
 		this.superMinPlayer = false;
 		this.fullscreenActive = !this.fullscreenActive;
-		let width = this.fullscreenActive ? window.innerWidth - 70: 440;
-		let height = this.fullscreenActive ? window.innerHeight - 120: 250;
+		let width = this.fullscreenActive ? window.innerWidth - 70 : 440;
+		let height = this.fullscreenActive ? window.innerHeight - 120 : 250;
 		this.youtubePlayer.resizePlayer(width, height);
 
 	}
 
 	playPause(event: string): void {
 		this.playingEvent = event;
-		if(!this.youtubePlayer.getCurrentVideo()) {
+		if (!this.youtubePlayer.getCurrentVideo()) {
 			this.playFirstInPlaylist.emit();
 			return;
 		}
-		event === 'pause' ? this.youtubePlayer.pausePlayingVideo(): this.youtubePlayer.playPausedVideo();
+		event === 'pause' ? this.youtubePlayer.pausePlayingVideo() : this.youtubePlayer.playPausedVideo();
 	}
 
 	nextVideo(): void {
@@ -75,7 +75,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 	}
 
 	minimizePlayer(): void {
-		this.superMinPlayer =	!this.superMinPlayer;
+		this.superMinPlayer = !this.superMinPlayer;
 	}
 
 	toggleRepeat(): void {
@@ -109,25 +109,25 @@ export class VideoPlayerComponent implements AfterContentInit {
 
 	handleInputChange(e: any): void {
 		let file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-		if(file.type !== 'application/json') {
+		if (file.type !== 'application/json') {
 			this.notificationService.showNotification("File not supported.");
 			return;
 		}
 		let reader = new FileReader();
 		let me = this;
 		reader.readAsText(file);
-		reader.onload = function(ev) {
+		reader.onload = function (ev) {
 			let list;
 			try {
 				list = JSON.parse(ev.target['result']);
 			} catch (exc) {
 				list = null;
 			}
-			if(!list) {
+			if (!list) {
 				me.notificationService.showNotification("Playlist not valid.");
 				return;
 			}
-			if(list.length < 1) {
+			if (list.length < 1) {
 				me.notificationService.showNotification("Nothing to import.");
 				return;
 			}
