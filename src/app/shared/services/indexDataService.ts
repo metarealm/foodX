@@ -50,22 +50,23 @@ export class IndexDataService {
 
 
     searchVideos(args: SearchObject): Promise<any> {
-        let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
+        //let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
+        let solrUrl = '/api/select'
         let params = new URLSearchParams();
         params.set('wt', 'json');
         params.set('rows', '' + args.noOfRow);
         params.set('q', 'RecipeTitle:' + args.searchTerm);
-        params.set('json.wrf', 'JSONP_CALLBACK');
+        //params.set('json.wrf', 'JSONP_CALLBACK');
         params.set('fl','youtubevideoID');
         params.set('start', '' + args.pageNum * args.noOfRow);
         params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
         console.log(args)
 
-        return this.jsonp
-            .request(solrUrl, { search: params })
+        return this.http
+            .get(solrUrl, { search: params })
             .map((response) => {
-
+                console.log(response);
                 let jsonRes = response.json();
                 let suggestions = [];
                 let suggestionObject = jsonRes['response']['docs'];
