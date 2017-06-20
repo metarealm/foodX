@@ -1,8 +1,8 @@
-<form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
+<form [formGroup]="searchForm" (ngSubmit)="doSearch($event)" >
 
 
   <div class="mdl-textfield mdl-js-textfield" style="width: 60%;">
-    <input class="mdl-textfield__input" list="browsers" #term (keyup)="suggest(term.value)" formControlName="query" type="text"
+    <input class="mdl-textfield__input" list="browsers" #queryinput (keyup)="suggest(queryinput.value)" formControlName="query" type="text"
       id="query" autocomplete="off">
     <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
 		<i class="material-icons">search</i>
@@ -13,7 +13,7 @@
 
 
 <!--<input list="browsers" name="browser">-->
-<datalist id="browsers">
+<datalist id="browsers" (selected)="selectedenvent()">
   <option *ngFor="let item of items" value={{item}}>
 </datalist>
 <!--<input #term (keyup)="search(term.value)" />
