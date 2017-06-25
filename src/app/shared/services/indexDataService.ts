@@ -27,16 +27,17 @@ export class IndexDataService {
     ) {
     }
     suggest(term: string) {
-        let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
+        // let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
+        let solrUrl = '/api/suggest'
         let params = new URLSearchParams();
         params.set('suggest', 'true'); // the user's search value
         params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
-        params.set('json.wrf', 'JSONP_CALLBACK');
+        // params.set('json.wrf', 'JSONP_CALLBACK');
 
-        return this.jsonp
-            .request(solrUrl, { search: params })
+        return this.http
+            .get(solrUrl, { search: params })
             .map((response) => {
                 let jsonRes = response.json();
                 let suggestions = [];

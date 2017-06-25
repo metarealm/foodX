@@ -11,7 +11,18 @@ router.get('/apitest', (req, res) => {
 /* GET api listing. */
 router.get('/select', (req, res) => {
 
-    solr.getDataToSolr(req.query)
+    solr.selectFromSolr(req.query)
+    .then(result => res.status(200).json(result))
+    .catch(error => {
+      res.status(500).send(error)
+    });
+    
+});
+
+/* GET api listing. */
+router.get('/suggest', (req, res) => {
+
+    solr.suggestFromSolr(req.query)
     .then(result => res.status(200).json(result))
     .catch(error => {
       res.status(500).send(error)

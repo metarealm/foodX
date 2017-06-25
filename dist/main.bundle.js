@@ -1474,15 +1474,16 @@ var IndexDataService = (function () {
         return Promise.resolve(__WEBPACK_IMPORTED_MODULE_4__Helper_indexdata__["a" /* indexDatas */]);
     };
     IndexDataService.prototype.suggest = function (term) {
-        var solrUrl = __WEBPACK_IMPORTED_MODULE_5__constants__["a" /* AppSettings */].SOLR_SERVER_PATH + 'foodx/suggest';
+        // let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
+        var solrUrl = '/api/suggest';
         var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* URLSearchParams */]();
         params.set('suggest', 'true'); // the user's search value
         params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
-        params.set('json.wrf', 'JSONP_CALLBACK');
-        return this.jsonp
-            .request(solrUrl, { search: params })
+        // params.set('json.wrf', 'JSONP_CALLBACK');
+        return this.http
+            .get(solrUrl, { search: params })
             .map(function (response) {
             var jsonRes = response.json();
             var suggestions = [];
