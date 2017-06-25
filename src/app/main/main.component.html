@@ -22,7 +22,7 @@
   </div>
 
   <!-- <videos-playlist [repeat]="repeat" [shuffle]="shuffle" [playlistToggle]="playlistToggle" [playlistNames]="playlistNames" [videoPlaylist]="videoPlaylist"></videos-playlist> -->
-  <filters [playlistToggle]="filterToggle"></filters>
+  <filters [filterlistToggle]="filterToggle"></filters>
 
   <!--<router-outlet></router-outlet>-->
 
@@ -37,7 +37,7 @@
   </main>
 </div>
 
-<video-player (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()"
+<video-player #videoplayer (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()"
   (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
   (nextVideoEvent)="nextVideo($event)" (prevVideoEvent)="prevVideo($event)"></video-player>
 

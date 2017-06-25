@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 
 export class FilterComponent implements OnInit {
-    @Input() playlistToggle;
+    @Input() filterlistToggle;
     videos: IndexedData[];
     selectedVideo: IndexedData;
     likefacets: any;
