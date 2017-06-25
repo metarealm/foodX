@@ -52,6 +52,7 @@ export class MainComponent {
 
 	handleSearchVideo(videos: Array<any>): void {
 		this.videoList = videos;
+		this.filterToggle = true;
 		console.log(this.videoList);
 	}
 

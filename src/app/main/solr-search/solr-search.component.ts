@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, ViewChild, ViewEncapsulation } from "@angular/core";
 import { FormBuilder, Validators } from '@angular/forms';
 import { YoutubeApiService } from "../../shared/services/youtube-api.service";
 import { YoutubePlayerService } from "../../shared/services/youtube-player.service";
@@ -6,7 +6,7 @@ import { NotificationService } from '../../shared/services/notification.service'
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { Observable } from 'rxjs/Observable';
 import { SearchObject } from '../../shared/searchObject';
-import { FacetService} from '../../shared/services/facetService';
+import { FacetService } from '../../shared/services/facetService';
 
 @Component({
     selector: 'solr-search',
@@ -17,6 +17,7 @@ import { FacetService} from '../../shared/services/facetService';
 export class SolrSearchComponent {
 
     // items: Observable<string[]>;
+    @ViewChild('queryinput') queryinput; 
     items: string[];
     @Output() videosUpdated = new EventEmitter();
     @Input() loadingInProgress;
@@ -31,7 +32,7 @@ export class SolrSearchComponent {
         public fb: FormBuilder,
         private youtubePlayer: YoutubePlayerService,
         private notificationService: NotificationService,
-        private facetService : FacetService) {
+        private facetService: FacetService) {
         this.search().then(data => { this.videosUpdated.emit(data); });
 
     }
@@ -43,11 +44,16 @@ export class SolrSearchComponent {
 
     }
 
+    public selectedenvent() {
+        console.log(' selected event triggered');
+    }
     public doSearch(): void {
         if (this.loadingInProgress || (this.searchForm.value.query.trim().length === 0) ||
             (this.last_search && this.last_search === this.searchForm.value.query)) return;
         this.videosUpdated.emit([]);
         this.last_search = this.searchForm.value.query;
+        console.log(this.queryinput);
+        this.queryinput.nativeElement.blur();
         // this.last_search = this.last_search + ' recipe';
         this.searObject.pageNum = 0;
         this.searObject.searchTerm = this.last_search;

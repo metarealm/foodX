@@ -38,8 +38,10 @@ export class VideoPlayerComponent implements AfterContentInit {
 		playerApi.type = 'text/javascript';
 		playerApi.src = 'https://www.youtube.com/iframe_api';
 		doc.body.appendChild(playerApi);
-		this.superMinPlayer = !this.superMinPlayer;
+		// this.superMinPlayer = !this.superMinPlayer;
 		this.youtubePlayer.createPlayer();
+		//this.toggleFullscreen();
+
 	}
 
 	toggleFullscreen(): void {

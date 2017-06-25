@@ -40,6 +40,7 @@ export class YoutubePlayerService {
 		});
 		let interval = setInterval(() => {
 			if ((typeof window['YT'] !== "undefined") && window['YT'] && window['YT'].Player) {
+				console.log('YT player set');
 				this.yt_player = new YT.Player('yt-player', this.ytOptions);
 				clearInterval(interval);
 			}
@@ -67,6 +68,7 @@ export class YoutubePlayerService {
 			this.notificationService.showNotification("Player not ready.");
 			return;
 		}
+		
 		this.yt_player.loadVideoById(videoId);
 		this.currentVideoId = videoId;
 	}
@@ -84,14 +86,8 @@ export class YoutubePlayerService {
 	}
 
 	resizePlayer(width: number, height: number) {
+		console.log( 'resizing player to  - width =' + width + ' height ='+ height);
 		this.yt_player.setSize(width, height);
 	}
 
-	loadPlayerApi() {
-		const doc = YoutubePlayerService.win.document;
-		let playerApiScript = doc.createElement("script");
-		playerApiScript.type = "text/javascript";
-		playerApiScript.src = `http://www.youtube.com/iframe_api`;
-		doc.body.appendChild(playerApiScript);
-	}
 }
