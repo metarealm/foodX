@@ -9,12 +9,12 @@ import { NotificationService } from '../../shared/services/notification.service'
 })
 
 export class VideoPlayerComponent implements AfterContentInit {
-	public minPlayer: boolean = false;
+	public minPlayer: boolean = true;
 	public superMinPlayer: boolean = false;
 	public playingEvent: string = 'pause';
 	private shuffle: boolean = false;
 	private repeat: boolean = false;
-	private fullscreenActive: boolean = true;
+	private fullscreenActive: boolean = false;
 
 	@Output() repeatActive = new EventEmitter();
 	@Output() shuffleActive = new EventEmitter();
@@ -40,7 +40,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 		doc.body.appendChild(playerApi);
 		// this.superMinPlayer = !this.superMinPlayer;
 		this.youtubePlayer.createPlayer();
-		this.toggleFullscreen();
+		//this.toggleFullscreen();
 
 	}
 
