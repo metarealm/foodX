@@ -4,6 +4,8 @@ import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MdlModule } from '@angular-mdl/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+
 
 // Components
 import { AppComponent } from "./app.component";
@@ -14,6 +16,8 @@ import { VideoPlayerComponent } from "./main/video-player/video-player.component
 import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
+import { PageNotFoundComponent } from './not-found.component';
+
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
 import { YoutubePlayerService } from "./shared/services/youtube-player.service";
@@ -35,7 +39,8 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		ReactiveFormsModule,
 		MdlModule,
 		JsonpModule,
-		YoutubePlayerModule
+		YoutubePlayerModule,
+		AppRoutingModule
 	],
 	declarations: [
 		AppComponent,
@@ -43,6 +48,8 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		VideosListComponent,
 		VideoPlayerComponent,
 		VideosPlaylistComponent,
+		PageNotFoundComponent,
+		MainComponent,
 
 		VideoDurationPipe,
 		VideoLikesPipe,
