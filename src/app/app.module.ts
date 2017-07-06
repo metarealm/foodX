@@ -1,8 +1,10 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MdlModule } from '@angular-mdl/core';
+import { MaterialModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -31,6 +33,7 @@ import { VideoLikesPipe } from "./shared/pipes/video-likes.pipe";
 import { VideoViewsPipe } from "./shared/pipes/video-views.pipe";
 import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 @NgModule({
 	imports: [
@@ -40,6 +43,8 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		MdlModule,
 		JsonpModule,
 		YoutubePlayerModule,
+		BrowserAnimationsModule,
+		MaterialModule,
 		AppRoutingModule
 	],
 	declarations: [
@@ -59,7 +64,8 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 		LazyScroll,
 
 		FilterComponent,
-		SolrSearchComponent
+		SolrSearchComponent,
+		FrontpageComponent
 
 	],
 	bootstrap: [
