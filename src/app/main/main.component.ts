@@ -1,12 +1,13 @@
 import { AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SolrSearchComponent } from './solr-search/solr-search.component';
 import { YoutubeApiService } from "../shared/services/youtube-api.service";
 import { YoutubePlayerService } from "../shared/services/youtube-player.service";
 import { PlaylistStoreService } from "../shared/services/playlist-store.service";
 import { NotificationService } from '../shared/services/notification.service';
 import { IndexDataService } from '../shared/services/indexDataService';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { SearchObject } from '../shared/searchObject';
 
 @Component({
 	selector: 'main-list',
@@ -14,7 +15,7 @@ import { IndexDataService } from '../shared/services/indexDataService';
 	styleUrls: ['main.component.css'],
 })
 
-export class MainComponent {
+export class MainComponent implements AfterViewInit {
 
 	public componentHandler: any;
 
@@ -30,9 +31,12 @@ export class MainComponent {
 	private pageLoadingFinished: boolean = false;
 	public repeat: boolean = false;
 	public shuffle: boolean = false;
+	public searchParam: string;
 	public link;
 
 	constructor(
+		private route: ActivatedRoute,
+		private router: Router,
 		private youtubeService: YoutubeApiService,
 		private youtubePlayer: YoutubePlayerService,
 		private playlistService: PlaylistStoreService,
@@ -42,9 +46,15 @@ export class MainComponent {
 		this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
 	}
 
-	AfterViewInit(){
-        this.componentHandler.upgradeAllRegistered();
-    }
+	ngAfterViewInit() {
+		this.searchParam = this.route.snapshot.paramMap.get('recipe');
+		console.log('searhc param is ' + this.searchParam);
+		let searObject = new SearchObject(0, this.searchParam);
+
+		this.solrSearch.setSearchObject(searObject);
+		this.solrSearch.doSearch();
+		// this.componentHandler.upgradeAllRegistered();
+	}
 
 	playFirstInPlaylist(): void {
 		if (this.videoPlaylist[0]) this.youtubePlayer.playVideo(this.videoPlaylist[0].id);

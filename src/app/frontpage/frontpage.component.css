@@ -19,6 +19,7 @@ body{
   border-radius: 5px;
   outline: none;
   color: #9DBFAF;
+  font-size: 20px;
 }
 
 .searchTerm:focus{
@@ -41,9 +42,9 @@ body{
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 30%;
+  width: 40%;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

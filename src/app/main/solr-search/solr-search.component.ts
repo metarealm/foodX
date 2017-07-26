@@ -17,13 +17,14 @@ import { FacetService } from '../../shared/services/facetService';
 export class SolrSearchComponent {
 
     // items: Observable<string[]>;
-    @ViewChild('queryinput') queryinput; 
+    @ViewChild('queryinput') queryinput;
     items: string[];
     @Output() videosUpdated = new EventEmitter();
     @Input() loadingInProgress;
+    public searchParam: string;
     private last_search: string;
     private pagenum: number = 0;
-    private searObject: SearchObject = new SearchObject(0, 'indian');
+    private searObject: SearchObject
     public searchForm = this.fb.group({
         query: ["", Validators.required]
     });
@@ -32,10 +33,19 @@ export class SolrSearchComponent {
         public fb: FormBuilder,
         private youtubePlayer: YoutubePlayerService,
         private notificationService: NotificationService,
-        private facetService: FacetService) {
-        this.search().then(data => { this.videosUpdated.emit(data); });
+        private facetService: FacetService
+    ) {
+        // this.searObject = new SearchObject(0, this.searchParam);
+        // this.searObject = new SearchObject(0, 'indian')
+        // this.search().then(data => { this.videosUpdated.emit(data); });
 
     }
+    public setSearchObject(param: any) {
+        this.searObject = param;
+        console.log("changing the searhc object to " + this.searObject.searchTerm);
+        this.search().then(data => { this.videosUpdated.emit(data); });
+    }
+
     public suggest(term: string) {
 
         this.solrService.suggest(term).then(items => {

@@ -48,15 +48,15 @@ var AppRoutingModule = (function () {
 AppRoutingModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(appRoutes)
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]
         ]
     })
 ], AppRoutingModule);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/app-routing.module.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app-routing.module.js.map
 
 /***/ }),
 
@@ -81,7 +81,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\r\n<!--<main-list></main-list>-->"
+module.exports = "<router-outlet></router-outlet>\n<!--<main-list></main-list>-->"
 
 /***/ }),
 
@@ -112,7 +112,7 @@ AppComponent = __decorate([
     })
 ], AppComponent);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/app.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app.component.js.map
 
 /***/ }),
 
@@ -237,7 +237,7 @@ AppModule = __decorate([
     })
 ], AppModule);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/app.module.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app.module.js.map
 
 /***/ }),
 
@@ -249,7 +249,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, "body{\r\n  background: #f2f2f2;\r\n  font-family: 'Open Sans', sans-serif;\r\n}\r\n\r\n.search {\r\n  width: 100%;\r\n  position: relative\r\n}\r\n\r\n.searchTerm {\r\n  float: left;\r\n  width: 100%;\r\n  border: 3px solid #00B4CC;\r\n  padding: 5px;\r\n  height: 20px;\r\n  border-radius: 5px;\r\n  outline: none;\r\n  color: #9DBFAF;\r\n}\r\n\r\n.searchTerm:focus{\r\n  color: #00B4CC;\r\n}\r\n\r\n.searchButton {\r\n  position: absolute;  \r\n  right: -50px;\r\n  width: 40px;\r\n  height: 36px;\r\n  border: 1px solid #00B4CC;\r\n  background: #00B4CC;\r\n  text-align: center;\r\n  color: #fff;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n}\r\n\r\n/*Resize the wrap to see the search bar change!*/\r\n.wrap{\r\n  width: 30%;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%, -50%);\r\n          transform: translate(-50%, -50%);\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}", ""]);
+exports.push([module.i, "body{\n  background: #f2f2f2;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  border: 3px solid #00B4CC;\n  padding: 5px;\n  height: 20px;\n  border-radius: 5px;\n  outline: none;\n  color: #9DBFAF;\n  font-size: 20px;\n}\n\n.searchTerm:focus{\n  color: #00B4CC;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n  width: 40px;\n  height: 36px;\n  border: 1px solid #00B4CC;\n  background: #00B4CC;\n  text-align: center;\n  color: #fff;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 20px;\n}\n\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n  width: 40%;\n  position: absolute;\n  top: 40%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}", ""]);
 
 // exports
 
@@ -262,7 +262,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<md-input-container>\n  <input mdInput placeholder=\"State\" [mdAutocomplete]=\"auto\" [formControl]=\"stateCtrl\">\n</md-input-container>\n\n<md-autocomplete #auto=\"mdAutocomplete\">\n  <md-option *ngFor=\"let state of filteredStates | async\" [value]=\"state\">\n    {{ state }}\n  </md-option>\n</md-autocomplete>\n\n  <md-input-container class=\"example-full-width\">\n    <input mdInput placeholder=\"recipe \" type=\"search\" value=\"Google\">\n  </md-input-container>-->\n\n  <div class=\"wrap\">\n   <div class=\"search\">\n      <input type=\"text\" class=\"searchTerm\" placeholder=\"search your recipe\">\n      <button type=\"submit\" class=\"searchButton\">\n        <i class=\"material-icons\">search</i>\n     </button>\n   </div>\n</div>\n"
+module.exports = "<div class=\"wrap\">\n  <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n    <div class=\"search\">\n      <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" \n      formControlName=\"query\" placeholder=\"search your recipe\">\n      <button type=\"submit\" class=\"searchButton\">\n        <i class=\"material-icons\">search</i>\n     </button>\n      <datalist id=\"browsers\">\n        <select>\n        <option *ngFor=\"let item of items\" value={{item}}></option>\n        </select>\n      </datalist>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -272,10 +272,12 @@ module.exports = "<!--<md-input-container>\n  <input mdInput placeholder=\"State
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith__ = __webpack_require__("../../../../rxjs/add/operator/startWith.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__ = __webpack_require__("../../../../../src/app/shared/services/indexDataService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_startWith__ = __webpack_require__("../../../../rxjs/add/operator/startWith.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_startWith__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FrontpageComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -290,21 +292,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var FrontpageComponent = (function () {
-    function FrontpageComponent() {
+    function FrontpageComponent(fb, route, router, solrService) {
         var _this = this;
+        this.fb = fb;
+        this.route = route;
+        this.router = router;
+        this.solrService = solrService;
+        this.searchForm = this.fb.group({
+            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required]
+        });
         this.searchtype = [
             'ingredients',
             'recipe titles'
         ];
-        this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
+        this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
         this.filteredStates = this.stateCtrl.valueChanges
             .startWith(null)
             .map(function (name) { return _this.filterStates(name); });
     }
+    FrontpageComponent.prototype.suggest = function (term) {
+        var _this = this;
+        this.solrService.suggest(term).then(function (items) {
+            _this.items = items;
+        });
+    };
     FrontpageComponent.prototype.filterStates = function (val) {
         return val ? this.searchtype.filter(function (s) { return s.toLowerCase().indexOf(val.toLowerCase()) === 0; })
             : this.searchtype;
+    };
+    FrontpageComponent.prototype.gotoSearch = function () {
+        var searchTerm = this.searchForm.value.query;
+        this.router.navigate(['/search', { recipe: searchTerm }]);
     };
     return FrontpageComponent;
 }());
@@ -314,10 +336,11 @@ FrontpageComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/frontpage/frontpage.component.html"),
         styles: [__webpack_require__("../../../../../src/app/frontpage/frontpage.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _d || Object])
 ], FrontpageComponent);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/frontpage.component.js.map
+var _a, _b, _c, _d;
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/frontpage.component.js.map
 
 /***/ }),
 
@@ -329,7 +352,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".filterlist {\r\n  height: calc(100% - 113px);\r\n  width: 0.5%;\r\n  max-width: 20px;\r\n  position: fixed;\r\n  top: 100px;\r\n  /*background-color: rgba(204, 204, 204, 1);*/\r\n  overflow-x: hidden;\r\n  transition: 0.1s;\r\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\na{\r\n  color: black;\r\n}\r\n.filterlist.opened {\r\n  width: 20%;\r\n  max-width: 20%;\r\n  z-index: 993;\r\n  height: calc(100% - 114px);\r\n  box-shadow: none;\r\n}\r\n\r\n\r\n.behclick-panel  .list-group {\r\n  margin-bottom: 0px;\r\n}\r\n.behclick-panel .list-group-item:first-child {\r\nborder-top-left-radius:0px;\r\nborder-top-right-radius:0px;\r\n}\r\n.behclick-panel .list-group-item {\r\nborder-right:0px;\r\nborder-left:0px;\r\n}\r\n.behclick-panel .list-group-item:last-child{\r\nborder-bottom-right-radius:0px;\r\nborder-bottom-left-radius:0px;\r\n}\r\n.behclick-panel .list-group-item {\r\npadding: 5px;\r\n}\r\n.behclick-panel .panel-heading {\r\n/* \t\t\t\tpadding: 10px 15px;\r\n                      border-bottom: 1px solid transparent; */\r\nborder-top-right-radius: 0px;\r\nborder-top-left-radius: 0px;\r\nborder-bottom: 1px solid darkslategrey;\r\n}\r\n.behclick-panel .panel-heading:last-child{\r\n/* border-bottom: 0px; */\r\n}\r\n.behclick-panel {\r\nborder-radius: 0px;\r\nborder-right: 0px;\r\nborder-left: 0px;\r\nborder-bottom: 0px;\r\nbox-shadow: 0 0px 0px rgba(0, 0, 0, 0);\r\n}\r\n.behclick-panel .radio, .checkbox {\r\nmargin: 0px;\r\npadding-left: 10px;\r\n}\r\n.behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {\r\noutline: none;\r\n}\r\n.behclick-panel .panel-body > .panel-heading{\r\npadding:10px 10px;\r\n}\r\n.behclick-panel .panel-body {\r\npadding: 0px;\r\n}\r\n/* unvisited link */\r\n.behclick-panel a:link {\r\n  text-decoration:none;\r\n}\r\n\r\n/* visited link */\r\n.behclick-panel a:visited {\r\n  text-decoration:none;\r\n}\r\n\r\n/* mouse over link */\r\n.behclick-panel a:hover {\r\n  text-decoration:none;\r\n}\r\n\r\n/* selected link */\r\n.behclick-panel a:active {\r\n  text-decoration:none;\r\n}\r\n", ""]);
+exports.push([module.i, ".filterlist {\n  height: calc(100% - 113px);\n  width: 0.5%;\n  max-width: 20px;\n  position: fixed;\n  top: 100px;\n  /*background-color: rgba(204, 204, 204, 1);*/\n  overflow-x: hidden;\n  transition: 0.1s;\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\na{\n  color: black;\n}\n.filterlist.opened {\n  width: 20%;\n  max-width: 20%;\n  z-index: 993;\n  height: calc(100% - 114px);\n  box-shadow: none;\n}\n\n\n.behclick-panel  .list-group {\n  margin-bottom: 0px;\n}\n.behclick-panel .list-group-item:first-child {\nborder-top-left-radius:0px;\nborder-top-right-radius:0px;\n}\n.behclick-panel .list-group-item {\nborder-right:0px;\nborder-left:0px;\n}\n.behclick-panel .list-group-item:last-child{\nborder-bottom-right-radius:0px;\nborder-bottom-left-radius:0px;\n}\n.behclick-panel .list-group-item {\npadding: 5px;\n}\n.behclick-panel .panel-heading {\n/* \t\t\t\tpadding: 10px 15px;\n                      border-bottom: 1px solid transparent; */\nborder-top-right-radius: 0px;\nborder-top-left-radius: 0px;\nborder-bottom: 1px solid darkslategrey;\n}\n.behclick-panel .panel-heading:last-child{\n/* border-bottom: 0px; */\n}\n.behclick-panel {\nborder-radius: 0px;\nborder-right: 0px;\nborder-left: 0px;\nborder-bottom: 0px;\nbox-shadow: 0 0px 0px rgba(0, 0, 0, 0);\n}\n.behclick-panel .radio, .checkbox {\nmargin: 0px;\npadding-left: 10px;\n}\n.behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {\noutline: none;\n}\n.behclick-panel .panel-body > .panel-heading{\npadding:10px 10px;\n}\n.behclick-panel .panel-body {\npadding: 0px;\n}\n/* unvisited link */\n.behclick-panel a:link {\n  text-decoration:none;\n}\n\n/* visited link */\n.behclick-panel a:visited {\n  text-decoration:none;\n}\n\n/* mouse over link */\n.behclick-panel a:hover {\n  text-decoration:none;\n}\n\n/* selected link */\n.behclick-panel a:active {\n  text-decoration:none;\n}\n", ""]);
 
 // exports
 
@@ -342,7 +365,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/filter/filter.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xs-6 col-sm-3\">\r\n\t\t\t<div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\r\n\t\t\t\t<div class=\"panel-body\">\r\n\r\n\r\n\t\t\t\t\t<div class=\"panel-heading \">\r\n\t\t\t\t\t\t<h4 class=\"panel-title\">\r\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\r\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> Type(veg-nonveg)\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</h4>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\r\n\t\t\t\t\t\t<ul class=\"list-group\">\r\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\r\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\r\n\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\r\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\r\n\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t<div class=\"panel-heading \">\r\n\t\t\t\t\t\t<h4 class=\"panel-title\">\r\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\r\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> ingredients\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</h4>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\r\n\t\t\t\t\t\t<ul class=\"list-group\">\r\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\r\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\r\n\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\r\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\r\n\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\r\n\r\n\t\t\t\t\t<div class=\"panel-heading \">\r\n\t\t\t\t\t\t<h4 class=\"panel-title\">\r\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\r\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> recipie country\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</h4>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\r\n\t\t\t\t\t\t<ul class=\"list-group\">\r\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\r\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\r\n\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\r\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\r\n\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\r\n\t\t\t\t\t<div class=\"panel-heading \">\r\n\t\t\t\t\t\t<h4 class=\"panel-title\">\r\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\r\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> likes\r\n\t\t\t\t\t\t\t</a>\r\n\t\t\t\t\t\t</h4>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\r\n\t\t\t\t\t\t<ul class=\"list-group\">\r\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\r\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\r\n\t\t\t\t\t\t\t\t\t<label>\r\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\r\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-{{facet.val+200}}({{facet.count}})\r\n\t\t\t\t\t\t\t\t\t</label>\r\n\t\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t</li>\r\n\t\t\t\t\t\t</ul>\r\n\t\t\t\t\t</div>\r\n\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\n\t<div class=\"row\">\n\t\t<div class=\"col-xs-6 col-sm-3\">\n\t\t\t<div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\n\t\t\t\t<div class=\"panel-body\">\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> Type(veg-nonveg)\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> ingredients\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> recipie country\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> likes\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-{{facet.val+200}}({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -404,7 +427,7 @@ FilterComponent = __decorate([
 ], FilterComponent);
 
 var _a;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/filter.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/filter.component.js.map
 
 /***/ }),
 
@@ -416,7 +439,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".loader-video {\r\n  top: calc(50% - 35px);\r\n  left: calc(50% - 16px);\r\n}\r\n\r\n.mdl-layout__header {\r\n  height: 75px;\r\n  width : 100%;\r\n  /*background-color: rgb(204, 204, 204);*/\r\n}\r\n\r\n.mdl-layout__tab-bar{\r\n  height: 75%;\r\n  vertical-align : text-top;\r\n}\r\n.mdl-layout__tab{\r\n  height: 99%;\r\n    font-size: 10px;\r\n}\r\n\r\n.mdl-layout__content {\r\n  width: 97%;\r\n  margin-left: 3%;\r\n  margin-top: 1%;\r\n}\r\n\r\n.mdl-layout__header-row {\r\n  width : 100%;\r\n  /*padding: 0 40px 0 16px;*/\r\n}\r\n\r\n.mdl-layout__drawer-button {\r\n\r\n  left: inherit;\r\n}\r\n\r\n.mdl-layout__content_moved {\r\n  width: 80%;\r\n  margin-left: 20%;\r\n}\r\n\r\n.blur-main-playlist-opened {\r\n  opacity: 0.4;\r\n  transition: all 0.3s ease;\r\n  -moz-transition: all 0.3s ease;\r\n  -ms-transition: all 0.3s ease;\r\n  -webkit-transition: all 0.3s ease;\r\n  -o-transition: all 0.3s ease;\r\n}\r\n\r\n.mdl-js-snackbar {\r\n  bottom: 0;\r\n  z-index: 999;\r\n  right: 0;\r\n  left: 78%;\r\n  background-color: rgba(196, 48, 43, 0.85);\r\n}\r\n", ""]);
+exports.push([module.i, ".loader-video {\n  top: calc(50% - 35px);\n  left: calc(50% - 16px);\n}\n\n.mdl-layout__header {\n  height: 75px;\n  width : 100%;\n  /*background-color: rgb(204, 204, 204);*/\n}\n\n.mdl-layout__tab-bar{\n  height: 75%;\n  vertical-align : text-top;\n}\n.mdl-layout__tab{\n  height: 99%;\n    font-size: 10px;\n}\n\n.mdl-layout__content {\n  width: 97%;\n  margin-left: 3%;\n  margin-top: 1%;\n}\n\n.mdl-layout__header-row {\n  width : 100%;\n  /*padding: 0 40px 0 16px;*/\n}\n\n.mdl-layout__drawer-button {\n\n  left: inherit;\n}\n\n.mdl-layout__content_moved {\n  width: 80%;\n  margin-left: 20%;\n}\n\n.blur-main-playlist-opened {\n  opacity: 0.4;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-js-snackbar {\n  bottom: 0;\n  z-index: 999;\n  right: 0;\n  left: 78%;\n  background-color: rgba(196, 48, 43, 0.85);\n}\n", ""]);
 
 // exports
 
@@ -429,7 +452,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mdl-layout mdl-layout--fixed-header mdl-layout--fixed-tabs\">\r\n  <header class=\"mdl-layout__header\">\r\n\r\n    <div class=\"mdl-layout__header-row\">\r\n      <div class=\"mdl-layout-title\" style=\"width: 15%;\">\r\n        <!--img src=\"assets/logo.png\" style=\"height: 35px;\"-->\r\n      </div>\r\n      <nav class=\"mdl-navigation\" style=\"width: 100%;\">\r\n        <solr-search #search (videosUpdated)=\"handleSearchVideo($event)\" [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\r\n      </nav>\r\n    </div>\r\n\r\n    <!--<nav class=\"mdl-layout__tab-bar mdl-js-ripple-effect\">\r\n      <a class=\"mdl-layout__tab is-active\" routerLink=\"/video\" routerLinkActive=\"active\"> video </a>\r\n      <a class=\"mdl-layout__tab\" routerLink=\"/audio\" routerLinkActive=\"active\">audio</a>\r\n    </nav>-->\r\n\r\n  </header>\r\n\r\n  <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\r\n    <i class=\"material-icons\"></i>\r\n  </div>\r\n\r\n  <!-- <videos-playlist [repeat]=\"repeat\" [shuffle]=\"shuffle\" [playlistToggle]=\"playlistToggle\" [playlistNames]=\"playlistNames\" [videoPlaylist]=\"videoPlaylist\"></videos-playlist> -->\r\n  <filters [filterlistToggle]=\"filterToggle\"></filters>\r\n\r\n  <!--<router-outlet></router-outlet>-->\r\n\r\n  <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\r\n    <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\r\n      <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\r\n        [loadingInProgress]=\"loadingInProgress\"></videos-list>\r\n      <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\r\n        <div class=\"loading\"></div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</div>\r\n\r\n<video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\r\n  (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\" (shuffleActive)=\"shuffleActive($event)\"\r\n  (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\r\n\r\n<div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\r\n  <div class=\"mdl-snackbar__text\"></div>\r\n  <button class=\"mdl-snackbar__action\" type=\"button\"></button>\r\n</div>"
+module.exports = "<div class=\"mdl-layout mdl-layout--fixed-header mdl-layout--fixed-tabs\">\n  <header class=\"mdl-layout__header\">\n\n    <div class=\"mdl-layout__header-row\">\n      <div class=\"mdl-layout-title\" style=\"width: 15%;\">\n        <!--img src=\"assets/logo.png\" style=\"height: 35px;\"-->\n      </div>\n      <nav class=\"mdl-navigation\" style=\"width: 100%;\">\n        <solr-search #search  (videosUpdated)=\"handleSearchVideo($event)\"  [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\n      </nav>\n    </div>\n\n    <!--<nav class=\"mdl-layout__tab-bar mdl-js-ripple-effect\">\n      <a class=\"mdl-layout__tab is-active\" routerLink=\"/video\" routerLinkActive=\"active\"> video </a>\n      <a class=\"mdl-layout__tab\" routerLink=\"/audio\" routerLinkActive=\"active\">audio</a>\n    </nav>-->\n\n  </header>\n\n  <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\n    <i class=\"material-icons\"></i>\n  </div>\n\n  <!-- <videos-playlist [repeat]=\"repeat\" [shuffle]=\"shuffle\" [playlistToggle]=\"playlistToggle\" [playlistNames]=\"playlistNames\" [videoPlaylist]=\"videoPlaylist\"></videos-playlist> -->\n  <filters [filterlistToggle]=\"filterToggle\"></filters>\n\n  <!--<router-outlet></router-outlet>-->\n\n  <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\n    <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\n      <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\n        [loadingInProgress]=\"loadingInProgress\"></videos-list>\n      <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\n        <div class=\"loading\"></div>\n      </div>\n    </div>\n  </main>\n</div>\n\n<video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\n  (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\" (shuffleActive)=\"shuffleActive($event)\"\n  (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\n\n<div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\n  <div class=\"mdl-snackbar__text\"></div>\n  <button class=\"mdl-snackbar__action\" type=\"button\"></button>\n</div>"
 
 /***/ }),
 
@@ -444,6 +467,8 @@ module.exports = "<div class=\"mdl-layout mdl-layout--fixed-header mdl-layout--f
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__ = __webpack_require__("../../../../../src/app/shared/services/playlist-store.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__ = __webpack_require__("../../../../../src/app/shared/services/notification.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__ = __webpack_require__("../../../../../src/app/shared/services/indexDataService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_searchObject__ = __webpack_require__("../../../../../src/app/shared/searchObject.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -462,8 +487,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var MainComponent = (function () {
-    function MainComponent(youtubeService, youtubePlayer, playlistService, notificationService, indexDataService) {
+    function MainComponent(route, router, youtubeService, youtubePlayer, playlistService, notificationService, indexDataService) {
+        this.route = route;
+        this.router = router;
         this.youtubeService = youtubeService;
         this.youtubePlayer = youtubePlayer;
         this.playlistService = playlistService;
@@ -480,8 +509,13 @@ var MainComponent = (function () {
         this.shuffle = false;
         this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
     }
-    MainComponent.prototype.AfterViewInit = function () {
-        this.componentHandler.upgradeAllRegistered();
+    MainComponent.prototype.ngAfterViewInit = function () {
+        this.searchParam = this.route.snapshot.paramMap.get('recipe');
+        console.log('searhc param is ' + this.searchParam);
+        var searObject = new __WEBPACK_IMPORTED_MODULE_8__shared_searchObject__["a" /* SearchObject */](0, this.searchParam);
+        this.solrSearch.setSearchObject(searObject);
+        this.solrSearch.doSearch();
+        // this.componentHandler.upgradeAllRegistered();
     };
     MainComponent.prototype.playFirstInPlaylist = function () {
         if (this.videoPlaylist[0])
@@ -642,7 +676,7 @@ var MainComponent = (function () {
     return MainComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]) === "function" && _a || Object)
 ], MainComponent.prototype, "solrSearch", void 0);
 MainComponent = __decorate([
@@ -651,11 +685,11 @@ MainComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/main/main.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/main.component.css")],
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _h || Object])
 ], MainComponent);
 
-var _a, _b, _c, _d, _e, _f;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/main.component.js.map
+var _a, _b, _c, _d, _e, _f, _g, _h;
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main.component.js.map
 
 /***/ }),
 
@@ -667,7 +701,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input[type=text] {\r\n    width: 40%;\r\n    box-sizing: border-box;\r\n    border: 2px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 16px;\r\n    background-color : blue;\r\n    background-position: 10px 10px; \r\n    background-repeat: no-repeat;\r\n    padding: 12px 20px 12px 40px;\r\n    transition: width 0.4s ease-in-out;\r\n}\r\n\r\ninput[type=text]:focus {\r\n    width: 100%;\r\n}", ""]);
+exports.push([module.i, "input[type=text] {\n    width: 40%;\n    box-sizing: border-box;\n    border: 2px solid #ccc;\n    border-radius: 4px;\n    font-size: 16px;\n    background-color : blue;\n    background-position: 10px 10px; \n    background-repeat: no-repeat;\n    padding: 12px 20px 12px 40px;\n    transition: width 0.4s ease-in-out;\n}\n\ninput[type=text]:focus {\n    width: 100%;\n}", ""]);
 
 // exports
 
@@ -680,7 +714,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/solr-search/solr-search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\r\n\r\n\r\n  <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\r\n    <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\r\n      formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\r\n    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\r\n\t\t<i class=\"material-icons\">search</i>\r\n    </button>\r\n    <datalist id=\"browsers\">\r\n    <!--<select>-->\r\n  <option *ngFor=\"let item of items\" value={{item}}></option>\r\n  <!--</select>-->\r\n    </datalist>\r\n  </div>\r\n\r\n</form>\r\n\r\n\r\n<!--<input list=\"browsers\" name=\"browser\">-->\r\n\r\n<!--<input #term (keyup)=\"search(term.value)\" />\r\n<ul>\r\n  <li *ngFor=\"let item of items | async\">{{item}}</li>\r\n  <li *ngFor=\"let item of items\">{{item}}</li>\r\n</ul>-->"
+module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\n\n\n  <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\n    <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\n      formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\n    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\n\t\t<i class=\"material-icons\">search</i>\n    </button>\n    <datalist id=\"browsers\">\n      <!--<select>-->\n      <option *ngFor=\"let item of items\" value={{item}}></option>\n      <!--</select>-->\n    </datalist>\n  </div>\n\n</form>\n\n\n<!--<input list=\"browsers\" name=\"browser\">-->\n\n<!--<input #term (keyup)=\"search(term.value)\" />\n<ul>\n  <li *ngFor=\"let item of items | async\">{{item}}</li>\n  <li *ngFor=\"let item of items\">{{item}}</li>\n</ul>-->"
 
 /***/ }),
 
@@ -693,8 +727,7 @@ module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__ = __webpack_require__("../../../../../src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__ = __webpack_require__("../../../../../src/app/shared/services/notification.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__ = __webpack_require__("../../../../../src/app/shared/services/indexDataService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_searchObject__ = __webpack_require__("../../../../../src/app/shared/searchObject.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_facetService__ = __webpack_require__("../../../../../src/app/shared/services/facetService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__ = __webpack_require__("../../../../../src/app/shared/services/facetService.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SolrSearchComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -711,10 +744,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var SolrSearchComponent = (function () {
     function SolrSearchComponent(solrService, fb, youtubePlayer, notificationService, facetService) {
-        var _this = this;
+        // this.searObject = new SearchObject(0, this.searchParam);
+        // this.searObject = new SearchObject(0, 'indian')
+        // this.search().then(data => { this.videosUpdated.emit(data); });
         this.solrService = solrService;
         this.fb = fb;
         this.youtubePlayer = youtubePlayer;
@@ -722,12 +756,16 @@ var SolrSearchComponent = (function () {
         this.facetService = facetService;
         this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
         this.pagenum = 0;
-        this.searObject = new __WEBPACK_IMPORTED_MODULE_5__shared_searchObject__["a" /* SearchObject */](0, 'indian');
         this.searchForm = this.fb.group({
-            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* Validators */].required]
+            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required]
         });
-        this.search().then(function (data) { _this.videosUpdated.emit(data); });
     }
+    SolrSearchComponent.prototype.setSearchObject = function (param) {
+        var _this = this;
+        this.searObject = param;
+        console.log("changing the searhc object to " + this.searObject.searchTerm);
+        this.search().then(function (data) { _this.videosUpdated.emit(data); });
+    };
     SolrSearchComponent.prototype.suggest = function (term) {
         var _this = this;
         this.solrService.suggest(term).then(function (items) {
@@ -771,7 +809,7 @@ var SolrSearchComponent = (function () {
     return SolrSearchComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_4" /* ViewChild */])('queryinput'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('queryinput'),
     __metadata("design:type", Object)
 ], SolrSearchComponent.prototype, "queryinput", void 0);
 __decorate([
@@ -789,11 +827,11 @@ SolrSearchComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/main/solr-search/solr-search.component.css")],
         providers: [__WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_facetService__["a" /* FacetService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__["a" /* FacetService */]) === "function" && _e || Object])
 ], SolrSearchComponent);
 
 var _a, _b, _c, _d, _e;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/solr-search.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/solr-search.component.js.map
 
 /***/ }),
 
@@ -805,7 +843,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".main-player-block {\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 50px;\r\n  bottom: 0;\r\n  background-color: rgba(204, 204, 204, 1);\r\n  z-index: 992;\r\n}\r\n\r\n.player-containter {\r\n  transition: all 300ms ease-in-out;\r\n  width: 440px;\r\n  height: 250px;\r\n  position: fixed;\r\n  z-index: 992;\r\n  bottom: 16px;\r\n  right: 5px;\r\n  background-color: #000;\r\n  border: 3px solid rgba(79, 111, 144, 0.75);\r\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);\r\n}\r\n\r\n.player-containter.minimized {\r\n  -webkit-transform: translate3d(-20%, 20%, 0) scale(0.6);\r\n          transform: translate3d(-20%, 20%, 0) scale(0.6);\r\n}\r\n\r\n.player-containter.super-minimized {\r\n  -webkit-transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\r\n          transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\r\n}\r\n\r\n.player-view-controls {\r\n  position: absolute;\r\n  color: white;\r\n  background-color: rgb(196, 48, 43);\r\n  top: -27px;\r\n  left: -3px;\r\n  font-size: 30px;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px;\r\n}\r\n\r\n.player-view-controls i {\r\n  cursor: pointer;\r\n}\r\n\r\n.player-view-controls .minimize {\r\n  margin-left: -7px;\r\n}\r\n\r\n.player-controls-block {\r\n  margin-top: 5px;\r\n  text-align: center;\r\n  color: #fff;\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.mdl-button--icon.play {\r\n  width: 42px;\r\n  height: 42px;\r\n}\r\n\r\n.mdl-button--icon.play i {\r\n  -webkit-transform: translate(-20px, -12px);\r\n          transform: translate(-20px, -12px);\r\n  font-size: 40px;\r\n}\r\n\r\n.mdl-button--icon.prev {\r\n  width: 30px;\r\n  height: 30px;\r\n}\r\n\r\n.mdl-button--icon.prev i {\r\n  -webkit-transform: translate(-15px, -12px);\r\n          transform: translate(-15px, -12px);\r\n  font-size: 28px;\r\n}\r\n\r\n.mdl-button--icon.next {\r\n  width: 30px;\r\n  height: 30px;\r\n}\r\n\r\n.mdl-button--icon.next i {\r\n  -webkit-transform: translate(-14px, -12px);\r\n          transform: translate(-14px, -12px);\r\n  font-size: 28px;\r\n}\r\n\r\n.repeat-shuffle-block {\r\n  margin-left: 40px;\r\n  position: absolute;\r\n  top: 10px;\r\n}\r\n\r\n.repeat-shuffle-block button.active {\r\n  background-color: rgba(196, 48, 43, 0.85);\r\n}\r\n\r\n.mute-block {\r\n  margin-left: -80px;\r\n  position: absolute;\r\n  top: 10px;\r\n}\r\n\r\n.mute-block button.active {\r\n  background-color: rgba(196, 48, 43, 0.85);\r\n}\r\n\r\n.playlist-drop-button {\r\n  position: absolute;\r\n  color: #fff;\r\n  right: 12px;\r\n  top: 10px;\r\n}\r\n\r\n.main-yt-player-block {\r\n  position: relative;\r\n  text-align: center;\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.main-yt-player-block .material-icons {\r\n  position: absolute;\r\n  color: white;\r\n  font-size: 255px;\r\n  left: 0;\r\n  right: 0;\r\n  margin: 0 auto;\r\n  cursor: pointer;\r\n  display: none;\r\n  text-shadow: 2px 2px 2px #000;\r\n}\r\n\r\n.main-yt-player-block:hover .material-icons {\r\n  display: block;\r\n}\r\n\r\n.player-fullscreen {\r\n  bottom: 50px;\r\n  left: 0;\r\n  width: 95%;\r\n  height: calc(100% - 114px);\r\n  border: none;\r\n  box-shadow: none;\r\n}\r\n", ""]);
+exports.push([module.i, ".main-player-block {\n  position: absolute;\n  width: 100%;\n  height: 50px;\n  bottom: 0;\n  background-color: rgba(204, 204, 204, 1);\n  z-index: 992;\n}\n\n.player-containter {\n  transition: all 300ms ease-in-out;\n  width: 440px;\n  height: 250px;\n  position: fixed;\n  z-index: 992;\n  bottom: 16px;\n  right: 5px;\n  background-color: #000;\n  border: 3px solid rgba(79, 111, 144, 0.75);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n\n.player-containter.minimized {\n  -webkit-transform: translate3d(-20%, 20%, 0) scale(0.6);\n          transform: translate3d(-20%, 20%, 0) scale(0.6);\n}\n\n.player-containter.super-minimized {\n  -webkit-transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\n          transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\n}\n\n.player-view-controls {\n  position: absolute;\n  color: white;\n  background-color: rgb(196, 48, 43);\n  top: -27px;\n  left: -3px;\n  font-size: 30px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n\n.player-view-controls i {\n  cursor: pointer;\n}\n\n.player-view-controls .minimize {\n  margin-left: -7px;\n}\n\n.player-controls-block {\n  margin-top: 5px;\n  text-align: center;\n  color: #fff;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.mdl-button--icon.play {\n  width: 42px;\n  height: 42px;\n}\n\n.mdl-button--icon.play i {\n  -webkit-transform: translate(-20px, -12px);\n          transform: translate(-20px, -12px);\n  font-size: 40px;\n}\n\n.mdl-button--icon.prev {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.prev i {\n  -webkit-transform: translate(-15px, -12px);\n          transform: translate(-15px, -12px);\n  font-size: 28px;\n}\n\n.mdl-button--icon.next {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.next i {\n  -webkit-transform: translate(-14px, -12px);\n          transform: translate(-14px, -12px);\n  font-size: 28px;\n}\n\n.repeat-shuffle-block {\n  margin-left: 40px;\n  position: absolute;\n  top: 10px;\n}\n\n.repeat-shuffle-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.mute-block {\n  margin-left: -80px;\n  position: absolute;\n  top: 10px;\n}\n\n.mute-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.playlist-drop-button {\n  position: absolute;\n  color: #fff;\n  right: 12px;\n  top: 10px;\n}\n\n.main-yt-player-block {\n  position: relative;\n  text-align: center;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.main-yt-player-block .material-icons {\n  position: absolute;\n  color: white;\n  font-size: 255px;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  cursor: pointer;\n  display: none;\n  text-shadow: 2px 2px 2px #000;\n}\n\n.main-yt-player-block:hover .material-icons {\n  display: block;\n}\n\n.player-fullscreen {\n  bottom: 50px;\n  left: 0;\n  width: 95%;\n  height: calc(100% - 114px);\n  border: none;\n  box-shadow: none;\n}\n", ""]);
 
 // exports
 
@@ -818,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/video-player/video-player.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-player-block\">\r\n  <div class=\"player-controls-block\">\r\n    <span class=\"mute-block\">\r\n\t\t\t<button id=\"fullscreen_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': fullscreenActive}\" (click)=\"toggleFullscreen()\">\r\n\t\t\t\t<i class=\"material-icons\">fullscreen</i>\r\n\t\t\t</button>\r\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"fullscreen_tip\">\r\n\t\t\t\tFullscreen\r\n\t\t\t</div>\r\n\t\t</span>\r\n    <button id=\"prev_tip\" class=\"mdl-button mdl-js-button mdl-button--icon prev\" (click)=\"prevVideo()\">\r\n\t\t\t<i class=\"material-icons\">skip_previous</i>\r\n\t\t</button>\r\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"prev_tip\">\r\n      Previous\r\n    </div>\r\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('play')\" *ngIf=\"playingEvent === 'pause'\">\r\n\t\t\t<i class=\"material-icons\">play_circle_filled</i>\r\n\t\t</button>\r\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('pause')\" *ngIf=\"playingEvent === 'play'\">\r\n\t\t\t<i class=\"material-icons\">pause_circle_filled</i>\r\n\t\t</button>\r\n    <button id=\"next_tip\" class=\"mdl-button mdl-js-button mdl-button--icon next\" (click)=\"nextVideo()\">\r\n\t\t\t<i class=\"material-icons\">skip_next</i>\r\n\t\t</button>\r\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"next_tip\">\r\n      Next\r\n    </div>\r\n    <span class=\"repeat-shuffle-block\">\r\n      <button id=\"repeat_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': repeat}\" (click)=\"toggleRepeat()\">\r\n\t\t\t\t<i class=\"material-icons\">repeat_one</i>\r\n\t\t\t</button>\r\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"repeat_tip\">\r\n\t\t\t\tRepeat one\r\n\t\t\t</div>\r\n      <button id=\"shuffle_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': shuffle}\" (click)=\"toggleShuffle()\">\r\n\t\t\t\t<i class=\"material-icons\">shuffle</i>\r\n\t\t\t</button>\r\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"shuffle_tip\">\r\n\t\t\t\tShuffle\r\n\t\t\t</div>\r\n    </span>\r\n  </div>\r\n  <div class=\"player-containter\" [ngClass]=\"{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}\">\r\n    <div class=\"player-view-controls\">\r\n      <!-- <i class=\"material-icons\" *ngIf=\"!minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_down</i>\r\n      <i class=\"material-icons\" *ngIf=\"minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_up</i> -->\r\n      <i class=\"material-icons minimize\" *ngIf=\"!superMinPlayer && !fullscreenActive\" (click)=\"minimizePlayer()\">remove</i>\r\n    </div>\r\n    <div class=\"main-yt-player-block\">\r\n      <i class=\"material-icons\" *ngIf=\"superMinPlayer\" (click)=\"minimizePlayer()\">zoom_out_map</i>\r\n      <div id=\"yt-player\"></div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <!-- <button id=\"demo-menu-top-right\" class=\"mdl-button mdl-js-button mdl-button--icon playlist-drop-button\" (click)=\"openClosedPlaylist()\">\r\n    <i class=\"material-icons\">more_vert</i>\r\n  </button>\r\n\r\n  <ul class=\"mdl-menu mdl-menu--top-right mdl-js-menu\" data-mdl-for=\"demo-menu-top-right\">\r\n    <li class=\"mdl-menu__item\" (click)=\"exportPlaylistAction()\">Export playlist</li>\r\n    <li class=\"mdl-menu__item\" (click)=\"importPlaylistAction()\">Import playlist</li>\r\n    <li class=\"mdl-menu__item\" (click)=\"clearPlaylistAction()\">Clear playlist</li>\r\n  </ul>\r\n  <input id=\"import_button\" style=\"display: none;\" type=\"file\" name=\"file\" accept=\".json, .txt\" (change)=\"handleInputChange($event)\"> -->\r\n</div>\r\n"
+module.exports = "<div class=\"main-player-block\">\n  <div class=\"player-controls-block\">\n    <span class=\"mute-block\">\n\t\t\t<button id=\"fullscreen_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': fullscreenActive}\" (click)=\"toggleFullscreen()\">\n\t\t\t\t<i class=\"material-icons\">fullscreen</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"fullscreen_tip\">\n\t\t\t\tFullscreen\n\t\t\t</div>\n\t\t</span>\n    <button id=\"prev_tip\" class=\"mdl-button mdl-js-button mdl-button--icon prev\" (click)=\"prevVideo()\">\n\t\t\t<i class=\"material-icons\">skip_previous</i>\n\t\t</button>\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"prev_tip\">\n      Previous\n    </div>\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('play')\" *ngIf=\"playingEvent === 'pause'\">\n\t\t\t<i class=\"material-icons\">play_circle_filled</i>\n\t\t</button>\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('pause')\" *ngIf=\"playingEvent === 'play'\">\n\t\t\t<i class=\"material-icons\">pause_circle_filled</i>\n\t\t</button>\n    <button id=\"next_tip\" class=\"mdl-button mdl-js-button mdl-button--icon next\" (click)=\"nextVideo()\">\n\t\t\t<i class=\"material-icons\">skip_next</i>\n\t\t</button>\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"next_tip\">\n      Next\n    </div>\n    <span class=\"repeat-shuffle-block\">\n      <button id=\"repeat_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': repeat}\" (click)=\"toggleRepeat()\">\n\t\t\t\t<i class=\"material-icons\">repeat_one</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"repeat_tip\">\n\t\t\t\tRepeat one\n\t\t\t</div>\n      <button id=\"shuffle_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': shuffle}\" (click)=\"toggleShuffle()\">\n\t\t\t\t<i class=\"material-icons\">shuffle</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"shuffle_tip\">\n\t\t\t\tShuffle\n\t\t\t</div>\n    </span>\n  </div>\n  <div class=\"player-containter\" [ngClass]=\"{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}\">\n    <div class=\"player-view-controls\">\n      <!-- <i class=\"material-icons\" *ngIf=\"!minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_down</i>\n      <i class=\"material-icons\" *ngIf=\"minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_up</i> -->\n      <i class=\"material-icons minimize\" *ngIf=\"!superMinPlayer && !fullscreenActive\" (click)=\"minimizePlayer()\">remove</i>\n    </div>\n    <div class=\"main-yt-player-block\">\n      <i class=\"material-icons\" *ngIf=\"superMinPlayer\" (click)=\"minimizePlayer()\">zoom_out_map</i>\n      <div id=\"yt-player\"></div>\n    </div>\n  </div>\n\n\n  <!-- <button id=\"demo-menu-top-right\" class=\"mdl-button mdl-js-button mdl-button--icon playlist-drop-button\" (click)=\"openClosedPlaylist()\">\n    <i class=\"material-icons\">more_vert</i>\n  </button>\n\n  <ul class=\"mdl-menu mdl-menu--top-right mdl-js-menu\" data-mdl-for=\"demo-menu-top-right\">\n    <li class=\"mdl-menu__item\" (click)=\"exportPlaylistAction()\">Export playlist</li>\n    <li class=\"mdl-menu__item\" (click)=\"importPlaylistAction()\">Import playlist</li>\n    <li class=\"mdl-menu__item\" (click)=\"clearPlaylistAction()\">Clear playlist</li>\n  </ul>\n  <input id=\"import_button\" style=\"display: none;\" type=\"file\" name=\"file\" accept=\".json, .txt\" (change)=\"handleInputChange($event)\"> -->\n</div>\n"
 
 /***/ }),
 
@@ -1004,7 +1042,7 @@ VideoPlayerComponent = __decorate([
 ], VideoPlayerComponent);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/video-player.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-player.component.js.map
 
 /***/ }),
 
@@ -1016,7 +1054,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".loader-progress {\r\n  position: relative;\r\n  width: 100%;\r\n  margin-bottom: 60px;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.loader-progress>.loading {\r\n  margin: 0 auto;\r\n}\r\n\r\n.demo-card-square.mdl-card {\r\n  height: 300;\r\n  width: 100%;\r\n}\r\n\r\n.custom-cell.mdl-cell--2-col {\r\n  width: calc(25% - 25px);\r\n}\r\n\r\n.custom-cell {\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.demo-card-square>.mdl-card__title {\r\n  color: #fff;\r\n}\r\n\r\n.mdl-card__title {\r\n  position: relative;\r\n  transition: all 0.3s ease;\r\n  -moz-transition: all 0.3s ease;\r\n  -ms-transition: all 0.3s ease;\r\n  -webkit-transition: all 0.3s ease;\r\n  -o-transition: all 0.3s ease;\r\n}\r\n\r\n.mdl-card--expand:hover {\r\n  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.3);\r\n  background-size: 130% !important;\r\n  cursor: pointer;\r\n}\r\n\r\n.mdl-card__supporting-text {\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  padding: 6px 2px 2px 2px;\r\n  color: rgb(196, 48, 43);\r\n  text-align: right;\r\n  width: 97%;\r\n}\r\n\r\n.mdl-card__supporting-text .material-icons {\r\n  cursor: pointer;\r\n  font-size: 20px;\r\n}\r\n\r\n.video-name-block {\r\n  font-size: 11px;\r\n  font-weight: normal;\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  height: 40px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 0, 0.45);\r\n}\r\n\r\n.video-info-block {\r\n  font-size: 11px;\r\n  font-weight: normal;\r\n  position: absolute;\r\n  left: 0;\r\n  bottom: 0;\r\n  height: 30px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 0, 0.45);\r\n}\r\n\r\n.video-informations {\r\n  padding: 8px;\r\n  text-align: center;\r\n}\r\n\r\n.video-informations i {\r\n  font-size: 11px;\r\n}\r\n\r\n.video-play-button {\r\n  left: 0;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  margin: auto;\r\n}\r\n\r\n.video-play-button i {\r\n  font-size: 50px;\r\n  visibility: hidden;\r\n}\r\n\r\n.mdl-card--expand:hover .video-play-button i {\r\n  visibility: visible;\r\n}\r\n\r\n.last-item {\r\n  margin-bottom: 45px;\r\n}\r\n\r\n@media (max-width: 479px) {\r\n  .custom-cell.mdl-cell--2-col {\r\n    width: calc(100% - 16px);\r\n  }\r\n}\r\n\r\n@media (max-width: 839px) and (min-width: 480px) {\r\n  .custom-cell.mdl-cell--2-col {\r\n    width: calc(50% - 16px);\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, ".loader-progress {\n  position: relative;\n  width: 100%;\n  margin-bottom: 60px;\n  top: 0;\n  left: 0;\n}\n\n.loader-progress>.loading {\n  margin: 0 auto;\n}\n\n.demo-card-square.mdl-card {\n  height: 300;\n  width: 100%;\n}\n\n.custom-cell.mdl-cell--2-col {\n  width: calc(25% - 25px);\n}\n\n.custom-cell {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.demo-card-square>.mdl-card__title {\n  color: #fff;\n}\n\n.mdl-card__title {\n  position: relative;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-card--expand:hover {\n  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.3);\n  background-size: 130% !important;\n  cursor: pointer;\n}\n\n.mdl-card__supporting-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  padding: 6px 2px 2px 2px;\n  color: rgb(196, 48, 43);\n  text-align: right;\n  width: 97%;\n}\n\n.mdl-card__supporting-text .material-icons {\n  cursor: pointer;\n  font-size: 20px;\n}\n\n.video-name-block {\n  font-size: 11px;\n  font-weight: normal;\n  position: absolute;\n  left: 0;\n  top: 0;\n  height: 40px;\n  width: 100%;\n  background-color: rgba(0, 0, 0, 0.45);\n}\n\n.video-info-block {\n  font-size: 11px;\n  font-weight: normal;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  height: 30px;\n  width: 100%;\n  background-color: rgba(0, 0, 0, 0.45);\n}\n\n.video-informations {\n  padding: 8px;\n  text-align: center;\n}\n\n.video-informations i {\n  font-size: 11px;\n}\n\n.video-play-button {\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  margin: auto;\n}\n\n.video-play-button i {\n  font-size: 50px;\n  visibility: hidden;\n}\n\n.mdl-card--expand:hover .video-play-button i {\n  visibility: visible;\n}\n\n.last-item {\n  margin-bottom: 45px;\n}\n\n@media (max-width: 479px) {\n  .custom-cell.mdl-cell--2-col {\n    width: calc(100% - 16px);\n  }\n}\n\n@media (max-width: 839px) and (min-width: 480px) {\n  .custom-cell.mdl-cell--2-col {\n    width: calc(50% - 16px);\n  }\n}\n", ""]);
 
 // exports
 
@@ -1029,7 +1067,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/videos-list/videos-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mdl-cell custom-cell mdl-cell--2-col\" id=\"{{i + video.id}}\" *ngFor=\"let video of videoList; let i = index;\"\r\n  [ngClass]=\"{'last-item': i === videoList.length-1}\">\r\n  <div class=\"demo-card-square mdl-card mdl-shadow--2dp\">\r\n    <div class=\"mdl-card__title mdl-card--expand\" (click)=\"play(video)\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\r\n      <div class=\"video-info-block\">\r\n        <div class=\"video-informations\">\r\n          <span style=\"float: left;\">\r\n\t\t\t\t\t\t<i class=\"material-icons\">thumb_up</i>\r\n\t\t\t\t\t\t{{ video.statistics.likeCount | videoLikes }}\r\n\t\t\t\t\t</span>\r\n          <span style=\"margin-left: 10px;\">\r\n\t\t\t\t\t\t<i class=\"material-icons\">remove_red_eye</i>\r\n\t\t\t\t\t\t{{ video.statistics.viewCount | videoViews}}\r\n\t\t\t\t\t</span>\r\n          <span style=\"margin-left: 10px; float: right;\">\r\n\t\t\t\t\t\t<i class=\"material-icons\">access_time</i>\r\n\t\t\t\t\t\t{{ video.contentDetails.duration | videoDuration }}\r\n\t\t\t\t\t</span>\r\n        </div>\r\n      </div>\r\n      <!--<div class=\"video-name-block\">\r\n        <div class=\"video-informations\">\r\n          {{ video.snippet.title | playlistItemName }}\r\n        </div>\r\n      </div>-->\r\n      <div class=\"video-play-button\">\r\n        <i class=\"material-icons\">play_circle_filled</i>\r\n      </div>\r\n    </div>\r\n    <div class=\"mdl-card__supporting-text\">\r\n      <!--<i (click)=\"addToPlaylist(video)\" class=\"material-icons\">playlist_add</i>-->\r\n      <div class=\"video-informations\">\r\n        {{ video.snippet.title | playlistItemName }}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"loader loader-progress\" *ngIf=\"loadingInProgress\">\r\n  <div class=\"loading\"></div>\r\n</div>"
+module.exports = "<div class=\"mdl-cell custom-cell mdl-cell--2-col\" id=\"{{i + video.id}}\" *ngFor=\"let video of videoList; let i = index;\"\n  [ngClass]=\"{'last-item': i === videoList.length-1}\">\n  <div class=\"demo-card-square mdl-card mdl-shadow--2dp\">\n    <div class=\"mdl-card__title mdl-card--expand\" (click)=\"play(video)\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      <div class=\"video-info-block\">\n        <div class=\"video-informations\">\n          <span style=\"float: left;\">\n\t\t\t\t\t\t<i class=\"material-icons\">thumb_up</i>\n\t\t\t\t\t\t{{ video.statistics.likeCount | videoLikes }}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px;\">\n\t\t\t\t\t\t<i class=\"material-icons\">remove_red_eye</i>\n\t\t\t\t\t\t{{ video.statistics.viewCount | videoViews}}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px; float: right;\">\n\t\t\t\t\t\t<i class=\"material-icons\">access_time</i>\n\t\t\t\t\t\t{{ video.contentDetails.duration | videoDuration }}\n\t\t\t\t\t</span>\n        </div>\n      </div>\n      <!--<div class=\"video-name-block\">\n        <div class=\"video-informations\">\n          {{ video.snippet.title | playlistItemName }}\n        </div>\n      </div>-->\n      <div class=\"video-play-button\">\n        <i class=\"material-icons\">play_circle_filled</i>\n      </div>\n    </div>\n    <div class=\"mdl-card__supporting-text\">\n      <!--<i (click)=\"addToPlaylist(video)\" class=\"material-icons\">playlist_add</i>-->\n      <div class=\"video-informations\">\n        {{ video.snippet.title | playlistItemName }}\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"loader loader-progress\" *ngIf=\"loadingInProgress\">\n  <div class=\"loading\"></div>\n</div>"
 
 /***/ }),
 
@@ -1091,7 +1129,7 @@ VideosListComponent = __decorate([
 ], VideosListComponent);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/videos-list.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/videos-list.component.js.map
 
 /***/ }),
 
@@ -1103,7 +1141,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".playlist {\r\n  height: calc(100% - 113px);\r\n  width: 1%;\r\n  max-width: 20px;\r\n  position: fixed;\r\n  top: 100px;\r\n  background-color: rgba(204, 204, 204, 1);\r\n  overflow-x: hidden;\r\n  transition: 0.1s;\r\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.playlist.opened {\r\n  width: 20%;\r\n  max-width: 20%;\r\n  z-index: 993;\r\n  height: calc(100% - 114px);\r\n  box-shadow: none;\r\n}\r\n\r\n.playlist-thumbnail {\r\n  height: 55px;\r\n  width: 55px;\r\n  background: #000;\r\n  margin: 5px;\r\n  display: inline-block;\r\n  position: relative;\r\n}\r\n\r\n.playist-item.playing {\r\n  background: rgba(196, 48, 43, 0.95);\r\n}\r\n\r\n.playist-item-empty {\r\n  color: #fff;\r\n}\r\n\r\n.playist-item-empty .playlist-thumbnail {\r\n  text-align: center;\r\n}\r\n\r\n.playist-item-empty i {\r\n  margin-top: 10px;\r\n  font-size: 35px;\r\n}\r\n\r\n.playist-item:hover {\r\n  background: rgba(196, 48, 43, 0.5);\r\n  cursor: pointer;\r\n}\r\n\r\n.playist-item:hover .delete-from-playlist {\r\n  display: block;\r\n}\r\n\r\n.no-in-playlist {\r\n  color: #fff;\r\n  text-shadow: 2px 2px 2px #000;\r\n}\r\n\r\n.video-duration {\r\n  color: #fff;\r\n  text-shadow: 2px 2px 2px #000;\r\n  position: absolute;\r\n  bottom: -4px;\r\n  left: 1px;\r\n  font-size: 9px;\r\n}\r\n\r\n.opened-item-info {\r\n  display: inline-block;\r\n  color: rgba(255, 255, 255, 0.8);\r\n  position: absolute;\r\n  left: 70px;\r\n  margin-top: 8px;\r\n}\r\n\r\n.opened-item-info.closed {\r\n  display: none;\r\n}\r\n\r\n.delete-from-playlist {\r\n  position: absolute;\r\n  display: none;\r\n  bottom: 0;\r\n  right: 0;\r\n  color: #f44542;\r\n  background-color: rgba(0, 0, 0, 0.65);\r\n  font-size: 16px;\r\n}\r\n", ""]);
+exports.push([module.i, ".playlist {\n  height: calc(100% - 113px);\n  width: 1%;\n  max-width: 20px;\n  position: fixed;\n  top: 100px;\n  background-color: rgba(204, 204, 204, 1);\n  overflow-x: hidden;\n  transition: 0.1s;\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.playlist.opened {\n  width: 20%;\n  max-width: 20%;\n  z-index: 993;\n  height: calc(100% - 114px);\n  box-shadow: none;\n}\n\n.playlist-thumbnail {\n  height: 55px;\n  width: 55px;\n  background: #000;\n  margin: 5px;\n  display: inline-block;\n  position: relative;\n}\n\n.playist-item.playing {\n  background: rgba(196, 48, 43, 0.95);\n}\n\n.playist-item-empty {\n  color: #fff;\n}\n\n.playist-item-empty .playlist-thumbnail {\n  text-align: center;\n}\n\n.playist-item-empty i {\n  margin-top: 10px;\n  font-size: 35px;\n}\n\n.playist-item:hover {\n  background: rgba(196, 48, 43, 0.5);\n  cursor: pointer;\n}\n\n.playist-item:hover .delete-from-playlist {\n  display: block;\n}\n\n.no-in-playlist {\n  color: #fff;\n  text-shadow: 2px 2px 2px #000;\n}\n\n.video-duration {\n  color: #fff;\n  text-shadow: 2px 2px 2px #000;\n  position: absolute;\n  bottom: -4px;\n  left: 1px;\n  font-size: 9px;\n}\n\n.opened-item-info {\n  display: inline-block;\n  color: rgba(255, 255, 255, 0.8);\n  position: absolute;\n  left: 70px;\n  margin-top: 8px;\n}\n\n.opened-item-info.closed {\n  display: none;\n}\n\n.delete-from-playlist {\n  position: absolute;\n  display: none;\n  bottom: 0;\n  right: 0;\n  color: #f44542;\n  background-color: rgba(0, 0, 0, 0.65);\n  font-size: 16px;\n}\n", ""]);
 
 // exports
 
@@ -1116,7 +1154,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/videos-playlist/videos-playlist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"playlist\" class=\"playlist\" [ngClass]=\"{'opened': playlistToggle}\">\r\n  <div id=\"{{video.id}}\" class=\"playist-item\" *ngFor=\"let video of videoPlaylist; let i = index;\" (click)=\"play(video.id)\" [ngClass]=\"{'playing': currentPlaying(video.id)}\">\r\n    <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}\">\r\n      <span class=\"no-in-playlist\">{{ i + 1 }}</span>\r\n      <span class=\"video-duration\">{{ video.contentDetails.duration | videoDuration }}</span>\r\n      <i class=\"material-icons delete-from-playlist\" (click)=\"removeFromPlaylist(video)\">cancel</i>\r\n    </div>\r\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\r\n      {{ video.snippet.title | playlistItemName }}\r\n    </div>\r\n  </div>\r\n  <div class=\"playist-item-empty\" *ngIf=\"!videoPlaylist.length\">\r\n    <!-- <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000'}\">\r\n      <i class=\"material-icons\">block</i>\r\n    </div> -->\r\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\r\n      Playlist is empty\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"playlist\" class=\"playlist\" [ngClass]=\"{'opened': playlistToggle}\">\n  <div id=\"{{video.id}}\" class=\"playist-item\" *ngFor=\"let video of videoPlaylist; let i = index;\" (click)=\"play(video.id)\" [ngClass]=\"{'playing': currentPlaying(video.id)}\">\n    <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}\">\n      <span class=\"no-in-playlist\">{{ i + 1 }}</span>\n      <span class=\"video-duration\">{{ video.contentDetails.duration | videoDuration }}</span>\n      <i class=\"material-icons delete-from-playlist\" (click)=\"removeFromPlaylist(video)\">cancel</i>\n    </div>\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n      {{ video.snippet.title | playlistItemName }}\n    </div>\n  </div>\n  <div class=\"playist-item-empty\" *ngIf=\"!videoPlaylist.length\">\n    <!-- <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000'}\">\n      <i class=\"material-icons\">block</i>\n    </div> -->\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n      Playlist is empty\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1225,7 +1263,7 @@ VideosPlaylistComponent = __decorate([
 ], VideosPlaylistComponent);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/videos-playlist.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/videos-playlist.component.js.map
 
 /***/ }),
 
@@ -1254,7 +1292,7 @@ PageNotFoundComponent = __decorate([
     })
 ], PageNotFoundComponent);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/not-found.component.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/not-found.component.js.map
 
 /***/ }),
 
@@ -1288,7 +1326,7 @@ var indexDatas = [
         title: 'Indian Style Macaroni Pasta Recipe | Kids Lunch Box / Indian Style Recipes'
     }
 ];
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/indexdata.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/indexdata.js.map
 
 /***/ }),
 
@@ -1309,7 +1347,7 @@ AppSettings.EXPRESS_API_PATH = 'localhost';
 AppSettings.base_url = 'https://www.googleapis.com/youtube/v3/';
 AppSettings.max_results = 12;
 AppSettings.LOCATION_SERVICE_PATH = 'http://api.hostip.info/get_json.php';
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/constants.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/constants.js.map
 
 /***/ }),
 
@@ -1370,7 +1408,7 @@ LazyScroll = __decorate([
 ], LazyScroll);
 
 var _a;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/lazy-scroll.directive.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/lazy-scroll.directive.js.map
 
 /***/ }),
 
@@ -1405,7 +1443,7 @@ PlaylistItemNamePipe = __decorate([
     })
 ], PlaylistItemNamePipe);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/playlist-item-name.pipe.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/playlist-item-name.pipe.js.map
 
 /***/ }),
 
@@ -1456,7 +1494,7 @@ VideoDurationPipe = __decorate([
     })
 ], VideoDurationPipe);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/video-duration.pipe.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-duration.pipe.js.map
 
 /***/ }),
 
@@ -1487,7 +1525,7 @@ VideoLikesPipe = __decorate([
     })
 ], VideoLikesPipe);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/video-likes.pipe.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-likes.pipe.js.map
 
 /***/ }),
 
@@ -1518,7 +1556,7 @@ VideoViewsPipe = __decorate([
     })
 ], VideoViewsPipe);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/video-views.pipe.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-views.pipe.js.map
 
 /***/ }),
 
@@ -1564,7 +1602,7 @@ var SearchObject = (function () {
     return SearchObject;
 }());
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/searchObject.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/searchObject.js.map
 
 /***/ }),
 
@@ -1599,7 +1637,7 @@ FacetService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Injectable */])()
 ], FacetService);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/facetService.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/facetService.js.map
 
 /***/ }),
 
@@ -1750,7 +1788,7 @@ IndexDataService = __decorate([
 ], IndexDataService);
 
 var _a, _b, _c, _d;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/indexDataService.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/indexDataService.js.map
 
 /***/ }),
 
@@ -1789,7 +1827,7 @@ NotificationService = __decorate([
     __metadata("design:paramtypes", [])
 ], NotificationService);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/notification.service.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/notification.service.js.map
 
 /***/ }),
 
@@ -1855,7 +1893,7 @@ PlaylistStoreService = __decorate([
     __metadata("design:paramtypes", [])
 ], PlaylistStoreService);
 
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/playlist-store.service.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/playlist-store.service.js.map
 
 /***/ }),
 
@@ -1921,7 +1959,7 @@ YoutubeApiService = __decorate([
 ], YoutubeApiService);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/youtube-api.service.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/youtube-api.service.js.map
 
 /***/ }),
 
@@ -2031,7 +2069,7 @@ YoutubePlayerService = __decorate([
 ], YoutubePlayerService);
 
 var _a, _b, _c;
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/youtube-player.service.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/youtube-player.service.js.map
 
 /***/ }),
 
@@ -2048,7 +2086,7 @@ var _a, _b, _c;
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/environment.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/environment.js.map
 
 /***/ }),
 
@@ -2067,7 +2105,7 @@ if (__WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment *
     // enableProdMode();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/maitreyee/Documents/CODE/foodX/src/main.js.map
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main.js.map
 
 /***/ }),
 
