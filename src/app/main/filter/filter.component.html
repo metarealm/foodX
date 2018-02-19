@@ -3,86 +3,57 @@
 		<div class="col-xs-6 col-sm-3">
 			<div id="accordion" class="panel panel-primary behclick-panel">
 				<div class="panel-body">
-
-
 					<div class="panel-heading ">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse0">
-								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> Type(veg-nonveg)
-							</a>
-						</h4>
+						<h6 class="panel-title">veg-nonveg</h6>
 					</div>
 					<div id="collapse0" class="panel-collapse collapse in">
 						<ul class="list-group">
 							<li class="list-group-item" *ngFor="let facet of  contenttypefacets">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" value="">
-										{{facet.val}}-({{facet.count}})
+										<input type="checkbox" value=""> {{facet.val}}-({{facet.count}})
 									</label>
 								</div>
 							</li>
 						</ul>
 					</div>
-
-
 					<div class="panel-heading ">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse0">
-								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> ingredients
-							</a>
-						</h4>
+						<h6 class="panel-title"> ingredients</h6>
 					</div>
 					<div id="collapse0" class="panel-collapse collapse in">
 						<ul class="list-group">
 							<li class="list-group-item" *ngFor="let facet of  ingredientfacets">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" value="">
-										{{facet.val}}-({{facet.count}})
+										<input type="checkbox" value=""> {{facet.val}}-({{facet.count}})
 									</label>
 								</div>
 							</li>
 						</ul>
 					</div>
-
-
-
 					<div class="panel-heading ">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse0">
-								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> recipie country
-							</a>
-						</h4>
+						<h6 class="panel-title">recipie country</h6>
 					</div>
 					<div id="collapse0" class="panel-collapse collapse in">
 						<ul class="list-group">
 							<li class="list-group-item" *ngFor="let facet of  locationfacets">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" value="">
-										{{facet.val}}-({{facet.count}})
+										<input type="checkbox" value=""> {{facet.val}}-({{facet.count}})
 									</label>
 								</div>
 							</li>
 						</ul>
 					</div>
-
-
 					<div class="panel-heading ">
-						<h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse0">
-								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> likes
-							</a>
-						</h4>
+						<h6 class="panel-title">likes</h6>
 					</div>
 					<div id="collapse0" class="panel-collapse collapse in">
 						<ul class="list-group">
 							<li class="list-group-item" *ngFor="let facet of  likefacets">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" value="">
-										{{facet.val}}-{{facet.val+200}}({{facet.count}})
+										<input type="checkbox" value=""> {{facet.val}}-{{facet.val+200}}({{facet.count}})
 									</label>
 								</div>
 							</li>

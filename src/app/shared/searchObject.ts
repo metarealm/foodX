@@ -1,7 +1,7 @@
 export class SearchObject {
     private _pageNum : number =0;
     private _searchTerm : string;
-    private _noOfRow: number=12;
+    private _noOfRow: number=14;
 
     constructor(pageNum:number , searchTerm:string){
         this._pageNum = pageNum;

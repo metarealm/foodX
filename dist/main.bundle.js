@@ -352,7 +352,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".filterlist {\n  height: calc(100% - 113px);\n  width: 0.5%;\n  max-width: 20px;\n  position: fixed;\n  top: 100px;\n  /*background-color: rgba(204, 204, 204, 1);*/\n  overflow-x: hidden;\n  transition: 0.1s;\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\na{\n  color: black;\n}\n.filterlist.opened {\n  width: 20%;\n  max-width: 20%;\n  z-index: 993;\n  height: calc(100% - 114px);\n  box-shadow: none;\n}\n\n\n.behclick-panel  .list-group {\n  margin-bottom: 0px;\n}\n.behclick-panel .list-group-item:first-child {\nborder-top-left-radius:0px;\nborder-top-right-radius:0px;\n}\n.behclick-panel .list-group-item {\nborder-right:0px;\nborder-left:0px;\n}\n.behclick-panel .list-group-item:last-child{\nborder-bottom-right-radius:0px;\nborder-bottom-left-radius:0px;\n}\n.behclick-panel .list-group-item {\npadding: 5px;\n}\n.behclick-panel .panel-heading {\n/* \t\t\t\tpadding: 10px 15px;\n                      border-bottom: 1px solid transparent; */\nborder-top-right-radius: 0px;\nborder-top-left-radius: 0px;\nborder-bottom: 1px solid darkslategrey;\n}\n.behclick-panel .panel-heading:last-child{\n/* border-bottom: 0px; */\n}\n.behclick-panel {\nborder-radius: 0px;\nborder-right: 0px;\nborder-left: 0px;\nborder-bottom: 0px;\nbox-shadow: 0 0px 0px rgba(0, 0, 0, 0);\n}\n.behclick-panel .radio, .checkbox {\nmargin: 0px;\npadding-left: 10px;\n}\n.behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {\noutline: none;\n}\n.behclick-panel .panel-body > .panel-heading{\npadding:10px 10px;\n}\n.behclick-panel .panel-body {\npadding: 0px;\n}\n/* unvisited link */\n.behclick-panel a:link {\n  text-decoration:none;\n}\n\n/* visited link */\n.behclick-panel a:visited {\n  text-decoration:none;\n}\n\n/* mouse over link */\n.behclick-panel a:hover {\n  text-decoration:none;\n}\n\n/* selected link */\n.behclick-panel a:active {\n  text-decoration:none;\n}\n", ""]);
+exports.push([module.i, ".filterlist {\n  height: calc(100% - 113px);\n  width: 0.5%;\n  max-width: 20px;\n  position: fixed;\n  top: 80px;\n  /*background-color: rgba(204, 204, 204, 1);*/\n  overflow-x: hidden;\n  transition: 0.1s;\n  box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, .14), -2px 3px 1px -2px rgba(0, 0, 0, .2), -2px 1px 5px 0 rgba(0, 0, 0, .12);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\na{\n  color: black;\n}\n.filterlist.opened {\n  width: 20%;\n  max-width: 200px;\n  z-index: 993;\n  height: calc(100% - 114px);\n  box-shadow: none;\n}\n\n\n.behclick-panel  .list-group {\n  margin-bottom: 0px;\n  padding-left: 10px;\n  list-style-type: none;\n}\n.behclick-panel .list-group-item:first-child {\nborder-top-left-radius:0px;\nborder-top-right-radius:0px;\n}\n.behclick-panel .list-group-item {\nborder-right:0px;\nborder-left:0px;\n}\n.behclick-panel .list-group-item:last-child{\nborder-bottom-right-radius:0px;\nborder-bottom-left-radius:0px;\n}\n.behclick-panel .list-group-item {\npadding: 1px;\n}\n.behclick-panel .panel-heading {\n/* \t\t\t\tpadding: 10px 15px;\nborder-bottom: 1px solid transparent; */\nborder-top-right-radius: 0px;\nborder-top-left-radius: 0px;\nborder-bottom: 1px solid darkslategrey;\n}\n.behclick-panel .panel-heading:last-child{\nborder-bottom: 0px;\n}\n.behclick-panel {\nborder-radius: 0px;\nborder-right: 0px;\nborder-left: 0px;\nborder-bottom: 0px;\nbox-shadow: 0 0px 0px rgba(0, 0, 0, 0);\n}\n.behclick-panel .radio, .checkbox {\nmargin: 0px;\npadding-left: 0px;\n}\n.behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {\noutline: none;\n}\n.behclick-panel .panel-body > .panel-heading{\npadding:2px 2px;\n}\n.behclick-panel .panel-body {\npadding: 0px;\n}\n/* unvisited link */\n.behclick-panel a:link {\n  text-decoration:none;\n}\n\n/* visited link */\n.behclick-panel a:visited {\n  text-decoration:none;\n}\n\n/* mouse over link */\n.behclick-panel a:hover {\n  text-decoration:none;\n}\n\n/* selected link */\n.behclick-panel a:active {\n  text-decoration:none;\n}\n", ""]);
 
 // exports
 
@@ -365,7 +365,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/filter/filter.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\n\t<div class=\"row\">\n\t\t<div class=\"col-xs-6 col-sm-3\">\n\t\t\t<div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\n\t\t\t\t<div class=\"panel-body\">\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> Type(veg-nonveg)\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> ingredients\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> recipie country\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h4 class=\"panel-title\">\n\t\t\t\t\t\t\t<a data-toggle=\"collapse\" href=\"#collapse0\">\n\t\t\t\t\t\t\t\t<i class=\"indicator fa fa-caret-down\" aria-hidden=\"true\"></i> likes\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</h4>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t{{facet.val}}-{{facet.val+200}}({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\n\t<div class=\"row\">\n\t\t<div class=\"col-xs-6 col-sm-3\">\n\t\t\t<div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\n\t\t\t\t<div class=\"panel-body\">\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h6 class=\"panel-title\">veg-nonveg</h6>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\"> {{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h6 class=\"panel-title\"> ingredients</h6>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\"> {{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h6 class=\"panel-title\">recipie country</h6>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\"> {{facet.val}}-({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"panel-heading \">\n\t\t\t\t\t\t<h6 class=\"panel-title\">likes</h6>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div id=\"collapse0\" class=\"panel-collapse collapse in\">\n\t\t\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t\t\t<li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\n\t\t\t\t\t\t\t\t<div class=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"\"> {{facet.val}}-{{facet.val+200}}({{facet.count}})\n\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -439,7 +439,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".loader-video {\n  top: calc(50% - 35px);\n  left: calc(50% - 16px);\n}\n\n.mdl-layout__header {\n  height: 75px;\n  width : 100%;\n  /*background-color: rgb(204, 204, 204);*/\n}\n\n.mdl-layout__tab-bar{\n  height: 75%;\n  vertical-align : text-top;\n}\n.mdl-layout__tab{\n  height: 99%;\n    font-size: 10px;\n}\n\n.mdl-layout__content {\n  width: 97%;\n  margin-left: 3%;\n  margin-top: 1%;\n}\n\n.mdl-layout__header-row {\n  width : 100%;\n  /*padding: 0 40px 0 16px;*/\n}\n\n.mdl-layout__drawer-button {\n\n  left: inherit;\n}\n\n.mdl-layout__content_moved {\n  width: 80%;\n  margin-left: 20%;\n}\n\n.blur-main-playlist-opened {\n  opacity: 0.4;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-js-snackbar {\n  bottom: 0;\n  z-index: 999;\n  right: 0;\n  left: 78%;\n  background-color: rgba(196, 48, 43, 0.85);\n}\n", ""]);
+exports.push([module.i, "\n.loader-video {\n  top: calc(50% - 35px);\n  left: calc(50% - 16px);\n}\n\n.mdl-layout__header {\n  height: 75px;\n  width : 100%;\n  background-color: rgb(204, 204, 204);\n  position: fixed;\n}\n\n.mdl-layout__tab-bar{\n  height: 75%;\n  vertical-align : text-top;\n}\n.mdl-layout__tab{\n  height: 99%;\n    font-size: 10px;\n}\n\n.mdl-layout__content {\n  width: 97%;\n  top: 80px;\n  margin-left: 1%;\n  margin-top: 1%;\n}\n\n.mdl-layout__header-row {\n  width : 100%;\n  /*padding: 0 40px 0 16px;*/\n}\n\n.mdl-layout__drawer-button {\n\n  left: inherit;\n}\n\n.mdl-layout__content_moved {\n  width: 85%;\n  margin-left: 15%;\n}\n\n.blur-main-playlist-opened {\n  opacity: 0.4;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-js-snackbar {\n  bottom: 0;\n  z-index: 999;\n  right: 0;\n  left: 78%;\n  background-color: rgba(196, 48, 43, 0.85);\n}\n", ""]);
 
 // exports
 
@@ -452,7 +452,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mdl-layout mdl-layout--fixed-header mdl-layout--fixed-tabs\">\n  <header class=\"mdl-layout__header\">\n\n    <div class=\"mdl-layout__header-row\">\n      <div class=\"mdl-layout-title\" style=\"width: 15%;\">\n        <!--img src=\"assets/logo.png\" style=\"height: 35px;\"-->\n      </div>\n      <nav class=\"mdl-navigation\" style=\"width: 100%;\">\n        <solr-search #search  (videosUpdated)=\"handleSearchVideo($event)\"  [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\n      </nav>\n    </div>\n\n    <!--<nav class=\"mdl-layout__tab-bar mdl-js-ripple-effect\">\n      <a class=\"mdl-layout__tab is-active\" routerLink=\"/video\" routerLinkActive=\"active\"> video </a>\n      <a class=\"mdl-layout__tab\" routerLink=\"/audio\" routerLinkActive=\"active\">audio</a>\n    </nav>-->\n\n  </header>\n\n  <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\n    <i class=\"material-icons\"></i>\n  </div>\n\n  <!-- <videos-playlist [repeat]=\"repeat\" [shuffle]=\"shuffle\" [playlistToggle]=\"playlistToggle\" [playlistNames]=\"playlistNames\" [videoPlaylist]=\"videoPlaylist\"></videos-playlist> -->\n  <filters [filterlistToggle]=\"filterToggle\"></filters>\n\n  <!--<router-outlet></router-outlet>-->\n\n  <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\n    <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\n      <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\n        [loadingInProgress]=\"loadingInProgress\"></videos-list>\n      <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\n        <div class=\"loading\"></div>\n      </div>\n    </div>\n  </main>\n</div>\n\n<video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\n  (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\" (shuffleActive)=\"shuffleActive($event)\"\n  (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\n\n<div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\n  <div class=\"mdl-snackbar__text\"></div>\n  <button class=\"mdl-snackbar__action\" type=\"button\"></button>\n</div>"
+module.exports = "<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n  <header class=\"mdl-layout__header mdl-layout__header--waterfall\">\n    <div class=\"mdl-layout__header-row\">\n      <div class=\"mdl-layout-title\" style=\"width: 15%;\"></div>\n      <nav class=\"mdl-navigation\" style=\"width: 100%;\">\n        <solr-search #search (videosUpdated)=\"handleSearchVideo($event)\" [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\n      </nav>\n    </div>\n    <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\n      <i class=\"material-icons\"></i>\n    </div>\n  </header>\n\n\n\n  <filters [filterlistToggle]=\"filterToggle\"></filters>\n  <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\n    <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\n      <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\n        [loadingInProgress]=\"loadingInProgress\"></videos-list>\n      <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\n        <div class=\"loading\"></div>\n      </div>\n    </div>\n  </main>\n\n\n  <video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\n    (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\" (shuffleActive)=\"shuffleActive($event)\"\n    (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\n\n  <div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\n    <div class=\"mdl-snackbar__text\"></div>\n    <button class=\"mdl-snackbar__action\" type=\"button\"></button>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -701,7 +701,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input[type=text] {\n    width: 40%;\n    box-sizing: border-box;\n    border: 2px solid #ccc;\n    border-radius: 4px;\n    font-size: 16px;\n    background-color : blue;\n    background-position: 10px 10px; \n    background-repeat: no-repeat;\n    padding: 12px 20px 12px 40px;\n    transition: width 0.4s ease-in-out;\n}\n\ninput[type=text]:focus {\n    width: 100%;\n}", ""]);
+exports.push([module.i, "input[type=text] {\n    width: 40%;\n    box-sizing: border-box;\n    border: 2px solid #ccc;\n    border-radius: 4px;\n    font-size: 16px;\n    background-color: rgb(160, 158, 158);\n    background-position: 10px 10px; \n    background-repeat: no-repeat;\n    padding: 12px 20px 12px 40px;\n    transition: width 0.4s ease-in-out;\n}\n\ninput[type=text]:focus {\n    width: 100%;\n}", ""]);
 
 // exports
 
@@ -714,7 +714,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/solr-search/solr-search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\n\n\n  <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\n    <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\n      formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\n    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\n\t\t<i class=\"material-icons\">search</i>\n    </button>\n    <datalist id=\"browsers\">\n      <!--<select>-->\n      <option *ngFor=\"let item of items\" value={{item}}></option>\n      <!--</select>-->\n    </datalist>\n  </div>\n\n</form>\n\n\n<!--<input list=\"browsers\" name=\"browser\">-->\n\n<!--<input #term (keyup)=\"search(term.value)\" />\n<ul>\n  <li *ngFor=\"let item of items | async\">{{item}}</li>\n  <li *ngFor=\"let item of items\">{{item}}</li>\n</ul>-->"
+module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\n\n\n  <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\n    <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\n      formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\n    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\n\t\t<i class=\"material-icons\">search</i>\n    </button>\n    <datalist id=\"browsers\">\n      <!--<select>-->\n      <option *ngFor=\"let item of items\" value={{item}}></option>\n      <!--</select>-->\n    </datalist>\n  </div>\n\n</form>\n"
 
 /***/ }),
 
@@ -763,7 +763,7 @@ var SolrSearchComponent = (function () {
     SolrSearchComponent.prototype.setSearchObject = function (param) {
         var _this = this;
         this.searObject = param;
-        console.log("changing the searhc object to " + this.searObject.searchTerm);
+        console.log("changing the search object to " + this.searObject.searchTerm);
         this.search().then(function (data) { _this.videosUpdated.emit(data); });
     };
     SolrSearchComponent.prototype.suggest = function (term) {
@@ -843,7 +843,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".main-player-block {\n  position: absolute;\n  width: 100%;\n  height: 50px;\n  bottom: 0;\n  background-color: rgba(204, 204, 204, 1);\n  z-index: 992;\n}\n\n.player-containter {\n  transition: all 300ms ease-in-out;\n  width: 440px;\n  height: 250px;\n  position: fixed;\n  z-index: 992;\n  bottom: 16px;\n  right: 5px;\n  background-color: #000;\n  border: 3px solid rgba(79, 111, 144, 0.75);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n\n.player-containter.minimized {\n  -webkit-transform: translate3d(-20%, 20%, 0) scale(0.6);\n          transform: translate3d(-20%, 20%, 0) scale(0.6);\n}\n\n.player-containter.super-minimized {\n  -webkit-transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\n          transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);\n}\n\n.player-view-controls {\n  position: absolute;\n  color: white;\n  background-color: rgb(196, 48, 43);\n  top: -27px;\n  left: -3px;\n  font-size: 30px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n\n.player-view-controls i {\n  cursor: pointer;\n}\n\n.player-view-controls .minimize {\n  margin-left: -7px;\n}\n\n.player-controls-block {\n  margin-top: 5px;\n  text-align: center;\n  color: #fff;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.mdl-button--icon.play {\n  width: 42px;\n  height: 42px;\n}\n\n.mdl-button--icon.play i {\n  -webkit-transform: translate(-20px, -12px);\n          transform: translate(-20px, -12px);\n  font-size: 40px;\n}\n\n.mdl-button--icon.prev {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.prev i {\n  -webkit-transform: translate(-15px, -12px);\n          transform: translate(-15px, -12px);\n  font-size: 28px;\n}\n\n.mdl-button--icon.next {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.next i {\n  -webkit-transform: translate(-14px, -12px);\n          transform: translate(-14px, -12px);\n  font-size: 28px;\n}\n\n.repeat-shuffle-block {\n  margin-left: 40px;\n  position: absolute;\n  top: 10px;\n}\n\n.repeat-shuffle-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.mute-block {\n  margin-left: -80px;\n  position: absolute;\n  top: 10px;\n}\n\n.mute-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.playlist-drop-button {\n  position: absolute;\n  color: #fff;\n  right: 12px;\n  top: 10px;\n}\n\n.main-yt-player-block {\n  position: relative;\n  text-align: center;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.main-yt-player-block .material-icons {\n  position: absolute;\n  color: white;\n  font-size: 255px;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  cursor: pointer;\n  display: none;\n  text-shadow: 2px 2px 2px #000;\n}\n\n.main-yt-player-block:hover .material-icons {\n  display: block;\n}\n\n.player-fullscreen {\n  bottom: 50px;\n  left: 0;\n  width: 95%;\n  height: calc(100% - 114px);\n  border: none;\n  box-shadow: none;\n}\n", ""]);
+exports.push([module.i, "\n\n.player-containter {\n  transition: all 300ms ease-in-out;\n  width: 440px;\n  height: 250px;\n  position: fixed;\n  z-index: 992;\n  bottom: 16px;\n  right: 5px;\n  background-color: #000;\n  border: 3px solid rgba(79, 111, 144, 0.75);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n\n.player-containter.minimized {\n  -webkit-transform: translate3d(-20%, 20%, 0) scale(0.6);\n          transform: translate3d(-20%, 20%, 0) scale(0.6);\n}\n\n.player-containter.super-minimized {\n  /* transform: translate3d(-42.5%, 46.5%, 0) scale(0.15); */\n  -webkit-transform: translate3d(30%, 46.5%, 0) scale(0.15);\n          transform: translate3d(30%, 46.5%, 0) scale(0.15);\n}\n\n.player-view-controls {\n  cursor: pointer;\n  position: absolute;\n  color: rgb(0, 0, 0);\n  background-color: rgb(133, 130, 130);\n  top: -27px;\n  right: -3px;\n  font-size: 30px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n\n.player-view-controls .minimize {\n  margin-left: 0px;\n}\n\n.player-controls-block {\n  margin-top: 5px;\n  text-align: center;\n  color: #fff;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.mdl-button--icon.play {\n  width: 42px;\n  height: 42px;\n}\n\n.mdl-button--icon.play i {\n  -webkit-transform: translate(-20px, -12px);\n          transform: translate(-20px, -12px);\n  font-size: 40px;\n}\n\n.mdl-button--icon.prev {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.prev i {\n  -webkit-transform: translate(-15px, -12px);\n          transform: translate(-15px, -12px);\n  font-size: 28px;\n}\n\n.mdl-button--icon.next {\n  width: 30px;\n  height: 30px;\n}\n\n.mdl-button--icon.next i {\n  -webkit-transform: translate(-14px, -12px);\n          transform: translate(-14px, -12px);\n  font-size: 28px;\n}\n\n.repeat-shuffle-block {\n  margin-left: 40px;\n  position: absolute;\n  top: 10px;\n}\n\n.repeat-shuffle-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.mute-block {\n  margin-left: -80px;\n  position: absolute;\n  top: 10px;\n}\n\n.mute-block button.active {\n  background-color: rgba(196, 48, 43, 0.85);\n}\n\n.playlist-drop-button {\n  position: absolute;\n  color: #fff;\n  right: 12px;\n  top: 10px;\n}\n\n.main-yt-player-block {\n  position: relative;\n  text-align: center;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.main-yt-player-block .material-icons {\n  position: absolute;\n  color: white;\n  font-size: 255px;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  cursor: pointer;\n  display: none;\n  text-shadow: 2px 2px 2px #000;\n}\n\n.main-yt-player-block:hover .material-icons {\n  display: block;\n}\n\n.player-fullscreen {\n  bottom: 50px;\n  left: 0;\n  width: 95%;\n  height: calc(100% - 114px);\n  border: none;\n  box-shadow: none;\n}\n", ""]);
 
 // exports
 
@@ -856,7 +856,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/video-player/video-player.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-player-block\">\n  <div class=\"player-controls-block\">\n    <span class=\"mute-block\">\n\t\t\t<button id=\"fullscreen_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': fullscreenActive}\" (click)=\"toggleFullscreen()\">\n\t\t\t\t<i class=\"material-icons\">fullscreen</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"fullscreen_tip\">\n\t\t\t\tFullscreen\n\t\t\t</div>\n\t\t</span>\n    <button id=\"prev_tip\" class=\"mdl-button mdl-js-button mdl-button--icon prev\" (click)=\"prevVideo()\">\n\t\t\t<i class=\"material-icons\">skip_previous</i>\n\t\t</button>\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"prev_tip\">\n      Previous\n    </div>\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('play')\" *ngIf=\"playingEvent === 'pause'\">\n\t\t\t<i class=\"material-icons\">play_circle_filled</i>\n\t\t</button>\n    <button class=\"mdl-button mdl-js-button mdl-button--icon play\" (click)=\"playPause('pause')\" *ngIf=\"playingEvent === 'play'\">\n\t\t\t<i class=\"material-icons\">pause_circle_filled</i>\n\t\t</button>\n    <button id=\"next_tip\" class=\"mdl-button mdl-js-button mdl-button--icon next\" (click)=\"nextVideo()\">\n\t\t\t<i class=\"material-icons\">skip_next</i>\n\t\t</button>\n    <div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"next_tip\">\n      Next\n    </div>\n    <span class=\"repeat-shuffle-block\">\n      <button id=\"repeat_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': repeat}\" (click)=\"toggleRepeat()\">\n\t\t\t\t<i class=\"material-icons\">repeat_one</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"repeat_tip\">\n\t\t\t\tRepeat one\n\t\t\t</div>\n      <button id=\"shuffle_tip\" class=\"mdl-button mdl-js-button mdl-button--icon\" [ngClass]=\"{'active': shuffle}\" (click)=\"toggleShuffle()\">\n\t\t\t\t<i class=\"material-icons\">shuffle</i>\n\t\t\t</button>\n\t\t\t<div class=\"mdl-tooltip mdl-tooltip--top\" data-mdl-for=\"shuffle_tip\">\n\t\t\t\tShuffle\n\t\t\t</div>\n    </span>\n  </div>\n  <div class=\"player-containter\" [ngClass]=\"{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}\">\n    <div class=\"player-view-controls\">\n      <!-- <i class=\"material-icons\" *ngIf=\"!minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_down</i>\n      <i class=\"material-icons\" *ngIf=\"minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_up</i> -->\n      <i class=\"material-icons minimize\" *ngIf=\"!superMinPlayer && !fullscreenActive\" (click)=\"minimizePlayer()\">remove</i>\n    </div>\n    <div class=\"main-yt-player-block\">\n      <i class=\"material-icons\" *ngIf=\"superMinPlayer\" (click)=\"minimizePlayer()\">zoom_out_map</i>\n      <div id=\"yt-player\"></div>\n    </div>\n  </div>\n\n\n  <!-- <button id=\"demo-menu-top-right\" class=\"mdl-button mdl-js-button mdl-button--icon playlist-drop-button\" (click)=\"openClosedPlaylist()\">\n    <i class=\"material-icons\">more_vert</i>\n  </button>\n\n  <ul class=\"mdl-menu mdl-menu--top-right mdl-js-menu\" data-mdl-for=\"demo-menu-top-right\">\n    <li class=\"mdl-menu__item\" (click)=\"exportPlaylistAction()\">Export playlist</li>\n    <li class=\"mdl-menu__item\" (click)=\"importPlaylistAction()\">Import playlist</li>\n    <li class=\"mdl-menu__item\" (click)=\"clearPlaylistAction()\">Clear playlist</li>\n  </ul>\n  <input id=\"import_button\" style=\"display: none;\" type=\"file\" name=\"file\" accept=\".json, .txt\" (change)=\"handleInputChange($event)\"> -->\n</div>\n"
+module.exports = "<div class=\"main-player-block\">\n  <div class=\"player-containter\" *ngIf=showPlayer [ngClass]=\"{'minimized': minPlayer, 'super-minimized': superMinPlayer, 'player-fullscreen': fullscreenActive}\">\n    <div class=\"player-view-controls\">\n      <!-- <i class=\"material-icons\" *ngIf=\"!minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_down</i>\n      <i class=\"material-icons\" *ngIf=\"minPlayer && !superMinPlayer && !fullscreenActive\" (click)=\"togglePlayer()\">arrow_drop_up</i> -->\n      <i class=\"material-icons minimize\" *ngIf=\"!superMinPlayer && !fullscreenActive\" (click)=\"minimizePlayer()\">remove</i>\n      <i class=\"material-icons close\"  (click)=\"closePlayer()\">close</i>\n    \n    </div>\n    <div class=\"main-yt-player-block\">\n      <i class=\"material-icons\" *ngIf=\"superMinPlayer\" (click)=\"minimizePlayer()\">zoom_out_map</i>\n      <div id=\"yt-player\"></div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -885,12 +885,13 @@ var VideoPlayerComponent = (function () {
         var _this = this;
         this.youtubePlayer = youtubePlayer;
         this.notificationService = notificationService;
-        this.minPlayer = true;
-        this.superMinPlayer = false;
+        this.minPlayer = false;
+        this.superMinPlayer = true;
         this.playingEvent = 'pause';
         this.shuffle = false;
         this.repeat = false;
         this.fullscreenActive = false;
+        this.showPlayer = true;
         this.repeatActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
         this.shuffleActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
         this.nextVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
@@ -900,7 +901,10 @@ var VideoPlayerComponent = (function () {
         this.exportPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
         this.importPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
         this.closePlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */]();
-        this.youtubePlayer.playPauseEvent.subscribe(function (event) { return _this.playingEvent = event; });
+        this.youtubePlayer.playPauseEvent.subscribe(function (event) {
+            _this.superMinPlayer = !_this.superMinPlayer;
+            _this.playingEvent = event;
+        });
     }
     VideoPlayerComponent.prototype.ngAfterContentInit = function () {
         var doc = window.document;
@@ -908,11 +912,10 @@ var VideoPlayerComponent = (function () {
         playerApi.type = 'text/javascript';
         playerApi.src = 'https://www.youtube.com/iframe_api';
         doc.body.appendChild(playerApi);
-        // this.superMinPlayer = !this.superMinPlayer;
         this.youtubePlayer.createPlayer();
-        //this.toggleFullscreen();
     };
     VideoPlayerComponent.prototype.toggleFullscreen = function () {
+        console.log(" toggle fullscreen called ");
         this.minPlayer = false;
         this.superMinPlayer = false;
         this.fullscreenActive = !this.fullscreenActive;
@@ -940,6 +943,9 @@ var VideoPlayerComponent = (function () {
     };
     VideoPlayerComponent.prototype.minimizePlayer = function () {
         this.superMinPlayer = !this.superMinPlayer;
+    };
+    VideoPlayerComponent.prototype.closePlayer = function () {
+        this.youtubePlayer.playVideo('');
     };
     VideoPlayerComponent.prototype.toggleRepeat = function () {
         this.repeat = !this.repeat;
@@ -1067,7 +1073,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/videos-list/videos-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mdl-cell custom-cell mdl-cell--2-col\" id=\"{{i + video.id}}\" *ngFor=\"let video of videoList; let i = index;\"\n  [ngClass]=\"{'last-item': i === videoList.length-1}\">\n  <div class=\"demo-card-square mdl-card mdl-shadow--2dp\">\n    <div class=\"mdl-card__title mdl-card--expand\" (click)=\"play(video)\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      <div class=\"video-info-block\">\n        <div class=\"video-informations\">\n          <span style=\"float: left;\">\n\t\t\t\t\t\t<i class=\"material-icons\">thumb_up</i>\n\t\t\t\t\t\t{{ video.statistics.likeCount | videoLikes }}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px;\">\n\t\t\t\t\t\t<i class=\"material-icons\">remove_red_eye</i>\n\t\t\t\t\t\t{{ video.statistics.viewCount | videoViews}}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px; float: right;\">\n\t\t\t\t\t\t<i class=\"material-icons\">access_time</i>\n\t\t\t\t\t\t{{ video.contentDetails.duration | videoDuration }}\n\t\t\t\t\t</span>\n        </div>\n      </div>\n      <!--<div class=\"video-name-block\">\n        <div class=\"video-informations\">\n          {{ video.snippet.title | playlistItemName }}\n        </div>\n      </div>-->\n      <div class=\"video-play-button\">\n        <i class=\"material-icons\">play_circle_filled</i>\n      </div>\n    </div>\n    <div class=\"mdl-card__supporting-text\">\n      <!--<i (click)=\"addToPlaylist(video)\" class=\"material-icons\">playlist_add</i>-->\n      <div class=\"video-informations\">\n        {{ video.snippet.title | playlistItemName }}\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"loader loader-progress\" *ngIf=\"loadingInProgress\">\n  <div class=\"loading\"></div>\n</div>"
+module.exports = "<div class=\"mdl-cell custom-cell mdl-cell--2-col\" id=\"{{i + video.id}}\" *ngFor=\"let video of videoList; let i = index;\"\n  [ngClass]=\"{'last-item': i === videoList.length-1}\">\n  <div class=\"demo-card-square mdl-card mdl-shadow--2dp\">\n    <div class=\"mdl-card__title mdl-card--expand\" (click)=\"play(video)\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      <div class=\"video-info-block\">\n        <div class=\"video-informations\">\n          <span style=\"float: left;\">\n\t\t\t\t\t\t<i class=\"material-icons\">thumb_up</i>\n\t\t\t\t\t\t{{ video.statistics.likeCount | videoLikes }}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px;\">\n\t\t\t\t\t\t<i class=\"material-icons\">remove_red_eye</i>\n\t\t\t\t\t\t{{ video.statistics.viewCount | videoViews}}\n\t\t\t\t\t</span>\n          <span style=\"margin-left: 10px; float: right;\">\n\t\t\t\t\t\t<i class=\"material-icons\">access_time</i>\n\t\t\t\t\t\t{{ video.contentDetails.duration | videoDuration }}\n\t\t\t\t\t</span>\n        </div>\n      </div>\n      <div class=\"video-play-button\">\n        <i class=\"material-icons\">play_circle_filled</i>\n      </div>\n    </div>\n    <div class=\"mdl-card__supporting-text\">\n      <div class=\"video-informations\">\n        {{ video.snippet.title | playlistItemName }}\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"loader loader-progress\" *ngIf=\"loadingInProgress\">\n  <div class=\"loading\"></div>\n</div>"
 
 /***/ }),
 
@@ -1377,14 +1383,14 @@ var LazyScroll = (function () {
         }
     }
     LazyScroll.prototype.onScroll = function () {
-        this._count++;
-        if (this._element.scrollTop + this._element.clientHeight >= this._element.scrollHeight) {
+        var windowHeight = "innerHeight" in window ? window.innerHeight
+            : document.documentElement.offsetHeight;
+        var body = document.body, html = document.documentElement;
+        var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        var windowBottom = windowHeight + window.pageYOffset;
+        if (windowBottom >= docHeight) {
+            console.log('bottom reached');
             this.OnScrollMethod.emit(null);
-        }
-        else {
-            if (this._count % this.scrollTrigger === 0) {
-                this.OnScrollMethod.emit(null);
-            }
         }
     };
     return LazyScroll;
@@ -1401,7 +1407,7 @@ LazyScroll = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* Directive */])({
         selector: '[LazyScroll]',
         host: {
-            '(scroll)': 'onScroll($event)'
+            '(window:scroll)': 'onScroll($event)'
         }
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* ElementRef */]) === "function" && _a || Object])
@@ -1568,7 +1574,7 @@ VideoViewsPipe = __decorate([
 var SearchObject = (function () {
     function SearchObject(pageNum, searchTerm) {
         this._pageNum = 0;
-        this._noOfRow = 12;
+        this._noOfRow = 14;
         this._pageNum = pageNum;
         this._searchTerm = searchTerm;
     }
@@ -1983,14 +1989,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var YoutubePlayerService = (function () {
     function YoutubePlayerService(notificationService) {
-        var _this = this;
         this.notificationService = notificationService;
-        this.ytOptions = Object.assign({}, {
-            width: '440',
-            height: '250',
-            playerVars: { iv_load_policy: '3', rel: '0' }
-        }, { events: { onStateChange: function (ev) { _this.onPlayerStateChange(ev); } }
-        });
+        this.isPlayerStarted = false;
         this.videoChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */](true);
         this.playPauseEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* EventEmitter */](true);
     }
@@ -2003,16 +2003,17 @@ var YoutubePlayerService = (function () {
     });
     YoutubePlayerService.prototype.createPlayer = function () {
         var _this = this;
-        this.ytOptions = Object.assign({}, {
-            width: '440',
-            height: '250',
-            playerVars: { iv_load_policy: '3', rel: '0' }
-        }, { events: { onStateChange: function (ev) { _this.onPlayerStateChange(ev); } }
+        var ytOptions = Object.assign({}, {
+            width: 440,
+            height: 250,
+            videoId: '',
+            playerVars: { iv_load_policy: 3, rel: 0 }
+        }, {
+            events: { onStateChange: function (ev) { _this.onPlayerStateChange(ev); } }
         });
         var interval = setInterval(function () {
             if ((typeof window['YT'] !== "undefined") && window['YT'] && window['YT'].Player) {
-                console.log('YT player set');
-                _this.yt_player = new YT.Player('yt-player', _this.ytOptions);
+                _this.yt_player = new YT.Player('yt-player', ytOptions);
                 clearInterval(interval);
             }
         }, 100);
@@ -2033,6 +2034,8 @@ var YoutubePlayerService = (function () {
         }
     };
     YoutubePlayerService.prototype.playVideo = function (videoId) {
+        console.log("from playVideo - Going to start playing a video");
+        this.isPlayerStarted = true;
         if (!this.yt_player) {
             this.notificationService.showNotification("Player not ready.");
             return;
@@ -2050,7 +2053,6 @@ var YoutubePlayerService = (function () {
         return this.currentVideoId;
     };
     YoutubePlayerService.prototype.resizePlayer = function (width, height) {
-        console.log('resizing player to  - width =' + width + ' height =' + height);
         this.yt_player.setSize(width, height);
     };
     return YoutubePlayerService;

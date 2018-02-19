@@ -42,7 +42,7 @@ export class SolrSearchComponent {
     }
     public setSearchObject(param: any) {
         this.searObject = param;
-        console.log("changing the searhc object to " + this.searObject.searchTerm);
+        console.log("changing the search object to " + this.searObject.searchTerm);
         this.search().then(data => { this.videosUpdated.emit(data); });
     }
 

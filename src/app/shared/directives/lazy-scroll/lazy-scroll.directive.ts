@@ -3,7 +3,7 @@ import { Directive, ElementRef, Input, Output, EventEmitter } from '@angular/cor
 @Directive({
 	selector: '[LazyScroll]',
 	host: {
-		'(scroll)': 'onScroll($event)'
+		'(window:scroll)': 'onScroll($event)'
 	}
 })
 export class LazyScroll {
@@ -23,13 +23,19 @@ export class LazyScroll {
 	}
 
 	onScroll() {
-		this._count++;
-		if (this._element.scrollTop + this._element.clientHeight >= this._element.scrollHeight) {
+
+		let windowHeight = "innerHeight" in window ? window.innerHeight
+			: document.documentElement.offsetHeight;
+		let body = document.body, html = document.documentElement;
+		let docHeight = Math.max(body.scrollHeight,
+			body.offsetHeight, html.clientHeight,
+			html.scrollHeight, html.offsetHeight);
+		let windowBottom = windowHeight + window.pageYOffset;
+
+
+		if (windowBottom >= docHeight) {
+			console.log('bottom reached');
 			this.OnScrollMethod.emit(null);
-		} else {
-			if (this._count % this.scrollTrigger === 0) {
-				this.OnScrollMethod.emit(null);
-			}
 		}
 	}
 }

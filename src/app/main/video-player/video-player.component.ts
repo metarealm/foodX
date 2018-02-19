@@ -9,12 +9,14 @@ import { NotificationService } from '../../shared/services/notification.service'
 })
 
 export class VideoPlayerComponent implements AfterContentInit {
-	public minPlayer: boolean = true;
-	public superMinPlayer: boolean = false;
+	public minPlayer: boolean = false;
+	public superMinPlayer: boolean = true;
 	public playingEvent: string = 'pause';
 	private shuffle: boolean = false;
 	private repeat: boolean = false;
 	private fullscreenActive: boolean = false;
+
+	private showPlayer:boolean = true;
 
 	@Output() repeatActive = new EventEmitter();
 	@Output() shuffleActive = new EventEmitter();
@@ -29,7 +31,10 @@ export class VideoPlayerComponent implements AfterContentInit {
 	constructor(
 		private youtubePlayer: YoutubePlayerService,
 		private notificationService: NotificationService) {
-		this.youtubePlayer.playPauseEvent.subscribe(event => this.playingEvent = event);
+		this.youtubePlayer.playPauseEvent.subscribe(event => {
+			this.superMinPlayer = !this.superMinPlayer;
+			this.playingEvent = event
+		});
 	}
 
 	ngAfterContentInit() {
@@ -38,13 +43,11 @@ export class VideoPlayerComponent implements AfterContentInit {
 		playerApi.type = 'text/javascript';
 		playerApi.src = 'https://www.youtube.com/iframe_api';
 		doc.body.appendChild(playerApi);
-		// this.superMinPlayer = !this.superMinPlayer;
 		this.youtubePlayer.createPlayer();
-		//this.toggleFullscreen();
-
 	}
 
 	toggleFullscreen(): void {
+		console.log(" toggle fullscreen called ");
 		this.minPlayer = false;
 		this.superMinPlayer = false;
 		this.fullscreenActive = !this.fullscreenActive;
@@ -78,6 +81,10 @@ export class VideoPlayerComponent implements AfterContentInit {
 
 	minimizePlayer(): void {
 		this.superMinPlayer = !this.superMinPlayer;
+	}
+	
+	closePlayer(): void {
+		this.youtubePlayer.playVideo('');
 	}
 
 	toggleRepeat(): void {

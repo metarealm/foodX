@@ -1,11 +1,4 @@
-.main-player-block {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  bottom: 0;
-  background-color: rgba(204, 204, 204, 1);
-  z-index: 992;
-}
+
 
 .player-containter {
   transition: all 300ms ease-in-out;
@@ -25,26 +18,24 @@
 }
 
 .player-containter.super-minimized {
-  transform: translate3d(-42.5%, 46.5%, 0) scale(0.15);
+  /* transform: translate3d(-42.5%, 46.5%, 0) scale(0.15); */
+  transform: translate3d(30%, 46.5%, 0) scale(0.15);
 }
 
 .player-view-controls {
+  cursor: pointer;
   position: absolute;
-  color: white;
-  background-color: rgb(196, 48, 43);
+  color: rgb(0, 0, 0);
+  background-color: rgb(133, 130, 130);
   top: -27px;
-  left: -3px;
+  right: -3px;
   font-size: 30px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-.player-view-controls i {
-  cursor: pointer;
-}
-
 .player-view-controls .minimize {
-  margin-left: -7px;
+  margin-left: 0px;
 }
 
 .player-controls-block {

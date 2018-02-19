@@ -1,3 +1,4 @@
+
 .loader-video {
   top: calc(50% - 35px);
   left: calc(50% - 16px);
@@ -6,7 +7,8 @@
 .mdl-layout__header {
   height: 75px;
   width : 100%;
-  /*background-color: rgb(204, 204, 204);*/
+  background-color: rgb(204, 204, 204);
+  position: fixed;
 }
 
 .mdl-layout__tab-bar{
@@ -20,7 +22,8 @@
 
 .mdl-layout__content {
   width: 97%;
-  margin-left: 3%;
+  top: 80px;
+  margin-left: 1%;
   margin-top: 1%;
 }
 
@@ -35,8 +38,8 @@
 }
 
 .mdl-layout__content_moved {
-  width: 80%;
-  margin-left: 20%;
+  width: 85%;
+  margin-left: 15%;
 }
 
 .blur-main-playlist-opened {

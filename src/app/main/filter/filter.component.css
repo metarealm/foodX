@@ -3,7 +3,7 @@
   width: 0.5%;
   max-width: 20px;
   position: fixed;
-  top: 100px;
+  top: 80px;
   /*background-color: rgba(204, 204, 204, 1);*/
   overflow-x: hidden;
   transition: 0.1s;
@@ -19,7 +19,7 @@ a{
 }
 .filterlist.opened {
   width: 20%;
-  max-width: 20%;
+  max-width: 200px;
   z-index: 993;
   height: calc(100% - 114px);
   box-shadow: none;
@@ -28,6 +28,8 @@ a{
 
 .behclick-panel  .list-group {
   margin-bottom: 0px;
+  padding-left: 10px;
+  list-style-type: none;
 }
 .behclick-panel .list-group-item:first-child {
 border-top-left-radius:0px;
@@ -42,17 +44,17 @@ border-bottom-right-radius:0px;
 border-bottom-left-radius:0px;
 }
 .behclick-panel .list-group-item {
-padding: 5px;
+padding: 1px;
 }
 .behclick-panel .panel-heading {
 /* 				padding: 10px 15px;
-                      border-bottom: 1px solid transparent; */
+border-bottom: 1px solid transparent; */
 border-top-right-radius: 0px;
 border-top-left-radius: 0px;
 border-bottom: 1px solid darkslategrey;
 }
 .behclick-panel .panel-heading:last-child{
-/* border-bottom: 0px; */
+border-bottom: 0px;
 }
 .behclick-panel {
 border-radius: 0px;
@@ -63,13 +65,13 @@ box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 .behclick-panel .radio, .checkbox {
 margin: 0px;
-padding-left: 10px;
+padding-left: 0px;
 }
 .behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
 outline: none;
 }
 .behclick-panel .panel-body > .panel-heading{
-padding:10px 10px;
+padding:2px 2px;
 }
 .behclick-panel .panel-body {
 padding: 0px;
