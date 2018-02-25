@@ -246,10 +246,10 @@ AppModule = __decorate([
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
+
 
 // module
-exports.push([module.i, "body{\n  background: #f2f2f2;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  border: 3px solid blue;;\n  padding: 5px;\n  height: 40px;\n  border-radius: 5px;\n  outline: none;\n  color: #9DBFAF;\n  font-size: 20px;\n}\n\n.searchTerm:focus{\n  color: #00B4CC;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 56px;\n  border: 1px solid blue;\n  background: blue;\n  text-align: center;\n  color: #fff;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 20px;\n}\n\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n      height: 50px;\n    width: 50%;\n  position: absolute;\n  top: 40%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}", ""]);
+exports.push([module.i, "\n.mdl-chip__contact{\n\n    max-height: 50px\n}\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  /* border: 3px solid rgb(195, 195, 197);; */\n  padding: 5px;\n  height: 42px;\n  border-radius: 5px;\n  outline: none;\n  /* color: #9DBFAF; */\n  font-size: 20px;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 56px;\n  /* border: 1px solid rgb(98, 98, 100); */\n  background: rgb(196, 196, 199);\n  text-align: center;\n  color: #fff;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 20px;\n}\n.frontpage{\n    height: 100vh;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center; \n    background: url(" + __webpack_require__("../../../../../src/assets/mainpic.png") + ");\n}\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n      height: 50px;\n    width:50%;\n  position: absolute;\n   top: 40%;\n  left: 20%;\n  /*transform: translate(-50%, -50%); */\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n\n}\n.logoIcon{\n    height:50%\n}\n\n.dropbtn:hover, .dropbtn:focus {\n  background-color: #2980B9;\n}\n\n.suggestion-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n\n.suggestion-dropdown-content {\n\n  float: left;\n  width: 99%;\n  padding: 1px;\n  display: none;\n  position: absolute;\n  /* background-color: #e7e3e3; */\n  min-width: 160px;\n  overflow: auto;\n  -webkit-transform: translate(0, 52px);\n          transform: translate(0, 52px); \n  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n  z-index: 1;\n  list-style-type:none\n}\n\n.suggestion-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n\n.suggestion-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n.suggestion-show {display:block;}\n\n.advanceSearch {\n    /* display: inline; */\n    min-height: 30px;\n    border: 1px solid rgb(98, 98, 100);\n}\n\n.topLinks{\n    color : black;\n}", ""]);
 
 // exports
 
@@ -262,7 +262,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<img  src=\"assets/mainpic.png\">\n\n<div class=\"wrap\">\n  <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n    <div class=\"search\">\n      <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" \n      formControlName=\"query\" placeholder=\"search your recipe\">\n      <button type=\"submit\" class=\"searchButton\">\n        <i class=\"material-icons\">search</i>\n     </button>\n      <datalist id=\"browsers\">\n        <select>\n        <option *ngFor=\"let item of items\" value={{item}}></option>\n        </select>\n      </datalist>\n    </div>\n  </form>\n</div>"
+module.exports = "<!-- <img src=\"assets/mainpic.png\"> -->\n<div class=\"frontpage\">\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <button type=\"button\" class=\"mdl-chip\">\n            <span class=\"mdl-chip__text\">about</span>\n        </button>\n        <button type=\"button\" class=\"mdl-chip\">\n            <span class=\"mdl-chip__text\">help</span>\n        </button>\n        <div style=\"padding-right:25px;float:right\">\n            <span class=\"mdl-chip mdl-chip--contact mdl-chip--deletable\">\n                <span class=\"mdl-chip__text\">Bhabani</span>\n                <img class=\"mdl-chip__contact\" src=\"/assets/user.jpg\">\n            </span>\n        </div>\n    </div>\n    <div class=\"wrap \">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                        <div class=\"advanceSearch\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </form>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -302,13 +302,9 @@ var FrontpageComponent = (function () {
         this.route = route;
         this.router = router;
         this.solrService = solrService;
-        this.searchForm = this.fb.group({
-            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required]
-        });
-        this.searchtype = [
-            'ingredients',
-            'recipe titles'
-        ];
+        this.showSuggestDropDown = false;
+        this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required] });
+        this.searchtype = ['ingredients', 'recipe titles'];
         this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
         this.filteredStates = this.stateCtrl.valueChanges
             .startWith(null)
@@ -320,6 +316,14 @@ var FrontpageComponent = (function () {
             _this.items = items;
         });
     };
+    FrontpageComponent.prototype.onSearchInputClick = function () {
+        this.showSuggestDropDown = true;
+    };
+    FrontpageComponent.prototype.searchItemSelected = function (item) {
+        this.searchForm.value.query = item;
+        this.showSuggestDropDown = false;
+        this.gotoSearch();
+    };
     FrontpageComponent.prototype.filterStates = function (val) {
         return val ? this.searchtype.filter(function (s) { return s.toLowerCase().indexOf(val.toLowerCase()) === 0; })
             : this.searchtype;
@@ -328,10 +332,21 @@ var FrontpageComponent = (function () {
         var searchTerm = this.searchForm.value.query;
         this.router.navigate(['/search', { recipe: searchTerm }]);
     };
+    FrontpageComponent.prototype.onClick = function (event) {
+        if (this.showSuggestDropDown == false)
+            return 0;
+        var element = document.getElementById('search');
+        console.log(' event target is =' + event.target);
+        if (!element.contains(event.target)) {
+            this.showSuggestDropDown = false;
+            console.log(" clicked outside");
+        }
+    };
     return FrontpageComponent;
 }());
 FrontpageComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_0" /* Component */])({
+        host: { '(document:click)': 'onClick($event)', },
         selector: 'app-frontpage',
         template: __webpack_require__("../../../../../src/app/frontpage/frontpage.component.html"),
         styles: [__webpack_require__("../../../../../src/app/frontpage/frontpage.component.css")]
@@ -439,7 +454,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.loader-video {\n  top: calc(50% - 35px);\n  left: calc(50% - 16px);\n}\n\n.mdl-layout__header {\n  height: 75px;\n  width : 100%;\n  background-color: rgb(204, 204, 204);\n  position: fixed;\n}\n\n.mdl-layout__tab-bar{\n  height: 75%;\n  vertical-align : text-top;\n}\n.mdl-layout__tab{\n  height: 99%;\n    font-size: 10px;\n}\n\n.mdl-layout__content {\n  width: 97%;\n  top: 80px;\n  margin-left: 1%;\n  margin-top: 1%;\n}\n\n.mdl-layout__header-row {\n  width : 100%;\n  /*padding: 0 40px 0 16px;*/\n}\n\n.mdl-layout__drawer-button {\n\n  left: inherit;\n}\n\n.mdl-layout__content_moved {\n  width: 85%;\n  margin-left: 15%;\n}\n\n.blur-main-playlist-opened {\n  opacity: 0.4;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-js-snackbar {\n  bottom: 0;\n  z-index: 999;\n  right: 0;\n  left: 78%;\n  background-color: rgba(196, 48, 43, 0.85);\n}\n", ""]);
+exports.push([module.i, "\n.loader-video {\n  top: calc(50% - 35px);\n  left: calc(50% - 16px);\n}\n\n.mdl-navigation{\n    padding:5%\n}\n\n.mdl-layout__header {\n  height: 75px;\n  width : 100%;\n  background-color: rgb(204, 204, 204);\n  position: fixed;\n}\n\n.mdl-layout__tab-bar{\n  height: 75%;\n  vertical-align : text-top;\n}\n.mdl-layout__tab{\n  height: 99%;\n    font-size: 10px;\n}\n\n.mdl-layout__content {\n  width: 97%;\n  top: 80px;\n  margin-left: 1%;\n  margin-top: 1%;\n}\n\n.mdl-layout__header-row {\n  width : 100%;\n  /*padding: 0 40px 0 16px;*/\n}\n\n.mdl-layout__drawer-button {\n\n  left: inherit;\n}\n\n.mdl-layout__content_moved {\n  width: 85%;\n  margin-left: 15%;\n}\n\n.blur-main-playlist-opened {\n  opacity: 0.4;\n  transition: all 0.3s ease;\n  -moz-transition: all 0.3s ease;\n  -ms-transition: all 0.3s ease;\n  -webkit-transition: all 0.3s ease;\n  -o-transition: all 0.3s ease;\n}\n\n.mdl-js-snackbar {\n  bottom: 0;\n  z-index: 999;\n  right: 0;\n  left: 78%;\n  background-color: rgba(196, 48, 43, 0.85);\n}\n", ""]);
 
 // exports
 
@@ -452,7 +467,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n  <header class=\"mdl-layout__header mdl-layout__header--waterfall\">\n    <div class=\"mdl-layout__header-row\">\n      <div class=\"mdl-layout-title\" style=\"width: 15%;\"></div>\n      <nav class=\"mdl-navigation\" style=\"width: 100%;\">\n        <solr-search #search (videosUpdated)=\"handleSearchVideo($event)\" [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\n      </nav>\n    </div>\n    <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\n      <i class=\"material-icons\"></i>\n    </div>\n  </header>\n\n\n\n  <filters [filterlistToggle]=\"filterToggle\"></filters>\n  <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\n    <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\n      <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\n        [loadingInProgress]=\"loadingInProgress\"></videos-list>\n      <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\n        <div class=\"loading\"></div>\n      </div>\n    </div>\n  </main>\n\n\n  <video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\n    (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\" (shuffleActive)=\"shuffleActive($event)\"\n    (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\n\n  <div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\n    <div class=\"mdl-snackbar__text\"></div>\n    <button class=\"mdl-snackbar__action\" type=\"button\"></button>\n  </div>\n</div>"
+module.exports = "<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n\n    <header class=\"mdl-layout__header mdl-layout__header--waterfall\">\n        <div class=\"mdl-layout__header-row\">\n            <div class=\"mdl-layout-title\" (click)=\"goHome()\" style=\"width: 10%;font-family:cursive\">Shake & Stir</div>\n            <nav class=\"mdl-navigation\" style=\"width: 100%;\">\n                <solr-search #search (videosUpdated)=\"handleSearchVideo($event)\" [loadingInProgress]=\"loadingInProgress\" style=\"width: 100%;\"></solr-search>\n            </nav>\n        </div>\n        <div aria-expanded=\"false\" role=\"button\" tabindex=\"0\" class=\"mdl-layout__drawer-button\" (click)=\"toggleFilter()\">\n            <i class=\"material-icons\"></i>\n        </div>\n    </header>\n\n    <filters [filterlistToggle]=\"filterToggle\"></filters>\n    \n    <main class=\"mdl-layout__content\" LazyScroll (OnScrollMethod)=\"searchMore()\" ScrollDistance=\"3\">\n        <div class=\"page-content\" [ngClass]=\"{'mdl-layout__content_moved': filterToggle}\">\n            <videos-list *ngIf=\"videoList.length\" class=\"mdl-grid\" (videoPlaylist)=\"checkAddToPlaylist($event)\" [videoList]=\"videoList\"\n                [loadingInProgress]=\"loadingInProgress\"></videos-list>\n            <div class=\"loader loader-video\" *ngIf=\"!videoList.length\">\n                <div class=\"loading\"></div>\n            </div>\n        </div>\n    </main>\n\n\n    <video-player #videoplayer (closePlaylist)=\"closePlaylist()\" (importPlaylist)=\"importPlaylist($event)\" (exportPlaylist)=\"exportPlaylist()\"\n        (clearPlaylist)=\"clearPlaylist()\" (playFirstInPlaylist)=\"playFirstInPlaylist()\" (repeatActive)=\"repeatActive($event)\"\n        (shuffleActive)=\"shuffleActive($event)\" (nextVideoEvent)=\"nextVideo($event)\" (prevVideoEvent)=\"prevVideo($event)\"></video-player>\n\n    <div id=\"demo-toast-example\" class=\"mdl-js-snackbar mdl-snackbar\">\n        <div class=\"mdl-snackbar__text\"></div>\n        <button class=\"mdl-snackbar__action\" type=\"button\"></button>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -509,13 +524,16 @@ var MainComponent = (function () {
         this.shuffle = false;
         this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
     }
+    MainComponent.prototype.goHome = function () {
+        console.log("Going to the front page route");
+        this.router.navigate(['/']);
+    };
     MainComponent.prototype.ngAfterViewInit = function () {
         this.searchParam = this.route.snapshot.paramMap.get('recipe');
         console.log('searhc param is ' + this.searchParam);
         var searObject = new __WEBPACK_IMPORTED_MODULE_8__shared_searchObject__["a" /* SearchObject */](0, this.searchParam);
         this.solrSearch.setSearchObject(searObject);
         this.solrSearch.doSearch();
-        // this.componentHandler.upgradeAllRegistered();
     };
     MainComponent.prototype.playFirstInPlaylist = function () {
         if (this.videoPlaylist[0])
@@ -714,7 +732,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/solr-search/solr-search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\n\n\n  <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\n    <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\n      formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\n    <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\n\t\t<i class=\"material-icons\">search</i>\n    </button>\n    <datalist id=\"browsers\">\n      <!--<select>-->\n      <option *ngFor=\"let item of items\" value={{item}}></option>\n      <!--</select>-->\n    </datalist>\n  </div>\n\n</form>\n"
+module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch($event)\">\n    <div class=\"mdl-textfield mdl-js-textfield\" style=\"width: 60%;\">\n        <input class=\"mdl-textfield__input\" (change)=\"selectedenvent()\" list=\"browsers\" #queryinput (keyup)=\"suggest(queryinput.value)\"\n            formControlName=\"query\" type=\"text\" id=\"query\" autocomplete=\"off\" />\n        <button type=\"submit\" class=\"mdl-button mdl-js-button mdl-button--icon\">\n            <i class=\"material-icons\">search</i>\n        </button>\n        <datalist id=\"browsers\">\n            <option *ngFor=\"let item of items\" value={{item}}></option>\n        </datalist>\n    </div>\n</form>"
 
 /***/ }),
 
@@ -1160,7 +1178,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/main/videos-playlist/videos-playlist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"playlist\" class=\"playlist\" [ngClass]=\"{'opened': playlistToggle}\">\n  <div id=\"{{video.id}}\" class=\"playist-item\" *ngFor=\"let video of videoPlaylist; let i = index;\" (click)=\"play(video.id)\" [ngClass]=\"{'playing': currentPlaying(video.id)}\">\n    <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}\">\n      <span class=\"no-in-playlist\">{{ i + 1 }}</span>\n      <span class=\"video-duration\">{{ video.contentDetails.duration | videoDuration }}</span>\n      <i class=\"material-icons delete-from-playlist\" (click)=\"removeFromPlaylist(video)\">cancel</i>\n    </div>\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n      {{ video.snippet.title | playlistItemName }}\n    </div>\n  </div>\n  <div class=\"playist-item-empty\" *ngIf=\"!videoPlaylist.length\">\n    <!-- <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000'}\">\n      <i class=\"material-icons\">block</i>\n    </div> -->\n    <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n      Playlist is empty\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"playlist\" class=\"playlist\" [ngClass]=\"{'opened': playlistToggle}\">\n    <div id=\"{{video.id}}\" class=\"playist-item\" *ngFor=\"let video of videoPlaylist; let i = index;\" (click)=\"play(video.id)\"\n        [ngClass]=\"{'playing': currentPlaying(video.id)}\">\n        <div class=\"playlist-thumbnail\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.default.url + ') center center no-repeat', 'background-size': '100%'}\">\n            <span class=\"no-in-playlist\">{{ i + 1 }}</span>\n            <span class=\"video-duration\">{{ video.contentDetails.duration | videoDuration }}</span>\n            <i class=\"material-icons delete-from-playlist\" (click)=\"removeFromPlaylist(video)\">cancel</i>\n        </div>\n        <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n            {{ video.snippet.title | playlistItemName }}\n        </div>\n    </div>\n    <div class=\"playist-item-empty\" *ngIf=\"!videoPlaylist.length\">\n        <div class=\"opened-item-info\" [ngClass]=\"{'closed': !playlistToggle}\" *ngIf=\"playlistNames\">\n            Playlist is empty\n        </div>\n    </div>\n</div>å"
 
 /***/ }),
 
@@ -2072,6 +2090,13 @@ YoutubePlayerService = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/youtube-player.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/assets/mainpic.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "mainpic.a9526bb590e5dc2d6edf.png";
 
 /***/ }),
 

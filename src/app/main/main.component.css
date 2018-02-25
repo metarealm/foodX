@@ -4,6 +4,10 @@
   left: calc(50% - 16px);
 }
 
+.mdl-navigation{
+    padding:5%
+}
+
 .mdl-layout__header {
   height: 75px;
   width : 100%;

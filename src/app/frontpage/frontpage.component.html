@@ -1,19 +1,42 @@
-
-<img  src="assets/mainpic.png">
-
-<div class="wrap">
-  <form [formGroup]="searchForm" (ngSubmit)="gotoSearch($event)">
-    <div class="search">
-      <input type="text" class="searchTerm" #queryinput list="browsers" (keyup)="suggest(queryinput.value)" 
-      formControlName="query" placeholder="search your recipe">
-      <button type="submit" class="searchButton">
-        <i class="material-icons">search</i>
-     </button>
-      <datalist id="browsers">
-        <select>
-        <option *ngFor="let item of items" value={{item}}></option>
-        </select>
-      </datalist>
+<!-- <img src="assets/mainpic.png"> -->
+<div class="frontpage">
+    <div class="topLinks" style="padding:25px">
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">about</span>
+        </button>
+        <button type="button" class="mdl-chip">
+            <span class="mdl-chip__text">help</span>
+        </button>
+        <div style="padding-right:25px;float:right">
+            <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+                <span class="mdl-chip__text">Bhabani</span>
+                <img class="mdl-chip__contact" src="/assets/user.jpg">
+            </span>
+        </div>
     </div>
-  </form>
+    <div class="wrap ">
+        <form [formGroup]="searchForm" (ngSubmit)="gotoSearch($event)">
+            <div id="search" class="search">
+                <div (click)="onSearchInputClick()">
+                    <input type="text" class="searchTerm" #queryinput list="browsers" (keyup)="suggest(queryinput.value)" formControlName="query"
+                        placeholder="search your recipe" />
+                    <button type="submit" class="searchButton">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+
+                <div *ngIf="showSuggestDropDown">
+                    <div id="myDropdown" class="suggestion-dropdown suggestion-dropdown-content suggestion-show">
+                        <ul>
+                            <li *ngFor="let item of items" (click)="searchItemSelected(item)">
+                                <div class="">{{item}}</div>
+                            </li>
+                        </ul>
+                        <div class="advanceSearch">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,36 +1,36 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header mdl-layout__header--waterfall">
-    <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title" style="width: 15%;"></div>
-      <nav class="mdl-navigation" style="width: 100%;">
-        <solr-search #search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
-      </nav>
+
+    <header class="mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-title" (click)="goHome()" style="width: 10%;font-family:cursive">Shake & Stir</div>
+            <nav class="mdl-navigation" style="width: 100%;">
+                <solr-search #search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
+            </nav>
+        </div>
+        <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="toggleFilter()">
+            <i class="material-icons"></i>
+        </div>
+    </header>
+
+    <filters [filterlistToggle]="filterToggle"></filters>
+    
+    <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
+        <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
+            <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList"
+                [loadingInProgress]="loadingInProgress"></videos-list>
+            <div class="loader loader-video" *ngIf="!videoList.length">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <video-player #videoplayer (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()"
+        (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)"
+        (shuffleActive)="shuffleActive($event)" (nextVideoEvent)="nextVideo($event)" (prevVideoEvent)="prevVideo($event)"></video-player>
+
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
     </div>
-    <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="toggleFilter()">
-      <i class="material-icons"></i>
-    </div>
-  </header>
-
-
-
-  <filters [filterlistToggle]="filterToggle"></filters>
-  <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
-    <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
-      <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList"
-        [loadingInProgress]="loadingInProgress"></videos-list>
-      <div class="loader loader-video" *ngIf="!videoList.length">
-        <div class="loading"></div>
-      </div>
-    </div>
-  </main>
-
-
-  <video-player #videoplayer (closePlaylist)="closePlaylist()" (importPlaylist)="importPlaylist($event)" (exportPlaylist)="exportPlaylist()"
-    (clearPlaylist)="clearPlaylist()" (playFirstInPlaylist)="playFirstInPlaylist()" (repeatActive)="repeatActive($event)" (shuffleActive)="shuffleActive($event)"
-    (nextVideoEvent)="nextVideo($event)" (prevVideoEvent)="prevVideo($event)"></video-player>
-
-  <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
-    <div class="mdl-snackbar__text"></div>
-    <button class="mdl-snackbar__action" type="button"></button>
-  </div>
 </div>
