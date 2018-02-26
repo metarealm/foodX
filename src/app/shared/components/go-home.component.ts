@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'app-go-home-component',
-    template: `<div style="display:inline-block">
+    template: `<div  (click)="goHome()"  style="display:inline-block">
     <i style="width:20%" class="material-icons">home</i>
-    <div class="mdl-layout-title" (click)="goHome()" style="font-family:cursive">Shake & Stir</div>
+    <div class="mdl-layout-title" style="font-family:cursive">Shake & Stir</div>
     </div>`
 })
 export class GoHomeComponent implements OnInit {

@@ -155,6 +155,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__ = __webpack_require__("../../../../../src/app/shared/directives/lazy-scroll/lazy-scroll.directive.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__frontpage_frontpage_component__ = __webpack_require__("../../../../../src/app/frontpage/frontpage.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__ = __webpack_require__("../../../../../src/app/shared/components/go-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_search_configuration_component__ = __webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -198,6 +199,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -234,7 +236,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_31__frontpage_frontpage_component__["a" /* FrontpageComponent */],
             __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_user_information_component__["a" /* UserInformationComponent */],
             __WEBPACK_IMPORTED_MODULE_18__frontpage_login_callback_login_callback_component__["a" /* LoginCallbackComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__["a" /* GoHomeComponent */]
+            __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__["a" /* GoHomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_search_configuration_component__["a" /* SearchConfigurationComponent */]
         ],
         bootstrap: [
             __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]
@@ -421,7 +424,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  /* border: 3px solid rgb(195, 195, 197);; */\n  padding: 5px;\n  height: 42px;\n  border-radius: 5px;\n  outline: none;\n  /* color: #9DBFAF; */\n  font-size: 20px;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 56px;\n  /* border: 1px solid rgb(98, 98, 100); */\n  background: rgb(196, 196, 199);\n  text-align: center;\n  color: #fff;\n  border-radius: 5px;\n  cursor: pointer;\n  font-size: 20px;\n}\n.frontpage{\n    height: 100vh;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center; \n    background: url(" + __webpack_require__("../../../../../src/assets/mainpic.png") + ");\n}\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n      height: 50px;\n    width:50%;\n  position: absolute;\n   top: 40%;\n  left: 20%;\n  /*transform: translate(-50%, -50%); */\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n\n}\n/* .logoIcon{\n    height:50%\n} */\n\n.dropbtn:hover, .dropbtn:focus {\n  background-color: #2980B9;\n}\n\n.suggestion-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n\n.suggestion-dropdown-content {\n\n  float: left;\n  width: 99%;\n  padding: 1px;\n  display: none;\n  position: absolute;\n  /* background-color: #e7e3e3; */\n  min-width: 160px;\n  overflow: auto;\n  -webkit-transform: translate(0, 52px);\n          transform: translate(0, 52px); \n  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n  z-index: 1;\n  list-style-type:none\n}\n\n.suggestion-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n\n.suggestion-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n.suggestion-show {display:block;}\n\n.advanceSearch {\n    /* display: inline; */\n    min-height: 30px;\n    border: 1px solid rgb(98, 98, 100);\n}\n\n.topLinks{\n    color : black;\n}", ""]);
+exports.push([module.i, "\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  /* border: 3px solid rgb(195, 195, 197);; */\n  padding: 3px;\n  height: 42px;\n  /* border-radius: 5px; */\n  outline: none;\n  /* color: #9DBFAF; */\n  font-size: 15px;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 52px;\n  /* border: 1px solid rgb(98, 98, 100); */\n  background: rgb(255, 255, 255);\n  text-align: center;\n  color: rgb(54, 54, 54);\n  /* border-radius: 5px; */\n  cursor: pointer;\n  font-size: 20px;\n}\n.frontpage{\n    height: 100vh;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center; \n    background: url(" + __webpack_require__("../../../../../src/assets/mainpic.png") + ")  no-repeat center;\n}\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n      height: 50px;\n    width:50%;\n  position: absolute;\n   top: 40%;\n  left: 20%;\n  /*transform: translate(-50%, -50%); */\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.sns-link-button{\n    background-color: grey;\n    color: white;\n    margin-top: 10px;\n    margin-left: 40%;\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.dropbtn:hover, .dropbtn:focus {\n  background-color: #2980B9;\n}\n\n.suggestion-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n\n.suggestion-dropdown-content {\n\n  float: left;\n  width: 99%;\n  padding: 1px;\n  display: none;\n  position: absolute;\n  /* background-color: #e7e3e3; */\n  min-width: 160px;\n  overflow: auto;\n  -webkit-transform: translate(0, 52px);\n          transform: translate(0, 52px); \n  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n  z-index: 1;\n  list-style-type:none\n}\n\n.suggestion-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n\n.suggestion-dropdown ul{\n    -webkit-padding-start: 5px; \n}\n.suggestion-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n.suggestion-show {display:block;}\n\n.advanceSearch {\n    /* display: inline; */\n    min-height: 30px;\n    border: 1px solid rgb(98, 98, 100);\n}\n\n.topLinks{\n    color : black;\n}", ""]);
 
 // exports
 
@@ -434,7 +437,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <img src=\"assets/mainpic.png\"> -->\n<div class=\"frontpage\">\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <button type=\"button\" class=\"mdl-chip\">\n            <span class=\"mdl-chip__text\">about</span>\n        </button>\n        <button type=\"button\" class=\"mdl-chip\">\n            <span class=\"mdl-chip__text\">help</span>\n        </button>\n        <app-user-information></app-user-information>\n    </div>\n    <div class=\"wrap \">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                        <div class=\"advanceSearch\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </form>\n    </div>\n</div>"
+module.exports = "<!-- <img src=\"assets/mainpic.png\"> -->\n<div class=\"frontpage\">\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n    <div class=\"wrap \">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div>\n                    <button class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n                        <i class=\"material-icons\">phonelink_setup</i>\n                        <span>Link Devices</span>\n                    </button>\n                </div>\n\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <div class=\"advanceSearch\">\n                            <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                                <input type=\"radio\" id=\"option-1\" class=\"mdl-radio__button\" name=\"options\" value=\"1\" checked>\n                                <span class=\"mdl-radio__label\">recipe</span>\n                            </label>\n                            <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                                <input type=\"radio\" id=\"option-2\" class=\"mdl-radio__button\" name=\"options\" value=\"2\">\n                                <span class=\"mdl-radio__label\">ingredients</span>\n                            </label>\n                        </div>\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </form>\n    </div>\n\n\n</div>"
 
 /***/ }),
 
@@ -1707,13 +1710,79 @@ var GoHomeComponent = (function () {
 GoHomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
         selector: 'app-go-home-component',
-        template: "<div style=\"display:inline-block\">\n    <i style=\"width:20%\" class=\"material-icons\">home</i>\n    <div class=\"mdl-layout-title\" (click)=\"goHome()\" style=\"font-family:cursive\">Shake & Stir</div>\n    </div>"
+        template: "<div  (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i style=\"width:20%\" class=\"material-icons\">home</i>\n    <div class=\"mdl-layout-title\" style=\"font-family:cursive\">Shake & Stir</div>\n    </div>"
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], GoHomeComponent);
 
 var _a, _b;
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/go-home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".pref-dropdown-content {\n    float: left;\n    padding: 1px;\n    display: none;\n    position: absolute;\n    min-width: 50px;\n    overflow: auto;\n    -webkit-transform: translate(50, 50px);\n            transform: translate(50, 50px); \n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n    z-index: 10;\n    list-style-type:none\n  }\n.pref-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n.pref-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n.pref-dropdown ul{\n    -webkit-padding-start: 5px; \n}\n.pref-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<button type=\"button\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">help</i>\n    <span>about</span>\n</button>\n\n\n<button type=\"button\" (click)=\"setShowconfig()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">settings</i>\n    <span>set Preferene</span>\n</button>\n\n<div *ngIf=\"showConfig\" class=\"pref-dropdown pref-dropdown-content pref-dropdown-show\">\n    <ul>\n        <li>option1</li>\n        <li>option2</li>\n        <li>option3</li>\n    </ul>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchConfigurationComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SearchConfigurationComponent = (function () {
+    function SearchConfigurationComponent() {
+        this.showConfig = false;
+    }
+    SearchConfigurationComponent.prototype.ngOnInit = function () {
+    };
+    SearchConfigurationComponent.prototype.setShowconfig = function () {
+        console.log(" changing the showConfig value");
+        this.showConfig = true;
+    };
+    return SearchConfigurationComponent;
+}());
+SearchConfigurationComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+        selector: 'app-search-configuration',
+        template: __webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SearchConfigurationComponent);
+
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/search-configuration.component.js.map
 
 /***/ }),
 
@@ -1738,7 +1807,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/shared/components/user-information/user-information.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div (click)=\"selectUser()\" style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n    </span>\n</div>"
+module.exports = "<div (click)=\"selectUser()\" style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n    </span>\n</div>"
 
 /***/ }),
 
@@ -2487,7 +2556,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/assets/mainpic.png":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "mainpic.a9526bb590e5dc2d6edf.png";
+module.exports = __webpack_require__.p + "mainpic.5b383e4058493af51008.png";
 
 /***/ }),
 

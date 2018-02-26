@@ -39,6 +39,7 @@ import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { GoHomeComponent } from './shared/components/go-home.component';
+import { SearchConfigurationComponent } from './shared/components/search-configuration/search-configuration.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { GoHomeComponent } from './shared/components/go-home.component';
 		FrontpageComponent,
 		UserInformationComponent,
 		LoginCallbackComponent,
-		GoHomeComponent
+		GoHomeComponent,
+		SearchConfigurationComponent
 
 	],
 	bootstrap: [

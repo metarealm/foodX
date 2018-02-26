@@ -1,0 +1,18 @@
+<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">help</i>
+    <span>about</span>
+</button>
+
+
+<button type="button" (click)="setShowconfig()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">settings</i>
+    <span>set Preferene</span>
+</button>
+
+<div *ngIf="showConfig" class="pref-dropdown pref-dropdown-content pref-dropdown-show">
+    <ul>
+        <li>option1</li>
+        <li>option2</li>
+        <li>option3</li>
+    </ul>
+</div>
