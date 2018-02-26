@@ -1,11 +1,15 @@
 
+.sns-go-home{
+    width:15%;
+    display: inline-block;
+}
+.sns-go-home:hover{
+    cursor: pointer;
+}
+
 .loader-video {
   top: calc(50% - 35px);
   left: calc(50% - 16px);
-}
-
-.mdl-navigation{
-    padding:5%
 }
 
 .mdl-layout__header {

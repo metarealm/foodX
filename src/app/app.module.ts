@@ -19,6 +19,8 @@ import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { PageNotFoundComponent } from './not-found.component';
+import { UserInformationComponent } from './shared/components/user-information/user-information.component';
+import { LoginCallbackComponent } from './frontpage/login-callback/login-callback.component';
 
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
@@ -26,7 +28,9 @@ import { YoutubePlayerService } from "./shared/services/youtube-player.service";
 import { PlaylistStoreService } from "./shared/services/playlist-store.service";
 import { NotificationService } from "./shared/services/notification.service";
 import { IndexDataService } from './shared/services/indexDataService';
-import { FacetService } from './shared/services/facetService'
+import { FacetService } from './shared/services/facetService';
+import { AuthService } from './auth/auth.service';
+
 // Pipes
 import { VideoDurationPipe } from "./shared/pipes/video-duration.pipe";
 import { VideoLikesPipe } from "./shared/pipes/video-likes.pipe";
@@ -34,6 +38,8 @@ import { VideoViewsPipe } from "./shared/pipes/video-views.pipe";
 import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { GoHomeComponent } from './shared/components/go-home.component';
+
 
 @NgModule({
 	imports: [
@@ -65,7 +71,10 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 
 		FilterComponent,
 		SolrSearchComponent,
-		FrontpageComponent
+		FrontpageComponent,
+		UserInformationComponent,
+		LoginCallbackComponent,
+		GoHomeComponent
 
 	],
 	bootstrap: [
@@ -77,7 +86,8 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 		PlaylistStoreService,
 		NotificationService,
 		IndexDataService,
-		FacetService,
+        FacetService,
+        AuthService
 
 	]
 })

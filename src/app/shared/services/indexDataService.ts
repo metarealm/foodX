@@ -7,7 +7,7 @@ import { Subject } from 'rxjs/Subject';
 import { indexDatas, IndexedData } from '../Helper/indexdata';
 import { AppSettings } from '../constants';
 import { NotificationService } from './notification.service';
-import { SearchObject } from '../searchObject';
+import { SearchObject } from '../Helper/searchObject';
 import { FacetService } from './facetService';
 
 @Injectable()

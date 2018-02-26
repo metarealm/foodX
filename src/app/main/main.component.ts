@@ -7,7 +7,7 @@ import { PlaylistStoreService } from "../shared/services/playlist-store.service"
 import { NotificationService } from '../shared/services/notification.service';
 import { IndexDataService } from '../shared/services/indexDataService';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { SearchObject } from '../shared/searchObject';
+import { SearchObject } from '../shared/Helper/searchObject';
 
 @Component({
     selector: 'main-list',
@@ -46,10 +46,7 @@ export class MainComponent implements AfterViewInit {
         this.videoPlaylist = this.playlistService.retrieveStorage().playlists;
     }
 
-    goHome(){
-        console.log("Going to the front page route");
-        this.router.navigate(['/']);
-    }
+
     ngAfterViewInit() {
         this.searchParam = this.route.snapshot.paramMap.get('recipe');
         console.log('searhc param is ' + this.searchParam);

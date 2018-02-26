@@ -1,8 +1,5 @@
 
-.mdl-chip__contact{
 
-    max-height: 50px
-}
 .search {
   width: 100%;
   position: relative
@@ -51,9 +48,9 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
-.logoIcon{
+/* .logoIcon{
     height:50%
-}
+} */
 
 .dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;

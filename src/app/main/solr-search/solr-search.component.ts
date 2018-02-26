@@ -5,7 +5,7 @@ import { YoutubePlayerService } from "../../shared/services/youtube-player.servi
 import { NotificationService } from '../../shared/services/notification.service';
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { Observable } from 'rxjs/Observable';
-import { SearchObject } from '../../shared/searchObject';
+import { SearchObject } from '../../shared/Helper/searchObject';
 import { FacetService } from '../../shared/services/facetService';
 
 @Component({

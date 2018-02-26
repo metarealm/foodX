@@ -7,12 +7,7 @@
         <button type="button" class="mdl-chip">
             <span class="mdl-chip__text">help</span>
         </button>
-        <div style="padding-right:25px;float:right">
-            <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
-                <span class="mdl-chip__text">Bhabani</span>
-                <img class="mdl-chip__contact" src="/assets/user.jpg">
-            </span>
-        </div>
+        <app-user-information></app-user-information>
     </div>
     <div class="wrap ">
         <form [formGroup]="searchForm" (ngSubmit)="gotoSearch($event)">

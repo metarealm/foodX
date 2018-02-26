@@ -1,0 +1,6 @@
+.mdl-chip__contact{
+    max-height: 50px
+}
+.mdl-chip:hover {
+    cursor: pointer;
+}

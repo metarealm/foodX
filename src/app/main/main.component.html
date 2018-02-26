@@ -2,10 +2,11 @@
 
     <header class="mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
-            <div class="mdl-layout-title" (click)="goHome()" style="width: 10%;font-family:cursive">Shake & Stir</div>
-            <nav class="mdl-navigation" style="width: 100%;">
+            <app-go-home-component class="sns-go-home"></app-go-home-component>
+            <nav class="mdl-navigation" style="width: 70%;">
                 <solr-search #search (videosUpdated)="handleSearchVideo($event)" [loadingInProgress]="loadingInProgress" style="width: 100%;"></solr-search>
             </nav>
+            <app-user-information></app-user-information>
         </div>
         <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button" (click)="toggleFilter()">
             <i class="material-icons"></i>
@@ -13,7 +14,7 @@
     </header>
 
     <filters [filterlistToggle]="filterToggle"></filters>
-    
+
     <main class="mdl-layout__content" LazyScroll (OnScrollMethod)="searchMore()" ScrollDistance="3">
         <div class="page-content" [ngClass]="{'mdl-layout__content_moved': filterToggle}">
             <videos-list *ngIf="videoList.length" class="mdl-grid" (videoPlaylist)="checkAddToPlaylist($event)" [videoList]="videoList"
