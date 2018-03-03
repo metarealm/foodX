@@ -19,7 +19,7 @@ import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { PageNotFoundComponent } from './not-found.component';
-import { UserInformationComponent } from './shared/components/user-information/user-information.component';
+import { UserInformationComponent } from './shared/components/user-information.component';
 import { LoginCallbackComponent } from './frontpage/login-callback/login-callback.component';
 
 // Services
@@ -39,7 +39,9 @@ import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { GoHomeComponent } from './shared/components/go-home.component';
-import { SearchConfigurationComponent } from './shared/components/search-configuration/search-configuration.component';
+import { SearchConfigurationComponent } from './shared/components/search-configuration.component';
+import { UserAccountsComponent } from './shared/components/user-accounts.component';
+
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { SearchConfigurationComponent } from './shared/components/search-configu
 		UserInformationComponent,
 		LoginCallbackComponent,
 		GoHomeComponent,
-		SearchConfigurationComponent
+		SearchConfigurationComponent,
+		UserAccountsComponent
 
 	],
 	bootstrap: [

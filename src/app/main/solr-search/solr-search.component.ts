@@ -24,7 +24,7 @@ export class SolrSearchComponent {
     public searchParam: string;
     private last_search: string;
     private pagenum: number = 0;
-    private searObject: SearchObject
+    private searObject: SearchObject;
     public searchForm = this.fb.group({
         query: ["", Validators.required]
     });
@@ -42,6 +42,7 @@ export class SolrSearchComponent {
     }
     public setSearchObject(param: any) {
         this.searObject = param;
+        this.queryinput.value = param.searchTerm;
         console.log("changing the search object to " + this.searObject.searchTerm);
         this.search().then(data => { this.videosUpdated.emit(data); });
     }

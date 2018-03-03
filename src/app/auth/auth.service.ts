@@ -94,6 +94,8 @@ export class AuthService {
         localStorage.removeItem('profile');
         localStorage.removeItem('expires_at');
         this.userProfile = undefined;
+        this.user = new User("Guest", "Guest@sns.com");
+        this.userChangeEvent.emit(this.user);
         this.setLoggedIn(false);
     }
 

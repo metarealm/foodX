@@ -64,7 +64,6 @@ export class FrontpageComponent {
     onClick(event) {
         if (this.showSuggestDropDown == false) return 0;
         let element = document.getElementById('search');
-        console.log(' event target is =' + event.target);
         if (!element.contains(event.target)) {
             this.showSuggestDropDown = false;
             console.log(" clicked outside");

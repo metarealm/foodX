@@ -48,7 +48,7 @@ var AppRoutingModule = (function () {
     return AppRoutingModule;
 }());
 AppRoutingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
         ],
@@ -59,31 +59,6 @@ AppRoutingModule = __decorate([
 ], AppRoutingModule);
 
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app-routing.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<router-outlet></router-outlet>\n<!--<main-list></main-list>-->"
 
 /***/ }),
 
@@ -107,10 +82,10 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__("../../../../../src/app/app.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+        template: '<router-outlet></router-outlet>',
+        styles: ['']
     })
 ], AppComponent);
 
@@ -139,7 +114,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_solr_search_solr_search_component__ = __webpack_require__("../../../../../src/app/main/solr-search/solr-search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_youtube_player__ = __webpack_require__("../../../../ng2-youtube-player/modules/ng2-youtube-player.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_user_information_component__ = __webpack_require__("../../../../../src/app/shared/components/user-information/user-information.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_component__ = __webpack_require__("../../../../../src/app/shared/components/user-information.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__frontpage_login_callback_login_callback_component__ = __webpack_require__("../../../../../src/app/frontpage/login-callback/login-callback.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__ = __webpack_require__("../../../../../src/app/shared/services/youtube-api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__ = __webpack_require__("../../../../../src/app/shared/services/youtube-player.service.ts");
@@ -155,7 +130,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__ = __webpack_require__("../../../../../src/app/shared/directives/lazy-scroll/lazy-scroll.directive.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__frontpage_frontpage_component__ = __webpack_require__("../../../../../src/app/frontpage/frontpage.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__ = __webpack_require__("../../../../../src/app/shared/components/go-home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_search_configuration_component__ = __webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_component__ = __webpack_require__("../../../../../src/app/shared/components/search-configuration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__shared_components_user_accounts_component__ = __webpack_require__("../../../../../src/app/shared/components/user-accounts.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -200,13 +176,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
@@ -234,10 +211,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__main_filter_filter_component__["a" /* FilterComponent */],
             __WEBPACK_IMPORTED_MODULE_14__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
             __WEBPACK_IMPORTED_MODULE_31__frontpage_frontpage_component__["a" /* FrontpageComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_user_information_component__["a" /* UserInformationComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_component__["a" /* UserInformationComponent */],
             __WEBPACK_IMPORTED_MODULE_18__frontpage_login_callback_login_callback_component__["a" /* LoginCallbackComponent */],
             __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__["a" /* GoHomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_search_configuration_component__["a" /* SearchConfigurationComponent */]
+            __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_component__["a" /* SearchConfigurationComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__shared_components_user_accounts_component__["a" /* UserAccountsComponent */]
         ],
         bootstrap: [
             __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]
@@ -262,14 +240,24 @@ AppModule = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AUTH_CONFIG; });
-var AUTH_CONFIG = {
+
+var PROD_AUTH_CONFIG = {
+    CLIENT_ID: 'JgPmVv4NkeKrx4igeWNXwCxeJRoxscyA',
+    CLIENT_DOMAIN: 'bhabani.auth0.com',
+    AUDIENCE: 'http://peeknmake.com',
+    REDIRECT: 'http://peeknmake.com/loginCallback',
+    SCOPE: 'openid profile email'
+};
+var DEV_AUTH_CONFIG = {
     CLIENT_ID: 'eKCAmr7JzR6jsQeVLzbXKE3CGtRBBzR2',
     CLIENT_DOMAIN: 'bhabani.auth0.com',
     AUDIENCE: 'http://localhost:3000',
     REDIRECT: 'http://localhost:3000/loginCallback',
     SCOPE: 'openid profile email'
 };
+var AUTH_CONFIG = (__WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production) ? PROD_AUTH_CONFIG : DEV_AUTH_CONFIG;
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/auth-config.js.map
 
 /***/ }),
@@ -315,7 +303,7 @@ var AuthService = (function () {
             scope: __WEBPACK_IMPORTED_MODULE_3__auth_config__["a" /* AUTH_CONFIG */].SCOPE
         });
         this.user = new __WEBPACK_IMPORTED_MODULE_5__shared_Helper_user__["a" /* User */]("Guest", "Guest@sns.com");
-        this.userChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */](true);
+        this.userChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */](true);
         this.loggedIn$ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](this.loggedIn);
         // If authenticated, set local profile property and update login status subject
         // If token is expired, log out to clear any data from localStorage
@@ -382,6 +370,8 @@ var AuthService = (function () {
         localStorage.removeItem('profile');
         localStorage.removeItem('expires_at');
         this.userProfile = undefined;
+        this.user = new __WEBPACK_IMPORTED_MODULE_5__shared_Helper_user__["a" /* User */]("Guest", "Guest@sns.com");
+        this.userChangeEvent.emit(this.user);
         this.setLoggedIn(false);
     };
     Object.defineProperty(AuthService.prototype, "authenticated", {
@@ -403,11 +393,11 @@ var AuthService = (function () {
     return AuthService;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]) === "function" && _a || Object)
 ], AuthService.prototype, "userChangeEvent", void 0);
 AuthService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], AuthService);
 
@@ -424,7 +414,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  /* border: 3px solid rgb(195, 195, 197);; */\n  padding: 3px;\n  height: 42px;\n  /* border-radius: 5px; */\n  outline: none;\n  /* color: #9DBFAF; */\n  font-size: 15px;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 52px;\n  /* border: 1px solid rgb(98, 98, 100); */\n  background: rgb(255, 255, 255);\n  text-align: center;\n  color: rgb(54, 54, 54);\n  /* border-radius: 5px; */\n  cursor: pointer;\n  font-size: 20px;\n}\n.frontpage{\n    height: 100vh;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center; \n    background: url(" + __webpack_require__("../../../../../src/assets/mainpic.png") + ")  no-repeat center;\n}\n/*Resize the wrap to see the search bar change!*/\n.wrap{\n      height: 50px;\n    width:50%;\n  position: absolute;\n   top: 40%;\n  left: 20%;\n  /*transform: translate(-50%, -50%); */\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.sns-link-button{\n    background-color: grey;\n    color: white;\n    margin-top: 10px;\n    margin-left: 40%;\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n\n.dropbtn:hover, .dropbtn:focus {\n  background-color: #2980B9;\n}\n\n.suggestion-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n\n.suggestion-dropdown-content {\n\n  float: left;\n  width: 99%;\n  padding: 1px;\n  display: none;\n  position: absolute;\n  /* background-color: #e7e3e3; */\n  min-width: 160px;\n  overflow: auto;\n  -webkit-transform: translate(0, 52px);\n          transform: translate(0, 52px); \n  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n  z-index: 1;\n  list-style-type:none\n}\n\n.suggestion-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n\n.suggestion-dropdown ul{\n    -webkit-padding-start: 5px; \n}\n.suggestion-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n.suggestion-show {display:block;}\n\n.advanceSearch {\n    /* display: inline; */\n    min-height: 30px;\n    border: 1px solid rgb(98, 98, 100);\n}\n\n.topLinks{\n    color : black;\n}", ""]);
+exports.push([module.i, "\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.searchTerm {\n  float: left;\n  width: 100%;\n  /* border: 1px solid rgb(0, 0, 0);; */\n  padding: 3px;\n  height: 42px;\n  /* border-radius: 5px; */\n  outline: none;\n  /* color: #9DBFAF; */\n  font-size: 15px;\n}\n\n.searchButton {\n  position: absolute;  \n  right: -50px;\n    width: 60px;\n    height: 52px;\n  /* border: 1px solid rgb(98, 98, 100); */\n  background: rgb(255, 255, 255);\n  text-align: center;\n  color: rgb(54, 54, 54);\n  /* border-radius: 5px; */\n  cursor: pointer;\n  font-size: 20px;\n}\n.frontpage{\n    height: 100vh;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center; \n    background: url(" + __webpack_require__("../../../../../src/assets/mainpic.png") + ")  no-repeat center;\n}\n/*Resize the wrap to see the search bar change!*/\n.wrap-middle{\n      height: 50px;\n    width:50%;\n  position: absolute;\n   top: 35%;\n  left: 20%;\n  /*transform: translate(-50%, -50%); */\n  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */\n}\n\n.wrap-lower{\n    height: 50px;\n    max-height:25%;\n  width:80%;\nposition: absolute;\n top: 65%;\nleft: 10%;\n/*transform: translate(-50%, -50%); */\n/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */\n}\n\n\n.dropbtn:hover, .dropbtn:focus {\n  background-color: #2980B9;\n}\n\n.suggestion-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n\n.suggestion-dropdown-content {\n\n  float: left;\n  width: 99%;\n  padding: 1px;\n  display: none;\n  position: absolute;\n  /* background-color: #e7e3e3; */\n  min-width: 160px;\n  overflow: auto;\n  -webkit-transform: translate(0, 52px);\n          transform: translate(0, 52px); \n  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n  z-index: 1;\n  list-style-type:none\n}\n\n.suggestion-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n\n.suggestion-dropdown ul{\n    -webkit-padding-start: 5px; \n}\n.suggestion-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n.suggestion-show {display:block;}\n\n.sns-search-options {\n    min-height: 24px;\n    height: 20%;\n}\n\n.topLinks{\n    color : black;\n}\n\n.sns-search-type {\n    display: inline\n}", ""]);
 
 // exports
 
@@ -437,7 +427,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <img src=\"assets/mainpic.png\"> -->\n<div class=\"frontpage\">\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n    <div class=\"wrap \">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div>\n                    <button class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n                        <i class=\"material-icons\">phonelink_setup</i>\n                        <span>Link Devices</span>\n                    </button>\n                </div>\n\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <div class=\"advanceSearch\">\n                            <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                                <input type=\"radio\" id=\"option-1\" class=\"mdl-radio__button\" name=\"options\" value=\"1\" checked>\n                                <span class=\"mdl-radio__label\">recipe</span>\n                            </label>\n                            <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                                <input type=\"radio\" id=\"option-2\" class=\"mdl-radio__button\" name=\"options\" value=\"2\">\n                                <span class=\"mdl-radio__label\">ingredients</span>\n                            </label>\n                        </div>\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </form>\n    </div>\n\n\n</div>"
+module.exports = "<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n\n    <div class=\"wrap-middle\">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div class=\"sns-search-options\">\n                    <div *ngIf=\"showSuggestDropDown\">\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\" checked>\n                            <span class=\"mdl-radio__label\">All</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Ingredients</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Recipe</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Advanced</span>\n                        </label>\n                    </div>\n                </div>\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n\n            </div>\n        </form>\n        <app-user-accounts></app-user-accounts>\n    </div>\n\n    <div class=\"wrap-lower\">\n        --\n    </div>\n</div>"
 
 /***/ }),
 
@@ -514,7 +504,6 @@ var FrontpageComponent = (function () {
         if (this.showSuggestDropDown == false)
             return 0;
         var element = document.getElementById('search');
-        console.log(' event target is =' + event.target);
         if (!element.contains(event.target)) {
             this.showSuggestDropDown = false;
             console.log(" clicked outside");
@@ -523,7 +512,7 @@ var FrontpageComponent = (function () {
     return FrontpageComponent;
 }());
 FrontpageComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         host: { '(document:click)': 'onClick($event)', },
         selector: 'app-frontpage',
         template: __webpack_require__("../../../../../src/app/frontpage/frontpage.component.html"),
@@ -565,7 +554,7 @@ var LoginCallbackComponent = (function () {
     return LoginCallbackComponent;
 }());
 LoginCallbackComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-callback',
         template: "<p>Loading... </p>",
         styles: []
@@ -647,11 +636,11 @@ var FilterComponent = (function () {
     return FilterComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], FilterComponent.prototype, "filterlistToggle", void 0);
 FilterComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'filters',
         template: __webpack_require__("../../../../../src/app/main/filter/filter.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/filter/filter.component.css")],
@@ -909,11 +898,11 @@ var MainComponent = (function () {
     return MainComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]) === "function" && _a || Object)
 ], MainComponent.prototype, "solrSearch", void 0);
 MainComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'main-list',
         template: __webpack_require__("../../../../../src/app/main/main.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/main.component.css")],
@@ -987,7 +976,7 @@ var SolrSearchComponent = (function () {
         this.youtubePlayer = youtubePlayer;
         this.notificationService = notificationService;
         this.facetService = facetService;
-        this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
+        this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
         this.pagenum = 0;
         this.searchForm = this.fb.group({
             query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required]
@@ -996,6 +985,7 @@ var SolrSearchComponent = (function () {
     SolrSearchComponent.prototype.setSearchObject = function (param) {
         var _this = this;
         this.searObject = param;
+        this.queryinput.value = param.searchTerm;
         console.log("changing the search object to " + this.searObject.searchTerm);
         this.search().then(function (data) { _this.videosUpdated.emit(data); });
     };
@@ -1042,19 +1032,19 @@ var SolrSearchComponent = (function () {
     return SolrSearchComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('queryinput'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('queryinput'),
     __metadata("design:type", Object)
 ], SolrSearchComponent.prototype, "queryinput", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], SolrSearchComponent.prototype, "videosUpdated", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], SolrSearchComponent.prototype, "loadingInProgress", void 0);
 SolrSearchComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'solr-search',
         template: __webpack_require__("../../../../../src/app/main/solr-search/solr-search.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/solr-search/solr-search.component.css")],
@@ -1125,15 +1115,15 @@ var VideoPlayerComponent = (function () {
         this.repeat = false;
         this.fullscreenActive = false;
         this.showPlayer = true;
-        this.repeatActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.shuffleActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.nextVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.prevVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.playFirstInPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.clearPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.exportPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.importPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
-        this.closePlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
+        this.repeatActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.shuffleActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.nextVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.prevVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.playFirstInPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.clearPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.exportPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.importPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
+        this.closePlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
         this.youtubePlayer.playPauseEvent.subscribe(function (event) {
             _this.superMinPlayer = !_this.superMinPlayer;
             _this.playingEvent = event;
@@ -1236,43 +1226,43 @@ var VideoPlayerComponent = (function () {
     return VideoPlayerComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "repeatActive", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "shuffleActive", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "nextVideoEvent", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "prevVideoEvent", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "playFirstInPlaylist", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "clearPlaylist", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "exportPlaylist", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "importPlaylist", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideoPlayerComponent.prototype, "closePlaylist", void 0);
 VideoPlayerComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'video-player',
         template: __webpack_require__("../../../../../src/app/main/video-player/video-player.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/video-player/video-player.component.css")]
@@ -1334,7 +1324,7 @@ var VideosListComponent = (function () {
     function VideosListComponent(youtubePlayer, playlistService) {
         this.youtubePlayer = youtubePlayer;
         this.playlistService = playlistService;
-        this.videoPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
+        this.videoPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
     }
     VideosListComponent.prototype.play = function (video) {
         console.log(video);
@@ -1347,19 +1337,19 @@ var VideosListComponent = (function () {
     return VideosListComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosListComponent.prototype, "videoList", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosListComponent.prototype, "loadingInProgress", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], VideosListComponent.prototype, "videoPlaylist", void 0);
 VideosListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'videos-list',
         template: __webpack_require__("../../../../../src/app/main/videos-list/videos-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/videos-list/videos-list.component.css")]
@@ -1473,27 +1463,27 @@ var VideosPlaylistComponent = (function () {
     return VideosPlaylistComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosPlaylistComponent.prototype, "playlistToggle", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosPlaylistComponent.prototype, "videoPlaylist", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosPlaylistComponent.prototype, "playlistNames", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosPlaylistComponent.prototype, "repeat", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
     __metadata("design:type", Object)
 ], VideosPlaylistComponent.prototype, "shuffle", void 0);
 VideosPlaylistComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'videos-playlist',
         template: __webpack_require__("../../../../../src/app/main/videos-playlist/videos-playlist.component.html"),
         styles: [__webpack_require__("../../../../../src/app/main/videos-playlist/videos-playlist.component.css")]
@@ -1526,7 +1516,7 @@ var PageNotFoundComponent = (function () {
     return PageNotFoundComponent;
 }());
 PageNotFoundComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         template: '<p>Page Not Fount!</p>'
     })
 ], PageNotFoundComponent);
@@ -1708,7 +1698,7 @@ var GoHomeComponent = (function () {
     return GoHomeComponent;
 }());
 GoHomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-go-home-component',
         template: "<div  (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i style=\"width:20%\" class=\"material-icons\">home</i>\n    <div class=\"mdl-layout-title\" style=\"font-family:cursive\">Shake & Stir</div>\n    </div>"
     }),
@@ -1720,32 +1710,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".pref-dropdown-content {\n    float: left;\n    padding: 1px;\n    display: none;\n    position: absolute;\n    min-width: 50px;\n    overflow: auto;\n    -webkit-transform: translate(50, 50px);\n            transform: translate(50, 50px); \n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\n    z-index: 10;\n    list-style-type:none\n  }\n.pref-dropdown {\n    padding-left: 5px;\n  position: relative;\n  background-color: white;\n  display: inline-block;\n}\n.pref-dropdown-content li {\n  color: black;\n  padding: 2px 2px;\n  text-decoration: none;\n  display: block;\n}\n.pref-dropdown ul{\n    -webkit-padding-start: 5px; \n}\n.pref-dropdown li:hover {background-color: rgb(247, 242, 242)}\n\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<button type=\"button\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">help</i>\n    <span>about</span>\n</button>\n\n\n<button type=\"button\" (click)=\"setShowconfig()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">settings</i>\n    <span>set Preferene</span>\n</button>\n\n<div *ngIf=\"showConfig\" class=\"pref-dropdown pref-dropdown-content pref-dropdown-show\">\n    <ul>\n        <li>option1</li>\n        <li>option2</li>\n        <li>option3</li>\n    </ul>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/components/search-configuration/search-configuration.component.ts":
+/***/ "../../../../../src/app/shared/components/search-configuration.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1774,10 +1739,9 @@ var SearchConfigurationComponent = (function () {
     return SearchConfigurationComponent;
 }());
 SearchConfigurationComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-search-configuration',
-        template: __webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/shared/components/search-configuration/search-configuration.component.css")]
+        template: "\n    <button type=\"button\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">help</i>\n        <span>about</span>\n    </button>\n    <button type=\"button\" (click)=\"setShowconfig()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">settings</i>\n        <span>set Preferene</span>\n    </button>"
     }),
     __metadata("design:paramtypes", [])
 ], SearchConfigurationComponent);
@@ -1786,32 +1750,60 @@ SearchConfigurationComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/components/user-information/user-information.component.css":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "../../../../../src/app/shared/components/user-accounts.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserAccountsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 
-// module
-exports.push([module.i, ".mdl-chip__contact{\n    max-height: 50px\n}\n.mdl-chip:hover {\n    cursor: pointer;\n}", ""]);
+var UserAccountsComponent = (function () {
+    function UserAccountsComponent(authService) {
+        var _this = this;
+        this.authService = authService;
+        this.isLoggedin = false;
+        this.isLoggedin = authService.loggedIn;
+        this.authService.userChangeEvent.subscribe(function (user) { return _this.isLoggedin = (user.userName == "Guest") ? false : true; });
+    }
+    UserAccountsComponent.prototype.ngOnInit = function () {
+    };
+    UserAccountsComponent.prototype.signOutUser = function () {
+        this.authService.logout();
+    };
+    UserAccountsComponent.prototype.singInUser = function () {
+        this.authService.login();
+    };
+    return UserAccountsComponent;
+}());
+UserAccountsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+        selector: 'app-user-accounts',
+        template: "\n    <div class=\"sns-link-account\">\n    <div class=\"sns-link-buttons\">\n        <button *ngIf=\"!isLoggedin\" (click)=\"singInUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing in</span>\n        </button>\n        <button *ngIf=\"isLoggedin\" (click)=\"signOutUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing out</span>\n        </button>\n        <button class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">phonelink_setup</i>\n            <span>Link Devices</span>\n        </button>\n    </div>\n    </div>\n    ",
+        styles: ['.sns-link-account {margin-top: 20px;display:inline-block; width:100%}',
+            '.sns-link-buttons{display: flex;justify-content: center}',
+            '.sns-link-button{background-color: grey;color: white;margin:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}'
+        ]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
+], UserAccountsComponent);
 
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
+var _a;
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-accounts.component.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/components/user-information/user-information.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div (click)=\"selectUser()\" style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n    </span>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/shared/components/user-information/user-information.component.ts":
+/***/ "../../../../../src/app/shared/components/user-information.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1839,18 +1831,16 @@ var UserInformationComponent = (function () {
         this.user = this.authService.loggedUser;
         this.authService.userChangeEvent.subscribe(function (user) { return _this.user = user; });
     }
-    UserInformationComponent.prototype.selectUser = function () {
-        this.authService.login();
-    };
     UserInformationComponent.prototype.ngOnInit = function () {
     };
     return UserInformationComponent;
 }());
 UserInformationComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-user-information',
-        template: __webpack_require__("../../../../../src/app/shared/components/user-information/user-information.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/shared/components/user-information/user-information.component.css")]
+        template: "\n    <div style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n    </span>\n    </div>\n    ",
+        styles: ['.mdl-chip__contact{ max-height: 50px }',
+            '.mdl-chip:hover { cursor: pointer }']
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
 ], UserInformationComponent);
@@ -1900,7 +1890,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var LazyScroll = (function () {
     function LazyScroll(element) {
         this.element = element;
-        this.OnScrollMethod = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]();
+        this.OnScrollMethod = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]();
         this._element = this.element.nativeElement;
         if (!this.scrollTrigger) {
             this.scrollTrigger = 1;
@@ -1920,21 +1910,21 @@ var LazyScroll = (function () {
     return LazyScroll;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Input */])('ScrollDistance'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])('ScrollDistance'),
     __metadata("design:type", Number)
 ], LazyScroll.prototype, "scrollTrigger", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
     __metadata("design:type", Object)
 ], LazyScroll.prototype, "OnScrollMethod", void 0);
 LazyScroll = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* Directive */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Directive */])({
         selector: '[LazyScroll]',
         host: {
             '(window:scroll)': 'onScroll($event)'
         }
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* ElementRef */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* ElementRef */]) === "function" && _a || Object])
 ], LazyScroll);
 
 var _a;
@@ -1968,7 +1958,7 @@ var PlaylistItemNamePipe = (function () {
     return PlaylistItemNamePipe;
 }());
 PlaylistItemNamePipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Pipe */])({
         name: 'playlistItemName'
     })
 ], PlaylistItemNamePipe);
@@ -2019,7 +2009,7 @@ var VideoDurationPipe = (function () {
     return VideoDurationPipe;
 }());
 VideoDurationPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Pipe */])({
         name: 'videoDuration'
     })
 ], VideoDurationPipe);
@@ -2050,7 +2040,7 @@ var VideoLikesPipe = (function () {
     return VideoLikesPipe;
 }());
 VideoLikesPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Pipe */])({
         name: 'videoLikes'
     })
 ], VideoLikesPipe);
@@ -2081,7 +2071,7 @@ var VideoViewsPipe = (function () {
     return VideoViewsPipe;
 }());
 VideoViewsPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Pipe */])({
         name: 'videoViews'
     })
 ], VideoViewsPipe);
@@ -2118,7 +2108,7 @@ var FacetService = (function () {
     return FacetService;
 }());
 FacetService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])()
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])()
 ], FacetService);
 
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/facetService.js.map
@@ -2267,7 +2257,7 @@ var IndexDataService = (function () {
     return IndexDataService;
 }());
 IndexDataService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Jsonp */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Jsonp */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__notification_service__["a" /* NotificationService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_7__facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__facetService__["a" /* FacetService */]) === "function" && _d || Object])
 ], IndexDataService);
 
@@ -2307,7 +2297,7 @@ var NotificationService = (function () {
     return NotificationService;
 }());
 NotificationService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [])
 ], NotificationService);
 
@@ -2373,7 +2363,7 @@ var PlaylistStoreService = (function () {
     return PlaylistStoreService;
 }());
 PlaylistStoreService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [])
 ], PlaylistStoreService);
 
@@ -2438,7 +2428,7 @@ var YoutubeApiService = (function () {
     return YoutubeApiService;
 }());
 YoutubeApiService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */]) === "function" && _b || Object])
 ], YoutubeApiService);
 
@@ -2469,8 +2459,8 @@ var YoutubePlayerService = (function () {
     function YoutubePlayerService(notificationService) {
         this.notificationService = notificationService;
         this.isPlayerStarted = false;
-        this.videoChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */](true);
-        this.playPauseEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */](true);
+        this.videoChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */](true);
+        this.playPauseEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */](true);
     }
     Object.defineProperty(YoutubePlayerService, "win", {
         get: function () {
@@ -2536,15 +2526,15 @@ var YoutubePlayerService = (function () {
     return YoutubePlayerService;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]) === "function" && _a || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]) === "function" && _a || Object)
 ], YoutubePlayerService.prototype, "videoChangeEvent", void 0);
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* EventEmitter */]) === "function" && _b || Object)
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* EventEmitter */]) === "function" && _b || Object)
 ], YoutubePlayerService.prototype, "playPauseEvent", void 0);
 YoutubePlayerService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Injectable */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */]) === "function" && _c || Object])
 ], YoutubePlayerService);
 
@@ -2583,15 +2573,17 @@ var environment = {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 
 
 
-if (__WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].production) {
-    // enableProdMode();
+
+if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].production) {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main.js.map
 
 /***/ }),
