@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-about',
   template: `
     <p>
-      about Works!
+      The Idea About PeekNMake to give people find relevant recipe searches
     </p>
   `,
   styles: []

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
     selector: 'app-search-configuration',
     template: `
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+    <button type="button" (click)="goToAboutPage()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
         <i class="material-icons">help</i>
         <span>about</span>
     </button>
@@ -16,13 +17,17 @@ import { Component, OnInit } from '@angular/core';
 export class SearchConfigurationComponent implements OnInit {
 
     public showConfig = false;
-    constructor() { }
+    constructor(private router:Router) { }
 
     ngOnInit() {
     }
     public setShowconfig() {
         console.log(" changing the showConfig value");
         this.showConfig = true;
+        this.router.navigate(['/user-preferences']);
+    }
+    public goToAboutPage() {
+        this.router.navigate(['/about']);
     }
 
 }
