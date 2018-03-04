@@ -16,7 +16,7 @@ export class VideoPlayerComponent implements AfterContentInit {
 	private repeat: boolean = false;
 	private fullscreenActive: boolean = false;
 
-	private showPlayer:boolean = true;
+	public showPlayer:boolean = true;
 
 	@Output() repeatActive = new EventEmitter();
 	@Output() shuffleActive = new EventEmitter();

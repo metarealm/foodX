@@ -40,7 +40,7 @@ export class User {
         return this._gender;
     }
 
-    get pictureLInk():any{
+    get pictureLink():any{
         return this._pictureLink;
     }
 }

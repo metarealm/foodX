@@ -7,6 +7,7 @@ import { MdlModule } from '@angular-mdl/core';
 import { MaterialModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutRoutingModule } from './about/about-routing.module';
 
 
 // Components

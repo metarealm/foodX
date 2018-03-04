@@ -28,7 +28,7 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class UserAccountsComponent implements OnInit {
 
-    private isLoggedin = false;
+    public isLoggedin = false;
     constructor(private authService: AuthService) {
         this.isLoggedin = authService.loggedIn;
         this.authService.userChangeEvent.subscribe((user) => this.isLoggedin  = (user.userName == "Guest")? false:true);

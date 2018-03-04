@@ -1,2 +1,2 @@
-ng build --env=prod
+ng build --prod
 scp -r dist NodeServer:./foodX/
