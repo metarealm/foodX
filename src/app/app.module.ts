@@ -18,9 +18,9 @@ import { VideoPlayerComponent } from "./main/video-player/video-player.component
 import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
-import { PageNotFoundComponent } from './not-found.component';
+import { PageNotFoundComponent } from './shared/components/not-found.component';
 import { UserInformationComponent } from './shared/components/user-information.component';
-import { LoginCallbackComponent } from './frontpage/login-callback/login-callback.component';
+import { LoginCallbackComponent } from './shared/components/login-callback.component';
 
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";

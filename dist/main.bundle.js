@@ -21,8 +21,8 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_main_component__ = __webpack_require__("../../../../../src/app/main/main.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__frontpage_frontpage_component__ = __webpack_require__("../../../../../src/app/frontpage/frontpage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__frontpage_login_callback_login_callback_component__ = __webpack_require__("../../../../../src/app/frontpage/login-callback/login-callback.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_components_not_found_component__ = __webpack_require__("../../../../../src/app/shared/components/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_components_login_callback_component__ = __webpack_require__("../../../../../src/app/shared/components/login-callback.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -39,8 +39,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__frontpage_frontpage_component__["a" /* FrontpageComponent */] },
     { path: 'search', component: __WEBPACK_IMPORTED_MODULE_2__main_main_component__["a" /* MainComponent */] },
-    { path: 'loginCallback', component: __WEBPACK_IMPORTED_MODULE_5__frontpage_login_callback_login_callback_component__["a" /* LoginCallbackComponent */] },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_4__not_found_component__["a" /* PageNotFoundComponent */] }
+    { path: 'loginCallback', component: __WEBPACK_IMPORTED_MODULE_5__shared_components_login_callback_component__["a" /* LoginCallbackComponent */] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_4__shared_components_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -113,9 +113,9 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_filter_filter_component__ = __webpack_require__("../../../../../src/app/main/filter/filter.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_solr_search_solr_search_component__ = __webpack_require__("../../../../../src/app/main/solr-search/solr-search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_youtube_player__ = __webpack_require__("../../../../ng2-youtube-player/modules/ng2-youtube-player.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__shared_components_not_found_component__ = __webpack_require__("../../../../../src/app/shared/components/not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_component__ = __webpack_require__("../../../../../src/app/shared/components/user-information.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__frontpage_login_callback_login_callback_component__ = __webpack_require__("../../../../../src/app/frontpage/login-callback/login-callback.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_components_login_callback_component__ = __webpack_require__("../../../../../src/app/shared/components/login-callback.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__ = __webpack_require__("../../../../../src/app/shared/services/youtube-api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__ = __webpack_require__("../../../../../src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__shared_services_playlist_store_service__ = __webpack_require__("../../../../../src/app/shared/services/playlist-store.service.ts");
@@ -201,7 +201,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__main_videos_list_videos_list_component__["a" /* VideosListComponent */],
             __WEBPACK_IMPORTED_MODULE_12__main_video_player_video_player_component__["a" /* VideoPlayerComponent */],
             __WEBPACK_IMPORTED_MODULE_11__main_videos_playlist_videos_playlist_component__["a" /* VideosPlaylistComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__not_found_component__["a" /* PageNotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__shared_components_not_found_component__["a" /* PageNotFoundComponent */],
             __WEBPACK_IMPORTED_MODULE_9__main_main_component__["a" /* MainComponent */],
             __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_duration_pipe__["a" /* VideoDurationPipe */],
             __WEBPACK_IMPORTED_MODULE_27__shared_pipes_video_likes_pipe__["a" /* VideoLikesPipe */],
@@ -212,7 +212,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_14__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
             __WEBPACK_IMPORTED_MODULE_31__frontpage_frontpage_component__["a" /* FrontpageComponent */],
             __WEBPACK_IMPORTED_MODULE_17__shared_components_user_information_component__["a" /* UserInformationComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__frontpage_login_callback_login_callback_component__["a" /* LoginCallbackComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__shared_components_login_callback_component__["a" /* LoginCallbackComponent */],
             __WEBPACK_IMPORTED_MODULE_32__shared_components_go_home_component__["a" /* GoHomeComponent */],
             __WEBPACK_IMPORTED_MODULE_33__shared_components_search_configuration_component__["a" /* SearchConfigurationComponent */],
             __WEBPACK_IMPORTED_MODULE_34__shared_components_user_accounts_component__["a" /* UserAccountsComponent */]
@@ -427,7 +427,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n\n    <div class=\"wrap-middle\">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div class=\"sns-search-options\">\n                    <div *ngIf=\"showSuggestDropDown\">\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\" checked>\n                            <span class=\"mdl-radio__label\">All</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Ingredients</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Recipe</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Advanced</span>\n                        </label>\n                    </div>\n                </div>\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n\n            </div>\n        </form>\n        <app-user-accounts></app-user-accounts>\n    </div>\n\n    <div class=\"wrap-lower\">\n        --\n    </div>\n</div>"
+module.exports = "\n<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n    <div class=\"topLinks\" style=\"padding:25px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n\n    <div class=\"wrap-middle\">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch($event)\">\n            <div id=\"search\" class=\"search\">\n                <div class=\"sns-search-options\">\n                    <div *ngIf=\"showSuggestDropDown\">\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\" checked>\n                            <span class=\"mdl-radio__label\">All</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Ingredients</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Recipe</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Advanced</span>\n                        </label>\n                    </div>\n                </div>\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n\n            </div>\n        </form>\n        <app-user-accounts></app-user-accounts>\n    </div>\n\n    <div class=\"wrap-lower\">\n        --\n    </div>\n</div>"
 
 /***/ }),
 
@@ -473,6 +473,7 @@ var FrontpageComponent = (function () {
         this.showSuggestDropDown = false;
         this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* Validators */].required] });
         this.searchtype = ['ingredients', 'recipe titles'];
+        this._suggestTimeout = null;
         this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
         this.filteredStates = this.stateCtrl.valueChanges
             .startWith(null)
@@ -480,9 +481,15 @@ var FrontpageComponent = (function () {
     }
     FrontpageComponent.prototype.suggest = function (term) {
         var _this = this;
-        this.solrService.suggest(term).then(function (items) {
-            _this.items = items;
-        });
+        if (this._suggestTimeout) {
+            window.clearTimeout(this._suggestTimeout);
+        }
+        this._suggestTimeout = window.setTimeout(function () {
+            _this._suggestTimeout = null;
+            _this.solrService.suggest(term).then(function (items) {
+                _this.items = items;
+            });
+        }, 100);
     };
     FrontpageComponent.prototype.onSearchInputClick = function () {
         this.showSuggestDropDown = true;
@@ -523,47 +530,6 @@ FrontpageComponent = __decorate([
 
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/frontpage.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/frontpage/login-callback/login-callback.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginCallbackComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LoginCallbackComponent = (function () {
-    function LoginCallbackComponent(authService) {
-        this.authService = authService;
-    }
-    LoginCallbackComponent.prototype.ngOnInit = function () {
-        this.authService.handleAuth();
-    };
-    return LoginCallbackComponent;
-}());
-LoginCallbackComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
-        selector: 'app-callback',
-        template: "<p>Loading... </p>",
-        styles: []
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
-], LoginCallbackComponent);
-
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/login-callback.component.js.map
 
 /***/ }),
 
@@ -1496,35 +1462,6 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/not-found.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageNotFoundComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var PageNotFoundComponent = (function () {
-    function PageNotFoundComponent() {
-        this.title = 'app works!';
-    }
-    return PageNotFoundComponent;
-}());
-PageNotFoundComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
-        template: '<p>Page Not Fount!</p>'
-    })
-], PageNotFoundComponent);
-
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/not-found.component.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/shared/Helper/indexdata.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1710,6 +1647,76 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/shared/components/login-callback.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginCallbackComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LoginCallbackComponent = (function () {
+    function LoginCallbackComponent(authService) {
+        this.authService = authService;
+    }
+    LoginCallbackComponent.prototype.ngOnInit = function () {
+        this.authService.handleAuth();
+    };
+    return LoginCallbackComponent;
+}());
+LoginCallbackComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+        selector: 'app-callback',
+        template: "<p>Loading... </p>",
+        styles: []
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
+], LoginCallbackComponent);
+
+var _a;
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/login-callback.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/components/not-found.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageNotFoundComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var PageNotFoundComponent = (function () {
+    function PageNotFoundComponent() {
+        this.title = 'app works!';
+    }
+    return PageNotFoundComponent;
+}());
+PageNotFoundComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+        template: '<p>Page Not Fount!</p>'
+    })
+], PageNotFoundComponent);
+
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/not-found.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/shared/components/search-configuration.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1838,7 +1845,7 @@ var UserInformationComponent = (function () {
 UserInformationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
         selector: 'app-user-information',
-        template: "\n    <div style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n    </span>\n    </div>\n    ",
+        template: "\n    <div style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user._pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user._userName}}</span>\n    </span>\n\n\n    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n        <ul>\n            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                <div class=\"\">{{item}}</div>\n            </li>\n        </ul>\n    </div>\n\n    </div>\n    ",
         styles: ['.mdl-chip__contact{ max-height: 50px }',
             '.mdl-chip:hover { cursor: pointer }']
     }),

@@ -2,7 +2,8 @@ var request = require('request');
 var constants = require('./constants');
 
 exports.selectFromSolr = function (query) {
-    console.info('inside post solr data rest call ');
+    //console.info('inside post solr data rest call with query')
+    //console.log(query);
     return new Promise((resolve, reject) => {
         let options = {
             url: constants.SOLR_URI +'/select',
@@ -10,8 +11,8 @@ exports.selectFromSolr = function (query) {
         };
 
         request(options, function (error, response, body) {
-            console.log(`STATUS: ${response.statusCode}`);
-            console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
+            //console.log(`STATUS: ${response.statusCode}`);
+            //console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
             var searchResult = '';
             if (error) {
                 reject(new Error('Failed to load page, status code: ' + response.statusCode));
@@ -25,7 +26,8 @@ exports.selectFromSolr = function (query) {
 }
 
 exports.suggestFromSolr = function (query) {
-    console.info('inside post solr data rest call ');
+    //console.info('inside post solr data rest call with query');
+    //console.log(query);
     return new Promise((resolve, reject) => {
         let options = {
             url: constants.SOLR_URI +'/suggest',
@@ -33,8 +35,8 @@ exports.suggestFromSolr = function (query) {
         };
 
         request(options, function (error, response, body) {
-            console.log(`STATUS: ${response.statusCode}`);
-            console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
+            //console.log(`STATUS: ${response.statusCode}`);
+            //console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
             var searchResult = '';
             if (error) {
                 reject(new Error('Failed to load page, status code: ' + response.statusCode));
