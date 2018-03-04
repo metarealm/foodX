@@ -11,6 +11,14 @@
   top: calc(50% - 35px);
   left: calc(50% - 16px);
 }
+.mdl-layout {
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;  
+}
+
+.mdl-layout::-webkit-scrollbar { 
+    display: none; 
+}
 
 .mdl-layout__header {
   height: 75px;

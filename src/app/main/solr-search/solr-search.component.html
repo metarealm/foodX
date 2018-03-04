@@ -1,4 +1,4 @@
-<form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
+<form [formGroup]="searchForm" (ngSubmit)="doSearch()">
     <div class="mdl-textfield mdl-js-textfield" style="width: 80%;">
         <input class="mdl-textfield__input" (change)="selectedenvent()" list="browsers" #queryinput (keyup)="suggest(queryinput.value)"
             formControlName="query" type="text" id="query" autocomplete="off" />

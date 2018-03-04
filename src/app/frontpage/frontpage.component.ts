@@ -19,7 +19,7 @@ export class FrontpageComponent {
     private stateCtrl: FormControl;
     private filteredStates: any;
     private items: string[];
-    private showSuggestDropDown = false;
+    public showSuggestDropDown = false;
     public searchForm = this.fb.group({ query: ["", Validators.required] });
     private searchtype = ['ingredients', 'recipe titles'];
     private _suggestTimeout = null;

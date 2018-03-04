@@ -9,6 +9,10 @@ const appRoutes: Routes = [
   { path: '',component: FrontpageComponent},
   { path: 'search',   component: MainComponent},
   { path: 'loginCallback',component: LoginCallbackComponent},
+  {
+    path: 'about',
+    loadChildren: './about/about.module#AboutModule',
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
  

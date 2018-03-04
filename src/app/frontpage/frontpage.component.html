@@ -6,7 +6,7 @@
     </div>
 
     <div class="wrap-middle">
-        <form [formGroup]="searchForm" (ngSubmit)="gotoSearch($event)">
+        <form [formGroup]="searchForm" (ngSubmit)="gotoSearch()">
             <div id="search" class="search">
                 <div class="sns-search-options">
                     <div *ngIf="showSuggestDropDown">
