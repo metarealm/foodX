@@ -10,6 +10,16 @@ import { User } from '../Helper/user'
         <img class="mdl-chip__contact" src={{user._pictureLink}}>
         <span class="mdl-chip__text">{{user._userName}}</span>
     </span>
+
+
+    <div id="myDropdown" class="suggestion-dropdown suggestion-dropdown-content suggestion-show">
+        <ul>
+            <li *ngFor="let item of items" (click)="searchItemSelected(item)">
+                <div class="">{{item}}</div>
+            </li>
+        </ul>
+    </div>
+
     </div>
     `,
     styles: ['.mdl-chip__contact{ max-height: 50px }',

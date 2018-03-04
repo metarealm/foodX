@@ -22,6 +22,7 @@ export class FrontpageComponent {
     private showSuggestDropDown = false;
     public searchForm = this.fb.group({ query: ["", Validators.required] });
     private searchtype = ['ingredients', 'recipe titles'];
+    private _suggestTimeout = null;
 
     constructor(public fb: FormBuilder,
         private route: ActivatedRoute,
@@ -35,9 +36,15 @@ export class FrontpageComponent {
             .map(name => this.filterStates(name));
     }
     public suggest(term: string) {
-        this.solrService.suggest(term).then(items => {
-            this.items = items;
-        });
+        if (this._suggestTimeout) { 
+            window.clearTimeout(this._suggestTimeout);
+        }
+        this._suggestTimeout = window.setTimeout(() => {
+            this._suggestTimeout = null;
+            this.solrService.suggest(term).then(items => {
+                this.items = items;
+            });
+        }, 100);
     }
 
     public onSearchInputClick() {

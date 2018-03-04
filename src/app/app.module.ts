@@ -20,7 +20,7 @@ import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { PageNotFoundComponent } from './shared/components/not-found.component';
 import { UserInformationComponent } from './shared/components/user-information.component';
-import { LoginCallbackComponent } from './frontpage/login-callback/login-callback.component';
+import { LoginCallbackComponent } from './shared/components/login-callback.component';
 
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
