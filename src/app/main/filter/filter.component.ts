@@ -28,9 +28,7 @@ export class FilterComponent implements OnInit {
             this.ingredientfacets = message['Ingredients']['buckets'];
             this.contenttypefacets = message['contenttype']['buckets'];
         });
-
     }
-
     getFilterVideos(): void {
     }
     ngOnInit(): void {
