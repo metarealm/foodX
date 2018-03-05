@@ -24,7 +24,7 @@ export class SearchConfigurationComponent implements OnInit {
     public setShowconfig() {
         console.log(" changing the showConfig value");
         this.showConfig = true;
-        this.router.navigate(['/user-preferences']);
+        this.router.navigate(['/pref']);
     }
     public goToAboutPage() {
         this.router.navigate(['/about']);
