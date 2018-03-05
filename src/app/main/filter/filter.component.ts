@@ -16,19 +16,17 @@ export class FilterComponent implements OnInit {
     videos: IndexedData[];
     selectedVideo: IndexedData;
     likefacets: any;
-    locationfacets:any;
-    ingredientfacets:any;
-    contenttypefacets:any;
+    locationfacets: any;
+    ingredientfacets: any;
+    contenttypefacets: any;
     subscription: Subscription;
 
     constructor(private dataService: FacetService) {
         this.subscription = this.dataService.facet$.subscribe(message => {
-                            console.log(' facet data ');
-                            console.log( message['likes']['buckets']);
-                            this.likefacets=message['likes']['buckets'];
-                            this.locationfacets =message['Recipelocation']['buckets'];
-                            this.ingredientfacets=message['Ingredients']['buckets'];
-                            this.contenttypefacets = message['contenttype']['buckets'];
+            this.likefacets = message['likes']['buckets'];
+            this.locationfacets = message['Recipelocation']['buckets'];
+            this.ingredientfacets = message['Ingredients']['buckets'];
+            this.contenttypefacets = message['contenttype']['buckets'];
         });
 
     }
