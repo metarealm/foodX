@@ -44,7 +44,7 @@ export class FrontpageComponent {
             this.solrService.suggest(term).then(items => {
                 this.items = items;
             });
-        }, 100);
+        }, 200);
     }
 
     public onSearchInputClick() {
