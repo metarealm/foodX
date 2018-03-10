@@ -2,7 +2,7 @@ var request = require('request');
 var constants = require('./constants');
 
 exports.selectFromSolr = function (query) {
-    console.log("constants.SOLR_URI " +constants.SOLR_URI );
+    // console.log("constants.SOLR_URI " +constants.SOLR_URI );
     return new Promise((resolve, reject) => {
         let options = {
             url: constants.SOLR_URI + '/select',
@@ -23,7 +23,7 @@ exports.selectFromSolr = function (query) {
 }
 
 exports.suggestFromSolr = function (query) {
-    console.log("constants.SOLR_URI " +constants.SOLR_URI );
+    // console.log("constants.SOLR_URI " +constants.SOLR_URI );
     return new Promise((resolve, reject) => {
         let options = {
             url: constants.SOLR_URI + '/suggest',

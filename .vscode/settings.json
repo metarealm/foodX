@@ -8,7 +8,8 @@
         "dist/**":true,
         "e2e/**":true,
         "node_modules/**":true,
-        "**/*log":true
+        "**/*log":true,
+        "**/*spec.ts":true
     },
     "editor.detectIndentation": false,
 }

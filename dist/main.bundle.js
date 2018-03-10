@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([4],{
 
 /***/ "../../../../../src async recursive":
 /***/ (function(module, exports, __webpack_require__) {
@@ -6,11 +6,15 @@ webpackJsonp([3],{
 var map = {
 	"./about/about.module": [
 		"../../../../../src/app/about/about.module.ts",
-		1
+		2
+	],
+	"./map-view/map-view.module": [
+		"../../../../../src/app/map-view/map-view.module.ts",
+		0
 	],
 	"./user-preference/user-preference.module": [
 		"../../../../../src/app/user-preference/user-preference.module.ts",
-		0
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -56,13 +60,9 @@ var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__frontpage_frontpage_component__["a" /* FrontpageComponent */] },
     { path: 'search', component: __WEBPACK_IMPORTED_MODULE_2__main_main_component__["a" /* MainComponent */] },
     { path: 'loginCallback', component: __WEBPACK_IMPORTED_MODULE_5__shared_components_login_callback_component__["a" /* LoginCallbackComponent */] },
-    {
-        path: 'about', loadChildren: './about/about.module#AboutModule',
-    },
-    {
-        path: 'pref',
-        loadChildren: './user-preference/user-preference.module#UserPreferenceModule',
-    },
+    { path: 'about', loadChildren: './about/about.module#AboutModule' },
+    { path: 'pref', loadChildren: './user-preference/user-preference.module#UserPreferenceModule' },
+    { path: 'mapview', loadChildren: './map-view/map-view.module#MapViewModule' },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_4__shared_components_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = (function () {
@@ -512,7 +512,7 @@ var FrontpageComponent = (function () {
             _this.solrService.suggest(term).then(function (items) {
                 _this.items = items;
             });
-        }, 100);
+        }, 200);
     };
     FrontpageComponent.prototype.onSearchInputClick = function () {
         this.showSuggestDropDown = true;
@@ -885,7 +885,7 @@ var MainComponent = (function () {
     return MainComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]) === "function" && _a || Object)
 ], MainComponent.prototype, "solrSearch", void 0);
 MainComponent = __decorate([
@@ -1019,7 +1019,7 @@ var SolrSearchComponent = (function () {
     return SolrSearchComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('queryinput'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('queryinput'),
     __metadata("design:type", Object)
 ], SolrSearchComponent.prototype, "queryinput", void 0);
 __decorate([
@@ -1658,7 +1658,7 @@ var GoHomeComponent = (function () {
 GoHomeComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Component */])({
         selector: 'app-go-home-component',
-        template: "<div  (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i style=\"width:20%\" class=\"material-icons\">home</i>\n    <div class=\"mdl-layout-title\" style=\"font-family:cursive\">Shake & Stir</div>\n    </div>"
+        template: "<div  class=\"mdl-layout-title\" (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i class=\"material-icons\">home</i>\n    <span  style=\"font-family:cursive\">Peek N Make</span>\n    </div>"
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], GoHomeComponent);
@@ -2005,7 +2005,7 @@ var PlaylistItemNamePipe = (function () {
     return PlaylistItemNamePipe;
 }());
 PlaylistItemNamePipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
         name: 'playlistItemName'
     })
 ], PlaylistItemNamePipe);
@@ -2056,7 +2056,7 @@ var VideoDurationPipe = (function () {
     return VideoDurationPipe;
 }());
 VideoDurationPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
         name: 'videoDuration'
     })
 ], VideoDurationPipe);
@@ -2087,7 +2087,7 @@ var VideoLikesPipe = (function () {
     return VideoLikesPipe;
 }());
 VideoLikesPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
         name: 'videoLikes'
     })
 ], VideoLikesPipe);
@@ -2118,7 +2118,7 @@ var VideoViewsPipe = (function () {
     return VideoViewsPipe;
 }());
 VideoViewsPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
         name: 'videoViews'
     })
 ], VideoViewsPipe);

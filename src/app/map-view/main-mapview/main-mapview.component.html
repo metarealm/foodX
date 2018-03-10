@@ -1,0 +1,26 @@
+<div mdl-shadow="2">
+    <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
+        <mdl-layout-header class="map-view-header">
+            <mdl-layout-header-row>
+                <i class="material-icons">home</i>
+                <mdl-layout-title>
+                    <span style="font-family:cursive">Peek N Make</span>
+                </mdl-layout-title>
+            </mdl-layout-header-row>
+        </mdl-layout-header>
+
+        <mdl-layout-content class="map-container">
+            <div class="map">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">
+                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="100000" [fillColor]="'grey'" [circleDraggable]="true" [editable]="true">
+                    </agm-circle>
+                </agm-map>
+            </div>
+            <div class="map-videos">
+                <div>Lets Find Some Food</div>
+                <div class="map-video" *ngFor="let shadow of [2,3,4,6,8,8,8]" [mdl-shadow]="shadow">Videos{{shadow}}</div>
+            </div>
+            <div class="map-footer"></div>
+        </mdl-layout-content>
+    </mdl-layout>
+</div>
