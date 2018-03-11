@@ -11,16 +11,19 @@
 
         <mdl-layout-content class="map-container">
             <div class="map">
-                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="mapClicked($event)">
-                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="100000" [fillColor]="'grey'" [circleDraggable]="true" [editable]="true">
+                <agm-map [latitude]="lat" [longitude]="lng" [minZoom]="minZoom" [maxZoom]="maxZoom" [zoom]="zoom" [styles]="mainMapStyles"
+                    (mapClick)="mapClicked($event)">
+                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="200000" [fillColor]="'grey'" [circleDraggable]="true" [editable]="true">
                     </agm-circle>
                 </agm-map>
             </div>
             <div class="map-videos">
                 <div>Lets Find Some Food</div>
-                <div class="map-video" *ngFor="let shadow of [2,3,4,6,8,8,8]" [mdl-shadow]="shadow">Videos{{shadow}}</div>
+                <div class="map-video" *ngFor="let video of mapVideos" >
+                    <app-h-video [video]="video"></app-h-video>
+                </div>
             </div>
             <div class="map-footer"></div>
         </mdl-layout-content>
-    </mdl-layout>
+     </mdl-layout>
 </div>

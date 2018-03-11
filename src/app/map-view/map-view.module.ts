@@ -5,6 +5,7 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { MapViewRoutingModule } from './map-view-routing.module';
 import { MainMapviewComponent } from './main-mapview/main-mapview.component';
+import { HVideoComponent } from './h-video/h-video.component';
 
 @NgModule({
     imports: [
@@ -15,6 +16,6 @@ import { MainMapviewComponent } from './main-mapview/main-mapview.component';
             apiKey: 'AIzaSyCR-P6Z32gjEajXnb1UECYVUu8gBhvT0EE'
         })
     ],
-    declarations: [MainMapviewComponent]
+    declarations: [MainMapviewComponent, HVideoComponent]
 })
 export class MapViewModule { }

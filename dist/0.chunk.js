@@ -1,5 +1,46 @@
 webpackJsonp([0],{
 
+/***/ "../../../../../src/app/map-view/h-video/h-video.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HVideoComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HVideoComponent = (function () {
+    function HVideoComponent() {
+        this.shadow = 2;
+    }
+    HVideoComponent.prototype.ngOnInit = function () {
+    };
+    return HVideoComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* Input */])(),
+    __metadata("design:type", Object)
+], HVideoComponent.prototype, "video", void 0);
+HVideoComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* Component */])({
+        selector: 'app-h-video',
+        template: "\n    <div class=\"video-component\" [mdl-shadow]=\"shadow\">\n      <div class=\"mdl-card__title mdl-card--expand\" (click)=\"play(video)\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      </div>\n      <div class=\"video-informations\">\n        {{ video.snippet.title }}\n      </div>\n    </div>\n  ",
+        styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 3fr; grid-gap:5px}',]
+    }),
+    __metadata("design:paramtypes", [])
+], HVideoComponent);
+
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/h-video.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/map-view/main-mapview/main-mapview.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8,7 +49,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".map-view-header{\n  background-color: rgb(204, 204, 204);\n  font-family:cursive;\n}\n.map-container{\n    display:-ms-grid;\n    display:grid;\n    height: 100vh;\n    -ms-grid-columns: 4fr 1fr;\n        grid-template-columns: 4fr 1fr;  \n    -ms-grid-rows: 39fr 1fr;  \n        grid-template-rows: 39fr 1fr; \n    \n}\n.map-header{\n    background-color: transparent;\n    text-align: right;\n}\n\n.map-footer{\n    grid-column: 1/3; \n}\n.map{\n    text-align: right;\n}\n.map-videos{\n    overflow: scroll;\n}\n.map-video{\n    height: 100px;\n    padding: 5px;\n}\nagm-map {height: 100%}\n", ""]);
+exports.push([module.i, ".map-view-header{\n  background-color: rgb(204, 204, 204);\n  font-family:cursive;\n}\n.map-container{\n    display:-ms-grid;\n    display:grid;\n    height: 100vh;\n    -ms-grid-columns: 7fr 3fr;\n        grid-template-columns: 7fr 3fr;  \n    -ms-grid-rows: 39fr 1fr;  \n        grid-template-rows: 39fr 1fr; \n    \n}\n.map-header{\n    background-color: transparent;\n    text-align: right;\n}\n\n.map-footer{\n    grid-column: 1/3; \n}\n.map{\n    text-align: right;\n}\n.map-videos{\n    overflow: scroll;\n}\n.map-video{\n    height: 100px;\n    padding: 5px;\n}\nagm-map {height: 100%}\n", ""]);
 
 // exports
 
@@ -21,7 +62,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/map-view/main-mapview/main-mapview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div mdl-shadow=\"2\">\n    <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>\n        <mdl-layout-header class=\"map-view-header\">\n            <mdl-layout-header-row>\n                <i class=\"material-icons\">home</i>\n                <mdl-layout-title>\n                    <span style=\"font-family:cursive\">Peek N Make</span>\n                </mdl-layout-title>\n            </mdl-layout-header-row>\n        </mdl-layout-header>\n\n        <mdl-layout-content class=\"map-container\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"zoom\" [disableDefaultUI]=\"false\" [zoomControl]=\"false\" (mapClick)=\"mapClicked($event)\">\n                    <agm-circle [latitude]=\"lat + 0.3\" [longitude]=\"lng\" [radius]=\"100000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div>Lets Find Some Food</div>\n                <div class=\"map-video\" *ngFor=\"let shadow of [2,3,4,6,8,8,8]\" [mdl-shadow]=\"shadow\">Videos{{shadow}}</div>\n            </div>\n            <div class=\"map-footer\"></div>\n        </mdl-layout-content>\n    </mdl-layout>\n</div>"
+module.exports = "<div mdl-shadow=\"2\">\n    <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>\n        <mdl-layout-header class=\"map-view-header\">\n            <mdl-layout-header-row>\n                <i class=\"material-icons\">home</i>\n                <mdl-layout-title>\n                    <span style=\"font-family:cursive\">Peek N Make</span>\n                </mdl-layout-title>\n            </mdl-layout-header-row>\n        </mdl-layout-header>\n\n        <mdl-layout-content class=\"map-container\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [minZoom]=\"minZoom\" [maxZoom]=\"maxZoom\" [zoom]=\"zoom\" [styles]=\"mainMapStyles\"\n                    (mapClick)=\"mapClicked($event)\">\n                    <agm-circle [latitude]=\"lat + 0.3\" [longitude]=\"lng\" [radius]=\"200000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div>Lets Find Some Food</div>\n                <div class=\"map-video\" *ngFor=\"let video of mapVideos\" >\n                    <app-h-video [video]=\"video\"></app-h-video>\n                </div>\n            </div>\n            <div class=\"map-footer\"></div>\n        </mdl-layout-content>\n     </mdl-layout>\n</div>"
 
 /***/ }),
 
@@ -30,6 +71,10 @@ module.exports = "<div mdl-shadow=\"2\">\n    <mdl-layout mdl-layout-fixed-heade
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__map_style__ = __webpack_require__("../../../../../src/app/map-view/main-mapview/map-style.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__ = __webpack_require__("../../../../../src/app/shared/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__ = __webpack_require__("../../../../../src/app/shared/services/indexDataService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_Helper_searchObject__ = __webpack_require__("../../../../../src/app/shared/Helper/searchObject.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainMapviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -37,13 +82,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
 
 var MainMapviewComponent = (function () {
-    function MainMapviewComponent() {
+    function MainMapviewComponent(solrService, notificationService) {
+        this.solrService = solrService;
+        this.notificationService = notificationService;
+        this.mainMapStyles = __WEBPACK_IMPORTED_MODULE_1__map_style__["a" /* mpaStyles */];
         this.zoom = 6;
+        this.maxZoom = 8;
+        this.minZoom = 4;
         this.lat = 20.673858;
         this.lng = 85.815982;
+        this.mapVideos = [];
     }
+    MainMapviewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mapSearchObject = new __WEBPACK_IMPORTED_MODULE_4__shared_Helper_searchObject__["a" /* SearchObject */](0, "odisha");
+        this.solrService.searchVideos(this.mapSearchObject)
+            .then(function (data) {
+            _this.mapSearchObject.pageNum = _this.mapSearchObject.pageNum + 1;
+            // if (data.length < 1) this.notificationService.showNotification("No matches found.");
+            _this.mapVideos = data;
+        });
+    };
     MainMapviewComponent.prototype.clickedMarker = function (label, index) {
         console.log("clicked the marker: " + (label || index));
     };
@@ -64,10 +132,126 @@ MainMapviewComponent = __decorate([
         selector: 'app-main-mapview',
         template: __webpack_require__("../../../../../src/app/map-view/main-mapview/main-mapview.component.html"),
         styles: [__webpack_require__("../../../../../src/app/map-view/main-mapview/main-mapview.component.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _b || Object])
 ], MainMapviewComponent);
 
+var _a, _b;
 //# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main-mapview.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/map-view/main-mapview/map-style.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mpaStyles; });
+var mpaStyles = [
+    {
+        featureType: "administrative.country",
+        stylers: [
+            {
+                weight: 3.5
+            }
+        ]
+    },
+    {
+        featureType: "administrative.country",
+        elementType: "geometry.stroke",
+        stylers: [
+            {
+                visibility: "on"
+            },
+            {
+                weight: 1.5
+            }
+        ]
+    },
+    {
+        featureType: "administrative.province",
+        elementType: "geometry.stroke",
+        stylers: [
+            {
+                saturation: -45
+            },
+            {
+                lightness: -70
+            },
+            {
+                visibility: "on"
+            }
+        ]
+    },
+    {
+        featureType: "administrative.neighborhood",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "poi",
+        elementType: "labels.text",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "poi.business",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "road",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "road",
+        elementType: "labels.icon",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "transit",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "water",
+        elementType: "labels.text",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    }
+];
+//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/map-style.js.map
 
 /***/ }),
 
@@ -119,6 +303,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_view_routing_module__ = __webpack_require__("../../../../../src/app/map-view/map-view-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_mapview_main_mapview_component__ = __webpack_require__("../../../../../src/app/map-view/main-mapview/main-mapview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__h_video_h_video_component__ = __webpack_require__("../../../../../src/app/map-view/h-video/h-video.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapViewModule", function() { return MapViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -126,6 +311,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -147,7 +333,7 @@ MapViewModule = __decorate([
                 apiKey: 'AIzaSyCR-P6Z32gjEajXnb1UECYVUu8gBhvT0EE'
             })
         ],
-        declarations: [__WEBPACK_IMPORTED_MODULE_5__main_mapview_main_mapview_component__["a" /* MainMapviewComponent */]]
+        declarations: [__WEBPACK_IMPORTED_MODULE_5__main_mapview_main_mapview_component__["a" /* MainMapviewComponent */], __WEBPACK_IMPORTED_MODULE_6__h_video_h_video_component__["a" /* HVideoComponent */]]
     })
 ], MapViewModule);
 
