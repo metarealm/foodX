@@ -4,6 +4,7 @@ import { mpaStyles } from './map-style';
 import { NotificationService } from '../../shared/services/notification.service';
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { SearchObject } from '../../shared/Helper/searchObject';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'app-main-mapview',
@@ -24,9 +25,7 @@ export class MainMapviewComponent implements OnInit {
     
     constructor(private solrService: IndexDataService , 
                 private notificationService:NotificationService,
-                ){
-
-    }
+                private router:Router){} 
     ngOnInit() {
         this.mapSearchObject = new SearchObject(0,"odisha");
         this.solrService.searchVideos(this.mapSearchObject)
@@ -37,7 +36,11 @@ export class MainMapviewComponent implements OnInit {
             })
 
     }
+    goHome(){
 
+        console.log("Going to the front page route");
+        this.router.navigate(['/']);
+    }
     clickedMarker(label: string, index: number) {
         console.log(`clicked the marker: ${label || index}`)
     }

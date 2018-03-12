@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MdlModule } from '@angular-mdl/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/modules/shared.module'; 
 import { MapViewRoutingModule } from './map-view-routing.module';
+
 import { MainMapviewComponent } from './main-mapview/main-mapview.component';
 import { HVideoComponent } from './h-video/h-video.component';
 
@@ -11,6 +13,7 @@ import { HVideoComponent } from './h-video/h-video.component';
     imports: [
         CommonModule,
         MdlModule,
+        SharedModule,
         MapViewRoutingModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCR-P6Z32gjEajXnb1UECYVUu8gBhvT0EE'

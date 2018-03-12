@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
     selector: 'app-h-video',
     template: `
     <div class="video-component" [mdl-shadow]="shadow">
-      <div class="mdl-card__title mdl-card--expand" (click)="play(video)" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}">
+      <div class="mdl-card__title mdl-card--expand" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}">
       </div>
       <div class="video-informations">
         {{ video.snippet.title }}

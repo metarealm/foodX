@@ -11,6 +11,10 @@ import { Router} from '@angular/router';
     <button type="button" (click)="setShowconfig()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
         <i class="material-icons">settings</i>
         <span>set Preferene</span>
+    </button>
+    <button type="button" (click)="setMapView()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">map</i>
+        <span>Map View</span>
     </button>`
 })
 
@@ -28,6 +32,9 @@ export class SearchConfigurationComponent implements OnInit {
     }
     public goToAboutPage() {
         this.router.navigate(['/about']);
+    }
+    public setMapView(){
+        this.router.navigate(['/mapview']);
     }
 
 }

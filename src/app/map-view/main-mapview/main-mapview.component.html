@@ -2,10 +2,8 @@
     <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
         <mdl-layout-header class="map-view-header">
             <mdl-layout-header-row>
-                <i class="material-icons">home</i>
-                <mdl-layout-title>
-                    <span style="font-family:cursive">Peek N Make</span>
-                </mdl-layout-title>
+                <app-go-home-component class="sns-go-home"></app-go-home-component>
+                <app-user-information></app-user-information>
             </mdl-layout-header-row>
         </mdl-layout-header>
 
@@ -19,11 +17,11 @@
             </div>
             <div class="map-videos">
                 <div>Lets Find Some Food</div>
-                <div class="map-video" *ngFor="let video of mapVideos" >
+                <div class="map-video" *ngFor="let video of mapVideos">
                     <app-h-video [video]="video"></app-h-video>
                 </div>
             </div>
             <div class="map-footer"></div>
         </mdl-layout-content>
-     </mdl-layout>
+    </mdl-layout>
 </div>

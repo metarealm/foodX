@@ -7,6 +7,7 @@ import { MdlModule } from '@angular-mdl/core';
 import { MaterialModule} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/modules/shared.module'; 
 
 
 // Components
@@ -19,8 +20,8 @@ import { FilterComponent} from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { PageNotFoundComponent } from './shared/components/not-found.component';
-import { UserInformationComponent } from './shared/components/user-information.component';
-import { LoginCallbackComponent } from './shared/components/login-callback.component';
+
+import { FrontpageComponent } from './frontpage/frontpage.component';
 
 // Services
 import { YoutubeApiService } from "./shared/services/youtube-api.service";
@@ -37,10 +38,7 @@ import { VideoLikesPipe } from "./shared/pipes/video-likes.pipe";
 import { VideoViewsPipe } from "./shared/pipes/video-views.pipe";
 import { PlaylistItemNamePipe } from "./shared/pipes/playlist-item-name.pipe";
 import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directive";
-import { FrontpageComponent } from './frontpage/frontpage.component';
-import { GoHomeComponent } from './shared/components/go-home.component';
-import { SearchConfigurationComponent } from './shared/components/search-configuration.component';
-import { UserAccountsComponent } from './shared/components/user-accounts.component';
+
 
 
 
@@ -54,7 +52,8 @@ import { UserAccountsComponent } from './shared/components/user-accounts.compone
 		YoutubePlayerModule,
 		BrowserAnimationsModule,
 		MaterialModule,
-		AppRoutingModule
+        AppRoutingModule,
+        SharedModule
 	],
 	declarations: [
 		AppComponent,
@@ -64,22 +63,14 @@ import { UserAccountsComponent } from './shared/components/user-accounts.compone
 		VideosPlaylistComponent,
 		PageNotFoundComponent,
 		MainComponent,
-
 		VideoDurationPipe,
 		VideoLikesPipe,
 		VideoViewsPipe,
 		PlaylistItemNamePipe,
-
 		LazyScroll,
-
 		FilterComponent,
 		SolrSearchComponent,
 		FrontpageComponent,
-		UserInformationComponent,
-		LoginCallbackComponent,
-		GoHomeComponent,
-		SearchConfigurationComponent,
-		UserAccountsComponent
 
 	],
 	bootstrap: [
@@ -93,7 +84,6 @@ import { UserAccountsComponent } from './shared/components/user-accounts.compone
 		IndexDataService,
         FacetService,
         AuthService
-
 	]
 })
 export class AppModule {

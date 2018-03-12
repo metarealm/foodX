@@ -27,4 +27,11 @@
     height: 100px;
     padding: 5px;
 }
+.sns-go-home{
+    display: inline-block;
+    width: 80%
+}
+.sns-go-home:hover{
+    cursor: pointer;
+}
 agm-map {height: 100%}

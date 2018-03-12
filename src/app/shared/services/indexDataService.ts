@@ -24,8 +24,8 @@ export class IndexDataService {
     constructor(private jsonp: Jsonp, private http: Http,
         private notificationService: NotificationService,
         private facetService: FacetService
-    ) {
-    }
+    ) {}
+     
     suggest(term: string) {
         // let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
         let solrUrl = '/api/suggest'
@@ -56,7 +56,8 @@ export class IndexDataService {
         let params = new URLSearchParams();
         params.set('wt', 'json');
         params.set('rows', '' + args.noOfRow);
-        params.set('q', 'RecipeTitle:' + args.searchTerm);
+        params.set('q', '*:*');
+        params.set('fq', args.searchTerm);
         //params.set('json.wrf', 'JSONP_CALLBACK');
         params.set('fl','youtubevideoID');
         params.set('start', '' + args.pageNum * args.noOfRow);
