@@ -12,4 +12,5 @@
         "**/*spec.ts":true
     },
     "editor.detectIndentation": false,
+    "eslint.enable": false,
 }
