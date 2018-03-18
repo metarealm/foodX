@@ -31,26 +31,25 @@ export class MainMapviewComponent implements OnInit {
     constructor(private solrService: IndexDataService,
         private notificationService: NotificationService,
         private router: Router) { }
+
     ngOnInit() {
-        this.mapSearchObject = new SearchObject(0, "odisha");
-        this.solrService.searchVideos(this.mapSearchObject)
-            .then(data => {
-                this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
-                this.mapVideos = data;
-            });
+        // this.mapSearchObject = new SearchObject(0, "odisha");
+        // this.solrService.searchVideos(this.mapSearchObject)
+        //     .then(data => {
+        //         this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
+        //         this.mapVideos = data;
+        //     });
         this.cirCenter$
             .debounceTime(500)
             .subscribe(result => {
                 this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
-                .then(data => {
-                    console.log(" response from the location chage circle");
-                    console.log(data);
-                    this.mapVideos = data;
-                });
+                    .then(data => {
+                        this.mapVideos = data;
+                    });
             });
+        this.cirCenter$.next(this.agmCircleCenter);
     }
     goHome() {
-
         console.log("Going to the front page route");
         this.router.navigate(['/']);
     }
@@ -79,14 +78,6 @@ export class MainMapviewComponent implements OnInit {
     circleCenterChanged(latlng: LatLngLiteral) {
         this.cirCenter$.next(latlng);
         console.log("center changed");
-        // console.log("center changed to");
-        // console.log(this.agmCircleCenter);
-        // this.solrService.searchByLocation(this.agmCircleCenter.lat, this.agmCircleCenter.lng, this.agrCircleRad / 1000)
-        //     .then(data => {
-        //         this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
-        //         this.mapVideos = data;
-        //     })
-
     }
 }
 
