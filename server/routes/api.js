@@ -3,10 +3,7 @@ const router = express.Router();
 const solr = require('../services/SolrServices');
 const mongo = require('../services/mongo');
 const MongoClient = require('mongodb').MongoClient;
-const IndexController = require('../controller/IndexController');
 
-
-router.get('/citiesincircle', IndexController.getLocFromMongo);
 
 /* GET api listing. */
 router.get('/apitest', (req, res) => {
