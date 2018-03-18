@@ -11,7 +11,7 @@
             <div class="map">
                 <agm-map [latitude]="lat" [longitude]="lng" [minZoom]="minZoom" [maxZoom]="maxZoom" [zoom]="zoom" [styles]="mainMapStyles"
                     (mapClick)="mapClicked($event)">
-                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="200000" [fillColor]="'grey'" [circleDraggable]="true" [editable]="true">
+                    <agm-circle [latitude]="lat" [longitude]="lng" [radius]="200000" [fillColor]="'grey'" [circleDraggable]="true" (centerChange)="circleCenterChanged($event)" (radiusChange)="circleRadChanged($event)" [editable]="true">
                     </agm-circle>
                 </agm-map>
             </div>

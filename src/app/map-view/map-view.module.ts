@@ -8,6 +8,7 @@ import { MapViewRoutingModule } from './map-view-routing.module';
 
 import { MainMapviewComponent } from './main-mapview/main-mapview.component';
 import { HVideoComponent } from './h-video/h-video.component';
+import { MapServiceService } from './map-service.service';
 
 @NgModule({
     imports: [
@@ -19,6 +20,7 @@ import { HVideoComponent } from './h-video/h-video.component';
             apiKey: 'AIzaSyCR-P6Z32gjEajXnb1UECYVUu8gBhvT0EE'
         })
     ],
-    declarations: [MainMapviewComponent, HVideoComponent]
+    declarations: [MainMapviewComponent, HVideoComponent],
+    providers: [MapServiceService]
 })
 export class MapViewModule { }

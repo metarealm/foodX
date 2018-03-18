@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MouseEvent } from '@agm/core';
+import { MouseEvent, LatLngLiteral } from '@agm/core';
 import { mpaStyles } from './map-style';
 import { NotificationService } from '../../shared/services/notification.service';
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { SearchObject } from '../../shared/Helper/searchObject';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-main-mapview',
@@ -20,23 +22,34 @@ export class MainMapviewComponent implements OnInit {
     public minZoom = 4;
     public lat: number = 20.673858;
     public lng: number = 85.815982;
-    public mapVideos = []; 
-    private mapSearchObject :SearchObject ;
-    
-    constructor(private solrService: IndexDataService , 
-                private notificationService:NotificationService,
-                private router:Router){} 
+    public mapVideos = [];
+    private mapSearchObject: SearchObject;
+    private agmCircleCenter = { lat: 20.673858, lng: 85.815982 };
+    private cirCenter$ = new Subject<LatLngLiteral>();
+    private agrCircleRad = 200000;
+
+    constructor(private solrService: IndexDataService,
+        private notificationService: NotificationService,
+        private router: Router) { }
     ngOnInit() {
-        this.mapSearchObject = new SearchObject(0,"odisha");
+        this.mapSearchObject = new SearchObject(0, "odisha");
         this.solrService.searchVideos(this.mapSearchObject)
             .then(data => {
                 this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
-                // if (data.length < 1) this.notificationService.showNotification("No matches found.");
                 this.mapVideos = data;
-            })
-
+            });
+        this.cirCenter$
+            .debounceTime(500)
+            .subscribe(result => {
+                this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
+                .then(data => {
+                    console.log(" response from the location chage circle");
+                    console.log(data);
+                    this.mapVideos = data;
+                });
+            });
     }
-    goHome(){
+    goHome() {
 
         console.log("Going to the front page route");
         this.router.navigate(['/']);
@@ -53,6 +66,27 @@ export class MainMapviewComponent implements OnInit {
     }
     markerDragEnd(m: marker, $event: MouseEvent) {
         console.log('dragEnd', m, $event);
+    }
+    circleRadChanged(radius: number) {
+        this.agrCircleRad = radius;
+        console.log("radius of the circle changed" + this.agrCircleRad);
+        this.solrService.searchByLocation(this.agmCircleCenter.lat, this.agmCircleCenter.lng, this.agrCircleRad / 1000)
+            .then(data => {
+                this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
+                this.mapVideos = data;
+            })
+    }
+    circleCenterChanged(latlng: LatLngLiteral) {
+        this.cirCenter$.next(latlng);
+        console.log("center changed");
+        // console.log("center changed to");
+        // console.log(this.agmCircleCenter);
+        // this.solrService.searchByLocation(this.agmCircleCenter.lat, this.agmCircleCenter.lng, this.agrCircleRad / 1000)
+        //     .then(data => {
+        //         this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
+        //         this.mapVideos = data;
+        //     })
+
     }
 }
 
