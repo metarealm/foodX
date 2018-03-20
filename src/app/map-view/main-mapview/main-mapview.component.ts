@@ -16,7 +16,12 @@ import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operato
 export class MainMapviewComponent implements OnInit {
 
     public mainMapStyles = mpaStyles;
-    public markers: marker[];
+    public markers: marker[] = [{
+        lat: 20.673858,
+        lng: 85.815982,
+        label: 'cuttack',
+        draggable: false
+    }];
     public zoom = 6;
     public maxZoom = 8;
     public minZoom = 4;
@@ -33,19 +38,14 @@ export class MainMapviewComponent implements OnInit {
         private router: Router) { }
 
     ngOnInit() {
-        // this.mapSearchObject = new SearchObject(0, "odisha");
-        // this.solrService.searchVideos(this.mapSearchObject)
-        //     .then(data => {
-        //         this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
-        //         this.mapVideos = data;
-        //     });
         this.cirCenter$
             .debounceTime(500)
             .subscribe(result => {
                 this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
                     .then(data => {
-                        this.mapVideos = data;
-                    });
+                        return this.processCircleData(data);
+                    })
+                    .then(result => this.mapVideos= result);
             });
         this.cirCenter$.next(this.agmCircleCenter);
     }
@@ -60,7 +60,7 @@ export class MainMapviewComponent implements OnInit {
         this.markers.push({
             lat: $event.coords.lat,
             lng: $event.coords.lng,
-            draggable: true
+            draggable: false,
         });
     }
     markerDragEnd(m: marker, $event: MouseEvent) {
@@ -78,6 +78,18 @@ export class MainMapviewComponent implements OnInit {
     circleCenterChanged(latlng: LatLngLiteral) {
         this.cirCenter$.next(latlng);
         console.log("center changed");
+    }
+
+    processCircleData(data :any){
+        let videsIds = data[0]['video_id'];
+        this.markers = [{
+            lat: parseFloat(data[0].geo_location.split(',')[0]),
+            lng: parseFloat(data[0].geo_location.split(',')[1]),
+            label: data[0].id,
+            draggable: false
+        }];
+        console.log(this.markers);
+        return this.solrService.getVideos(videsIds);
     }
 }
 

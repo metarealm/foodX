@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Jsonp, URLSearchParams, RequestOptions } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 import { indexDatas, IndexedData } from '../Helper/indexdata';
@@ -55,13 +55,14 @@ export class IndexDataService {
             .get(solrUrl, { search: params })
             .map((response) => {
                 let jsonRes = response.json();
-                let ids = jsonRes['response']['docs'][0]['video_id'];
-                return this.getVideos(ids);
+                return jsonRes['response']['docs'];
+                // let ids = jsonRes['response']['docs'][0]['video_id'];
+                // let locations = jsonRes['response']['docs'][0]['location_name'];
+                // return this.getVideos(ids);
             }).toPromise().catch(this.handleError);
     }
 
     searchVideos(args: SearchObject): Promise<any> {
-        //let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
         let solrUrl = '/api/select';
         let params = new URLSearchParams();
         params.set('wt', 'json');
