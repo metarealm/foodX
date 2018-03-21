@@ -5,8 +5,8 @@ webpackJsonp(["user-preference.module"],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserPreferenceRoutingModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_setting_user_setting_component__ = __webpack_require__("./src/app/user-preference/user-setting/user-setting.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -24,16 +24,16 @@ var routes = [
 var UserPreferenceRoutingModule = (function () {
     function UserPreferenceRoutingModule() {
     }
+    UserPreferenceRoutingModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forChild(routes)],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+        })
+    ], UserPreferenceRoutingModule);
     return UserPreferenceRoutingModule;
 }());
-UserPreferenceRoutingModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forChild(routes)],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
-    })
-], UserPreferenceRoutingModule);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-preference-routing.module.js.map
+
 
 /***/ }),
 
@@ -43,8 +43,8 @@ UserPreferenceRoutingModule = __decorate([
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserPreferenceModule", function() { return UserPreferenceModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_preference_routing_module__ = __webpack_require__("./src/app/user-preference/user-preference-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_setting_user_setting_component__ = __webpack_require__("./src/app/user-preference/user-setting/user-setting.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -60,19 +60,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var UserPreferenceModule = (function () {
     function UserPreferenceModule() {
     }
+    UserPreferenceModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_2__user_preference_routing_module__["a" /* UserPreferenceRoutingModule */]
+            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_3__user_setting_user_setting_component__["a" /* UserSettingComponent */]]
+        })
+    ], UserPreferenceModule);
     return UserPreferenceModule;
 }());
-UserPreferenceModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__user_preference_routing_module__["a" /* UserPreferenceRoutingModule */]
-        ],
-        declarations: [__WEBPACK_IMPORTED_MODULE_3__user_setting_user_setting_component__["a" /* UserSettingComponent */]]
-    })
-], UserPreferenceModule);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-preference.module.js.map
+
 
 /***/ }),
 
@@ -81,7 +81,7 @@ UserPreferenceModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserSettingComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -97,18 +97,18 @@ var UserSettingComponent = (function () {
     }
     UserSettingComponent.prototype.ngOnInit = function () {
     };
+    UserSettingComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-user-setting',
+            template: "\n    <p>\n      user-setting Works!\n    </p>\n  ",
+            styles: []
+        }),
+        __metadata("design:paramtypes", [])
+    ], UserSettingComponent);
     return UserSettingComponent;
 }());
-UserSettingComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-user-setting',
-        template: "\n    <p>\n      user-setting Works!\n    </p>\n  ",
-        styles: []
-    }),
-    __metadata("design:paramtypes", [])
-], UserSettingComponent);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-setting.component.js.map
+
 
 /***/ })
 

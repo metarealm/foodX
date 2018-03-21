@@ -14,7 +14,7 @@ import { Router} from '@angular/router';
     </button>
     <button type="button" (click)="setMapView()" class="mdl-button mdl-js-button mdl-js-ripple-effect">
     <i class="material-icons">map</i>
-        <span>Map View</span>
+        <span>Explore Cuisines</span>
     </button>`
 })
 

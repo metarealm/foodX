@@ -21,7 +21,8 @@ export class FrontpageComponent {
     private items: string[];
     public showSuggestDropDown = false;
     public searchForm = this.fb.group({ query: ["", Validators.required] });
-    private searchtype = ['ingredients', 'recipe titles'];
+    public searchtype : number;
+    private searchtypes = ['ingredients', 'recipe titles', 'Advanced'];
     private _suggestTimeout = null;
 
     constructor(public fb: FormBuilder,
@@ -59,8 +60,8 @@ export class FrontpageComponent {
     }
 
     filterStates(val: string) {
-        return val ? this.searchtype.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
-            : this.searchtype;
+        return val ? this.searchtypes.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
+            : this.searchtypes;
     }
 
     gotoSearch() {

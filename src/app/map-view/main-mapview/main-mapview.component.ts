@@ -16,6 +16,7 @@ import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operato
 export class MainMapviewComponent implements OnInit {
 
     public mainMapStyles = mpaStyles;
+    public browseTab = true;
     public markers: marker[] = [{
         lat: 20.673858,
         lng: 85.815982,
@@ -45,7 +46,7 @@ export class MainMapviewComponent implements OnInit {
                     .then(data => {
                         return this.processCircleData(data);
                     })
-                    .then(result => this.mapVideos= result);
+                    .then(result => this.mapVideos = result);
             });
         this.cirCenter$.next(this.agmCircleCenter);
     }
@@ -57,38 +58,48 @@ export class MainMapviewComponent implements OnInit {
         console.log(`clicked the marker: ${label || index}`)
     }
     mapClicked($event: MouseEvent) {
-        this.markers.push({
-            lat: $event.coords.lat,
-            lng: $event.coords.lng,
-            draggable: false,
-        });
+        // this.markers.push({
+        //     lat: $event.coords.lat,
+        //     lng: $event.coords.lng,
+        //     draggable: false,
+        // });
+    }
+    browseClicked(){
+        this.browseTab = true;
     }
     markerDragEnd(m: marker, $event: MouseEvent) {
         console.log('dragEnd', m, $event);
+    }
+    filterClicked(){
+        this.browseTab = false;
     }
     circleRadChanged(radius: number) {
         this.agrCircleRad = radius;
         console.log("radius of the circle changed" + this.agrCircleRad);
         this.solrService.searchByLocation(this.agmCircleCenter.lat, this.agmCircleCenter.lng, this.agrCircleRad / 1000)
             .then(data => {
-                this.mapSearchObject.pageNum = this.mapSearchObject.pageNum + 1;
-                this.mapVideos = data;
+                return this.processCircleData(data);
             })
+            .then(result => this.mapVideos = result);
     }
     circleCenterChanged(latlng: LatLngLiteral) {
         this.cirCenter$.next(latlng);
-        console.log("center changed");
+        // console.log("center changed");
     }
 
-    processCircleData(data :any){
-        let videsIds = data[0]['video_id'];
-        this.markers = [{
-            lat: parseFloat(data[0].geo_location.split(',')[0]),
-            lng: parseFloat(data[0].geo_location.split(',')[1]),
-            label: data[0].id,
-            draggable: false
-        }];
-        console.log(this.markers);
+    processCircleData(data: any) {
+        let videsIds = [];
+        this.markers = [];
+        for (let i = 0; i < data.length; i++) {
+            videsIds.push(data[i]['video_id']);
+            this.markers.push({
+                lat: parseFloat(data[i].geo_location.split(',')[0]),
+                lng: parseFloat(data[i].geo_location.split(',')[1]),
+                label: data[i].id,
+                draggable: false
+            });
+            // console.log(this.markers);
+        }
         return this.solrService.getVideos(videsIds);
     }
 }

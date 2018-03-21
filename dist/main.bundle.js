@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "./src/$$_gendir lazy recursive":
+/***/ "./src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -28,7 +28,7 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = "./src/$$_gendir lazy recursive";
+webpackAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -38,8 +38,8 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_main_component__ = __webpack_require__("./src/app/main/main.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__frontpage_frontpage_component__ = __webpack_require__("./src/app/frontpage/frontpage.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_components_not_found_component__ = __webpack_require__("./src/app/shared/components/not-found.component.ts");
@@ -68,20 +68,20 @@ var appRoutes = [
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
+    AppRoutingModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]
+            ]
+        })
+    ], AppRoutingModule);
     return AppRoutingModule;
 }());
-AppRoutingModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]
-        ]
-    })
-], AppRoutingModule);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app-routing.module.js.map
+
 
 /***/ }),
 
@@ -90,7 +90,7 @@ AppRoutingModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -102,17 +102,17 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app works!';
     }
+    AppComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'foodx-root',
+            template: '<router-outlet></router-outlet>',
+            styles: ['']
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-root',
-        template: '<router-outlet></router-outlet>',
-        styles: ['']
-    })
-], AppComponent);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app.component.js.map
+
 
 /***/ }),
 
@@ -120,14 +120,14 @@ AppComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FoodXModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_mdl_core__ = __webpack_require__("./node_modules/@angular-mdl/core/components/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("./node_modules/@angular/material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material_radio__ = __webpack_require__("./node_modules/@angular/material/esm5/radio.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_modules_shared_module__ = __webpack_require__("./src/app/shared/modules/shared.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("./src/app/app.component.ts");
@@ -192,58 +192,58 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AppModule = (function () {
-    function AppModule() {
+var FoodXModule = (function () {
+    function FoodXModule() {
     }
-    return AppModule;
+    FoodXModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_mdl_core__["a" /* MdlModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* JsonpModule */],
+                __WEBPACK_IMPORTED_MODULE_16_ng2_youtube_player__["a" /* YoutubePlayerModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_material_radio__["a" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_8__shared_modules_shared_module__["a" /* SharedModule */]
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__main_videos_list_videos_list_component__["a" /* VideosListComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__main_video_player_video_player_component__["a" /* VideoPlayerComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__main_videos_playlist_videos_playlist_component__["a" /* VideosPlaylistComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__shared_components_not_found_component__["a" /* PageNotFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_duration_pipe__["a" /* VideoDurationPipe */],
+                __WEBPACK_IMPORTED_MODULE_27__shared_pipes_video_likes_pipe__["a" /* VideoLikesPipe */],
+                __WEBPACK_IMPORTED_MODULE_28__shared_pipes_video_views_pipe__["a" /* VideoViewsPipe */],
+                __WEBPACK_IMPORTED_MODULE_29__shared_pipes_playlist_item_name_pipe__["a" /* PlaylistItemNamePipe */],
+                __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__["a" /* LazyScroll */],
+                __WEBPACK_IMPORTED_MODULE_14__main_filter_filter_component__["a" /* FilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__frontpage_frontpage_component__["a" /* FrontpageComponent */],
+            ],
+            bootstrap: [
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__["a" /* YoutubeApiService */],
+                __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+                __WEBPACK_IMPORTED_MODULE_21__shared_services_playlist_store_service__["a" /* PlaylistStoreService */],
+                __WEBPACK_IMPORTED_MODULE_22__shared_services_notification_service__["a" /* NotificationService */],
+                __WEBPACK_IMPORTED_MODULE_23__shared_services_indexDataService__["a" /* IndexDataService */],
+                __WEBPACK_IMPORTED_MODULE_24__shared_services_facetService__["a" /* FacetService */],
+                __WEBPACK_IMPORTED_MODULE_25__auth_auth_service__["a" /* AuthService */]
+            ]
+        })
+    ], FoodXModule);
+    return FoodXModule;
 }());
-AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["j" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_mdl_core__["a" /* MdlModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* JsonpModule */],
-            __WEBPACK_IMPORTED_MODULE_16_ng2_youtube_player__["a" /* YoutubePlayerModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_8__shared_modules_shared_module__["a" /* SharedModule */]
-        ],
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__main_videos_list_videos_list_component__["a" /* VideosListComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__main_video_player_video_player_component__["a" /* VideoPlayerComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__main_videos_playlist_videos_playlist_component__["a" /* VideosPlaylistComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__shared_components_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_duration_pipe__["a" /* VideoDurationPipe */],
-            __WEBPACK_IMPORTED_MODULE_27__shared_pipes_video_likes_pipe__["a" /* VideoLikesPipe */],
-            __WEBPACK_IMPORTED_MODULE_28__shared_pipes_video_views_pipe__["a" /* VideoViewsPipe */],
-            __WEBPACK_IMPORTED_MODULE_29__shared_pipes_playlist_item_name_pipe__["a" /* PlaylistItemNamePipe */],
-            __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__["a" /* LazyScroll */],
-            __WEBPACK_IMPORTED_MODULE_14__main_filter_filter_component__["a" /* FilterComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__frontpage_frontpage_component__["a" /* FrontpageComponent */],
-        ],
-        bootstrap: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]
-        ],
-        providers: [
-            __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__["a" /* YoutubeApiService */],
-            __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
-            __WEBPACK_IMPORTED_MODULE_21__shared_services_playlist_store_service__["a" /* PlaylistStoreService */],
-            __WEBPACK_IMPORTED_MODULE_22__shared_services_notification_service__["a" /* NotificationService */],
-            __WEBPACK_IMPORTED_MODULE_23__shared_services_indexDataService__["a" /* IndexDataService */],
-            __WEBPACK_IMPORTED_MODULE_24__shared_services_facetService__["a" /* FacetService */],
-            __WEBPACK_IMPORTED_MODULE_25__auth_auth_service__["a" /* AuthService */]
-        ]
-    })
-], AppModule);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/app.module.js.map
+
 
 /***/ }),
 
@@ -269,7 +269,7 @@ var DEV_AUTH_CONFIG = {
     SCOPE: 'openid profile email'
 };
 var AUTH_CONFIG = (__WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production) ? PROD_AUTH_CONFIG : DEV_AUTH_CONFIG;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/auth-config.js.map
+
 
 /***/ }),
 
@@ -278,12 +278,12 @@ var AUTH_CONFIG = (__WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs/_esm5/BehaviorSubject.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_auth0_js__ = __webpack_require__("./node_modules/auth0-js/src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_auth0_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_auth0_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__auth_config__ = __webpack_require__("./src/app/auth/auth-config.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_Helper_user__ = __webpack_require__("./src/app/shared/Helper/user.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -313,7 +313,7 @@ var AuthService = (function () {
             scope: __WEBPACK_IMPORTED_MODULE_3__auth_config__["a" /* AUTH_CONFIG */].SCOPE
         });
         this.user = new __WEBPACK_IMPORTED_MODULE_5__shared_Helper_user__["a" /* User */]("Guest", "Guest@sns.com");
-        this.userChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */](true);
+        this.userChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */](true);
         this.loggedIn$ = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](this.loggedIn);
         // If authenticated, set local profile property and update login status subject
         // If token is expired, log out to clear any data from localStorage
@@ -400,19 +400,18 @@ var AuthService = (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+    ], AuthService.prototype, "userChangeEvent", void 0);
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+    ], AuthService);
     return AuthService;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
-], AuthService.prototype, "userChangeEvent", void 0);
-AuthService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _b || Object])
-], AuthService);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/auth.service.js.map
+
 
 /***/ }),
 
@@ -426,7 +425,7 @@ module.exports = "\n\n.search {\n  width: 100%;\n  position: relative\n}\n\n.sea
 /***/ "./src/app/frontpage/frontpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n    <div class=\"topLinks\" style=\"padding:10px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n\n    <div class=\"wrap-middle\">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch()\">\n            <div id=\"search\" class=\"search\">\n                <div class=\"sns-search-options\">\n                    <div *ngIf=\"showSuggestDropDown\">\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\" checked>\n                            <span class=\"mdl-radio__label\">All</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Ingredients</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Recipe</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Advanced</span>\n                        </label>\n                    </div>\n                </div>\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n\n            </div>\n        </form>\n        <app-user-accounts></app-user-accounts>\n    </div>\n\n    <div class=\"wrap-lower\">\n        --\n    </div>\n</div>"
+module.exports = "<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n    <div class=\"topLinks\" style=\"padding:10px\">\n        <app-search-configuration></app-search-configuration>\n        <app-user-information></app-user-information>\n    </div>\n\n    <div class=\"wrap-middle\">\n        <form [formGroup]=\"searchForm\" (ngSubmit)=\"gotoSearch()\">\n            <div id=\"search\" class=\"search\">\n                <div class=\"sns-search-options\">\n                    <div *ngIf=\"showSuggestDropDown\">\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Ingredients</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-1\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\" checked>\n                            <span class=\"mdl-radio__label\">Recipe</span>\n                        </label>\n                        <label class=\"mdl-radio mdl-js-radio mdl-js-ripple-effect\" for=\"option-2\">\n                            <input type=\"radio\" class=\"mdl-radio__button\" name=\"options\">\n                            <span class=\"mdl-radio__label\">Advanced</span>\n                        </label>\n                    </div>\n                </div>\n                <div (click)=\"onSearchInputClick()\">\n                    <input type=\"text\" class=\"searchTerm\" #queryinput list=\"browsers\" (keyup)=\"suggest(queryinput.value)\" formControlName=\"query\"\n                        placeholder=\"search your recipe\" />\n                    <button type=\"submit\" class=\"searchButton\">\n                        <i class=\"material-icons\">search</i>\n                    </button>\n                </div>\n                <div *ngIf=\"showSuggestDropDown\">\n                    <div id=\"myDropdown\" class=\"suggestion-dropdown suggestion-dropdown-content suggestion-show\">\n                        <ul>\n                            <li *ngFor=\"let item of items\" (click)=\"searchItemSelected(item)\">\n                                <div class=\"\">{{item}}</div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n\n            </div>\n        </form>\n        <app-user-accounts></app-user-accounts>\n    </div>\n\n    <div class=\"wrap-lower\">\n        --\n    </div>\n</div>"
 
 /***/ }),
 
@@ -435,9 +434,9 @@ module.exports = "\n<div class=\"frontpage mdl-layout mdl-js-layout mdl-layout--
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FrontpageComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/startWith.js");
@@ -468,8 +467,8 @@ var FrontpageComponent = (function () {
         this.solrService = solrService;
         this.authService = authService;
         this.showSuggestDropDown = false;
-        this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required] });
-        this.searchtype = ['ingredients', 'recipe titles'];
+        this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required] });
+        this.searchtypes = ['ingredients', 'recipe titles', 'Advanced'];
         this._suggestTimeout = null;
         this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
         this.filteredStates = this.stateCtrl.valueChanges
@@ -497,8 +496,8 @@ var FrontpageComponent = (function () {
         this.gotoSearch();
     };
     FrontpageComponent.prototype.filterStates = function (val) {
-        return val ? this.searchtype.filter(function (s) { return s.toLowerCase().indexOf(val.toLowerCase()) === 0; })
-            : this.searchtype;
+        return val ? this.searchtypes.filter(function (s) { return s.toLowerCase().indexOf(val.toLowerCase()) === 0; })
+            : this.searchtypes;
     };
     FrontpageComponent.prototype.gotoSearch = function () {
         var searchTerm = this.searchForm.value.query;
@@ -513,20 +512,23 @@ var FrontpageComponent = (function () {
             console.log(" clicked outside");
         }
     };
+    FrontpageComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            host: { '(document:click)': 'onClick($event)', },
+            selector: 'app-frontpage',
+            template: __webpack_require__("./src/app/frontpage/frontpage.component.html"),
+            styles: [__webpack_require__("./src/app/frontpage/frontpage.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */],
+            __WEBPACK_IMPORTED_MODULE_4__auth_auth_service__["a" /* AuthService */]])
+    ], FrontpageComponent);
     return FrontpageComponent;
 }());
-FrontpageComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        host: { '(document:click)': 'onClick($event)', },
-        selector: 'app-frontpage',
-        template: __webpack_require__("./src/app/frontpage/frontpage.component.html"),
-        styles: [__webpack_require__("./src/app/frontpage/frontpage.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__auth_auth_service__["a" /* AuthService */]) === "function" && _e || Object])
-], FrontpageComponent);
 
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/frontpage.component.js.map
+
 
 /***/ }),
 
@@ -540,7 +542,7 @@ module.exports = ".filterlist {\n  height: calc(100% - 100px);\n  width: 0.5%;\n
 /***/ "./src/app/main/filter/filter.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\n    <div class=\"row\">\n        <div class=\"col-xs-6 col-sm-3\">\n            <div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\n                <div class=\"panel-body\">\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">I am ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\"> Recipe has got ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">Recipie is from ..</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">Recipe is liked by ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}-{{facet.val+200}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened': filterlistToggle}\">\n    <div class=\"row\">\n        <div class=\"col-xs-6 col-sm-3\">\n            <div id=\"accordion\" class=\"panel panel-primary behclick-panel\">\n                <button type=\"button\" (click)=\"setMapView()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n                    <i class=\"material-icons\">map</i>\n                    <span>Find on Map</span>\n                </button>\n                <div class=\"panel-body\">\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">I am ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  contenttypefacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\"> Recipe has got ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  ingredientfacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">Recipie is from ..</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  locationfacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"panel-heading \">\n                        <h6 class=\"panel-title\">Recipe is liked by ...</h6>\n                    </div>\n                    <div id=\"collapse0\" class=\"panel-collapse collapse in\">\n                        <ul class=\"list-group\">\n                            <li class=\"list-group-item\" *ngFor=\"let facet of  likefacets\">\n                                <div class=\"checkbox\">\n                                    <input type=\"checkbox\" value=\"\"> {{facet.val}}-{{facet.val+200}}\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -549,9 +551,10 @@ module.exports = "<div class=\"container-fluid filterlist\" [ngClass]=\"{'opened
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_facetService__ = __webpack_require__("./src/app/shared/services/facetService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -564,10 +567,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FilterComponent = (function () {
-    function FilterComponent(dataService) {
+    function FilterComponent(dataService, router) {
         var _this = this;
         this.dataService = dataService;
+        this.router = router;
         this.subscription = this.dataService.facet$.subscribe(function (message) {
             _this.likefacets = message['likes']['buckets'];
             _this.locationfacets = message['Recipelocation']['buckets'];
@@ -583,24 +588,26 @@ var FilterComponent = (function () {
     FilterComponent.prototype.onSelect = function (video) {
         this.selectedVideo = video;
     };
+    FilterComponent.prototype.setMapView = function () {
+        this.router.navigate(['/mapview']);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], FilterComponent.prototype, "filterlistToggle", void 0);
+    FilterComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'filters',
+            template: __webpack_require__("./src/app/main/filter/filter.component.html"),
+            styles: [__webpack_require__("./src/app/main/filter/filter.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__shared_services_indexDataService__["a" /* IndexDataService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_facetService__["a" /* FacetService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]])
+    ], FilterComponent);
     return FilterComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], FilterComponent.prototype, "filterlistToggle", void 0);
-FilterComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'filters',
-        template: __webpack_require__("./src/app/main/filter/filter.component.html"),
-        styles: [__webpack_require__("./src/app/main/filter/filter.component.css")],
-        providers: [__WEBPACK_IMPORTED_MODULE_1__shared_services_indexDataService__["a" /* IndexDataService */]]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_facetService__["a" /* FacetService */]) === "function" && _a || Object])
-], FilterComponent);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/filter.component.js.map
+
 
 /***/ }),
 
@@ -623,14 +630,14 @@ module.exports = "<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__ = __webpack_require__("./src/app/main/solr-search/solr-search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__ = __webpack_require__("./src/app/shared/services/youtube-api.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__ = __webpack_require__("./src/app/shared/services/playlist-store.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_Helper_searchObject__ = __webpack_require__("./src/app/shared/Helper/searchObject.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -713,13 +720,12 @@ var MainComponent = (function () {
         this.shuffle = val;
         this.repeat = false;
     };
-    MainComponent.prototype.togglePlaylist = function () {
-        var _this = this;
-        this.playlistToggle = !this.playlistToggle;
-        setTimeout(function () {
-            _this.playlistNames = !_this.playlistNames;
-        }, 100);
-    };
+    // togglePlaylist(): void {
+    //     this.playlistToggle = !this.playlistToggle;
+    //     setTimeout(() => {
+    //         this.playlistNames = !this.playlistNames;
+    //     }, 100);
+    // }
     MainComponent.prototype.toggleFilter = function () {
         this.filterToggle = !this.filterToggle;
     };
@@ -728,7 +734,6 @@ var MainComponent = (function () {
         if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1)
             return;
         this.loadingInProgress = true;
-        // this.indexDataService.searchNext({'test':'test'})
         this.solrSearch.search()
             .then(function (data) {
             _this.loadingInProgress = false;
@@ -748,109 +753,28 @@ var MainComponent = (function () {
             _this.loadingInProgress = false;
         });
     };
-    MainComponent.prototype.nextVideo = function () {
-        var current = this.youtubePlayer.getCurrentVideo();
-        var inPlaylist = undefined;
-        this.videoPlaylist.forEach(function (video, index) {
-            if (video.id === current) {
-                inPlaylist = index;
-            }
-        });
-        if (inPlaylist !== undefined) {
-            var topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
-            var playlistEl = document.getElementById('playlist');
-            if (this.shuffle) {
-                var shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-                this.youtubePlayer.playVideo(shuffled);
-                playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
-            }
-            else {
-                if (this.videoPlaylist.length - 1 === inPlaylist) {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
-                    playlistEl.scrollTop = 0;
-                }
-                else {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id);
-                    playlistEl.scrollTop = topPos - 100;
-                }
-            }
-        }
-    };
-    MainComponent.prototype.prevVideo = function () {
-        var current = this.youtubePlayer.getCurrentVideo();
-        var inPlaylist = undefined;
-        this.videoPlaylist.forEach(function (video, index) {
-            if (video.id === current) {
-                inPlaylist = index;
-            }
-        });
-        if (inPlaylist !== undefined) {
-            var topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
-            var playlistEl = document.getElementById('playlist');
-            if (this.shuffle) {
-                var shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-                this.youtubePlayer.playVideo(shuffled);
-                playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
-            }
-            else {
-                if (inPlaylist === 0) {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id);
-                    playlistEl.scrollTop = playlistEl.offsetHeight;
-                }
-                else {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist - 1].id);
-                    playlistEl.scrollTop = topPos - 230;
-                }
-            }
-        }
-    };
-    MainComponent.prototype.getShuffled = function (index) {
-        var i = Math.floor(Math.random() * this.videoPlaylist.length);
-        return i !== index ? i : this.getShuffled(index);
-    };
-    MainComponent.prototype.closePlaylist = function () {
-        this.playlistToggle = false;
-        this.playlistNames = false;
-    };
-    MainComponent.prototype.clearPlaylist = function () {
-        this.videoPlaylist = [];
-        this.playlistService.clearPlaylist();
-        this.notificationService.showNotification("Playlist cleared.");
-    };
-    MainComponent.prototype.exportPlaylist = function () {
-        if (this.videoPlaylist.length < 1) {
-            this.notificationService.showNotification("Nothing to export.");
-            return;
-        }
-        var data = JSON.stringify(this.videoPlaylist);
-        var a = document.createElement("a");
-        var file = new Blob([data], { type: "text/json" });
-        a.href = URL.createObjectURL(file);
-        a.download = "playlist.json";
-        a.click();
-        this.notificationService.showNotification("Playlist exported.");
-    };
-    MainComponent.prototype.importPlaylist = function (playlist) {
-        this.videoPlaylist = playlist;
-        this.playlistService.importPlaylist(this.videoPlaylist);
-    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */])
+    ], MainComponent.prototype, "solrSearch", void 0);
+    MainComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'main-list',
+            template: __webpack_require__("./src/app/main/main.component.html"),
+            styles: [__webpack_require__("./src/app/main/main.component.css")],
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */],
+            __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+            __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */]])
+    ], MainComponent);
     return MainComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]) === "function" && _a || Object)
-], MainComponent.prototype, "solrSearch", void 0);
-MainComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'main-list',
-        template: __webpack_require__("./src/app/main/main.component.html"),
-        styles: [__webpack_require__("./src/app/main/main.component.css")],
-    }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_api_service__["a" /* YoutubeApiService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _h || Object])
-], MainComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main.component.js.map
+
 
 /***/ }),
 
@@ -873,8 +797,8 @@ module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"doSearch()\">\n 
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SolrSearchComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
@@ -904,10 +828,10 @@ var SolrSearchComponent = (function () {
         this.youtubePlayer = youtubePlayer;
         this.notificationService = notificationService;
         this.facetService = facetService;
-        this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.pagenum = 0;
         this.searchForm = this.fb.group({
-            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["k" /* Validators */].required]
+            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]
         });
     }
     SolrSearchComponent.prototype.setSearchObject = function (param) {
@@ -957,32 +881,35 @@ var SolrSearchComponent = (function () {
             return data;
         });
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])('queryinput'),
+        __metadata("design:type", Object)
+    ], SolrSearchComponent.prototype, "queryinput", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], SolrSearchComponent.prototype, "videosUpdated", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], SolrSearchComponent.prototype, "loadingInProgress", void 0);
+    SolrSearchComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'solr-search',
+            template: __webpack_require__("./src/app/main/solr-search/solr-search.component.html"),
+            styles: [__webpack_require__("./src/app/main/solr-search/solr-search.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+            __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__["a" /* FacetService */]])
+    ], SolrSearchComponent);
     return SolrSearchComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('queryinput'),
-    __metadata("design:type", Object)
-], SolrSearchComponent.prototype, "queryinput", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], SolrSearchComponent.prototype, "videosUpdated", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], SolrSearchComponent.prototype, "loadingInProgress", void 0);
-SolrSearchComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'solr-search',
-        template: __webpack_require__("./src/app/main/solr-search/solr-search.component.html"),
-        styles: [__webpack_require__("./src/app/main/solr-search/solr-search.component.css")],
-        providers: [__WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_indexDataService__["a" /* IndexDataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_facetService__["a" /* FacetService */]) === "function" && _e || Object])
-], SolrSearchComponent);
 
-var _a, _b, _c, _d, _e;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/solr-search.component.js.map
+
 
 /***/ }),
 
@@ -1005,7 +932,7 @@ module.exports = "<div class=\"main-player-block\">\n  <div class=\"player-conta
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoPlayerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1032,15 +959,15 @@ var VideoPlayerComponent = (function () {
         this.repeat = false;
         this.fullscreenActive = false;
         this.showPlayer = true;
-        this.repeatActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.shuffleActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.nextVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.prevVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.playFirstInPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.clearPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.exportPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.importPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this.closePlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.repeatActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.shuffleActive = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.nextVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.prevVideoEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.playFirstInPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.clearPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.exportPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.importPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.closePlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.youtubePlayer.playPauseEvent.subscribe(function (event) {
             _this.superMinPlayer = !_this.superMinPlayer;
             _this.playingEvent = event;
@@ -1140,55 +1067,55 @@ var VideoPlayerComponent = (function () {
             document.getElementById('import_button')['value'] = "";
         };
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "repeatActive", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "shuffleActive", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "nextVideoEvent", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "prevVideoEvent", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "playFirstInPlaylist", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "clearPlaylist", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "exportPlaylist", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "importPlaylist", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideoPlayerComponent.prototype, "closePlaylist", void 0);
+    VideoPlayerComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'video-player',
+            template: __webpack_require__("./src/app/main/video-player/video-player.component.html"),
+            styles: [__webpack_require__("./src/app/main/video-player/video-player.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__["a" /* NotificationService */]])
+    ], VideoPlayerComponent);
     return VideoPlayerComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "repeatActive", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "shuffleActive", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "nextVideoEvent", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "prevVideoEvent", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "playFirstInPlaylist", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "clearPlaylist", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "exportPlaylist", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "importPlaylist", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideoPlayerComponent.prototype, "closePlaylist", void 0);
-VideoPlayerComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'video-player',
-        template: __webpack_require__("./src/app/main/video-player/video-player.component.html"),
-        styles: [__webpack_require__("./src/app/main/video-player/video-player.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_notification_service__["a" /* NotificationService */]) === "function" && _b || Object])
-], VideoPlayerComponent);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-player.component.js.map
+
 
 /***/ }),
 
@@ -1211,7 +1138,7 @@ module.exports = "<div class=\"mdl-cell custom-cell mdl-cell--2-col\" id=\"{{i +
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideosListComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__ = __webpack_require__("./src/app/shared/services/playlist-store.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1230,7 +1157,7 @@ var VideosListComponent = (function () {
     function VideosListComponent(youtubePlayer, playlistService) {
         this.youtubePlayer = youtubePlayer;
         this.playlistService = playlistService;
-        this.videoPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.videoPlaylist = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
     }
     VideosListComponent.prototype.play = function (video) {
         console.log(video);
@@ -1240,31 +1167,31 @@ var VideosListComponent = (function () {
     VideosListComponent.prototype.addToPlaylist = function (video) {
         this.videoPlaylist.emit(video);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosListComponent.prototype, "videoList", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosListComponent.prototype, "loadingInProgress", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], VideosListComponent.prototype, "videoPlaylist", void 0);
+    VideosListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'videos-list',
+            template: __webpack_require__("./src/app/main/videos-list/videos-list.component.html"),
+            styles: [__webpack_require__("./src/app/main/videos-list/videos-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]])
+    ], VideosListComponent);
     return VideosListComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosListComponent.prototype, "videoList", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosListComponent.prototype, "loadingInProgress", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], VideosListComponent.prototype, "videoPlaylist", void 0);
-VideosListComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'videos-list',
-        template: __webpack_require__("./src/app/main/videos-list/videos-list.component.html"),
-        styles: [__webpack_require__("./src/app/main/videos-list/videos-list.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]) === "function" && _b || Object])
-], VideosListComponent);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/videos-list.component.js.map
+
 
 /***/ }),
 
@@ -1287,7 +1214,7 @@ module.exports = "<div id=\"playlist\" class=\"playlist\" [ngClass]=\"{'opened':
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideosPlaylistComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__ = __webpack_require__("./src/app/shared/services/playlist-store.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1355,39 +1282,39 @@ var VideosPlaylistComponent = (function () {
         var i = Math.floor(Math.random() * this.videoPlaylist.length);
         return i !== index ? i : this.getShuffled(index);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosPlaylistComponent.prototype, "playlistToggle", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosPlaylistComponent.prototype, "videoPlaylist", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosPlaylistComponent.prototype, "playlistNames", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosPlaylistComponent.prototype, "repeat", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Object)
+    ], VideosPlaylistComponent.prototype, "shuffle", void 0);
+    VideosPlaylistComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'videos-playlist',
+            template: __webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.html"),
+            styles: [__webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+            __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]])
+    ], VideosPlaylistComponent);
     return VideosPlaylistComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosPlaylistComponent.prototype, "playlistToggle", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosPlaylistComponent.prototype, "videoPlaylist", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosPlaylistComponent.prototype, "playlistNames", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosPlaylistComponent.prototype, "repeat", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
-    __metadata("design:type", Object)
-], VideosPlaylistComponent.prototype, "shuffle", void 0);
-VideosPlaylistComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'videos-playlist',
-        template: __webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.html"),
-        styles: [__webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.css")]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_youtube_player_service__["a" /* YoutubePlayerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_playlist_store_service__["a" /* PlaylistStoreService */]) === "function" && _b || Object])
-], VideosPlaylistComponent);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/videos-playlist.component.js.map
+
 
 /***/ }),
 
@@ -1421,7 +1348,7 @@ var indexDatas = [
         title: 'Indian Style Macaroni Pasta Recipe | Kids Lunch Box / Indian Style Recipes'
     }
 ];
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/indexdata.js.map
+
 
 /***/ }),
 
@@ -1468,7 +1395,7 @@ var SearchObject = (function () {
     return SearchObject;
 }());
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/searchObject.js.map
+
 
 /***/ }),
 
@@ -1529,7 +1456,7 @@ var User = (function () {
     return User;
 }());
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user.js.map
+
 
 /***/ }),
 
@@ -1538,8 +1465,8 @@ var User = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoHomeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1562,18 +1489,17 @@ var GoHomeComponent = (function () {
         console.log("Going to the front page route");
         this.router.navigate(['/']);
     };
+    GoHomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-go-home-component',
+            template: "<div  class=\"mdl-layout-title\" (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i class=\"material-icons\">home</i>\n    <span  style=\"font-family:cursive\">Peek N Make</span>\n    </div>"
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], GoHomeComponent);
     return GoHomeComponent;
 }());
-GoHomeComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-go-home-component',
-        template: "<div  class=\"mdl-layout-title\" (click)=\"goHome()\"  style=\"display:inline-block\">\n    <i class=\"material-icons\">home</i>\n    <span  style=\"font-family:cursive\">Peek N Make</span>\n    </div>"
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
-], GoHomeComponent);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/go-home.component.js.map
+
 
 /***/ }),
 
@@ -1582,7 +1508,7 @@ var _a, _b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginCallbackComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1602,19 +1528,18 @@ var LoginCallbackComponent = (function () {
     LoginCallbackComponent.prototype.ngOnInit = function () {
         this.authService.handleAuth();
     };
+    LoginCallbackComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-callback',
+            template: "<p>Loading... </p>",
+            styles: []
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]])
+    ], LoginCallbackComponent);
     return LoginCallbackComponent;
 }());
-LoginCallbackComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-callback',
-        template: "<p>Loading... </p>",
-        styles: []
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
-], LoginCallbackComponent);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/login-callback.component.js.map
+
 
 /***/ }),
 
@@ -1623,7 +1548,7 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageNotFoundComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1635,15 +1560,15 @@ var PageNotFoundComponent = (function () {
     function PageNotFoundComponent() {
         this.title = 'app works!';
     }
+    PageNotFoundComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            template: '<p>Page Not Fount!</p>'
+        })
+    ], PageNotFoundComponent);
     return PageNotFoundComponent;
 }());
-PageNotFoundComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        template: '<p>Page Not Fount!</p>'
-    })
-], PageNotFoundComponent);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/not-found.component.js.map
+
 
 /***/ }),
 
@@ -1652,8 +1577,8 @@ PageNotFoundComponent = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchConfigurationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1683,18 +1608,17 @@ var SearchConfigurationComponent = (function () {
     SearchConfigurationComponent.prototype.setMapView = function () {
         this.router.navigate(['/mapview']);
     };
+    SearchConfigurationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-search-configuration',
+            template: "\n    <button type=\"button\" (click)=\"goToAboutPage()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">help</i>\n        <span>about</span>\n    </button>\n    <button type=\"button\" (click)=\"setShowconfig()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">settings</i>\n        <span>set Preferene</span>\n    </button>\n    <button type=\"button\" (click)=\"setMapView()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">map</i>\n        <span>Explore Cuisines</span>\n    </button>"
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+    ], SearchConfigurationComponent);
     return SearchConfigurationComponent;
 }());
-SearchConfigurationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-search-configuration',
-        template: "\n    <button type=\"button\" (click)=\"goToAboutPage()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">help</i>\n        <span>about</span>\n    </button>\n    <button type=\"button\" (click)=\"setShowconfig()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n        <i class=\"material-icons\">settings</i>\n        <span>set Preferene</span>\n    </button>\n    <button type=\"button\" (click)=\"setMapView()\" class=\"mdl-button mdl-js-button mdl-js-ripple-effect\">\n    <i class=\"material-icons\">map</i>\n        <span>Map View</span>\n    </button>"
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
-], SearchConfigurationComponent);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/search-configuration.component.js.map
+
 
 /***/ }),
 
@@ -1703,7 +1627,7 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserAccountsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1732,22 +1656,21 @@ var UserAccountsComponent = (function () {
     UserAccountsComponent.prototype.singInUser = function () {
         this.authService.login();
     };
+    UserAccountsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-user-accounts',
+            template: "\n    <div class=\"sns-link-account\">\n    <div class=\"sns-link-buttons\">\n        <button *ngIf=\"!isLoggedin\" (click)=\"singInUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing in</span>\n        </button>\n        <button *ngIf=\"isLoggedin\" (click)=\"signOutUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing out</span>\n        </button>\n        <button class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">phonelink_setup</i>\n            <span>Link Devices</span>\n        </button>\n    </div>\n    </div>\n    ",
+            styles: ['.sns-link-account {margin-top: 20px;display:inline-block; width:100%}',
+                '.sns-link-buttons{display: flex;justify-content: center}',
+                '.sns-link-button{background-color: grey;color: white;margin:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}'
+            ]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]])
+    ], UserAccountsComponent);
     return UserAccountsComponent;
 }());
-UserAccountsComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-user-accounts',
-        template: "\n    <div class=\"sns-link-account\">\n    <div class=\"sns-link-buttons\">\n        <button *ngIf=\"!isLoggedin\" (click)=\"singInUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing in</span>\n        </button>\n        <button *ngIf=\"isLoggedin\" (click)=\"signOutUser()\" class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">assignment_ind</i>\n            <span>Sing out</span>\n        </button>\n        <button class=\"sns-link-button mdl-button mdl-js-button mdl-button--raised\">\n            <i class=\"material-icons\">phonelink_setup</i>\n            <span>Link Devices</span>\n        </button>\n    </div>\n    </div>\n    ",
-        styles: ['.sns-link-account {margin-top: 20px;display:inline-block; width:100%}',
-            '.sns-link-buttons{display: flex;justify-content: center}',
-            '.sns-link-button{background-color: grey;color: white;margin:5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}'
-        ]
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
-], UserAccountsComponent);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-accounts.component.js.map
+
 
 /***/ }),
 
@@ -1756,7 +1679,7 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserInformationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Helper_user__ = __webpack_require__("./src/app/shared/Helper/user.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1789,20 +1712,19 @@ var UserInformationComponent = (function () {
             this.authService.logout();
         }
     };
+    UserInformationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-user-information',
+            template: "\n    <div (click)=\"signInAction()\" style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user.pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user.userName}}</span>\n    </span>\n    </div>\n    ",
+            styles: ['.mdl-chip__contact{ max-height: 50px }',
+                '.mdl-chip:hover { cursor: pointer }']
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]])
+    ], UserInformationComponent);
     return UserInformationComponent;
 }());
-UserInformationComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-user-information',
-        template: "\n    <div (click)=\"signInAction()\" style=\"padding-right:25px;float:right\">\n    <span class=\"mdl-chip mdl-chip--contact\">\n        <img class=\"mdl-chip__contact\" src={{user.pictureLink}}>\n        <span class=\"mdl-chip__text\">{{user.userName}}</span>\n    </span>\n    </div>\n    ",
-        styles: ['.mdl-chip__contact{ max-height: 50px }',
-            '.mdl-chip:hover { cursor: pointer }']
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
-], UserInformationComponent);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/user-information.component.js.map
+
 
 /***/ }),
 
@@ -1816,17 +1738,17 @@ var _a;
 var AppSettings = (function () {
     function AppSettings() {
     }
+    AppSettings.YOUTUBE_API_KEY = 'AIzaSyBgJ0KTiDr4VQKrAJ9-BmR7oMFMivAksEc';
+    //public static  SOLR_SERVER_PATH: string = 'http://ec2-34-209-114-162.us-west-2.compute.amazonaws.com:8983/solr/';
+    AppSettings.SOLR_SERVER_PATH = (__WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production) ? 'http://ec2-34-209-114-162.us-west-2.compute.amazonaws.com:8983/solr/' : 'http://10.0.0.106:8983/solr/';
+    AppSettings.EXPRESS_API_PATH = 'localhost';
+    AppSettings.base_url = 'https://www.googleapis.com/youtube/v3/';
+    AppSettings.max_results = 12;
+    AppSettings.LOCATION_SERVICE_PATH = 'http://api.hostip.info/get_json.php';
     return AppSettings;
 }());
 
-AppSettings.YOUTUBE_API_KEY = 'AIzaSyBgJ0KTiDr4VQKrAJ9-BmR7oMFMivAksEc';
-//public static  SOLR_SERVER_PATH: string = 'http://ec2-34-209-114-162.us-west-2.compute.amazonaws.com:8983/solr/';
-AppSettings.SOLR_SERVER_PATH = (__WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production) ? 'http://ec2-34-209-114-162.us-west-2.compute.amazonaws.com:8983/solr/' : 'http://10.0.0.106:8983/solr/';
-AppSettings.EXPRESS_API_PATH = 'localhost';
-AppSettings.base_url = 'https://www.googleapis.com/youtube/v3/';
-AppSettings.max_results = 12;
-AppSettings.LOCATION_SERVICE_PATH = 'http://api.hostip.info/get_json.php';
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/constants.js.map
+
 
 /***/ }),
 
@@ -1835,7 +1757,7 @@ AppSettings.LOCATION_SERVICE_PATH = 'http://api.hostip.info/get_json.php';
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LazyScroll; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1849,7 +1771,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var LazyScroll = (function () {
     function LazyScroll(element) {
         this.element = element;
-        this.OnScrollMethod = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.OnScrollMethod = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this._element = this.element.nativeElement;
         if (!this.scrollTrigger) {
             this.scrollTrigger = 1;
@@ -1866,28 +1788,27 @@ var LazyScroll = (function () {
             this.OnScrollMethod.emit(null);
         }
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])('ScrollDistance'),
+        __metadata("design:type", Number)
+    ], LazyScroll.prototype, "scrollTrigger", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", Object)
+    ], LazyScroll.prototype, "OnScrollMethod", void 0);
+    LazyScroll = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */])({
+            selector: '[LazyScroll]',
+            host: {
+                '(window:scroll)': 'onScroll($event)'
+            }
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]])
+    ], LazyScroll);
     return LazyScroll;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('ScrollDistance'),
-    __metadata("design:type", Number)
-], LazyScroll.prototype, "scrollTrigger", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", Object)
-], LazyScroll.prototype, "OnScrollMethod", void 0);
-LazyScroll = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
-        selector: '[LazyScroll]',
-        host: {
-            '(window:scroll)': 'onScroll($event)'
-        }
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object])
-], LazyScroll);
 
-var _a;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/lazy-scroll.directive.js.map
+
 
 /***/ }),
 
@@ -1896,8 +1817,8 @@ var _a;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_go_home_component__ = __webpack_require__("./src/app/shared/components/go-home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_search_configuration_component__ = __webpack_require__("./src/app/shared/components/search-configuration.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_user_accounts_component__ = __webpack_require__("./src/app/shared/components/user-accounts.component.ts");
@@ -1919,31 +1840,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var SharedModule = (function () {
     function SharedModule() {
     }
+    SharedModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */]
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__components_go_home_component__["a" /* GoHomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_3__components_search_configuration_component__["a" /* SearchConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_4__components_user_accounts_component__["a" /* UserAccountsComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__components_user_information_component__["a" /* UserInformationComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__components_login_callback_component__["a" /* LoginCallbackComponent */]
+            ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_2__components_go_home_component__["a" /* GoHomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_3__components_search_configuration_component__["a" /* SearchConfigurationComponent */],
+                __WEBPACK_IMPORTED_MODULE_4__components_user_accounts_component__["a" /* UserAccountsComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__components_user_information_component__["a" /* UserInformationComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__components_login_callback_component__["a" /* LoginCallbackComponent */]
+            ]
+        })
+    ], SharedModule);
     return SharedModule;
 }());
-SharedModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */]
-        ],
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__components_go_home_component__["a" /* GoHomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__components_search_configuration_component__["a" /* SearchConfigurationComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__components_user_accounts_component__["a" /* UserAccountsComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_user_information_component__["a" /* UserInformationComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_login_callback_component__["a" /* LoginCallbackComponent */]
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_2__components_go_home_component__["a" /* GoHomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__components_search_configuration_component__["a" /* SearchConfigurationComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__components_user_accounts_component__["a" /* UserAccountsComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_user_information_component__["a" /* UserInformationComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_login_callback_component__["a" /* LoginCallbackComponent */]
-        ]
-    })
-], SharedModule);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/shared.module.js.map
+
 
 /***/ }),
 
@@ -1952,7 +1873,7 @@ SharedModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaylistItemNamePipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1970,15 +1891,15 @@ var PlaylistItemNamePipe = (function () {
         }
         return value;
     };
+    PlaylistItemNamePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
+            name: 'playlistItemName'
+        })
+    ], PlaylistItemNamePipe);
     return PlaylistItemNamePipe;
 }());
-PlaylistItemNamePipe = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* Pipe */])({
-        name: 'playlistItemName'
-    })
-], PlaylistItemNamePipe);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/playlist-item-name.pipe.js.map
+
 
 /***/ }),
 
@@ -1987,7 +1908,7 @@ PlaylistItemNamePipe = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoDurationPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2021,15 +1942,15 @@ var VideoDurationPipe = (function () {
             .map(function (_time) { return _time.length === 1 ? "0" + _time : _time; })
             .join(':');
     };
+    VideoDurationPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
+            name: 'videoDuration'
+        })
+    ], VideoDurationPipe);
     return VideoDurationPipe;
 }());
-VideoDurationPipe = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* Pipe */])({
-        name: 'videoDuration'
-    })
-], VideoDurationPipe);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-duration.pipe.js.map
+
 
 /***/ }),
 
@@ -2038,7 +1959,7 @@ VideoDurationPipe = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoLikesPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2052,15 +1973,15 @@ var VideoLikesPipe = (function () {
     VideoLikesPipe.prototype.transform = function (value, args) {
         return parseInt(value).toLocaleString('en');
     };
+    VideoLikesPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
+            name: 'videoLikes'
+        })
+    ], VideoLikesPipe);
     return VideoLikesPipe;
 }());
-VideoLikesPipe = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* Pipe */])({
-        name: 'videoLikes'
-    })
-], VideoLikesPipe);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-likes.pipe.js.map
+
 
 /***/ }),
 
@@ -2069,7 +1990,7 @@ VideoLikesPipe = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoViewsPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2083,15 +2004,15 @@ var VideoViewsPipe = (function () {
     VideoViewsPipe.prototype.transform = function (value, args) {
         return parseInt(value).toLocaleString('en');
     };
+    VideoViewsPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Pipe */])({
+            name: 'videoViews'
+        })
+    ], VideoViewsPipe);
     return VideoViewsPipe;
 }());
-VideoViewsPipe = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["X" /* Pipe */])({
-        name: 'videoViews'
-    })
-], VideoViewsPipe);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/video-views.pipe.js.map
+
 
 /***/ }),
 
@@ -2100,7 +2021,7 @@ VideoViewsPipe = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FacetService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2119,13 +2040,13 @@ var FacetService = (function () {
         this.facetSource.next(facet);
         console.log(this.facetSource);
     };
+    FacetService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+    ], FacetService);
     return FacetService;
 }());
-FacetService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
-], FacetService);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/facetService.js.map
+
 
 /***/ }),
 
@@ -2134,8 +2055,8 @@ FacetService = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IndexDataService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Helper_indexdata__ = __webpack_require__("./src/app/shared/Helper/indexdata.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__("./src/app/shared/constants.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
@@ -2274,15 +2195,16 @@ var IndexDataService = (function () {
         }
         return Promise.reject(errMsg);
     };
+    IndexDataService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Jsonp */], __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */],
+            __WEBPACK_IMPORTED_MODULE_5__facetService__["a" /* FacetService */]])
+    ], IndexDataService);
     return IndexDataService;
 }());
-IndexDataService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Jsonp */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Jsonp */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__facetService__["a" /* FacetService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__facetService__["a" /* FacetService */]) === "function" && _d || Object])
-], IndexDataService);
 
-var _a, _b, _c, _d;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/indexDataService.js.map
+
 
 /***/ }),
 
@@ -2291,7 +2213,7 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotificationService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2314,14 +2236,14 @@ var NotificationService = (function () {
         };
         notification['MaterialSnackbar'].showSnackbar(data);
     };
+    NotificationService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], NotificationService);
     return NotificationService;
 }());
-NotificationService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [])
-], NotificationService);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/notification.service.js.map
+
 
 /***/ }),
 
@@ -2330,7 +2252,7 @@ NotificationService = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaylistStoreService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2380,14 +2302,14 @@ var PlaylistStoreService = (function () {
         store.playlists = videos;
         localStorage.setItem(this.ngxYTPlayer, JSON.stringify(store));
     };
+    PlaylistStoreService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], PlaylistStoreService);
     return PlaylistStoreService;
 }());
-PlaylistStoreService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [])
-], PlaylistStoreService);
 
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/playlist-store.service.js.map
+
 
 /***/ }),
 
@@ -2396,8 +2318,8 @@ PlaylistStoreService = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YoutubeApiService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/toPromise.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
@@ -2444,15 +2366,15 @@ var YoutubeApiService = (function () {
         this.notificationService.showNotification(errMsg);
         return Promise.reject(errMsg);
     };
+    YoutubeApiService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */]])
+    ], YoutubeApiService);
     return YoutubeApiService;
 }());
-YoutubeApiService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__notification_service__["a" /* NotificationService */]) === "function" && _b || Object])
-], YoutubeApiService);
 
-var _a, _b;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/youtube-api.service.js.map
+
 
 /***/ }),
 
@@ -2461,7 +2383,7 @@ var _a, _b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return YoutubePlayerService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2478,8 +2400,8 @@ var YoutubePlayerService = (function () {
     function YoutubePlayerService(notificationService) {
         this.notificationService = notificationService;
         this.isPlayerStarted = false;
-        this.videoChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */](true);
-        this.playPauseEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */](true);
+        this.videoChangeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */](true);
+        this.playPauseEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */](true);
     }
     Object.defineProperty(YoutubePlayerService, "win", {
         get: function () {
@@ -2542,23 +2464,22 @@ var YoutubePlayerService = (function () {
     YoutubePlayerService.prototype.resizePlayer = function (width, height) {
         this.yt_player.setSize(width, height);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+    ], YoutubePlayerService.prototype, "videoChangeEvent", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */])
+    ], YoutubePlayerService.prototype, "playPauseEvent", void 0);
+    YoutubePlayerService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */]])
+    ], YoutubePlayerService);
     return YoutubePlayerService;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
-], YoutubePlayerService.prototype, "videoChangeEvent", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])(),
-    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
-], YoutubePlayerService.prototype, "playPauseEvent", void 0);
-YoutubePlayerService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__notification_service__["a" /* NotificationService */]) === "function" && _c || Object])
-], YoutubePlayerService);
 
-var _a, _b, _c;
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/youtube-player.service.js.map
+
 
 /***/ }),
 
@@ -2571,11 +2492,10 @@ var _a, _b, _c;
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false
 };
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/environment.js.map
+
 
 /***/ }),
 
@@ -2584,8 +2504,8 @@ var environment = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__("./src/app/app.module.ts");
 
@@ -2593,10 +2513,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_23" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_17" /* enableProdMode */])();
 }
-Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=/Users/bhabanidas/Work/foodX/src/main.js.map
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* FoodXModule */]);
+
 
 /***/ }),
 

@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpModule,JsonpModule, URLSearchParams } from "@angular/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule, JsonpModule, URLSearchParams } from "@angular/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MdlModule } from '@angular-mdl/core';
-import { MaterialModule} from '@angular/material';
+import { MatRadioModule } from '@angular/material/radio';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/modules/shared.module'; 
+import { SharedModule } from './shared/modules/shared.module';
 
 
 // Components
@@ -16,11 +16,10 @@ import { MainComponent } from "./main/main.component";
 import { VideosListComponent } from "./main/videos-list/videos-list.component";
 import { VideosPlaylistComponent } from "./main/videos-playlist/videos-playlist.component";
 import { VideoPlayerComponent } from "./main/video-player/video-player.component";
-import { FilterComponent} from "./main/filter/filter.component";
+import { FilterComponent } from "./main/filter/filter.component";
 import { SolrSearchComponent } from "./main/solr-search/solr-search.component";
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { PageNotFoundComponent } from './shared/components/not-found.component';
-
 import { FrontpageComponent } from './frontpage/frontpage.component';
 
 // Services
@@ -43,48 +42,48 @@ import { LazyScroll } from "./shared/directives/lazy-scroll/lazy-scroll.directiv
 
 
 @NgModule({
-	imports: [
-		BrowserModule,
-		HttpModule,
-		ReactiveFormsModule,
-		MdlModule,
-		JsonpModule,
-		YoutubePlayerModule,
-		BrowserAnimationsModule,
-		MaterialModule,
+    imports: [
+        BrowserModule,
+        HttpModule,
+        ReactiveFormsModule,
+        MdlModule,
+        JsonpModule,
+        YoutubePlayerModule,
+        BrowserAnimationsModule,
+        MatRadioModule,
         AppRoutingModule,
         SharedModule
-	],
-	declarations: [
-		AppComponent,
-		MainComponent,
-		VideosListComponent,
-		VideoPlayerComponent,
-		VideosPlaylistComponent,
-		PageNotFoundComponent,
-		MainComponent,
-		VideoDurationPipe,
-		VideoLikesPipe,
-		VideoViewsPipe,
-		PlaylistItemNamePipe,
-		LazyScroll,
-		FilterComponent,
-		SolrSearchComponent,
-		FrontpageComponent,
+    ],
+    declarations: [
+        AppComponent,
+        MainComponent,
+        VideosListComponent,
+        VideoPlayerComponent,
+        VideosPlaylistComponent,
+        PageNotFoundComponent,
+        MainComponent,
+        VideoDurationPipe,
+        VideoLikesPipe,
+        VideoViewsPipe,
+        PlaylistItemNamePipe,
+        LazyScroll,
+        FilterComponent,
+        SolrSearchComponent,
+        FrontpageComponent,
 
-	],
-	bootstrap: [
-		AppComponent
-	],
-	providers: [
-		YoutubeApiService,
-		YoutubePlayerService,
-		PlaylistStoreService,
-		NotificationService,
-		IndexDataService,
+    ],
+    bootstrap: [
+        AppComponent
+    ],
+    providers: [
+        YoutubeApiService,
+        YoutubePlayerService,
+        PlaylistStoreService,
+        NotificationService,
+        IndexDataService,
         FacetService,
         AuthService
-	]
+    ]
 })
-export class AppModule {
+export class FoodXModule {
 }
