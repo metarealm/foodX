@@ -2,49 +2,60 @@ var request = require('request');
 var constants = require('./constants');
 
 exports.selectFromSolr = function (query) {
-    //console.info('inside post solr data rest call with query')
-    //console.log(query);
     return new Promise((resolve, reject) => {
         let options = {
-            url: constants.SOLR_URI +'/select',
+            url: constants.SOLR_URI + '/select',
             qs: query
         };
-
         request(options, function (error, response, body) {
-            //console.log(`STATUS: ${response.statusCode}`);
-            //console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
             var searchResult = '';
             if (error) {
                 reject(new Error('Failed to load page, status code: ' + response.statusCode));
             } else if (response && body) {
-                resolve(JSON.parse(body)); // Print JSON response.
+                resolve(JSON.parse(body));
             }
-
         });
-
     })
 }
 
 exports.suggestFromSolr = function (query) {
-    //console.info('inside post solr data rest call with query');
-    //console.log(query);
     return new Promise((resolve, reject) => {
         let options = {
-            url: constants.SOLR_URI +'/suggest',
+            url: constants.SOLR_URI + '/suggest',
             qs: query
         };
-
         request(options, function (error, response, body) {
-            //console.log(`STATUS: ${response.statusCode}`);
-            //console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
             var searchResult = '';
             if (error) {
                 reject(new Error('Failed to load page, status code: ' + response.statusCode));
             } else if (response && body) {
-                resolve(JSON.parse(body)); // Print JSON response.
+                resolve(JSON.parse(body));
             }
-
         });
+    })
+}
 
+exports.selectFromLocation = function (queryparam) {
+    console.log(' query param from solr service ');
+    console.log(queryparam);
+    return new Promise((resolve, reject) => {
+        let lat = '18.15';
+        let long = '83.85';
+        let radius = '1000';
+        let query = '&q=video_id:[* TO *]&fq={!geofilt%20sfield=geo_location}&pt='+queryparam.lat+','+queryparam.lan+'&d='+queryparam.rad+'&wt=json';
+            
+        let options = {
+            url: constants.SOLR_LOC_URI + '/select?' + query,
+            qs: query
+        };
+        console.log(options);
+        request(options, function (error, response, body) {
+            var searchResult = '';
+            if (error) {
+                reject(new Error('Failed to load page, status code: ' + response.statusCode));
+            } else if (response && body) {
+                resolve(JSON.parse(body));
+            }
+        });
     })
 }

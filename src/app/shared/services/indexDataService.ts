@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Jsonp, URLSearchParams, RequestOptions } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 import { indexDatas, IndexedData } from '../Helper/indexdata';
@@ -15,22 +15,18 @@ export class IndexDataService {
 
     public nextToken: string;
     public lastQuery: string;
-
-
     getIndexedData(): Promise<IndexedData[]> {
         return Promise.resolve(indexDatas);
     }
-
     constructor(private jsonp: Jsonp, private http: Http,
         private notificationService: NotificationService,
         private facetService: FacetService
-    ) {
-    }
+    ) { }
+
     suggest(term: string) {
-        // let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/suggest';
         let solrUrl = '/api/suggest'
         let params = new URLSearchParams();
-        params.set('suggest', 'true'); // the user's search value
+        params.set('suggest', 'true');
         params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
@@ -49,16 +45,31 @@ export class IndexDataService {
             }).toPromise();
     }
 
+    searchByLocation(lat: number, lan: number, rad: number): Promise<any> {
+        let solrUrl = '/api/videoincircle';
+        let params = new URLSearchParams();
+        params.set('lat', String(lat));
+        params.set('lan', String(lan));
+        params.set('rad', String(rad));
+        return this.http
+            .get(solrUrl, { search: params })
+            .map((response) => {
+                let jsonRes = response.json();
+                return jsonRes['response']['docs'];
+                // let ids = jsonRes['response']['docs'][0]['video_id'];
+                // let locations = jsonRes['response']['docs'][0]['location_name'];
+                // return this.getVideos(ids);
+            }).toPromise().catch(this.handleError);
+    }
 
     searchVideos(args: SearchObject): Promise<any> {
-        //let solrUrl = AppSettings.SOLR_SERVER_PATH + 'foodx/select';
-        let solrUrl = '/api/select'
+        let solrUrl = '/api/select';
         let params = new URLSearchParams();
         params.set('wt', 'json');
         params.set('rows', '' + args.noOfRow);
-        params.set('q', 'RecipeTitle:' + args.searchTerm);
-        //params.set('json.wrf', 'JSONP_CALLBACK');
-        params.set('fl','youtubevideoID');
+        params.set('q', '*:*');
+        params.set('fq', args.searchTerm);
+        params.set('fl', 'youtubevideoID');
         params.set('start', '' + args.pageNum * args.noOfRow);
         params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
@@ -74,11 +85,9 @@ export class IndexDataService {
                 this.facetService.setFaets(jsonRes['facets']);
                 console.log('number of search result for ' + args.searchTerm + '=' + suggestionObject.length);
                 let ids = [];
-
                 suggestionObject.forEach((item) => {
                     ids.push(item.youtubevideoID);
                 });
-
                 return this.getVideos(ids);
             }).toPromise().catch(this.handleError);
     }
@@ -89,8 +98,7 @@ export class IndexDataService {
         params.set('rows', '' + AppSettings.max_results);
         params.set('start', '' + args['pagenum'] * AppSettings.max_results);
         params.set('wt', 'json');
-        params.set('q', 'RecipeTitle:' + args['term']);
-        // params.set('json.facet', '{likes : { range : {field : likes,start : 0,end : 1000,gap : 200}}}')
+        params.set('q', 'recipeTitle:' + args['term']);
         params.set('json.wrf', 'JSONP_CALLBACK');
 
         return this.http.get(solrUrl, { search: params })
@@ -128,10 +136,6 @@ export class IndexDataService {
         } else {
             errMsg = error.message ? error.message : error.toString();
         }
-
-        // this.notificationService.showNotification(errMsg);
         return Promise.reject(errMsg);
     }
-
-
 }

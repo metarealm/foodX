@@ -93,12 +93,12 @@ export class MainComponent implements AfterViewInit {
         this.repeat = false;
     }
 
-    togglePlaylist(): void {
-        this.playlistToggle = !this.playlistToggle;
-        setTimeout(() => {
-            this.playlistNames = !this.playlistNames;
-        }, 100);
-    }
+    // togglePlaylist(): void {
+    //     this.playlistToggle = !this.playlistToggle;
+    //     setTimeout(() => {
+    //         this.playlistNames = !this.playlistNames;
+    //     }, 100);
+    // }
 
     toggleFilter(): void {
         this.filterToggle = !this.filterToggle;
@@ -106,7 +106,6 @@ export class MainComponent implements AfterViewInit {
     searchMore(): void {
         if (this.loadingInProgress || this.pageLoadingFinished || this.videoList.length < 1) return;
         this.loadingInProgress = true;
-        // this.indexDataService.searchNext({'test':'test'})
         this.solrSearch.search()
             .then(data => {
                 this.loadingInProgress = false;
@@ -127,94 +126,94 @@ export class MainComponent implements AfterViewInit {
             })
     }
 
-    nextVideo(): void {
-        let current = this.youtubePlayer.getCurrentVideo();
-        let inPlaylist = undefined;
-        this.videoPlaylist.forEach((video, index) => {
-            if (video.id === current) {
-                inPlaylist = index;
-            }
-        });
+    // nextVideo(): void {
+    //     let current = this.youtubePlayer.getCurrentVideo();
+    //     let inPlaylist = undefined;
+    //     this.videoPlaylist.forEach((video, index) => {
+    //         if (video.id === current) {
+    //             inPlaylist = index;
+    //         }
+    //     });
 
-        if (inPlaylist !== undefined) {
-            let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
-            let playlistEl = document.getElementById('playlist');
-            if (this.shuffle) {
-                let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-                this.youtubePlayer.playVideo(shuffled);
-                playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
-            } else {
-                if (this.videoPlaylist.length - 1 === inPlaylist) {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
-                    playlistEl.scrollTop = 0;
-                } else {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id)
-                    playlistEl.scrollTop = topPos - 100;
-                }
-            }
-        }
-    }
+    //     if (inPlaylist !== undefined) {
+    //         let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
+    //         let playlistEl = document.getElementById('playlist');
+    //         if (this.shuffle) {
+    //             let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
+    //             this.youtubePlayer.playVideo(shuffled);
+    //             playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
+    //         } else {
+    //             if (this.videoPlaylist.length - 1 === inPlaylist) {
+    //                 this.youtubePlayer.playVideo(this.videoPlaylist[0].id);
+    //                 playlistEl.scrollTop = 0;
+    //             } else {
+    //                 this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist + 1].id)
+    //                 playlistEl.scrollTop = topPos - 100;
+    //             }
+    //         }
+    //     }
+    // }
 
-    prevVideo(): void {
-        let current = this.youtubePlayer.getCurrentVideo();
-        let inPlaylist = undefined;
-        this.videoPlaylist.forEach((video, index) => {
-            if (video.id === current) {
-                inPlaylist = index;
-            }
-        });
+    // prevVideo(): void {
+    //     let current = this.youtubePlayer.getCurrentVideo();
+    //     let inPlaylist = undefined;
+    //     this.videoPlaylist.forEach((video, index) => {
+    //         if (video.id === current) {
+    //             inPlaylist = index;
+    //         }
+    //     });
 
-        if (inPlaylist !== undefined) {
-            let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
-            let playlistEl = document.getElementById('playlist');
-            if (this.shuffle) {
-                let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
-                this.youtubePlayer.playVideo(shuffled);
-                playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
-            } else {
-                if (inPlaylist === 0) {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id);
-                    playlistEl.scrollTop = playlistEl.offsetHeight;
-                } else {
-                    this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist - 1].id)
-                    playlistEl.scrollTop = topPos - 230;
-                }
-            }
-        }
-    }
+    //     if (inPlaylist !== undefined) {
+    //         let topPos = document.getElementById(this.videoPlaylist[inPlaylist].id).offsetTop;
+    //         let playlistEl = document.getElementById('playlist');
+    //         if (this.shuffle) {
+    //             let shuffled = this.videoPlaylist[this.getShuffled(inPlaylist)].id;
+    //             this.youtubePlayer.playVideo(shuffled);
+    //             playlistEl.scrollTop = document.getElementById(shuffled).offsetTop - 100;
+    //         } else {
+    //             if (inPlaylist === 0) {
+    //                 this.youtubePlayer.playVideo(this.videoPlaylist[this.videoPlaylist.length - 1].id);
+    //                 playlistEl.scrollTop = playlistEl.offsetHeight;
+    //             } else {
+    //                 this.youtubePlayer.playVideo(this.videoPlaylist[inPlaylist - 1].id)
+    //                 playlistEl.scrollTop = topPos - 230;
+    //             }
+    //         }
+    //     }
+    // }
 
-    getShuffled(index: number): number {
-        let i = Math.floor(Math.random() * this.videoPlaylist.length);
-        return i !== index ? i : this.getShuffled(index);
-    }
+    // getShuffled(index: number): number {
+    //     let i = Math.floor(Math.random() * this.videoPlaylist.length);
+    //     return i !== index ? i : this.getShuffled(index);
+    // }
 
-    closePlaylist(): void {
-        this.playlistToggle = false;
-        this.playlistNames = false;
-    }
+    // closePlaylist(): void {
+    //     this.playlistToggle = false;
+    //     this.playlistNames = false;
+    // }
 
-    clearPlaylist(): void {
-        this.videoPlaylist = [];
-        this.playlistService.clearPlaylist();
-        this.notificationService.showNotification("Playlist cleared.");
-    }
+    // clearPlaylist(): void {
+    //     this.videoPlaylist = [];
+    //     this.playlistService.clearPlaylist();
+    //     this.notificationService.showNotification("Playlist cleared.");
+    // }
 
-    exportPlaylist(): void {
-        if (this.videoPlaylist.length < 1) {
-            this.notificationService.showNotification("Nothing to export.");
-            return;
-        }
-        let data = JSON.stringify(this.videoPlaylist);
-        let a = document.createElement("a");
-        let file = new Blob([data], { type: "text/json" });
-        a.href = URL.createObjectURL(file);
-        a.download = "playlist.json";
-        a.click();
-        this.notificationService.showNotification("Playlist exported.");
-    }
+    // exportPlaylist(): void {
+    //     if (this.videoPlaylist.length < 1) {
+    //         this.notificationService.showNotification("Nothing to export.");
+    //         return;
+    //     }
+    //     let data = JSON.stringify(this.videoPlaylist);
+    //     let a = document.createElement("a");
+    //     let file = new Blob([data], { type: "text/json" });
+    //     a.href = URL.createObjectURL(file);
+    //     a.download = "playlist.json";
+    //     a.click();
+    //     this.notificationService.showNotification("Playlist exported.");
+    // }
 
-    importPlaylist(playlist: any): void {
-        this.videoPlaylist = playlist;
-        this.playlistService.importPlaylist(this.videoPlaylist);
-    }
+    // importPlaylist(playlist: any): void {
+    //     this.videoPlaylist = playlist;
+    //     this.playlistService.importPlaylist(this.videoPlaylist);
+    // }
 }

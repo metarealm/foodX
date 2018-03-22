@@ -5,13 +5,13 @@ export class SearchObject {
 
     constructor(pageNum:number , searchTerm:string){
         this._pageNum = pageNum;
-        this._searchTerm = searchTerm;
+        this._searchTerm = 'recipeTitle:' + '"'+searchTerm + '"';;
     }
     set pageNum(pageNum : number){
         this._pageNum=pageNum;
     }
     set searchTerm(searchTerm : string){
-        this._searchTerm=searchTerm;
+        this._searchTerm='recipeTitle:' + '"'+searchTerm + '"';
     }
     get pageNum():number{
         return this._pageNum;

@@ -5,7 +5,7 @@ import { User } from '../Helper/user'
 @Component({
     selector: 'app-user-information',
     template: `
-    <div style="padding-right:25px;float:right">
+    <div (click)="signInAction()" style="padding-right:25px;float:right">
     <span class="mdl-chip mdl-chip--contact">
         <img class="mdl-chip__contact" src={{user.pictureLink}}>
         <span class="mdl-chip__text">{{user.userName}}</span>
@@ -25,5 +25,11 @@ export class UserInformationComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    public signInAction(){
+        if(this.user.userName == "Guest"){
+            this.authService.login();
+        }else{
+            this.authService.logout();
+        }
+    }
 }

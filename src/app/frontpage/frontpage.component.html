@@ -1,6 +1,5 @@
-
 <div class="frontpage mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <div class="topLinks" style="padding:25px">
+    <div class="topLinks" style="padding:10px">
         <app-search-configuration></app-search-configuration>
         <app-user-information></app-user-information>
     </div>
@@ -10,16 +9,12 @@
             <div id="search" class="search">
                 <div class="sns-search-options">
                     <div *ngIf="showSuggestDropDown">
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                            <input type="radio" class="mdl-radio__button" name="options" checked>
-                            <span class="mdl-radio__label">All</span>
-                        </label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
                             <input type="radio" class="mdl-radio__button" name="options">
                             <span class="mdl-radio__label">Ingredients</span>
                         </label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                            <input type="radio" class="mdl-radio__button" name="options">
+                            <input type="radio" class="mdl-radio__button" name="options" checked>
                             <span class="mdl-radio__label">Recipe</span>
                         </label>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">

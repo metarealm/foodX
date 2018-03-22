@@ -3,6 +3,7 @@ import { indexDatas, IndexedData } from '../../shared/Helper/indexdata';
 import { IndexDataService } from '../../shared/services/indexDataService';
 import { FacetService } from '../../shared/services/facetService';
 import { Subscription } from 'rxjs/Subscription';
+import { Router} from '@angular/router';
 
 @Component({
     selector: 'filters',
@@ -16,23 +17,20 @@ export class FilterComponent implements OnInit {
     videos: IndexedData[];
     selectedVideo: IndexedData;
     likefacets: any;
-    locationfacets:any;
-    ingredientfacets:any;
-    contenttypefacets:any;
+    locationfacets: any;
+    ingredientfacets: any;
+    contenttypefacets: any;
     subscription: Subscription;
+    
 
-    constructor(private dataService: FacetService) {
+    constructor(private dataService: FacetService , private router :Router) {
         this.subscription = this.dataService.facet$.subscribe(message => {
-                            console.log(' facet data ');
-                            console.log( message['likes']['buckets']);
-                            this.likefacets=message['likes']['buckets'];
-                            this.locationfacets =message['Recipelocation']['buckets'];
-                            this.ingredientfacets=message['Ingredients']['buckets'];
-                            this.contenttypefacets = message['contenttype']['buckets'];
+            this.likefacets = message['likes']['buckets'];
+            this.locationfacets = message['Recipelocation']['buckets'];
+            this.ingredientfacets = message['Ingredients']['buckets'];
+            this.contenttypefacets = message['contenttype']['buckets'];
         });
-
     }
-
     getFilterVideos(): void {
     }
     ngOnInit(): void {
@@ -41,5 +39,7 @@ export class FilterComponent implements OnInit {
     onSelect(video: IndexedData): void {
         this.selectedVideo = video;
     }
-
+    public setMapView(){
+        this.router.navigate(['/mapview']);
+    }
 }
