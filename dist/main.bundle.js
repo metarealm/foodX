@@ -126,40 +126,36 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_mdl_core__ = __webpack_require__("./node_modules/@angular-mdl/core/components/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material_radio__ = __webpack_require__("./node_modules/@angular/material/esm5/radio.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_modules_shared_module__ = __webpack_require__("./src/app/shared/modules/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__main_main_component__ = __webpack_require__("./src/app/main/main.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__main_videos_list_videos_list_component__ = __webpack_require__("./src/app/main/videos-list/videos-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_videos_playlist_videos_playlist_component__ = __webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_video_player_video_player_component__ = __webpack_require__("./src/app/main/video-player/video-player.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__main_filter_filter_component__ = __webpack_require__("./src/app/main/filter/filter.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__main_solr_search_solr_search_component__ = __webpack_require__("./src/app/main/solr-search/solr-search.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_youtube_player__ = __webpack_require__("./node_modules/ng2-youtube-player/modules/ng2-youtube-player.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_components_not_found_component__ = __webpack_require__("./src/app/shared/components/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__frontpage_frontpage_component__ = __webpack_require__("./src/app/frontpage/frontpage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__ = __webpack_require__("./src/app/shared/services/youtube-api.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__shared_services_playlist_store_service__ = __webpack_require__("./src/app/shared/services/playlist-store.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_services_notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_services_facetService__ = __webpack_require__("./src/app/shared/services/facetService.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_duration_pipe__ = __webpack_require__("./src/app/shared/pipes/video-duration.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__shared_pipes_video_likes_pipe__ = __webpack_require__("./src/app/shared/pipes/video-likes.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shared_pipes_video_views_pipe__ = __webpack_require__("./src/app/shared/pipes/video-views.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__shared_pipes_playlist_item_name_pipe__ = __webpack_require__("./src/app/shared/pipes/playlist-item-name.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__ = __webpack_require__("./src/app/shared/directives/lazy-scroll/lazy-scroll.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__("./src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_modules_shared_module__ = __webpack_require__("./src/app/shared/modules/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_main_component__ = __webpack_require__("./src/app/main/main.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__main_videos_list_videos_list_component__ = __webpack_require__("./src/app/main/videos-list/videos-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__main_videos_playlist_videos_playlist_component__ = __webpack_require__("./src/app/main/videos-playlist/videos-playlist.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__main_video_player_video_player_component__ = __webpack_require__("./src/app/main/video-player/video-player.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__main_filter_filter_component__ = __webpack_require__("./src/app/main/filter/filter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__main_solr_search_solr_search_component__ = __webpack_require__("./src/app/main/solr-search/solr-search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ng2_youtube_player__ = __webpack_require__("./node_modules/ng2-youtube-player/modules/ng2-youtube-player.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__shared_components_not_found_component__ = __webpack_require__("./src/app/shared/components/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__frontpage_frontpage_component__ = __webpack_require__("./src/app/frontpage/frontpage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_services_youtube_api_service__ = __webpack_require__("./src/app/shared/services/youtube-api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__shared_services_youtube_player_service__ = __webpack_require__("./src/app/shared/services/youtube-player.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__shared_services_playlist_store_service__ = __webpack_require__("./src/app/shared/services/playlist-store.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__shared_services_notification_service__ = __webpack_require__("./src/app/shared/services/notification.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__shared_services_indexDataService__ = __webpack_require__("./src/app/shared/services/indexDataService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_services_facetService__ = __webpack_require__("./src/app/shared/services/facetService.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__auth_auth_service__ = __webpack_require__("./src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_pipes_video_duration_pipe__ = __webpack_require__("./src/app/shared/pipes/video-duration.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__shared_pipes_video_likes_pipe__ = __webpack_require__("./src/app/shared/pipes/video-likes.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_views_pipe__ = __webpack_require__("./src/app/shared/pipes/video-views.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__shared_pipes_playlist_item_name_pipe__ = __webpack_require__("./src/app/shared/pipes/playlist-item-name.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__shared_directives_lazy_scroll_lazy_scroll_directive__ = __webpack_require__("./src/app/shared/directives/lazy-scroll/lazy-scroll.directive.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -201,42 +197,41 @@ var FoodXModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_mdl_core__["a" /* MdlModule */],
+                // MdlModule,
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* JsonpModule */],
-                __WEBPACK_IMPORTED_MODULE_16_ng2_youtube_player__["a" /* YoutubePlayerModule */],
+                __WEBPACK_IMPORTED_MODULE_14_ng2_youtube_player__["a" /* YoutubePlayerModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_material_radio__["a" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_8__shared_modules_shared_module__["a" /* SharedModule */]
+                __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_6__shared_modules_shared_module__["a" /* SharedModule */]
             ],
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__main_videos_list_videos_list_component__["a" /* VideosListComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__main_video_player_video_player_component__["a" /* VideoPlayerComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__main_videos_playlist_videos_playlist_component__["a" /* VideosPlaylistComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__shared_components_not_found_component__["a" /* PageNotFoundComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_duration_pipe__["a" /* VideoDurationPipe */],
-                __WEBPACK_IMPORTED_MODULE_27__shared_pipes_video_likes_pipe__["a" /* VideoLikesPipe */],
-                __WEBPACK_IMPORTED_MODULE_28__shared_pipes_video_views_pipe__["a" /* VideoViewsPipe */],
-                __WEBPACK_IMPORTED_MODULE_29__shared_pipes_playlist_item_name_pipe__["a" /* PlaylistItemNamePipe */],
-                __WEBPACK_IMPORTED_MODULE_30__shared_directives_lazy_scroll_lazy_scroll_directive__["a" /* LazyScroll */],
-                __WEBPACK_IMPORTED_MODULE_14__main_filter_filter_component__["a" /* FilterComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__frontpage_frontpage_component__["a" /* FrontpageComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__main_main_component__["a" /* MainComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__main_videos_list_videos_list_component__["a" /* VideosListComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__main_video_player_video_player_component__["a" /* VideoPlayerComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__main_videos_playlist_videos_playlist_component__["a" /* VideosPlaylistComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__shared_components_not_found_component__["a" /* PageNotFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__main_main_component__["a" /* MainComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__shared_pipes_video_duration_pipe__["a" /* VideoDurationPipe */],
+                __WEBPACK_IMPORTED_MODULE_25__shared_pipes_video_likes_pipe__["a" /* VideoLikesPipe */],
+                __WEBPACK_IMPORTED_MODULE_26__shared_pipes_video_views_pipe__["a" /* VideoViewsPipe */],
+                __WEBPACK_IMPORTED_MODULE_27__shared_pipes_playlist_item_name_pipe__["a" /* PlaylistItemNamePipe */],
+                __WEBPACK_IMPORTED_MODULE_28__shared_directives_lazy_scroll_lazy_scroll_directive__["a" /* LazyScroll */],
+                __WEBPACK_IMPORTED_MODULE_12__main_filter_filter_component__["a" /* FilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__main_solr_search_solr_search_component__["a" /* SolrSearchComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__frontpage_frontpage_component__["a" /* FrontpageComponent */],
             ],
             bootstrap: [
-                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_19__shared_services_youtube_api_service__["a" /* YoutubeApiService */],
-                __WEBPACK_IMPORTED_MODULE_20__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
-                __WEBPACK_IMPORTED_MODULE_21__shared_services_playlist_store_service__["a" /* PlaylistStoreService */],
-                __WEBPACK_IMPORTED_MODULE_22__shared_services_notification_service__["a" /* NotificationService */],
-                __WEBPACK_IMPORTED_MODULE_23__shared_services_indexDataService__["a" /* IndexDataService */],
-                __WEBPACK_IMPORTED_MODULE_24__shared_services_facetService__["a" /* FacetService */],
-                __WEBPACK_IMPORTED_MODULE_25__auth_auth_service__["a" /* AuthService */]
+                __WEBPACK_IMPORTED_MODULE_17__shared_services_youtube_api_service__["a" /* YoutubeApiService */],
+                __WEBPACK_IMPORTED_MODULE_18__shared_services_youtube_player_service__["a" /* YoutubePlayerService */],
+                __WEBPACK_IMPORTED_MODULE_19__shared_services_playlist_store_service__["a" /* PlaylistStoreService */],
+                __WEBPACK_IMPORTED_MODULE_20__shared_services_notification_service__["a" /* NotificationService */],
+                __WEBPACK_IMPORTED_MODULE_21__shared_services_indexDataService__["a" /* IndexDataService */],
+                __WEBPACK_IMPORTED_MODULE_22__shared_services_facetService__["a" /* FacetService */],
+                __WEBPACK_IMPORTED_MODULE_23__auth_auth_service__["a" /* AuthService */]
             ]
         })
     ], FoodXModule);

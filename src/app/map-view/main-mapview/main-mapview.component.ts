@@ -39,15 +39,16 @@ export class MainMapviewComponent implements OnInit {
         private router: Router) { }
 
     ngOnInit() {
-        this.cirCenter$
-            .debounceTime(500)
-            .subscribe(result => {
-                this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
+        this.cirCenter$.pipe(
+            debounceTime(500),
+            distinctUntilChanged()
+            ).subscribe(result => {
+                return this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
                     .then(data => {
                         return this.processCircleData(data);
                     })
                     .then(result => this.mapVideos = result);
-            });
+            })
         this.cirCenter$.next(this.agmCircleCenter);
     }
     goHome() {
