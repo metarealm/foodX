@@ -3113,6277 +3113,7172 @@ var BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
 
 /***/ }),
 
-/***/ "./node_modules/@angular-mdl/core/components/badge/mdl-badge.directive.js":
+/***/ "./node_modules/@angular/cdk/esm5/bidi.es5.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export MdlBadgeDirective */
-/* unused harmony export MdlBadgeOverlapDirective */
-/* unused harmony export MdlBadgeNoBackgroundDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlBadgeModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var DATA_BADE_ATTR = 'data-badge';
-var MdlBadgeDirective = (function () {
-    function MdlBadgeDirective(elementRef, renderer) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this.el = elementRef.nativeElement;
-    }
-    MdlBadgeDirective.prototype.ngOnChanges = function (changes) {
-        if (this.mdlBadgeContent === null || typeof this.mdlBadgeContent === 'undefined') {
-            this.renderer.removeAttribute(this.el, DATA_BADE_ATTR);
-            return;
-        }
-        this.renderer.setAttribute(this.el, DATA_BADE_ATTR, this.mdlBadgeContent);
-    };
-    return MdlBadgeDirective;
-}());
-
-MdlBadgeDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-badge]',
-                host: {
-                    '[class.mdl-badge]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlBadgeDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlBadgeDirective.propDecorators = {
-    'mdlBadgeContent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-badge',] },],
-};
-var MdlBadgeOverlapDirective = (function () {
-    function MdlBadgeOverlapDirective() {
-    }
-    return MdlBadgeOverlapDirective;
-}());
-
-MdlBadgeOverlapDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-badge-overlap]',
-                host: {
-                    '[class.mdl-badge--overlap]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlBadgeOverlapDirective.ctorParameters = function () { return []; };
-var MdlBadgeNoBackgroundDirective = (function () {
-    function MdlBadgeNoBackgroundDirective() {
-    }
-    return MdlBadgeNoBackgroundDirective;
-}());
-
-MdlBadgeNoBackgroundDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-badge-no-background]',
-                host: {
-                    '[class.mdl-badge--no-background]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlBadgeNoBackgroundDirective.ctorParameters = function () { return []; };
-var MDL_BADGE_DIRECTIVES = [MdlBadgeDirective, MdlBadgeOverlapDirective, MdlBadgeNoBackgroundDirective];
-var MdlBadgeModule = (function () {
-    function MdlBadgeModule() {
-    }
-    MdlBadgeModule.forRoot = function () {
-        return {
-            ngModule: MdlBadgeModule,
-            providers: []
-        };
-    };
-    return MdlBadgeModule;
-}());
-
-MdlBadgeModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_BADGE_DIRECTIVES,
-                declarations: MDL_BADGE_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlBadgeModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-badge.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/button/mdl-button.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlUnsupportedButtonTypeError */
-/* unused harmony export MdlUnsupportedColoredTypeError */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlButtonComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlButtonModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_native_support__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/native-support.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-var MdlUnsupportedButtonTypeError = (function (_super) {
-    __extends(MdlUnsupportedButtonTypeError, _super);
-    function MdlUnsupportedButtonTypeError(type) {
-        /* istanbul ignore next */
-        return _super.call(this, "Button type \"" + type + "\" isn't supported (allowed: raised, fab, mini-fab, icon, '').") || this;
-    }
-    return MdlUnsupportedButtonTypeError;
-}(__WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["a" /* MdlError */]));
-
-var MdlUnsupportedColoredTypeError = (function (_super) {
-    __extends(MdlUnsupportedColoredTypeError, _super);
-    function MdlUnsupportedColoredTypeError(type) {
-        /* istanbul ignore next */
-        return _super.call(this, "Colored type \"" + type + "\" isn't supported (allowed: primary, accent, '').") || this;
-    }
-    return MdlUnsupportedColoredTypeError;
-}(__WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["a" /* MdlError */]));
-
-var MDL_BUTTON_TYPES = [
-    'raised',
-    'fab',
-    'mini-fab',
-    'icon',
-    ''
-];
-var MDL_COLORED_TYPES = [
-    'primary',
-    'accent',
-    ''
-];
-var MdlButtonComponent = (function () {
-    function MdlButtonComponent(elementRef, renderer) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this._disabled = false;
-        this.element = elementRef.nativeElement;
-    }
-    Object.defineProperty(MdlButtonComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlButtonComponent.prototype.ngOnChanges = function (changes) {
-        if (this.mdlButtonType && MDL_BUTTON_TYPES.indexOf(this.mdlButtonType) === -1) {
-            throw new MdlUnsupportedButtonTypeError(this.mdlButtonType);
-        }
-        if (this.mdlColoredType && MDL_COLORED_TYPES.indexOf(this.mdlColoredType) === -1) {
-            throw new MdlUnsupportedColoredTypeError(this.mdlColoredType);
-        }
-    };
-    MdlButtonComponent.prototype.onMouseUp = function () {
-        this.blurIt();
-    };
-    MdlButtonComponent.prototype.onMouseLeave = function () {
-        this.blurIt();
-    };
-    MdlButtonComponent.prototype.blurIt = function () {
-        Object(__WEBPACK_IMPORTED_MODULE_3__common_native_support__["a" /* callNative */])(this.element, 'blur');
-    };
-    return MdlButtonComponent;
-}());
-
-MdlButtonComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-button, button[mdl-button], a[mdl-button]',
-                host: {
-                    '[attr.disabled]': 'disabled ? "disabled" : null',
-                    '(mouseup)': 'onMouseUp()',
-                    '(mouseleave)': 'onMouseLeave()',
-                    '[class.mdl-button]': 'true',
-                    '[class.mdl-button--raised]': 'mdlButtonType == "raised"',
-                    '[class.mdl-button--fab]': 'mdlButtonType == "fab" || mdlButtonType == "mini-fab"',
-                    '[class.mdl-button--mini-fab]': 'mdlButtonType == "mini-fab"',
-                    '[class.mdl-button--icon]': 'mdlButtonType == "icon"',
-                    '[class.mdl-button--primary]': 'mdlColoredType == "primary"',
-                    '[class.mdl-button--accent]': 'mdlColoredType == "accent"'
-                },
-                exportAs: 'mdlButton',
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlButtonComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlButtonComponent.propDecorators = {
-    'mdlButtonType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-button-type',] },],
-    'mdlColoredType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-colored',] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MDL_BUTTON_DIRECTIVES = [MdlButtonComponent];
-var MdlButtonModule = (function () {
-    function MdlButtonModule() {
-    }
-    MdlButtonModule.forRoot = function () {
-        return {
-            ngModule: MdlButtonModule,
-            providers: []
-        };
-    };
-    return MdlButtonModule;
-}());
-
-MdlButtonModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_BUTTON_DIRECTIVES,
-                declarations: MDL_BUTTON_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlButtonModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-button.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/card/mdl-card.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlCardComponent */
-/* unused harmony export MdlCardChildStructure */
-/* unused harmony export MdlCardTitleComponent */
-/* unused harmony export MdlCardSupportingTextComponent */
-/* unused harmony export MdlCardMediaComponent */
-/* unused harmony export MdlCardActionsComponent */
-/* unused harmony export MdlCardMenuComponent */
-/* unused harmony export MdlCardTitleTextDirective */
-/* unused harmony export MdlCardBorderDirective */
-/* unused harmony export MdlCardExpandDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlCardModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var MdlCardComponent = (function () {
-    function MdlCardComponent() {
-    }
-    return MdlCardComponent;
-}());
-
-MdlCardComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card',
-                host: {
-                    '[class.mdl-card]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardComponent.ctorParameters = function () { return []; };
-var MdlCardChildStructure = (function () {
-    function MdlCardChildStructure(mdlCardComponent, childComponentName) {
-        this.mdlCardComponent = mdlCardComponent;
-        this.childComponentName = childComponentName;
-    }
-    MdlCardChildStructure.prototype.ngOnInit = function () {
-        if (this.mdlCardComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */](this.childComponentName, 'mdl-card');
-        }
-    };
-    return MdlCardChildStructure;
-}());
-
-var MdlCardTitleComponent = (function (_super) {
-    __extends(MdlCardTitleComponent, _super);
-    function MdlCardTitleComponent(mdlCardComponent) {
-        return _super.call(this, mdlCardComponent, 'mdl-card-title') || this;
-    }
-    MdlCardTitleComponent.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    return MdlCardTitleComponent;
-}(MdlCardChildStructure));
-
-MdlCardTitleComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card-title',
-                host: {
-                    '[class.mdl-card__title]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardTitleComponent.ctorParameters = function () { return [
-    { type: MdlCardComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlCardSupportingTextComponent = (function (_super) {
-    __extends(MdlCardSupportingTextComponent, _super);
-    function MdlCardSupportingTextComponent(mdlCardComponent) {
-        return _super.call(this, mdlCardComponent, 'mdl-card-supporting-text') || this;
-    }
-    MdlCardSupportingTextComponent.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    return MdlCardSupportingTextComponent;
-}(MdlCardChildStructure));
-
-MdlCardSupportingTextComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card-supporting-text',
-                host: {
-                    '[class.mdl-card__supporting-text]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardSupportingTextComponent.ctorParameters = function () { return [
-    { type: MdlCardComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlCardMediaComponent = (function (_super) {
-    __extends(MdlCardMediaComponent, _super);
-    function MdlCardMediaComponent(mdlCardComponent) {
-        return _super.call(this, mdlCardComponent, 'mdl-card-media') || this;
-    }
-    MdlCardMediaComponent.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    return MdlCardMediaComponent;
-}(MdlCardChildStructure));
-
-MdlCardMediaComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card-media',
-                host: {
-                    '[class.mdl-card__media]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardMediaComponent.ctorParameters = function () { return [
-    { type: MdlCardComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlCardActionsComponent = (function (_super) {
-    __extends(MdlCardActionsComponent, _super);
-    function MdlCardActionsComponent(mdlCardComponent) {
-        return _super.call(this, mdlCardComponent, 'mdl-card-actions') || this;
-    }
-    MdlCardActionsComponent.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    return MdlCardActionsComponent;
-}(MdlCardChildStructure));
-
-MdlCardActionsComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card-actions',
-                host: {
-                    '[class.mdl-card__actions]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardActionsComponent.ctorParameters = function () { return [
-    { type: MdlCardComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlCardMenuComponent = (function (_super) {
-    __extends(MdlCardMenuComponent, _super);
-    function MdlCardMenuComponent(mdlCardComponent) {
-        return _super.call(this, mdlCardComponent, 'mdl-card-menu') || this;
-    }
-    MdlCardMenuComponent.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    return MdlCardMenuComponent;
-}(MdlCardChildStructure));
-
-MdlCardMenuComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-card-menu',
-                host: {
-                    '[class.mdl-card__menu]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlCardMenuComponent.ctorParameters = function () { return [
-    { type: MdlCardComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlCardTitleTextDirective = (function () {
-    function MdlCardTitleTextDirective() {
-    }
-    return MdlCardTitleTextDirective;
-}());
-
-MdlCardTitleTextDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-card-title-text]',
-                host: {
-                    '[class.mdl-card__title-text]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlCardTitleTextDirective.ctorParameters = function () { return []; };
-var MdlCardBorderDirective = (function () {
-    function MdlCardBorderDirective() {
-    }
-    return MdlCardBorderDirective;
-}());
-
-MdlCardBorderDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-card-border]',
-                host: {
-                    '[class.mdl-card--border]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlCardBorderDirective.ctorParameters = function () { return []; };
-var MdlCardExpandDirective = (function () {
-    function MdlCardExpandDirective() {
-    }
-    return MdlCardExpandDirective;
-}());
-
-MdlCardExpandDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-card-expand]',
-                host: {
-                    '[class.mdl-card--expand]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlCardExpandDirective.ctorParameters = function () { return []; };
-var MDL_CARD_DIRECTIVES = [
-    MdlCardComponent,
-    MdlCardTitleComponent,
-    MdlCardMediaComponent,
-    MdlCardSupportingTextComponent,
-    MdlCardActionsComponent,
-    MdlCardMenuComponent,
-    MdlCardTitleTextDirective,
-    MdlCardBorderDirective,
-    MdlCardExpandDirective
-];
-var MdlCardModule = (function () {
-    function MdlCardModule() {
-    }
-    MdlCardModule.forRoot = function () {
-        return {
-            ngModule: MdlCardModule,
-            providers: []
-        };
-    };
-    return MdlCardModule;
-}());
-
-MdlCardModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_CARD_DIRECTIVES,
-                declarations: MDL_CARD_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlCardModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-card.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/checkbox/mdl-checkbox.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlCheckboxComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlCheckboxModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_noop__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/noop.js");
-
-
-
-
-
-var IS_FOCUSED = 'is-focused';
-var CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-    useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlCheckboxComponent; }),
-    multi: true
-};
-var MdlCheckboxComponent = (function () {
-    function MdlCheckboxComponent(elementRef, renderer) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this._disabled = false;
-        this.tabindex = null;
-        this.change = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.value_ = false;
-        this.onTouchedCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-        this.onChangeCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-        this.el = elementRef.nativeElement;
-    }
-    Object.defineProperty(MdlCheckboxComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlCheckboxComponent.prototype, "value", {
-        get: function () { return this.value_; },
-        set: function (v) {
-            this.value_ = v;
-            this.onChangeCallback(v);
-            this.change.emit(v);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
-    MdlCheckboxComponent.prototype.writeValue = function (value) {
-        this.value_ = value;
-    };
-    MdlCheckboxComponent.prototype.registerOnChange = function (fn) {
-        this.onChangeCallback = fn;
-    };
-    MdlCheckboxComponent.prototype.registerOnTouched = function (fn) {
-        this.onTouchedCallback = fn;
-    };
-    MdlCheckboxComponent.prototype.setDisabledState = function (isDisabled) {
-        this.disabled = isDisabled;
-    };
-    MdlCheckboxComponent.prototype.onFocus = function () {
-        this.renderer.addClass(this.el, IS_FOCUSED);
-    };
-    MdlCheckboxComponent.prototype.onBlur = function () {
-        this.renderer.removeClass(this.el, IS_FOCUSED);
-        this.onTouchedCallback();
-    };
-    MdlCheckboxComponent.prototype.onClick = function () {
-        if (this.disabled) {
-            return;
-        }
-        this.value = !this.value;
-    };
-    return MdlCheckboxComponent;
-}());
-
-MdlCheckboxComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-checkbox',
-                providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
-                host: {
-                    '(click)': 'onClick()',
-                    '[class.mdl-checkbox]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.is-checked]': 'value',
-                    '[class.is-disabled]': 'disabled'
-                },
-                template: "\n  <input type=\"checkbox\" class=\"mdl-checkbox__input\" \n    (focus)=\"onFocus()\" \n    (blur)=\"onBlur()\"\n    [disabled]=\"disabled\"\n    [attr.tabindex]=\"tabindex\"\n    [ngModel]=\"value\">\n  <span class=\"mdl-checkbox__label\"><ng-content></ng-content></span>\n  <span class=\"mdl-checkbox__focus-helper\"></span>\n  <span class=\"mdl-checkbox__box-outline\">\n    <span class=\"mdl-checkbox__tick-outline\"></span>\n  </span>\n  ",
-                inputs: ['value'],
-                outputs: ['change'],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush
-            },] },
-];
-/** @nocollapse */
-MdlCheckboxComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlCheckboxComponent.propDecorators = {
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'tabindex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MDL_CHECKBOX_DIRECTIVES = [MdlCheckboxComponent];
-var MdlCheckboxModule = (function () {
-    function MdlCheckboxModule() {
-    }
-    MdlCheckboxModule.forRoot = function () {
-        return {
-            ngModule: MdlCheckboxModule,
-            providers: []
-        };
-    };
-    return MdlCheckboxModule;
-}());
-
-MdlCheckboxModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormsModule */]],
-                exports: MDL_CHECKBOX_DIRECTIVES,
-                declarations: MDL_CHECKBOX_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlCheckboxModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-checkbox.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/chips/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlChipModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Directionality; });
+/* unused harmony export DIR_DOCUMENT */
+/* unused harmony export Dir */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BidiModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icon_mdl_icon_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_chip_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/chips/mdl-chip.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mdl_chip_contact_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/chips/mdl-chip-contact.directive.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-var DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_3__mdl_chip_component__["a" /* MdlChipComponent */], __WEBPACK_IMPORTED_MODULE_4__mdl_chip_contact_directive__["a" /* MdlChipContactDirective */]];
-var MdlChipModule = (function () {
-    function MdlChipModule() {
-    }
-    MdlChipModule.forRoot = function () {
-        return {
-            ngModule: MdlChipModule,
-            providers: []
-        };
-    };
-    return MdlChipModule;
-}());
-
-MdlChipModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__icon_mdl_icon_component__["a" /* MdlIconModule */], __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */]],
-                exports: DIRECTIVES,
-                declarations: DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlChipModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/chips/mdl-chip-contact.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlChipContactDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_chip_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/chips/mdl-chip.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-
-
-
-var MdlChipContactDirective = (function () {
-    function MdlChipContactDirective(mdlChipComponent) {
-        this.mdlChipComponent = mdlChipComponent;
-    }
-    MdlChipContactDirective.prototype.ngOnInit = function () {
-        if (!this.mdlChipComponent) {
-            throw new __WEBPACK_IMPORTED_MODULE_2__common_mdl_error__["b" /* MdlStructureError */]('mdl-chip-contact', 'mdl-chip');
-        }
-    };
-    return MdlChipContactDirective;
-}());
-
-MdlChipContactDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-chip-contact]',
-                host: {
-                    '[class.mdl-chip__contact]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlChipContactDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_chip_component__["a" /* MdlChipComponent */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_chip_component__["a" /* MdlChipComponent */]; }),] },] },
-]; };
-//# sourceMappingURL=mdl-chip-contact.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/chips/mdl-chip.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlChipComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_chip_contact_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/chips/mdl-chip-contact.directive.js");
-
-
-var MdlChipComponent = (function () {
-    function MdlChipComponent() {
-        this.actionClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-    }
-    MdlChipComponent.prototype.action = function () {
-        this.actionClick.emit();
-    };
-    return MdlChipComponent;
-}());
-
-MdlChipComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-chip',
-                host: {
-                    '[class.mdl-chip]': 'true',
-                    '[class.mdl-chip--contact]': 'chipContact'
-                },
-                template: "\n    <ng-content></ng-content>\n    <span *ngIf=\"mdlLabel\" class=\"mdl-chip__text\">{{mdlLabel}}</span>\n    <button *ngIf=\"mdlActionIcon\" (click)=\"action()\" type=\"button\" class=\"mdl-chip__action\">\n      <mdl-icon>{{mdlActionIcon}}</mdl-icon>\n    </button>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlChipComponent.ctorParameters = function () { return []; };
-MdlChipComponent.propDecorators = {
-    'mdlLabel': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-label',] },],
-    'mdlActionIcon': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-action-icon',] },],
-    'actionClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['action-click',] },],
-    'chipContact': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_1__mdl_chip_contact_directive__["a" /* MdlChipContactDirective */],] },],
-};
-//# sourceMappingURL=mdl-chip.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/animations.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export NativeWebAnimationPlayer */
-/* unused harmony export NoopAnimationPlayer */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Animations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NativeWebAnimations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NoopWebAnimations; });
-var NativeWebAnimationPlayer = (function () {
-    function NativeWebAnimationPlayer(element, keyframes, duration, easing) {
-        this.element = element;
-        this.keyframes = keyframes;
-        this.duration = duration;
-        this.easing = easing;
-        this.onDoneCallback = [];
-    }
-    NativeWebAnimationPlayer.prototype.onDone = function (fn) {
-        this.onDoneCallback.push(fn);
-    };
-    NativeWebAnimationPlayer.prototype.play = function () {
-        var _this = this;
-        var animation = this.element['animate'](this.keyframes, { duration: this.duration,
-            easing: this.easing,
-            fill: 'forwards' });
-        animation.addEventListener('finish', function () { return _this.onDoneCallback.forEach(function (fn) { return fn(); }); });
-    };
-    return NativeWebAnimationPlayer;
-}());
-
-var NoopAnimationPlayer = (function () {
-    function NoopAnimationPlayer(element, keyframes, duration, easing) {
-        this.element = element;
-        this.keyframes = keyframes;
-        this.duration = duration;
-        this.easing = easing;
-        this.onDoneCallback = [];
-    }
-    NoopAnimationPlayer.prototype.onDone = function (fn) {
-        this.onDoneCallback.push(fn);
-    };
-    NoopAnimationPlayer.prototype.play = function () {
-        this.onDoneCallback.forEach(function (fn) { return fn(); });
-    };
-    return NoopAnimationPlayer;
-}());
-
-var Animations = (function () {
-    function Animations() {
-    }
-    return Animations;
-}());
-
-var NativeWebAnimations = (function () {
-    function NativeWebAnimations() {
-    }
-    NativeWebAnimations.prototype.animate = function (element, keyframes, duration, easing) {
-        return new NativeWebAnimationPlayer(element, keyframes, duration, easing);
-    };
-    return NativeWebAnimations;
-}());
-
-var NoopWebAnimations = (function () {
-    function NoopWebAnimations() {
-    }
-    NoopWebAnimations.prototype.animate = function (element, keyframes, duration, easing) {
-        return new NoopAnimationPlayer(element, keyframes, duration, easing);
-    };
-    return NoopWebAnimations;
-}());
-
-//# sourceMappingURL=animations.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/append-view-container-ref-directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppendViewContainerRefDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var AppendViewContainerRefDirective = (function () {
-    function AppendViewContainerRefDirective(viewRef, renderer) {
-        this.viewRef = viewRef;
-        this.renderer = renderer;
-    }
-    AppendViewContainerRefDirective.prototype.ngAfterViewInit = function () {
-        this.renderer.appendChild(this.viewRef.element.nativeElement, this.viewContainerRefToAppend.element.nativeElement);
-    };
-    return AppendViewContainerRefDirective;
-}());
-
-AppendViewContainerRefDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[append-view-container-ref]'
-            },] },
-];
-/** @nocollapse */
-AppendViewContainerRefDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-AppendViewContainerRefDirective.propDecorators = {
-    'viewContainerRefToAppend': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['append-view-container-ref',] },],
-};
-//# sourceMappingURL=append-view-container-ref-directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/boolean-property.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = toBoolean;
-function toBoolean(value) {
-    return value != null && "" + value !== 'false';
-}
-//# sourceMappingURL=boolean-property.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export instantiateSupportedAnimationDriver */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlCommonsModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__append_view_container_ref_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/append-view-container-ref-directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/animations.js");
-
-
-
-function isWebAnimationsSupported() {
-    return typeof Element !== 'undefined' && typeof Element.prototype['animate'] === 'function';
-}
-function instantiateSupportedAnimationDriver() {
-    /* istanbul ignore next */
-    if (isWebAnimationsSupported()) {
-        return new __WEBPACK_IMPORTED_MODULE_2__animations__["b" /* NativeWebAnimations */]();
-    }
-    /* istanbul ignore next */
-    return new __WEBPACK_IMPORTED_MODULE_2__animations__["c" /* NoopWebAnimations */]();
-}
-var MdlCommonsModule = (function () {
-    function MdlCommonsModule() {
-    }
-    return MdlCommonsModule;
-}());
-
-MdlCommonsModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: [__WEBPACK_IMPORTED_MODULE_1__append_view_container_ref_directive__["a" /* AppendViewContainerRefDirective */]],
-                declarations: [__WEBPACK_IMPORTED_MODULE_1__append_view_container_ref_directive__["a" /* AppendViewContainerRefDirective */]],
-                providers: [
-                    { provide: __WEBPACK_IMPORTED_MODULE_2__animations__["a" /* Animations */], useFactory: instantiateSupportedAnimationDriver }
-                ]
-            },] },
-];
-/** @nocollapse */
-MdlCommonsModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/mdl-error.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlStructureError; });
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-/**
- * Wrapper for mdl error messages.
- */
-var MdlError = (function (_super) {
-    __extends(MdlError, _super);
-    function MdlError(value) {
-        /* istanbul ignore next */
-        return _super.call(this, value) || this;
-    }
-    return MdlError;
-}(Error));
-
-var MdlStructureError = (function (_super) {
-    __extends(MdlStructureError, _super);
-    function MdlStructureError(child, requiredParent) {
-        /* istanbul ignore next */
-        return _super.call(this, "\"" + child + "\" requires \"" + requiredParent + "\" as a parent.") || this;
-    }
-    return MdlStructureError;
-}(MdlError));
-
-//# sourceMappingURL=mdl-error.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/mdl-ripple.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlRippleDirective */
-/* unused harmony export MdlButtonRippleDirective */
-/* unused harmony export MdlCheckboxRippleDirective */
-/* unused harmony export MdlRadioRippleDirective */
-/* unused harmony export MdlIconToggleRippleDirective */
-/* unused harmony export MdlSwitchRippleDirective */
-/* unused harmony export MdlMenuItemRippleDirective */
-/* unused harmony export MdlAnchorRippleDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlRippleModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ripple_vendor__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/ripple.vendor.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-// known bugs: https://github.com/google/material-design-lite/issues/4215
-var MdlRippleDirective = (function () {
-    function MdlRippleDirective(elementRef, renderer, cssContainerClasses) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this.cssContainerClasses = cssContainerClasses;
-        this.RIPPLE = 'mdl-ripple';
-        this.rippleActive = true;
-        this.el = elementRef.nativeElement;
-    }
-    MdlRippleDirective.prototype.ngOnChanges = function (changes) {
-        var _this = this;
-        // remove any existing ripple container
-        if (this.rippleContainer) {
-            this.el.removeChild(this.rippleContainer);
-            delete this.rippleContainer;
-            delete this.ripple;
-        }
-        // if used as mdl-ripple without property binding it is an empty string
-        // otherwise (e.g. [mdl-ripple] it is a boolean - may be with the default value true.
-        if (this.rippleActive === '' || this.rippleActive) {
-            this.rippleContainer = this.renderer.createElement('span');
-            this.cssContainerClasses.forEach(function (cssClass) {
-                _this.renderer.addClass(_this.rippleContainer, cssClass);
-            });
-            var rippleElement = this.renderer.createElement('span');
-            this.renderer.addClass(rippleElement, this.RIPPLE);
-            this.rippleContainer.appendChild(rippleElement);
-            this.el.appendChild(this.rippleContainer);
-            this.ripple = new __WEBPACK_IMPORTED_MODULE_1__ripple_vendor__["a" /* MaterialRipple */](this.renderer, this.el);
-        }
-    };
-    return MdlRippleDirective;
-}());
-
-var MdlButtonRippleDirective = (function (_super) {
-    __extends(MdlButtonRippleDirective, _super);
-    function MdlButtonRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-button__ripple-container']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlButtonRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlButtonRippleDirective;
-}(MdlRippleDirective));
-
-MdlButtonRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-button[mdl-ripple], button[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlButtonRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlButtonRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlCheckboxRippleDirective = (function (_super) {
-    __extends(MdlCheckboxRippleDirective, _super);
-    function MdlCheckboxRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-checkbox__ripple-container', 'mdl-ripple--center']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlCheckboxRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlCheckboxRippleDirective;
-}(MdlRippleDirective));
-
-MdlCheckboxRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-checkbox[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlCheckboxRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlCheckboxRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlRadioRippleDirective = (function (_super) {
-    __extends(MdlRadioRippleDirective, _super);
-    function MdlRadioRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-radio__ripple-container', 'mdl-ripple--center']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlRadioRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlRadioRippleDirective;
-}(MdlRippleDirective));
-
-MdlRadioRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-radio[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlRadioRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlRadioRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlIconToggleRippleDirective = (function (_super) {
-    __extends(MdlIconToggleRippleDirective, _super);
-    function MdlIconToggleRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-icon-toggle__ripple-container', 'mdl-ripple--center']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlIconToggleRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlIconToggleRippleDirective;
-}(MdlRippleDirective));
-
-MdlIconToggleRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-icon-toggle[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlIconToggleRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlIconToggleRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlSwitchRippleDirective = (function (_super) {
-    __extends(MdlSwitchRippleDirective, _super);
-    function MdlSwitchRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-switch__ripple-container', 'mdl-ripple--center']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlSwitchRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlSwitchRippleDirective;
-}(MdlRippleDirective));
-
-MdlSwitchRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-switch[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlSwitchRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlSwitchRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlMenuItemRippleDirective = (function (_super) {
-    __extends(MdlMenuItemRippleDirective, _super);
-    function MdlMenuItemRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-menu__item--ripple-container']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlMenuItemRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlMenuItemRippleDirective;
-}(MdlRippleDirective));
-
-MdlMenuItemRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-menu-item[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlMenuItemRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlMenuItemRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MdlAnchorRippleDirective = (function (_super) {
-    __extends(MdlAnchorRippleDirective, _super);
-    function MdlAnchorRippleDirective(elementRef, renderer) {
-        var _this = _super.call(this, elementRef, renderer, ['mdl-tabs__ripple-container', 'mdl-layout__tab-ripple-container']) || this;
-        _this.rippleActive = true;
-        return _this;
-    }
-    // AOT is not able to call lifecycle hooks if a base class :(
-    MdlAnchorRippleDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    return MdlAnchorRippleDirective;
-}(MdlRippleDirective));
-
-MdlAnchorRippleDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'a[mdl-ripple],div[mdl-ripple]'
-            },] },
-];
-/** @nocollapse */
-MdlAnchorRippleDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlAnchorRippleDirective.propDecorators = {
-    'rippleActive': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-};
-var MDL_COMMON_DIRECTIVES = [
-    MdlCheckboxRippleDirective,
-    MdlButtonRippleDirective,
-    MdlRadioRippleDirective,
-    MdlIconToggleRippleDirective,
-    MdlSwitchRippleDirective,
-    MdlMenuItemRippleDirective,
-    MdlAnchorRippleDirective
-];
-var MdlRippleModule = (function () {
-    function MdlRippleModule() {
-    }
-    MdlRippleModule.forRoot = function () {
-        return {
-            ngModule: MdlRippleModule,
-            providers: []
-        };
-    };
-    return MdlRippleModule;
-}());
-
-MdlRippleModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_COMMON_DIRECTIVES,
-                declarations: MDL_COMMON_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlRippleModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-ripple.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/native-support.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = callNative;
-function callNative(el, method, arg) {
-    if (arg === void 0) { arg = null; }
-    /* istanbul ignore next */ // if this code runs in browser this is allways true!
-    if (el[method]) {
-        el[method](arg);
-    }
-}
-//# sourceMappingURL=native-support.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/noop.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return noop; });
-/* istanbul ignore next */
-/* istanbul ignore next */ var noop = function (_) { };
-//# sourceMappingURL=noop.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/number.property.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = toNumber;
-function toNumber(value) {
-    if (typeof value === 'undefined') {
-        return null;
-    }
-    else if (typeof value === 'string') {
-        return parseInt(value);
-    }
-    return value;
-}
-//# sourceMappingURL=number.property.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/common/ripple.vendor.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = MaterialRipple;
 /**
  * @license
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright Google LLC All Rights Reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
  */
 
 /**
- * Class constructor for Ripple MDL component.
- * Implements MDL component design pattern defined at:
- * https://github.com/jasonmayes/mdl-component-design-pattern
+ * Injection token used to inject the document into Directionality.
+ * This is used so that the value can be faked in tests.
  *
- * @constructor
- * @param {HTMLElement} element The element that will be upgraded.
+ * We can't use the real document in tests because changing the real `dir` causes geometry-based
+ * tests in Safari to fail.
+ *
+ * We also can't re-provide the DOCUMENT token from platform-brower because the unit tests
+ * themselves use things like `querySelector` in test code.
  */
-function MaterialRipple(renderer, element) {
-    this.renderer_ = renderer;
-    this.element_ = element;
-    // Initialize instance.
-    this.init();
-}
-;
+var DIR_DOCUMENT = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('cdk-dir-doc');
 /**
- * Store constants in one place so they can be updated easily.
- *
- * @enum {string | number}
- * @private
+ * The directionality (LTR / RTL) context for the application (or a subtree of it).
+ * Exposes the current direction and a stream of direction changes.
  */
-MaterialRipple.prototype.Constant_ = {
-    INITIAL_SCALE: 'scale(0.0001, 0.0001)',
-    INITIAL_SIZE: '1px',
-    INITIAL_OPACITY: '0.4',
-    FINAL_OPACITY: '0',
-    FINAL_SCALE: ''
-};
-/**
- * Store strings for class names defined by this component that are used in
- * JavaScript. This allows us to simply change it in one place should we
- * decide to modify at a later date.
- *
- * @enum {string}
- * @private
- */
-MaterialRipple.prototype.CssClasses_ = {
-    RIPPLE_CENTER: 'mdl-ripple--center',
-    RIPPLE_EFFECT_IGNORE_EVENTS: 'mdl-js-ripple-effect--ignore-events',
-    RIPPLE: 'mdl-ripple',
-    IS_ANIMATING: 'is-animating',
-    IS_VISIBLE: 'is-visible'
-};
-/**
- * Handle mouse / finger down on element.
- *
- * @param {Event} event The event that fired.
- * @private
- */
-MaterialRipple.prototype.downHandler_ = function (event) {
-    if (!this.rippleElement_.style.width && !this.rippleElement_.style.height) {
-        var rect = this.element_.getBoundingClientRect();
-        this.boundHeight = rect.height;
-        this.boundWidth = rect.width;
-        this.rippleSize_ = Math.sqrt(rect.width * rect.width +
-            rect.height * rect.height) * 2 + 2;
-        this.rippleElement_.style.width = this.rippleSize_ + 'px';
-        this.rippleElement_.style.height = this.rippleSize_ + 'px';
-    }
-    this.renderer_.addClass(this.rippleElement_, this.CssClasses_.IS_VISIBLE);
-    if (event.type === 'mousedown' && this.ignoringMouseDown_) {
-        this.ignoringMouseDown_ = false;
-    }
-    else {
-        if (event.type === 'touchstart') {
-            this.ignoringMouseDown_ = true;
+var Directionality = /** @class */ (function () {
+    function Directionality(_document) {
+        /**
+         * The current 'ltr' or 'rtl' value.
+         */
+        this.value = 'ltr';
+        /**
+         * Stream that emits whenever the 'ltr' / 'rtl' state changes.
+         */
+        this.change = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        if (_document) {
+            // TODO: handle 'auto' value -
+            // We still need to account for dir="auto".
+            // It looks like HTMLElemenet.dir is also "auto" when that's set to the attribute,
+            // but getComputedStyle return either "ltr" or "rtl". avoiding getComputedStyle for now
+            var /** @type {?} */ bodyDir = _document.body ? _document.body.dir : null;
+            var /** @type {?} */ htmlDir = _document.documentElement ? _document.documentElement.dir : null;
+            this.value = /** @type {?} */ ((bodyDir || htmlDir || 'ltr'));
         }
-        var frameCount = this.getFrameCount();
-        if (frameCount > 0) {
+    }
+    Directionality.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    Directionality.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [DIR_DOCUMENT,] },] },
+    ]; };
+    return Directionality;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Directive to listen for changes of direction of part of the DOM.
+ *
+ * Provides itself as Directionality such that descendant directives only need to ever inject
+ * Directionality to get the closest direction.
+ */
+var Dir = /** @class */ (function () {
+    function Dir() {
+        this._dir = 'ltr';
+        /**
+         * Whether the `value` has been set to its initial value.
+         */
+        this._isInitialized = false;
+        /**
+         * Event emitted when the direction changes.
+         */
+        this.change = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    Object.defineProperty(Dir.prototype, "dir", {
+        get: /**
+         * \@docs-private
+         * @return {?}
+         */
+        function () { return this._dir; },
+        set: /**
+         * @param {?} v
+         * @return {?}
+         */
+        function (v) {
+            var /** @type {?} */ old = this._dir;
+            this._dir = v;
+            if (old !== this._dir && this._isInitialized) {
+                this.change.emit(this._dir);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Dir.prototype, "value", {
+        /** Current layout direction of the element. */
+        get: /**
+         * Current layout direction of the element.
+         * @return {?}
+         */
+        function () { return this.dir; },
+        enumerable: true,
+        configurable: true
+    });
+    /** Initialize once default value has been set. */
+    /**
+     * Initialize once default value has been set.
+     * @return {?}
+     */
+    Dir.prototype.ngAfterContentInit = /**
+     * Initialize once default value has been set.
+     * @return {?}
+     */
+    function () {
+        this._isInitialized = true;
+    };
+    /**
+     * @return {?}
+     */
+    Dir.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this.change.complete();
+    };
+    Dir.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                    selector: '[dir]',
+                    providers: [{ provide: Directionality, useExisting: Dir }],
+                    host: { '[dir]': 'dir' },
+                    exportAs: 'dir',
+                },] },
+    ];
+    /** @nocollapse */
+    Dir.ctorParameters = function () { return []; };
+    Dir.propDecorators = {
+        "change": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['dirChange',] },],
+        "dir": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    };
+    return Dir;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var BidiModule = /** @class */ (function () {
+    function BidiModule() {
+    }
+    BidiModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    exports: [Dir],
+                    declarations: [Dir],
+                    providers: [
+                        { provide: DIR_DOCUMENT, useExisting: __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* DOCUMENT */] },
+                        Directionality,
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    BidiModule.ctorParameters = function () { return []; };
+    return BidiModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=bidi.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/coercion.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return coerceBooleanProperty; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return coerceNumberProperty; });
+/* unused harmony export _isNumberValue */
+/* unused harmony export coerceArray */
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Coerces a data-bound value (typically a string) to a boolean.
+ * @param {?} value
+ * @return {?}
+ */
+function coerceBooleanProperty(value) {
+    return value != null && "" + value !== 'false';
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @param {?} value
+ * @param {?=} fallbackValue
+ * @return {?}
+ */
+function coerceNumberProperty(value, fallbackValue) {
+    if (fallbackValue === void 0) { fallbackValue = 0; }
+    return _isNumberValue(value) ? Number(value) : fallbackValue;
+}
+/**
+ * Whether the provided value is considered a number.
+ * \@docs-private
+ * @param {?} value
+ * @return {?}
+ */
+function _isNumberValue(value) {
+    // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
+    // and other non-number values as NaN, where Number just uses 0) but it considers the string
+    // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
+    return !isNaN(parseFloat(/** @type {?} */ (value))) && !isNaN(Number(value));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Wraps the provided value in an array, unless the provided value is an array.
+ * @template T
+ * @param {?} value
+ * @return {?}
+ */
+function coerceArray(value) {
+    return Array.isArray(value) ? value : [value];
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=coercion.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/keycodes.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export UP_ARROW */
+/* unused harmony export DOWN_ARROW */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RIGHT_ARROW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return LEFT_ARROW; });
+/* unused harmony export PAGE_UP */
+/* unused harmony export PAGE_DOWN */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return HOME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return END; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ENTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return SPACE; });
+/* unused harmony export TAB */
+/* unused harmony export ESCAPE */
+/* unused harmony export BACKSPACE */
+/* unused harmony export DELETE */
+/* unused harmony export A */
+/* unused harmony export Z */
+/* unused harmony export ZERO */
+/* unused harmony export NINE */
+/* unused harmony export COMMA */
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var UP_ARROW = 38;
+var DOWN_ARROW = 40;
+var RIGHT_ARROW = 39;
+var LEFT_ARROW = 37;
+var PAGE_UP = 33;
+var PAGE_DOWN = 34;
+var HOME = 36;
+var END = 35;
+var ENTER = 13;
+var SPACE = 32;
+var TAB = 9;
+var ESCAPE = 27;
+var BACKSPACE = 8;
+var DELETE = 46;
+var A = 65;
+var Z = 90;
+var ZERO = 48;
+var NINE = 57;
+var COMMA = 188;
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=keycodes.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/observers.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export ObserveContent */
+/* unused harmony export MutationObserverFactory */
+/* unused harmony export CdkObserveContent */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObserversModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_coercion__ = __webpack_require__("./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators_debounceTime__ = __webpack_require__("./node_modules/rxjs/_esm5/operators/debounceTime.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Factory that creates a new MutationObserver and allows us to stub it out in unit tests.
+ * \@docs-private
+ */
+var MutationObserverFactory = /** @class */ (function () {
+    function MutationObserverFactory() {
+    }
+    /**
+     * @param {?} callback
+     * @return {?}
+     */
+    MutationObserverFactory.prototype.create = /**
+     * @param {?} callback
+     * @return {?}
+     */
+    function (callback) {
+        return typeof MutationObserver === 'undefined' ? null : new MutationObserver(callback);
+    };
+    MutationObserverFactory.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    MutationObserverFactory.ctorParameters = function () { return []; };
+    return MutationObserverFactory;
+}());
+/**
+ * Directive that triggers a callback whenever the content of
+ * its associated element has changed.
+ */
+var CdkObserveContent = /** @class */ (function () {
+    function CdkObserveContent(_mutationObserverFactory, _elementRef, _ngZone) {
+        this._mutationObserverFactory = _mutationObserverFactory;
+        this._elementRef = _elementRef;
+        this._ngZone = _ngZone;
+        this._disabled = false;
+        /**
+         * Event emitted for each change in the element's content.
+         */
+        this.event = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Used for debouncing the emitted values to the observeContent event.
+         */
+        this._debouncer = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
+    }
+    Object.defineProperty(CdkObserveContent.prototype, "disabled", {
+        get: /**
+         * Whether observing content is disabled. This option can be used
+         * to disconnect the underlying MutationObserver until it is needed.
+         * @return {?}
+         */
+        function () { return this._disabled; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._disabled = Object(__WEBPACK_IMPORTED_MODULE_1__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    CdkObserveContent.prototype.ngAfterContentInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this.debounce > 0) {
+            this._ngZone.runOutsideAngular(function () {
+                _this._debouncer.pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators_debounceTime__["a" /* debounceTime */])(_this.debounce))
+                    .subscribe(function (mutations) { return _this.event.emit(mutations); });
+            });
+        }
+        else {
+            this._debouncer.subscribe(function (mutations) { return _this.event.emit(mutations); });
+        }
+        this._observer = this._ngZone.runOutsideAngular(function () {
+            return _this._mutationObserverFactory.create(function (mutations) {
+                _this._debouncer.next(mutations);
+            });
+        });
+        if (!this.disabled) {
+            this._enable();
+        }
+    };
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    CdkObserveContent.prototype.ngOnChanges = /**
+     * @param {?} changes
+     * @return {?}
+     */
+    function (changes) {
+        if (changes['disabled']) {
+            changes['disabled'].currentValue ? this._disable() : this._enable();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    CdkObserveContent.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._disable();
+        this._debouncer.complete();
+    };
+    /**
+     * @return {?}
+     */
+    CdkObserveContent.prototype._disable = /**
+     * @return {?}
+     */
+    function () {
+        if (this._observer) {
+            this._observer.disconnect();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    CdkObserveContent.prototype._enable = /**
+     * @return {?}
+     */
+    function () {
+        if (this._observer) {
+            this._observer.observe(this._elementRef.nativeElement, {
+                characterData: true,
+                childList: true,
+                subtree: true
+            });
+        }
+    };
+    CdkObserveContent.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                    selector: '[cdkObserveContent]',
+                    exportAs: 'cdkObserveContent',
+                },] },
+    ];
+    /** @nocollapse */
+    CdkObserveContent.ctorParameters = function () { return [
+        { type: MutationObserverFactory, },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
+    ]; };
+    CdkObserveContent.propDecorators = {
+        "event": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['cdkObserveContent',] },],
+        "disabled": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['cdkObserveContentDisabled',] },],
+        "debounce": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    };
+    return CdkObserveContent;
+}());
+var ObserversModule = /** @class */ (function () {
+    function ObserversModule() {
+    }
+    ObserversModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    exports: [CdkObserveContent],
+                    declarations: [CdkObserveContent],
+                    providers: [MutationObserverFactory]
+                },] },
+    ];
+    /** @nocollapse */
+    ObserversModule.ctorParameters = function () { return []; };
+    return ObserversModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=observers.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/platform.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Platform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return supportsPassiveEventListeners; });
+/* unused harmony export getSupportedInputTypes */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PlatformModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+// Whether the current platform supports the V8 Break Iterator. The V8 check
+// is necessary to detect all Blink based browsers.
+var hasV8BreakIterator = (typeof Intl !== 'undefined' && (/** @type {?} */ (Intl)).v8BreakIterator);
+/**
+ * Service to detect the current platform by comparing the userAgent strings and
+ * checking browser-specific global properties.
+ */
+var Platform = /** @class */ (function () {
+    function Platform() {
+        /**
+         * Whether the Angular application is being rendered in the browser.
+         */
+        this.isBrowser = typeof document === 'object' && !!document;
+        /**
+         * Whether the current browser is Microsoft Edge.
+         */
+        this.EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
+        /**
+         * Whether the current rendering engine is Microsoft Trident.
+         */
+        this.TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
+        /**
+         * Whether the current rendering engine is Blink.
+         */
+        this.BLINK = this.isBrowser && (!!((/** @type {?} */ (window)).chrome || hasV8BreakIterator) &&
+            typeof CSS !== 'undefined' && !this.EDGE && !this.TRIDENT);
+        /**
+         * Whether the current rendering engine is WebKit.
+         */
+        this.WEBKIT = this.isBrowser &&
+            /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
+        /**
+         * Whether the current platform is Apple iOS.
+         */
+        this.IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+            !(/** @type {?} */ (window)).MSStream;
+        /**
+         * Whether the current browser is Firefox.
+         */
+        this.FIREFOX = this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent);
+        /**
+         * Whether the current platform is Android.
+         */
+        this.ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
+        /**
+         * Whether the current browser is Safari.
+         */
+        this.SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
+    }
+    Platform.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    Platform.ctorParameters = function () { return []; };
+    return Platform;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Cached result of whether the user's browser supports passive event listeners.
+ */
+var supportsPassiveEvents;
+/**
+ * Checks whether the user's browser supports passive event listeners.
+ * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+ * @return {?}
+ */
+function supportsPassiveEventListeners() {
+    if (supportsPassiveEvents == null && typeof window !== 'undefined') {
+        try {
+            window.addEventListener('test', /** @type {?} */ ((null)), Object.defineProperty({}, 'passive', {
+                get: function () { return supportsPassiveEvents = true; }
+            }));
+        }
+        finally {
+            supportsPassiveEvents = supportsPassiveEvents || false;
+        }
+    }
+    return supportsPassiveEvents;
+}
+/**
+ * Cached result Set of input types support by the current browser.
+ */
+var supportedInputTypes;
+/**
+ * Types of `<input>` that *might* be supported.
+ */
+var candidateInputTypes = [
+    'color',
+    'button',
+    'checkbox',
+    'date',
+    'datetime-local',
+    'email',
+    'file',
+    'hidden',
+    'image',
+    'month',
+    'number',
+    'password',
+    'radio',
+    'range',
+    'reset',
+    'search',
+    'submit',
+    'tel',
+    'text',
+    'time',
+    'url',
+    'week',
+];
+/**
+ * @return {?} The input types supported by this browser.
+ */
+function getSupportedInputTypes() {
+    // Result is cached.
+    if (supportedInputTypes) {
+        return supportedInputTypes;
+    }
+    // We can't check if an input type is not supported until we're on the browser, so say that
+    // everything is supported when not on the browser. We don't use `Platform` here since it's
+    // just a helper function and can't inject it.
+    if (typeof document !== 'object' || !document) {
+        supportedInputTypes = new Set(candidateInputTypes);
+        return supportedInputTypes;
+    }
+    var /** @type {?} */ featureTestInput = document.createElement('input');
+    supportedInputTypes = new Set(candidateInputTypes.filter(function (value) {
+        featureTestInput.setAttribute('type', value);
+        return featureTestInput.type === value;
+    }));
+    return supportedInputTypes;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var PlatformModule = /** @class */ (function () {
+    function PlatformModule() {
+    }
+    PlatformModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    providers: [Platform]
+                },] },
+    ];
+    /** @nocollapse */
+    PlatformModule.ctorParameters = function () { return []; };
+    return PlatformModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=platform.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/portal.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export DomPortalHost */
+/* unused harmony export PortalHostDirective */
+/* unused harmony export TemplatePortalDirective */
+/* unused harmony export BasePortalHost */
+/* unused harmony export Portal */
+/* unused harmony export ComponentPortal */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return TemplatePortal; });
+/* unused harmony export BasePortalOutlet */
+/* unused harmony export DomPortalOutlet */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CdkPortal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return CdkPortalOutlet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return PortalModule; });
+/* unused harmony export PortalInjector */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__("./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Throws an exception when attempting to attach a null portal to a host.
+ * \@docs-private
+ * @return {?}
+ */
+function throwNullPortalError() {
+    throw Error('Must provide a portal to attach');
+}
+/**
+ * Throws an exception when attempting to attach a portal to a host that is already attached.
+ * \@docs-private
+ * @return {?}
+ */
+function throwPortalAlreadyAttachedError() {
+    throw Error('Host already has a portal attached');
+}
+/**
+ * Throws an exception when attempting to attach a portal to an already-disposed host.
+ * \@docs-private
+ * @return {?}
+ */
+function throwPortalOutletAlreadyDisposedError() {
+    throw Error('This PortalOutlet has already been disposed');
+}
+/**
+ * Throws an exception when attempting to attach an unknown portal type.
+ * \@docs-private
+ * @return {?}
+ */
+function throwUnknownPortalTypeError() {
+    throw Error('Attempting to attach an unknown Portal type. BasePortalOutlet accepts either ' +
+        'a ComponentPortal or a TemplatePortal.');
+}
+/**
+ * Throws an exception when attempting to attach a portal to a null host.
+ * \@docs-private
+ * @return {?}
+ */
+function throwNullPortalOutletError() {
+    throw Error('Attempting to attach a portal to a null PortalOutlet');
+}
+/**
+ * Throws an exception when attempting to detach a portal that is not attached.
+ * \@docs-private
+ * @return {?}
+ */
+function throwNoPortalAttachedError() {
+    throw Error('Attempting to detach a portal that is not attached to a host');
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Interface that can be used to generically type a class.
+ * @record
+ * @template T
+ */
+
+/**
+ * A `Portal` is something that you want to render somewhere else.
+ * It can be attach to / detached from a `PortalOutlet`.
+ * @abstract
+ * @template T
+ */
+var Portal = /** @class */ (function () {
+    function Portal() {
+    }
+    /** Attach this portal to a host. */
+    /**
+     * Attach this portal to a host.
+     * @param {?} host
+     * @return {?}
+     */
+    Portal.prototype.attach = /**
+     * Attach this portal to a host.
+     * @param {?} host
+     * @return {?}
+     */
+    function (host) {
+        if (host == null) {
+            throwNullPortalOutletError();
+        }
+        if (host.hasAttached()) {
+            throwPortalAlreadyAttachedError();
+        }
+        this._attachedHost = host;
+        return /** @type {?} */ (host.attach(this));
+    };
+    /** Detach this portal from its host */
+    /**
+     * Detach this portal from its host
+     * @return {?}
+     */
+    Portal.prototype.detach = /**
+     * Detach this portal from its host
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ host = this._attachedHost;
+        if (host == null) {
+            throwNoPortalAttachedError();
+        }
+        else {
+            this._attachedHost = null;
+            host.detach();
+        }
+    };
+    Object.defineProperty(Portal.prototype, "isAttached", {
+        /** Whether this portal is attached to a host. */
+        get: /**
+         * Whether this portal is attached to a host.
+         * @return {?}
+         */
+        function () {
+            return this._attachedHost != null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Sets the PortalOutlet reference without performing `attach()`. This is used directly by
+     * the PortalOutlet when it is performing an `attach()` or `detach()`.
+     */
+    /**
+     * Sets the PortalOutlet reference without performing `attach()`. This is used directly by
+     * the PortalOutlet when it is performing an `attach()` or `detach()`.
+     * @param {?} host
+     * @return {?}
+     */
+    Portal.prototype.setAttachedHost = /**
+     * Sets the PortalOutlet reference without performing `attach()`. This is used directly by
+     * the PortalOutlet when it is performing an `attach()` or `detach()`.
+     * @param {?} host
+     * @return {?}
+     */
+    function (host) {
+        this._attachedHost = host;
+    };
+    return Portal;
+}());
+/**
+ * A `ComponentPortal` is a portal that instantiates some Component upon attachment.
+ * @template T
+ */
+var ComponentPortal = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */])(ComponentPortal, _super);
+    function ComponentPortal(component, viewContainerRef, injector) {
+        var _this = _super.call(this) || this;
+        _this.component = component;
+        _this.viewContainerRef = viewContainerRef;
+        _this.injector = injector;
+        return _this;
+    }
+    return ComponentPortal;
+}(Portal));
+/**
+ * A `TemplatePortal` is a portal that represents some embedded template (TemplateRef).
+ * @template C
+ */
+var TemplatePortal = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */])(TemplatePortal, _super);
+    function TemplatePortal(template, viewContainerRef, context) {
+        var _this = _super.call(this) || this;
+        _this.templateRef = template;
+        _this.viewContainerRef = viewContainerRef;
+        _this.context = context;
+        return _this;
+    }
+    Object.defineProperty(TemplatePortal.prototype, "origin", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            return this.templateRef.elementRef;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Attach the the portal to the provided `PortalOutlet`.
+     * When a context is provided it will override the `context` property of the `TemplatePortal`
+     * instance.
+     */
+    /**
+     * Attach the the portal to the provided `PortalOutlet`.
+     * When a context is provided it will override the `context` property of the `TemplatePortal`
+     * instance.
+     * @param {?} host
+     * @param {?=} context
+     * @return {?}
+     */
+    TemplatePortal.prototype.attach = /**
+     * Attach the the portal to the provided `PortalOutlet`.
+     * When a context is provided it will override the `context` property of the `TemplatePortal`
+     * instance.
+     * @param {?} host
+     * @param {?=} context
+     * @return {?}
+     */
+    function (host, context) {
+        if (context === void 0) { context = this.context; }
+        this.context = context;
+        return _super.prototype.attach.call(this, host);
+    };
+    /**
+     * @return {?}
+     */
+    TemplatePortal.prototype.detach = /**
+     * @return {?}
+     */
+    function () {
+        this.context = undefined;
+        return _super.prototype.detach.call(this);
+    };
+    return TemplatePortal;
+}(Portal));
+/**
+ * A `PortalOutlet` is an space that can contain a single `Portal`.
+ * @record
+ */
+
+/**
+ * Partial implementation of PortalOutlet that handles attaching
+ * ComponentPortal and TemplatePortal.
+ * @abstract
+ */
+var BasePortalOutlet = /** @class */ (function () {
+    function BasePortalOutlet() {
+        /**
+         * Whether this host has already been permanently disposed.
+         */
+        this._isDisposed = false;
+    }
+    /** Whether this host has an attached portal. */
+    /**
+     * Whether this host has an attached portal.
+     * @return {?}
+     */
+    BasePortalOutlet.prototype.hasAttached = /**
+     * Whether this host has an attached portal.
+     * @return {?}
+     */
+    function () {
+        return !!this._attachedPortal;
+    };
+    /** Attaches a portal. */
+    /**
+     * Attaches a portal.
+     * @param {?} portal
+     * @return {?}
+     */
+    BasePortalOutlet.prototype.attach = /**
+     * Attaches a portal.
+     * @param {?} portal
+     * @return {?}
+     */
+    function (portal) {
+        if (!portal) {
+            throwNullPortalError();
+        }
+        if (this.hasAttached()) {
+            throwPortalAlreadyAttachedError();
+        }
+        if (this._isDisposed) {
+            throwPortalOutletAlreadyDisposedError();
+        }
+        if (portal instanceof ComponentPortal) {
+            this._attachedPortal = portal;
+            return this.attachComponentPortal(portal);
+        }
+        else if (portal instanceof TemplatePortal) {
+            this._attachedPortal = portal;
+            return this.attachTemplatePortal(portal);
+        }
+        throwUnknownPortalTypeError();
+    };
+    /** Detaches a previously attached portal. */
+    /**
+     * Detaches a previously attached portal.
+     * @return {?}
+     */
+    BasePortalOutlet.prototype.detach = /**
+     * Detaches a previously attached portal.
+     * @return {?}
+     */
+    function () {
+        if (this._attachedPortal) {
+            this._attachedPortal.setAttachedHost(null);
+            this._attachedPortal = null;
+        }
+        this._invokeDisposeFn();
+    };
+    /** Permanently dispose of this portal host. */
+    /**
+     * Permanently dispose of this portal host.
+     * @return {?}
+     */
+    BasePortalOutlet.prototype.dispose = /**
+     * Permanently dispose of this portal host.
+     * @return {?}
+     */
+    function () {
+        if (this.hasAttached()) {
+            this.detach();
+        }
+        this._invokeDisposeFn();
+        this._isDisposed = true;
+    };
+    /** @docs-private */
+    /**
+     * \@docs-private
+     * @param {?} fn
+     * @return {?}
+     */
+    BasePortalOutlet.prototype.setDisposeFn = /**
+     * \@docs-private
+     * @param {?} fn
+     * @return {?}
+     */
+    function (fn) {
+        this._disposeFn = fn;
+    };
+    /**
+     * @return {?}
+     */
+    BasePortalOutlet.prototype._invokeDisposeFn = /**
+     * @return {?}
+     */
+    function () {
+        if (this._disposeFn) {
+            this._disposeFn();
+            this._disposeFn = null;
+        }
+    };
+    return BasePortalOutlet;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * A PortalOutlet for attaching portals to an arbitrary DOM element outside of the Angular
+ * application context.
+ */
+var DomPortalOutlet = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */])(DomPortalOutlet, _super);
+    function DomPortalOutlet(outletElement, _componentFactoryResolver, _appRef, _defaultInjector) {
+        var _this = _super.call(this) || this;
+        _this.outletElement = outletElement;
+        _this._componentFactoryResolver = _componentFactoryResolver;
+        _this._appRef = _appRef;
+        _this._defaultInjector = _defaultInjector;
+        return _this;
+    }
+    /**
+     * Attach the given ComponentPortal to DOM element using the ComponentFactoryResolver.
+     * @param portal Portal to be attached
+     * @returns Reference to the created component.
+     */
+    /**
+     * Attach the given ComponentPortal to DOM element using the ComponentFactoryResolver.
+     * @template T
+     * @param {?} portal Portal to be attached
+     * @return {?} Reference to the created component.
+     */
+    DomPortalOutlet.prototype.attachComponentPortal = /**
+     * Attach the given ComponentPortal to DOM element using the ComponentFactoryResolver.
+     * @template T
+     * @param {?} portal Portal to be attached
+     * @return {?} Reference to the created component.
+     */
+    function (portal) {
+        var _this = this;
+        var /** @type {?} */ componentFactory = this._componentFactoryResolver.resolveComponentFactory(portal.component);
+        var /** @type {?} */ componentRef;
+        // If the portal specifies a ViewContainerRef, we will use that as the attachment point
+        // for the component (in terms of Angular's component tree, not rendering).
+        // When the ViewContainerRef is missing, we use the factory to create the component directly
+        // and then manually attach the view to the application.
+        if (portal.viewContainerRef) {
+            componentRef = portal.viewContainerRef.createComponent(componentFactory, portal.viewContainerRef.length, portal.injector || portal.viewContainerRef.parentInjector);
+            this.setDisposeFn(function () { return componentRef.destroy(); });
+        }
+        else {
+            componentRef = componentFactory.create(portal.injector || this._defaultInjector);
+            this._appRef.attachView(componentRef.hostView);
+            this.setDisposeFn(function () {
+                _this._appRef.detachView(componentRef.hostView);
+                componentRef.destroy();
+            });
+        }
+        // At this point the component has been instantiated, so we move it to the location in the DOM
+        // where we want it to be rendered.
+        this.outletElement.appendChild(this._getComponentRootNode(componentRef));
+        return componentRef;
+    };
+    /**
+     * Attaches a template portal to the DOM as an embedded view.
+     * @param portal Portal to be attached.
+     * @returns Reference to the created embedded view.
+     */
+    /**
+     * Attaches a template portal to the DOM as an embedded view.
+     * @template C
+     * @param {?} portal Portal to be attached.
+     * @return {?} Reference to the created embedded view.
+     */
+    DomPortalOutlet.prototype.attachTemplatePortal = /**
+     * Attaches a template portal to the DOM as an embedded view.
+     * @template C
+     * @param {?} portal Portal to be attached.
+     * @return {?} Reference to the created embedded view.
+     */
+    function (portal) {
+        var _this = this;
+        var /** @type {?} */ viewContainer = portal.viewContainerRef;
+        var /** @type {?} */ viewRef = viewContainer.createEmbeddedView(portal.templateRef, portal.context);
+        viewRef.detectChanges();
+        // The method `createEmbeddedView` will add the view as a child of the viewContainer.
+        // But for the DomPortalOutlet the view can be added everywhere in the DOM
+        // (e.g Overlay Container) To move the view to the specified host element. We just
+        // re-append the existing root nodes.
+        viewRef.rootNodes.forEach(function (rootNode) { return _this.outletElement.appendChild(rootNode); });
+        this.setDisposeFn((function () {
+            var /** @type {?} */ index = viewContainer.indexOf(viewRef);
+            if (index !== -1) {
+                viewContainer.remove(index);
+            }
+        }));
+        // TODO(jelbourn): Return locals from view.
+        return viewRef;
+    };
+    /**
+     * Clears out a portal from the DOM.
+     */
+    /**
+     * Clears out a portal from the DOM.
+     * @return {?}
+     */
+    DomPortalOutlet.prototype.dispose = /**
+     * Clears out a portal from the DOM.
+     * @return {?}
+     */
+    function () {
+        _super.prototype.dispose.call(this);
+        if (this.outletElement.parentNode != null) {
+            this.outletElement.parentNode.removeChild(this.outletElement);
+        }
+    };
+    /**
+     * Gets the root HTMLElement for an instantiated component.
+     * @param {?} componentRef
+     * @return {?}
+     */
+    DomPortalOutlet.prototype._getComponentRootNode = /**
+     * Gets the root HTMLElement for an instantiated component.
+     * @param {?} componentRef
+     * @return {?}
+     */
+    function (componentRef) {
+        return /** @type {?} */ ((/** @type {?} */ (componentRef.hostView)).rootNodes[0]);
+    };
+    return DomPortalOutlet;
+}(BasePortalOutlet));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
+ * the directive instance itself can be attached to a host, enabling declarative use of portals.
+ */
+var CdkPortal = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */])(CdkPortal, _super);
+    function CdkPortal(templateRef, viewContainerRef) {
+        return _super.call(this, templateRef, viewContainerRef) || this;
+    }
+    CdkPortal.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* Directive */], args: [{
+                    selector: '[cdk-portal], [cdkPortal], [portal]',
+                    exportAs: 'cdkPortal',
+                },] },
+    ];
+    /** @nocollapse */
+    CdkPortal.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_7" /* TemplateRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* ViewContainerRef */], },
+    ]; };
+    return CdkPortal;
+}(TemplatePortal));
+/**
+ * Directive version of a PortalOutlet. Because the directive *is* a PortalOutlet, portals can be
+ * directly attached to it, enabling declarative use.
+ *
+ * Usage:
+ * `<ng-template [cdkPortalOutlet]="greeting"></ng-template>`
+ */
+var CdkPortalOutlet = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */])(CdkPortalOutlet, _super);
+    function CdkPortalOutlet(_componentFactoryResolver, _viewContainerRef) {
+        var _this = _super.call(this) || this;
+        _this._componentFactoryResolver = _componentFactoryResolver;
+        _this._viewContainerRef = _viewContainerRef;
+        /**
+         * Whether the portal component is initialized.
+         */
+        _this._isInitialized = false;
+        _this.attached = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["w" /* EventEmitter */]();
+        return _this;
+    }
+    Object.defineProperty(CdkPortalOutlet.prototype, "_deprecatedPortal", {
+        get: /**
+         * @deprecated
+         * \@deletion-target 6.0.0
+         * @return {?}
+         */
+        function () { return this.portal; },
+        set: /**
+         * @param {?} v
+         * @return {?}
+         */
+        function (v) { this.portal = v; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CdkPortalOutlet.prototype, "_deprecatedPortalHost", {
+        get: /**
+         * @deprecated
+         * \@deletion-target 6.0.0
+         * @return {?}
+         */
+        function () { return this.portal; },
+        set: /**
+         * @param {?} v
+         * @return {?}
+         */
+        function (v) { this.portal = v; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CdkPortalOutlet.prototype, "portal", {
+        /** Portal associated with the Portal outlet. */
+        get: /**
+         * Portal associated with the Portal outlet.
+         * @return {?}
+         */
+        function () {
+            return this._attachedPortal;
+        },
+        set: /**
+         * @param {?} portal
+         * @return {?}
+         */
+        function (portal) {
+            // Ignore the cases where the `portal` is set to a falsy value before the lifecycle hooks have
+            // run. This handles the cases where the user might do something like `<div cdkPortalOutlet>`
+            // and attach a portal programmatically in the parent component. When Angular does the first CD
+            // round, it will fire the setter with empty string, causing the user's content to be cleared.
+            if (this.hasAttached() && !portal && !this._isInitialized) {
+                return;
+            }
+            if (this.hasAttached()) {
+                _super.prototype.detach.call(this);
+            }
+            if (portal) {
+                _super.prototype.attach.call(this, portal);
+            }
+            this._attachedPortal = portal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CdkPortalOutlet.prototype, "attachedRef", {
+        /** Component or view reference that is attached to the portal. */
+        get: /**
+         * Component or view reference that is attached to the portal.
+         * @return {?}
+         */
+        function () {
+            return this._attachedRef;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    CdkPortalOutlet.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this._isInitialized = true;
+    };
+    /**
+     * @return {?}
+     */
+    CdkPortalOutlet.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        _super.prototype.dispose.call(this);
+        this._attachedPortal = null;
+        this._attachedRef = null;
+    };
+    /**
+     * Attach the given ComponentPortal to this PortalOutlet using the ComponentFactoryResolver.
+     *
+     * @param portal Portal to be attached to the portal outlet.
+     * @returns Reference to the created component.
+     */
+    /**
+     * Attach the given ComponentPortal to this PortalOutlet using the ComponentFactoryResolver.
+     *
+     * @template T
+     * @param {?} portal Portal to be attached to the portal outlet.
+     * @return {?} Reference to the created component.
+     */
+    CdkPortalOutlet.prototype.attachComponentPortal = /**
+     * Attach the given ComponentPortal to this PortalOutlet using the ComponentFactoryResolver.
+     *
+     * @template T
+     * @param {?} portal Portal to be attached to the portal outlet.
+     * @return {?} Reference to the created component.
+     */
+    function (portal) {
+        portal.setAttachedHost(this);
+        // If the portal specifies an origin, use that as the logical location of the component
+        // in the application tree. Otherwise use the location of this PortalOutlet.
+        var /** @type {?} */ viewContainerRef = portal.viewContainerRef != null ?
+            portal.viewContainerRef :
+            this._viewContainerRef;
+        var /** @type {?} */ componentFactory = this._componentFactoryResolver.resolveComponentFactory(portal.component);
+        var /** @type {?} */ ref = viewContainerRef.createComponent(componentFactory, viewContainerRef.length, portal.injector || viewContainerRef.parentInjector);
+        _super.prototype.setDisposeFn.call(this, function () { return ref.destroy(); });
+        this._attachedPortal = portal;
+        this._attachedRef = ref;
+        this.attached.emit(ref);
+        return ref;
+    };
+    /**
+     * Attach the given TemplatePortal to this PortlHost as an embedded View.
+     * @param portal Portal to be attached.
+     * @returns Reference to the created embedded view.
+     */
+    /**
+     * Attach the given TemplatePortal to this PortlHost as an embedded View.
+     * @template C
+     * @param {?} portal Portal to be attached.
+     * @return {?} Reference to the created embedded view.
+     */
+    CdkPortalOutlet.prototype.attachTemplatePortal = /**
+     * Attach the given TemplatePortal to this PortlHost as an embedded View.
+     * @template C
+     * @param {?} portal Portal to be attached.
+     * @return {?} Reference to the created embedded view.
+     */
+    function (portal) {
+        var _this = this;
+        portal.setAttachedHost(this);
+        var /** @type {?} */ viewRef = this._viewContainerRef.createEmbeddedView(portal.templateRef, portal.context);
+        _super.prototype.setDisposeFn.call(this, function () { return _this._viewContainerRef.clear(); });
+        this._attachedPortal = portal;
+        this._attachedRef = viewRef;
+        this.attached.emit(viewRef);
+        return viewRef;
+    };
+    CdkPortalOutlet.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* Directive */], args: [{
+                    selector: '[cdkPortalOutlet], [cdkPortalHost], [portalHost]',
+                    exportAs: 'cdkPortalOutlet, cdkPortalHost',
+                    inputs: ['portal: cdkPortalOutlet']
+                },] },
+    ];
+    /** @nocollapse */
+    CdkPortalOutlet.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* ComponentFactoryResolver */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* ViewContainerRef */], },
+    ]; };
+    CdkPortalOutlet.propDecorators = {
+        "_deprecatedPortal": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* Input */], args: ['portalHost',] },],
+        "_deprecatedPortalHost": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* Input */], args: ['cdkPortalHost',] },],
+        "attached": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Output */], args: ['attached',] },],
+    };
+    return CdkPortalOutlet;
+}(BasePortalOutlet));
+var PortalModule = /** @class */ (function () {
+    function PortalModule() {
+    }
+    PortalModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */], args: [{
+                    exports: [CdkPortal, CdkPortalOutlet],
+                    declarations: [CdkPortal, CdkPortalOutlet],
+                },] },
+    ];
+    /** @nocollapse */
+    PortalModule.ctorParameters = function () { return []; };
+    return PortalModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Custom injector to be used when providing custom
+ * injection tokens to components inside a portal.
+ * \@docs-private
+ */
+var PortalInjector = /** @class */ (function () {
+    function PortalInjector(_parentInjector, _customTokens) {
+        this._parentInjector = _parentInjector;
+        this._customTokens = _customTokens;
+    }
+    /**
+     * @param {?} token
+     * @param {?=} notFoundValue
+     * @return {?}
+     */
+    PortalInjector.prototype.get = /**
+     * @param {?} token
+     * @param {?=} notFoundValue
+     * @return {?}
+     */
+    function (token, notFoundValue) {
+        var /** @type {?} */ value = this._customTokens.get(token);
+        if (typeof value !== 'undefined') {
+            return value;
+        }
+        return this._parentInjector.get(token, notFoundValue);
+    };
+    return PortalInjector;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=portal.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/cdk/esm5/scrolling.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export DEFAULT_SCROLL_TIME */
+/* unused harmony export ScrollDispatcher */
+/* unused harmony export SCROLL_DISPATCHER_PROVIDER_FACTORY */
+/* unused harmony export SCROLL_DISPATCHER_PROVIDER */
+/* unused harmony export CdkScrollable */
+/* unused harmony export DEFAULT_RESIZE_TIME */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ViewportRuler; });
+/* unused harmony export VIEWPORT_RULER_PROVIDER_FACTORY */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return VIEWPORT_RULER_PROVIDER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ScrollDispatchModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__ = __webpack_require__("./node_modules/@angular/cdk/esm5/platform.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_fromEvent__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/fromEvent.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operators_auditTime__ = __webpack_require__("./node_modules/rxjs/_esm5/operators/auditTime.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operators_filter__ = __webpack_require__("./node_modules/rxjs/_esm5/operators/filter.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_observable_merge__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/merge.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Time in ms to throttle the scrolling events by default.
+ */
+var DEFAULT_SCROLL_TIME = 20;
+/**
+ * Service contained all registered Scrollable references and emits an event when any one of the
+ * Scrollable references emit a scrolled event.
+ */
+var ScrollDispatcher = /** @class */ (function () {
+    function ScrollDispatcher(_ngZone, _platform) {
+        this._ngZone = _ngZone;
+        this._platform = _platform;
+        /**
+         * Subject for notifying that a registered scrollable reference element has been scrolled.
+         */
+        this._scrolled = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
+        /**
+         * Keeps track of the global `scroll` and `resize` subscriptions.
+         */
+        this._globalSubscription = null;
+        /**
+         * Keeps track of the amount of subscriptions to `scrolled`. Used for cleaning up afterwards.
+         */
+        this._scrolledCount = 0;
+        /**
+         * Map of all the scrollable references that are registered with the service and their
+         * scroll event subscriptions.
+         */
+        this.scrollContainers = new Map();
+    }
+    /**
+     * Registers a scrollable instance with the service and listens for its scrolled events. When the
+     * scrollable is scrolled, the service emits the event to its scrolled observable.
+     * @param scrollable Scrollable instance to be registered.
+     */
+    /**
+     * Registers a scrollable instance with the service and listens for its scrolled events. When the
+     * scrollable is scrolled, the service emits the event to its scrolled observable.
+     * @param {?} scrollable Scrollable instance to be registered.
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.register = /**
+     * Registers a scrollable instance with the service and listens for its scrolled events. When the
+     * scrollable is scrolled, the service emits the event to its scrolled observable.
+     * @param {?} scrollable Scrollable instance to be registered.
+     * @return {?}
+     */
+    function (scrollable) {
+        var _this = this;
+        var /** @type {?} */ scrollSubscription = scrollable.elementScrolled()
+            .subscribe(function () { return _this._scrolled.next(scrollable); });
+        this.scrollContainers.set(scrollable, scrollSubscription);
+    };
+    /**
+     * Deregisters a Scrollable reference and unsubscribes from its scroll event observable.
+     * @param scrollable Scrollable instance to be deregistered.
+     */
+    /**
+     * Deregisters a Scrollable reference and unsubscribes from its scroll event observable.
+     * @param {?} scrollable Scrollable instance to be deregistered.
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.deregister = /**
+     * Deregisters a Scrollable reference and unsubscribes from its scroll event observable.
+     * @param {?} scrollable Scrollable instance to be deregistered.
+     * @return {?}
+     */
+    function (scrollable) {
+        var /** @type {?} */ scrollableReference = this.scrollContainers.get(scrollable);
+        if (scrollableReference) {
+            scrollableReference.unsubscribe();
+            this.scrollContainers.delete(scrollable);
+        }
+    };
+    /**
+     * Returns an observable that emits an event whenever any of the registered Scrollable
+     * references (or window, document, or body) fire a scrolled event. Can provide a time in ms
+     * to override the default "throttle" time.
+     *
+     * **Note:** in order to avoid hitting change detection for every scroll event,
+     * all of the events emitted from this stream will be run outside the Angular zone.
+     * If you need to update any data bindings as a result of a scroll event, you have
+     * to run the callback using `NgZone.run`.
+     */
+    /**
+     * Returns an observable that emits an event whenever any of the registered Scrollable
+     * references (or window, document, or body) fire a scrolled event. Can provide a time in ms
+     * to override the default "throttle" time.
+     *
+     * **Note:** in order to avoid hitting change detection for every scroll event,
+     * all of the events emitted from this stream will be run outside the Angular zone.
+     * If you need to update any data bindings as a result of a scroll event, you have
+     * to run the callback using `NgZone.run`.
+     * @param {?=} auditTimeInMs
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.scrolled = /**
+     * Returns an observable that emits an event whenever any of the registered Scrollable
+     * references (or window, document, or body) fire a scrolled event. Can provide a time in ms
+     * to override the default "throttle" time.
+     *
+     * **Note:** in order to avoid hitting change detection for every scroll event,
+     * all of the events emitted from this stream will be run outside the Angular zone.
+     * If you need to update any data bindings as a result of a scroll event, you have
+     * to run the callback using `NgZone.run`.
+     * @param {?=} auditTimeInMs
+     * @return {?}
+     */
+    function (auditTimeInMs) {
+        var _this = this;
+        if (auditTimeInMs === void 0) { auditTimeInMs = DEFAULT_SCROLL_TIME; }
+        return this._platform.isBrowser ? __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["a" /* Observable */].create(function (observer) {
+            if (!_this._globalSubscription) {
+                _this._addGlobalListener();
+            }
+            // In the case of a 0ms delay, use an observable without auditTime
+            // since it does add a perceptible delay in processing overhead.
+            var /** @type {?} */ subscription = auditTimeInMs > 0 ?
+                _this._scrolled.pipe(Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators_auditTime__["a" /* auditTime */])(auditTimeInMs)).subscribe(observer) :
+                _this._scrolled.subscribe(observer);
+            _this._scrolledCount++;
+            return function () {
+                subscription.unsubscribe();
+                _this._scrolledCount--;
+                if (!_this._scrolledCount) {
+                    _this._removeGlobalListener();
+                }
+            };
+        }) : Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["a" /* of */])();
+    };
+    /**
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._removeGlobalListener();
+        this.scrollContainers.forEach(function (_, container) { return _this.deregister(container); });
+    };
+    /**
+     * Returns an observable that emits whenever any of the
+     * scrollable ancestors of an element are scrolled.
+     * @param elementRef Element whose ancestors to listen for.
+     * @param auditTimeInMs Time to throttle the scroll events.
+     */
+    /**
+     * Returns an observable that emits whenever any of the
+     * scrollable ancestors of an element are scrolled.
+     * @param {?} elementRef Element whose ancestors to listen for.
+     * @param {?=} auditTimeInMs Time to throttle the scroll events.
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.ancestorScrolled = /**
+     * Returns an observable that emits whenever any of the
+     * scrollable ancestors of an element are scrolled.
+     * @param {?} elementRef Element whose ancestors to listen for.
+     * @param {?=} auditTimeInMs Time to throttle the scroll events.
+     * @return {?}
+     */
+    function (elementRef, auditTimeInMs) {
+        var /** @type {?} */ ancestors = this.getAncestorScrollContainers(elementRef);
+        return this.scrolled(auditTimeInMs).pipe(Object(__WEBPACK_IMPORTED_MODULE_7_rxjs_operators_filter__["a" /* filter */])(function (target) {
+            return !target || ancestors.indexOf(target) > -1;
+        }));
+    };
+    /** Returns all registered Scrollables that contain the provided element. */
+    /**
+     * Returns all registered Scrollables that contain the provided element.
+     * @param {?} elementRef
+     * @return {?}
+     */
+    ScrollDispatcher.prototype.getAncestorScrollContainers = /**
+     * Returns all registered Scrollables that contain the provided element.
+     * @param {?} elementRef
+     * @return {?}
+     */
+    function (elementRef) {
+        var _this = this;
+        var /** @type {?} */ scrollingContainers = [];
+        this.scrollContainers.forEach(function (_subscription, scrollable) {
+            if (_this._scrollableContainsElement(scrollable, elementRef)) {
+                scrollingContainers.push(scrollable);
+            }
+        });
+        return scrollingContainers;
+    };
+    /**
+     * Returns true if the element is contained within the provided Scrollable.
+     * @param {?} scrollable
+     * @param {?} elementRef
+     * @return {?}
+     */
+    ScrollDispatcher.prototype._scrollableContainsElement = /**
+     * Returns true if the element is contained within the provided Scrollable.
+     * @param {?} scrollable
+     * @param {?} elementRef
+     * @return {?}
+     */
+    function (scrollable, elementRef) {
+        var /** @type {?} */ element = elementRef.nativeElement;
+        var /** @type {?} */ scrollableElement = scrollable.getElementRef().nativeElement;
+        // Traverse through the element parents until we reach null, checking if any of the elements
+        // are the scrollable's element.
+        do {
+            if (element == scrollableElement) {
+                return true;
+            }
+        } while (element = element.parentElement);
+        return false;
+    };
+    /**
+     * Sets up the global scroll listeners.
+     * @return {?}
+     */
+    ScrollDispatcher.prototype._addGlobalListener = /**
+     * Sets up the global scroll listeners.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._globalSubscription = this._ngZone.runOutsideAngular(function () {
+            return Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_fromEvent__["a" /* fromEvent */])(window.document, 'scroll').subscribe(function () { return _this._scrolled.next(); });
+        });
+    };
+    /**
+     * Cleans up the global scroll listener.
+     * @return {?}
+     */
+    ScrollDispatcher.prototype._removeGlobalListener = /**
+     * Cleans up the global scroll listener.
+     * @return {?}
+     */
+    function () {
+        if (this._globalSubscription) {
+            this._globalSubscription.unsubscribe();
+            this._globalSubscription = null;
+        }
+    };
+    ScrollDispatcher.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ScrollDispatcher.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__["a" /* Platform */], },
+    ]; };
+    return ScrollDispatcher;
+}());
+/**
+ * \@docs-private
+ * @param {?} parentDispatcher
+ * @param {?} ngZone
+ * @param {?} platform
+ * @return {?}
+ */
+function SCROLL_DISPATCHER_PROVIDER_FACTORY(parentDispatcher, ngZone, platform) {
+    return parentDispatcher || new ScrollDispatcher(ngZone, platform);
+}
+/**
+ * \@docs-private
+ */
+var SCROLL_DISPATCHER_PROVIDER = {
+    // If there is already a ScrollDispatcher available, use that. Otherwise, provide a new one.
+    provide: ScrollDispatcher,
+    deps: [[new __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* SkipSelf */](), ScrollDispatcher], __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__["a" /* Platform */]],
+    useFactory: SCROLL_DISPATCHER_PROVIDER_FACTORY
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Sends an event when the directive's element is scrolled. Registers itself with the
+ * ScrollDispatcher service to include itself as part of its collection of scrolling events that it
+ * can be listened to through the service.
+ */
+var CdkScrollable = /** @class */ (function () {
+    function CdkScrollable(_elementRef, _scroll, _ngZone) {
+        var _this = this;
+        this._elementRef = _elementRef;
+        this._scroll = _scroll;
+        this._ngZone = _ngZone;
+        this._elementScrolled = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
+        this._scrollListener = function (event) { return _this._elementScrolled.next(event); };
+    }
+    /**
+     * @return {?}
+     */
+    CdkScrollable.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._ngZone.runOutsideAngular(function () {
+            _this.getElementRef().nativeElement.addEventListener('scroll', _this._scrollListener);
+        });
+        this._scroll.register(this);
+    };
+    /**
+     * @return {?}
+     */
+    CdkScrollable.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._scroll.deregister(this);
+        if (this._scrollListener) {
+            this.getElementRef().nativeElement.removeEventListener('scroll', this._scrollListener);
+        }
+    };
+    /**
+     * Returns observable that emits when a scroll event is fired on the host element.
+     */
+    /**
+     * Returns observable that emits when a scroll event is fired on the host element.
+     * @return {?}
+     */
+    CdkScrollable.prototype.elementScrolled = /**
+     * Returns observable that emits when a scroll event is fired on the host element.
+     * @return {?}
+     */
+    function () {
+        return this._elementScrolled.asObservable();
+    };
+    /**
+     * @return {?}
+     */
+    CdkScrollable.prototype.getElementRef = /**
+     * @return {?}
+     */
+    function () {
+        return this._elementRef;
+    };
+    CdkScrollable.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                    selector: '[cdk-scrollable], [cdkScrollable]'
+                },] },
+    ];
+    /** @nocollapse */
+    CdkScrollable.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+        { type: ScrollDispatcher, },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
+    ]; };
+    return CdkScrollable;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Time in ms to throttle the resize events by default.
+ */
+var DEFAULT_RESIZE_TIME = 20;
+/**
+ * Simple utility for getting the bounds of the browser viewport.
+ * \@docs-private
+ */
+var ViewportRuler = /** @class */ (function () {
+    function ViewportRuler(_platform, ngZone) {
+        var _this = this;
+        this._platform = _platform;
+        this._change = _platform.isBrowser ? ngZone.runOutsideAngular(function () {
+            return Object(__WEBPACK_IMPORTED_MODULE_8_rxjs_observable_merge__["a" /* merge */])(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_fromEvent__["a" /* fromEvent */])(window, 'resize'), Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_fromEvent__["a" /* fromEvent */])(window, 'orientationchange'));
+        }) : Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["a" /* of */])();
+        this._invalidateCache = this.change().subscribe(function () { return _this._updateViewportSize(); });
+    }
+    /**
+     * @return {?}
+     */
+    ViewportRuler.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._invalidateCache.unsubscribe();
+    };
+    /** Returns the viewport's width and height. */
+    /**
+     * Returns the viewport's width and height.
+     * @return {?}
+     */
+    ViewportRuler.prototype.getViewportSize = /**
+     * Returns the viewport's width and height.
+     * @return {?}
+     */
+    function () {
+        if (!this._viewportSize) {
+            this._updateViewportSize();
+        }
+        var /** @type {?} */ output = { width: this._viewportSize.width, height: this._viewportSize.height };
+        // If we're not on a browser, don't cache the size since it'll be mocked out anyway.
+        if (!this._platform.isBrowser) {
+            this._viewportSize = /** @type {?} */ ((null));
+        }
+        return output;
+    };
+    /** Gets a ClientRect for the viewport's bounds. */
+    /**
+     * Gets a ClientRect for the viewport's bounds.
+     * @return {?}
+     */
+    ViewportRuler.prototype.getViewportRect = /**
+     * Gets a ClientRect for the viewport's bounds.
+     * @return {?}
+     */
+    function () {
+        // Use the document element's bounding rect rather than the window scroll properties
+        // (e.g. pageYOffset, scrollY) due to in issue in Chrome and IE where window scroll
+        // properties and client coordinates (boundingClientRect, clientX/Y, etc.) are in different
+        // conceptual viewports. Under most circumstances these viewports are equivalent, but they
+        // can disagree when the page is pinch-zoomed (on devices that support touch).
+        // See https://bugs.chromium.org/p/chromium/issues/detail?id=489206#c4
+        // We use the documentElement instead of the body because, by default (without a css reset)
+        // browsers typically give the document body an 8px margin, which is not included in
+        // getBoundingClientRect().
+        var /** @type {?} */ scrollPosition = this.getViewportScrollPosition();
+        var _a = this.getViewportSize(), width = _a.width, height = _a.height;
+        return {
+            top: scrollPosition.top,
+            left: scrollPosition.left,
+            bottom: scrollPosition.top + height,
+            right: scrollPosition.left + width,
+            height: height,
+            width: width,
+        };
+    };
+    /** Gets the (top, left) scroll position of the viewport. */
+    /**
+     * Gets the (top, left) scroll position of the viewport.
+     * @return {?}
+     */
+    ViewportRuler.prototype.getViewportScrollPosition = /**
+     * Gets the (top, left) scroll position of the viewport.
+     * @return {?}
+     */
+    function () {
+        // While we can get a reference to the fake document
+        // during SSR, it doesn't have getBoundingClientRect.
+        if (!this._platform.isBrowser) {
+            return { top: 0, left: 0 };
+        }
+        // The top-left-corner of the viewport is determined by the scroll position of the document
+        // body, normally just (scrollLeft, scrollTop). However, Chrome and Firefox disagree about
+        // whether `document.body` or `document.documentElement` is the scrolled element, so reading
+        // `scrollTop` and `scrollLeft` is inconsistent. However, using the bounding rect of
+        // `document.documentElement` works consistently, where the `top` and `left` values will
+        // equal negative the scroll position.
+        var /** @type {?} */ documentRect = document.documentElement.getBoundingClientRect();
+        var /** @type {?} */ top = -documentRect.top || document.body.scrollTop || window.scrollY ||
+            document.documentElement.scrollTop || 0;
+        var /** @type {?} */ left = -documentRect.left || document.body.scrollLeft || window.scrollX ||
+            document.documentElement.scrollLeft || 0;
+        return { top: top, left: left };
+    };
+    /**
+     * Returns a stream that emits whenever the size of the viewport changes.
+     * @param throttle Time in milliseconds to throttle the stream.
+     */
+    /**
+     * Returns a stream that emits whenever the size of the viewport changes.
+     * @param {?=} throttleTime
+     * @return {?}
+     */
+    ViewportRuler.prototype.change = /**
+     * Returns a stream that emits whenever the size of the viewport changes.
+     * @param {?=} throttleTime
+     * @return {?}
+     */
+    function (throttleTime) {
+        if (throttleTime === void 0) { throttleTime = DEFAULT_RESIZE_TIME; }
+        return throttleTime > 0 ? this._change.pipe(Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators_auditTime__["a" /* auditTime */])(throttleTime)) : this._change;
+    };
+    /**
+     * Updates the cached viewport size.
+     * @return {?}
+     */
+    ViewportRuler.prototype._updateViewportSize = /**
+     * Updates the cached viewport size.
+     * @return {?}
+     */
+    function () {
+        this._viewportSize = this._platform.isBrowser ?
+            { width: window.innerWidth, height: window.innerHeight } :
+            { width: 0, height: 0 };
+    };
+    ViewportRuler.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ViewportRuler.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__["a" /* Platform */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
+    ]; };
+    return ViewportRuler;
+}());
+/**
+ * \@docs-private
+ * @param {?} parentRuler
+ * @param {?} platform
+ * @param {?} ngZone
+ * @return {?}
+ */
+function VIEWPORT_RULER_PROVIDER_FACTORY(parentRuler, platform, ngZone) {
+    return parentRuler || new ViewportRuler(platform, ngZone);
+}
+/**
+ * \@docs-private
+ */
+var VIEWPORT_RULER_PROVIDER = {
+    // If there is already a ViewportRuler available, use that. Otherwise, provide a new one.
+    provide: ViewportRuler,
+    deps: [[new __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["_3" /* SkipSelf */](), ViewportRuler], __WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__["a" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */]],
+    useFactory: VIEWPORT_RULER_PROVIDER_FACTORY
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var ScrollDispatchModule = /** @class */ (function () {
+    function ScrollDispatchModule() {
+    }
+    ScrollDispatchModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_platform__["b" /* PlatformModule */]],
+                    exports: [CdkScrollable],
+                    declarations: [CdkScrollable],
+                    providers: [SCROLL_DISPATCHER_PROVIDER],
+                },] },
+    ];
+    /** @nocollapse */
+    ScrollDispatchModule.ctorParameters = function () { return []; };
+    return ScrollDispatchModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=scrolling.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/material/esm5/core.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export MAT_PLACEHOLDER_GLOBAL_OPTIONS */
+/* unused harmony export AnimationCurves */
+/* unused harmony export AnimationDurations */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MatCommonModule; });
+/* unused harmony export MATERIAL_SANITY_CHECKS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return mixinDisabled; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return mixinColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return mixinDisableRipple; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return mixinTabIndex; });
+/* unused harmony export mixinErrorState */
+/* unused harmony export mixinInitialized */
+/* unused harmony export NativeDateModule */
+/* unused harmony export MatNativeDateModule */
+/* unused harmony export MAT_DATE_LOCALE */
+/* unused harmony export MAT_DATE_LOCALE_PROVIDER */
+/* unused harmony export DateAdapter */
+/* unused harmony export MAT_DATE_FORMATS */
+/* unused harmony export NativeDateAdapter */
+/* unused harmony export MAT_NATIVE_DATE_FORMATS */
+/* unused harmony export ShowOnDirtyErrorStateMatcher */
+/* unused harmony export ErrorStateMatcher */
+/* unused harmony export MAT_HAMMER_OPTIONS */
+/* unused harmony export GestureConfig */
+/* unused harmony export MatLine */
+/* unused harmony export MatLineSetter */
+/* unused harmony export MatLineModule */
+/* unused harmony export MatOptionModule */
+/* unused harmony export MatOptionSelectionChange */
+/* unused harmony export MAT_OPTION_PARENT_COMPONENT */
+/* unused harmony export MatOption */
+/* unused harmony export _countGroupLabelsBeforeOption */
+/* unused harmony export _getOptionScrollPosition */
+/* unused harmony export MatOptgroupBase */
+/* unused harmony export _MatOptgroupMixinBase */
+/* unused harmony export MatOptgroup */
+/* unused harmony export MAT_LABEL_GLOBAL_OPTIONS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return MatRippleModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MAT_RIPPLE_GLOBAL_OPTIONS; });
+/* unused harmony export MatRipple */
+/* unused harmony export RippleState */
+/* unused harmony export RippleRef */
+/* unused harmony export defaultRippleAnimationConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RippleRenderer; });
+/* unused harmony export MatPseudoCheckboxModule */
+/* unused harmony export MatPseudoCheckbox */
+/* unused harmony export JAN */
+/* unused harmony export FEB */
+/* unused harmony export MAR */
+/* unused harmony export APR */
+/* unused harmony export MAY */
+/* unused harmony export JUN */
+/* unused harmony export JUL */
+/* unused harmony export AUG */
+/* unused harmony export SEP */
+/* unused harmony export OCT */
+/* unused harmony export NOV */
+/* unused harmony export DEC */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_bidi__ = __webpack_require__("./node_modules/@angular/cdk/esm5/bidi.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_tslib__ = __webpack_require__("./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_cdk_coercion__ = __webpack_require__("./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_cdk_platform__ = __webpack_require__("./node_modules/@angular/cdk/esm5/platform.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_cdk_keycodes__ = __webpack_require__("./node_modules/@angular/cdk/esm5/keycodes.es5.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ */
+var AnimationCurves = /** @class */ (function () {
+    function AnimationCurves() {
+    }
+    AnimationCurves.STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
+    AnimationCurves.DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
+    AnimationCurves.ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
+    AnimationCurves.SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
+    return AnimationCurves;
+}());
+/**
+ * \@docs-private
+ */
+var AnimationDurations = /** @class */ (function () {
+    function AnimationDurations() {
+    }
+    AnimationDurations.COMPLEX = '375ms';
+    AnimationDurations.ENTERING = '225ms';
+    AnimationDurations.EXITING = '195ms';
+    return AnimationDurations;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Injection token that configures whether the Material sanity checks are enabled.
+ */
+var MATERIAL_SANITY_CHECKS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('mat-sanity-checks');
+/**
+ * Module that captures anything that should be loaded and/or run for *all* Angular Material
+ * components. This includes Bidi, etc.
+ *
+ * This module should be imported to each top-level component module (e.g., MatTabsModule).
+ */
+var MatCommonModule = /** @class */ (function () {
+    function MatCommonModule(_sanityChecksEnabled) {
+        this._sanityChecksEnabled = _sanityChecksEnabled;
+        /**
+         * Whether we've done the global sanity checks (e.g. a theme is loaded, there is a doctype).
+         */
+        this._hasDoneGlobalChecks = false;
+        /**
+         * Whether we've already checked for HammerJs availability.
+         */
+        this._hasCheckedHammer = false;
+        /**
+         * Reference to the global `document` object.
+         */
+        this._document = typeof document === 'object' && document ? document : null;
+        /**
+         * Reference to the global 'window' object.
+         */
+        this._window = typeof window === 'object' && window ? window : null;
+        if (this._areChecksEnabled() && !this._hasDoneGlobalChecks) {
+            this._checkDoctypeIsDefined();
+            this._checkThemeIsPresent();
+            this._hasDoneGlobalChecks = true;
+        }
+    }
+    /**
+     * Whether any sanity checks are enabled
+     * @return {?}
+     */
+    MatCommonModule.prototype._areChecksEnabled = /**
+     * Whether any sanity checks are enabled
+     * @return {?}
+     */
+    function () {
+        return this._sanityChecksEnabled && Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* isDevMode */])() && !this._isTestEnv();
+    };
+    /**
+     * Whether the code is running in tests.
+     * @return {?}
+     */
+    MatCommonModule.prototype._isTestEnv = /**
+     * Whether the code is running in tests.
+     * @return {?}
+     */
+    function () {
+        return this._window && (this._window['__karma__'] || this._window['jasmine']);
+    };
+    /**
+     * @return {?}
+     */
+    MatCommonModule.prototype._checkDoctypeIsDefined = /**
+     * @return {?}
+     */
+    function () {
+        if (this._document && !this._document.doctype) {
+            console.warn('Current document does not have a doctype. This may cause ' +
+                'some Angular Material components not to behave as expected.');
+        }
+    };
+    /**
+     * @return {?}
+     */
+    MatCommonModule.prototype._checkThemeIsPresent = /**
+     * @return {?}
+     */
+    function () {
+        if (this._document && typeof getComputedStyle === 'function') {
+            var /** @type {?} */ testElement = this._document.createElement('div');
+            testElement.classList.add('mat-theme-loaded-marker');
+            this._document.body.appendChild(testElement);
+            var /** @type {?} */ computedStyle = getComputedStyle(testElement);
+            // In some situations, the computed style of the test element can be null. For example in
+            // Firefox, the computed style is null if an application is running inside of a hidden iframe.
+            // See: https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+            if (computedStyle && computedStyle.display !== 'none') {
+                console.warn('Could not find Angular Material core theme. Most Material ' +
+                    'components may not work as expected. For more info refer ' +
+                    'to the theming guide: https://material.angular.io/guide/theming');
+            }
+            this._document.body.removeChild(testElement);
+        }
+    };
+    /** Checks whether HammerJS is available. */
+    /**
+     * Checks whether HammerJS is available.
+     * @return {?}
+     */
+    MatCommonModule.prototype._checkHammerIsAvailable = /**
+     * Checks whether HammerJS is available.
+     * @return {?}
+     */
+    function () {
+        if (this._hasCheckedHammer || !this._window) {
             return;
         }
-        this.setFrameCount(1);
-        var bound = event.currentTarget.getBoundingClientRect();
-        var x;
-        var y;
-        // Check if we are handling a keyboard click.
-        if (event.clientX === 0 && event.clientY === 0) {
-            x = Math.round(bound.width / 2);
-            y = Math.round(bound.height / 2);
+        if (this._areChecksEnabled() && !this._window['Hammer']) {
+            console.warn('Could not find HammerJS. Certain Angular Material components may not work correctly.');
         }
-        else {
-            var clientX = event.clientX !== undefined ? event.clientX : event.touches[0].clientX;
-            var clientY = event.clientY !== undefined ? event.clientY : event.touches[0].clientY;
-            x = Math.round(clientX - bound.left);
-            y = Math.round(clientY - bound.top);
+        this._hasCheckedHammer = true;
+    };
+    MatCommonModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_bidi__["a" /* BidiModule */]],
+                    exports: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_bidi__["a" /* BidiModule */]],
+                    providers: [{
+                            provide: MATERIAL_SANITY_CHECKS, useValue: true,
+                        }],
+                },] },
+    ];
+    /** @nocollapse */
+    MatCommonModule.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [MATERIAL_SANITY_CHECKS,] },] },
+    ]; };
+    return MatCommonModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with a `disabled` property.
+ * @template T
+ * @param {?} base
+ * @return {?}
+ */
+function mixinDisabled(base) {
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            _this._disabled = false;
+            return _this;
         }
-        this.setRippleXY(x, y);
-        this.setRippleStyles(true);
-        window.requestAnimationFrame(this.animFrameHandler.bind(this));
-    }
-};
+        Object.defineProperty(class_1.prototype, "disabled", {
+            get: /**
+             * @return {?}
+             */
+            function () { return this._disabled; },
+            set: /**
+             * @param {?} value
+             * @return {?}
+             */
+            function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_3__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value); },
+            enumerable: true,
+            configurable: true
+        });
+        return class_1;
+    }(base));
+}
+
 /**
- * Handle mouse / finger up on element.
- *
- * @param {Event} event The event that fired.
- * @private
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
  */
-MaterialRipple.prototype.upHandler_ = function (event) {
-    // Don't fire for the artificial "mouseup" generated by a double-click.
-    if (event && event.detail !== 2) {
-        // Allow a repaint to occur before removing this class, so the animation
-        // shows for tap events, which seem to trigger a mouseup too soon after
-        // mousedown.
-        setTimeout(function () {
-            this.renderer_.removeClass(this.rippleElement_, this.CssClasses_.IS_VISIBLE);
-        }.bind(this), 0);
-    }
-};
+
 /**
- * Initialize element.
+ * \@docs-private
+ * @record
  */
-MaterialRipple.prototype.init = function () {
-    if (this.element_) {
-        var recentering = this.element_.classList.contains(this.CssClasses_.RIPPLE_CENTER);
-        if (!this.element_.classList.contains(this.CssClasses_.RIPPLE_EFFECT_IGNORE_EVENTS)) {
-            this.rippleElement_ = this.element_.querySelector('.' +
-                this.CssClasses_.RIPPLE);
-            this.frameCount_ = 0;
-            this.rippleSize_ = 0;
-            this.x_ = 0;
-            this.y_ = 0;
-            // Touch start produces a compat mouse down event, which would cause a
-            // second ripples. To avoid that, we use this property to ignore the first
-            // mouse down after a touch start.
-            this.ignoringMouseDown_ = false;
-            this.boundDownHandler = this.downHandler_.bind(this);
-            this.element_.addEventListener('mousedown', this.boundDownHandler);
-            this.element_.addEventListener('touchstart', this.boundDownHandler);
-            this.boundUpHandler = this.upHandler_.bind(this);
-            this.element_.addEventListener('mouseup', this.boundUpHandler);
-            this.element_.addEventListener('mouseleave', this.boundUpHandler);
-            this.element_.addEventListener('touchend', this.boundUpHandler);
-            this.element_.addEventListener('blur', this.boundUpHandler);
-            /**
-             * Getter for frameCount_.
-             * @return {number} the frame count.
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with a `color` property.
+ * @template T
+ * @param {?} base
+ * @param {?=} defaultColor
+ * @return {?}
+ */
+function mixinColor(base, defaultColor) {
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            // Set the default color that can be specified from the mixin.
+            // Set the default color that can be specified from the mixin.
+            _this.color = defaultColor;
+            return _this;
+        }
+        Object.defineProperty(class_1.prototype, "color", {
+            get: /**
+             * @return {?}
              */
-            this.getFrameCount = function () {
-                return this.frameCount_;
-            };
-            /**
-             * Setter for frameCount_.
-             * @param {number} fC the frame count.
+            function () { return this._color; },
+            set: /**
+             * @param {?} value
+             * @return {?}
              */
-            this.setFrameCount = function (fC) {
-                this.frameCount_ = fC;
-            };
-            /**
-             * Getter for rippleElement_.
-             * @return {Element} the ripple element.
-             */
-            this.getRippleElement = function () {
-                return this.rippleElement_;
-            };
-            /**
-             * Sets the ripple X and Y coordinates.
-             * @param  {number} newX the new X coordinate
-             * @param  {number} newY the new Y coordinate
-             */
-            this.setRippleXY = function (newX, newY) {
-                this.x_ = newX;
-                this.y_ = newY;
-            };
-            /**
-             * Sets the ripple styles.
-             * @param  {boolean} start whether or not this is the start frame.
-             */
-            this.setRippleStyles = function (start) {
-                if (this.rippleElement_ !== null) {
-                    var transformString;
-                    var scale;
-                    var size;
-                    var offset = 'translate(' + this.x_ + 'px, ' + this.y_ + 'px)';
-                    if (start) {
-                        scale = this.Constant_.INITIAL_SCALE;
-                        size = this.Constant_.INITIAL_SIZE;
+            function (value) {
+                var /** @type {?} */ colorPalette = value || defaultColor;
+                if (colorPalette !== this._color) {
+                    if (this._color) {
+                        this._elementRef.nativeElement.classList.remove("mat-" + this._color);
                     }
-                    else {
-                        scale = this.Constant_.FINAL_SCALE;
-                        size = this.rippleSize_ + 'px';
-                        if (recentering) {
-                            offset = 'translate(' + this.boundWidth / 2 + 'px, ' +
-                                this.boundHeight / 2 + 'px)';
-                        }
+                    if (colorPalette) {
+                        this._elementRef.nativeElement.classList.add("mat-" + colorPalette);
                     }
-                    transformString = 'translate(-50%, -50%) ' + offset + scale;
-                    this.rippleElement_.style.webkitTransform = transformString;
-                    this.rippleElement_.style.msTransform = transformString;
-                    this.rippleElement_.style.transform = transformString;
-                    if (start) {
-                        this.renderer_.removeClass(this.rippleElement_, this.CssClasses_.IS_ANIMATING);
-                    }
-                    else {
-                        this.renderer_.addClass(this.rippleElement_, this.CssClasses_.IS_ANIMATING);
-                    }
+                    this._color = colorPalette;
                 }
-            };
-            /**
-             * Handles an animation frame.
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return class_1;
+    }(base));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with a `disableRipple` property.
+ * @template T
+ * @param {?} base
+ * @return {?}
+ */
+function mixinDisableRipple(base) {
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            _this._disableRipple = false;
+            return _this;
+        }
+        Object.defineProperty(class_1.prototype, "disableRipple", {
+            /** Whether the ripple effect is disabled or not. */
+            get: /**
+             * Whether the ripple effect is disabled or not.
+             * @return {?}
              */
-            this.animFrameHandler = function () {
-                if (this.frameCount_-- > 0) {
-                    window.requestAnimationFrame(this.animFrameHandler.bind(this));
+            function () { return this._disableRipple; },
+            set: /**
+             * @param {?} value
+             * @return {?}
+             */
+            function (value) { this._disableRipple = Object(__WEBPACK_IMPORTED_MODULE_3__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value); },
+            enumerable: true,
+            configurable: true
+        });
+        return class_1;
+    }(base));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with a `tabIndex` property.
+ * @template T
+ * @param {?} base
+ * @param {?=} defaultTabIndex
+ * @return {?}
+ */
+function mixinTabIndex(base, defaultTabIndex) {
+    if (defaultTabIndex === void 0) { defaultTabIndex = 0; }
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            _this._tabIndex = defaultTabIndex;
+            return _this;
+        }
+        Object.defineProperty(class_1.prototype, "tabIndex", {
+            get: /**
+             * @return {?}
+             */
+            function () { return this.disabled ? -1 : this._tabIndex; },
+            set: /**
+             * @param {?} value
+             * @return {?}
+             */
+            function (value) {
+                // If the specified tabIndex value is null or undefined, fall back to the default value.
+                this._tabIndex = value != null ? value : defaultTabIndex;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return class_1;
+    }(base));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with updateErrorState method.
+ * For component with `errorState` and need to update `errorState`.
+ * @template T
+ * @param {?} base
+ * @return {?}
+ */
+function mixinErrorState(base) {
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            /**
+             * Whether the component is in an error state.
+             */
+            _this.errorState = false;
+            /**
+             * Stream that emits whenever the state of the input changes such that the wrapping
+             * `MatFormField` needs to run change detection.
+             */
+            _this.stateChanges = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
+            return _this;
+        }
+        /**
+         * @return {?}
+         */
+        class_1.prototype.updateErrorState = /**
+         * @return {?}
+         */
+        function () {
+            var /** @type {?} */ oldState = this.errorState;
+            var /** @type {?} */ parent = this._parentFormGroup || this._parentForm;
+            var /** @type {?} */ matcher = this.errorStateMatcher || this._defaultErrorStateMatcher;
+            var /** @type {?} */ control = this.ngControl ? /** @type {?} */ (this.ngControl.control) : null;
+            var /** @type {?} */ newState = matcher.isErrorState(control, parent);
+            if (newState !== oldState) {
+                this.errorState = newState;
+                this.stateChanges.next();
+            }
+        };
+        return class_1;
+    }(base));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Mixin that adds an initialized property to a directive which, when subscribed to, will emit a
+ * value once markInitialized has been called, which should be done during the ngOnInit function.
+ * If the subscription is made after it has already been marked as initialized, then it will trigger
+ * an emit immediately.
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Mixin to augment a directive with an initialized property that will emits when ngOnInit ends.
+ * @template T
+ * @param {?} base
+ * @return {?}
+ */
+function mixinInitialized(base) {
+    return /** @class */ (function (_super) {
+        Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(class_1, _super);
+        function class_1() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            var _this = _super.apply(this, args) || this;
+            /**
+             * Whether this directive has been marked as initialized.
+             */
+            _this._isInitialized = false;
+            /**
+             * List of subscribers that subscribed before the directive was initialized. Should be notified
+             * during _markInitialized. Set to null after pending subscribers are notified, and should
+             * not expect to be populated after.
+             */
+            _this._pendingSubscribers = [];
+            /**
+             * Observable stream that emits when the directive initializes. If already initialized, the
+             * subscriber is stored to be notified once _markInitialized is called.
+             */
+            _this.initialized = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+                // If initialized, immediately notify the subscriber. Otherwise store the subscriber to notify
+                // when _markInitialized is called.
+                if (_this._isInitialized) {
+                    _this._notifySubscriber(subscriber);
                 }
                 else {
-                    this.setRippleStyles(false);
+                    /** @type {?} */ ((_this._pendingSubscribers)).push(subscriber);
                 }
-            };
-        }
-    }
-};
-//# sourceMappingURL=ripple.vendor.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog-outlet/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogOutletModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_dialog_outlet_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_backdrop_overlay_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-backdrop-overlay.component.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-var PUBLIC_COMPONENTS = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__["a" /* MdlDialogInnerOutletComponent */]
-];
-var PRIVATE_COMPONENTS = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__["b" /* MdlDialogOutletComponent */],
-    __WEBPACK_IMPORTED_MODULE_3__mdl_backdrop_overlay_component__["a" /* MdlBackdropOverlayComponent */]
-];
-var MdlDialogOutletModule = (function () {
-    function MdlDialogOutletModule() {
-    }
-    MdlDialogOutletModule.forRoot = function () {
-        return {
-            ngModule: MdlDialogOutletModule,
-            providers: [__WEBPACK_IMPORTED_MODULE_2__mdl_dialog_outlet_service__["a" /* MdlDialogOutletService */]]
-        };
-    };
-    return MdlDialogOutletModule;
-}());
-
-MdlDialogOutletModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: PUBLIC_COMPONENTS,
-                declarations: PUBLIC_COMPONENTS.concat(PRIVATE_COMPONENTS),
-                entryComponents: [
-                    __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__["b" /* MdlDialogOutletComponent */],
-                    __WEBPACK_IMPORTED_MODULE_3__mdl_backdrop_overlay_component__["a" /* MdlBackdropOverlayComponent */]
-                ]
-            },] },
-];
-/** @nocollapse */
-MdlDialogOutletModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-backdrop-overlay.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlBackdropOverlayComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlBackdropOverlayComponent = (function () {
-    function MdlBackdropOverlayComponent() {
-        this.clickEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.visible = false;
-        this.zIndex = 0;
-    }
-    Object.defineProperty(MdlBackdropOverlayComponent.prototype, "display", {
-        get: function () {
-            return this.visible ? null : 'none';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MdlBackdropOverlayComponent.prototype.onBackdropClick = function (e) {
-        this.clickEmitter.emit();
-        e.stopPropagation();
-    };
-    MdlBackdropOverlayComponent.prototype.hide = function () {
-        this.visible = false;
-    };
-    MdlBackdropOverlayComponent.prototype.showWithZIndex = function (zIndex) {
-        this.zIndex = zIndex;
-        this.visible = true;
-    };
-    return MdlBackdropOverlayComponent;
-}());
-
-MdlBackdropOverlayComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-backdrop-overlay',
-                host: {
-                    '[class.dialog-backdrop]': 'true',
-                },
-                template: "",
-                styles: [
-                    "    \n      .dialog-backdrop {\n        position: fixed;\n        top: 0; right: 0; bottom: 0; left: 0;\n        background: rgba(0,0,0,0.1);\n      }\n    "
-                ],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlBackdropOverlayComponent.ctorParameters = function () { return []; };
-MdlBackdropOverlayComponent.propDecorators = {
-    'display': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostBinding */], args: ['style.display',] },],
-    'zIndex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostBinding */], args: ['style.zIndex',] },],
-    'onBackdropClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['click', ['$event'],] },],
-};
-//# sourceMappingURL=mdl-backdrop-overlay.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlDialogOutletComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogInnerOutletComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.service.js");
-
-
-// the componnet is used outside the app-root. injecting MdlDialogService would not work
-// this component is not exported - needs to be instanciated by
-//    let x = this.appRef.bootstrap(MdlDialogOutletComponent);
-var MdlDialogOutletComponent = (function () {
-    function MdlDialogOutletComponent(vCRef) {
-        this.vCRef = vCRef;
-    }
-    Object.defineProperty(MdlDialogOutletComponent.prototype, "viewContainerRef", {
-        get: function () {
-            return this.vCRef;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return MdlDialogOutletComponent;
-}());
-
-MdlDialogOutletComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'dialog-outlet',
-                template: ''
-            },] },
-];
-/** @nocollapse */
-MdlDialogOutletComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-]; };
-// the component is used inside the app-root. this is possible because this component
-// is exported from the module
-var MdlDialogInnerOutletComponent = (function () {
-    function MdlDialogInnerOutletComponent(vCRef, service) {
-        this.vCRef = vCRef;
-        service.setDefaultViewContainerRef(vCRef);
-    }
-    return MdlDialogInnerOutletComponent;
-}());
-
-MdlDialogInnerOutletComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'dialog-outlet',
-                template: ''
-            },] },
-];
-/** @nocollapse */
-MdlDialogInnerOutletComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_service__["a" /* MdlDialogOutletService */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_service__["a" /* MdlDialogOutletService */]; }),] },] },
-]; };
-//# sourceMappingURL=mdl-dialog-outlet.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.service.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogOutletService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_backdrop_overlay_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-backdrop-overlay.component.js");
-
-
-
-var MdlDialogOutletService = (function () {
-    function MdlDialogOutletService(appRef, componentFactoryResolver) {
-        this.appRef = appRef;
-        this.componentFactoryResolver = componentFactoryResolver;
-        this.backdropClickEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        var dialogOutletCompRef = null;
-        try {
-            dialogOutletCompRef = this.appRef.bootstrap(__WEBPACK_IMPORTED_MODULE_1__mdl_dialog_outlet_component__["b" /* MdlDialogOutletComponent */]);
-        }
-        catch (e) {
-            // the user did not use the dialog.outlet element outside of his root app.
-        }
-        if (dialogOutletCompRef) {
-            this.setViewContainerRef(dialogOutletCompRef.instance.viewContainerRef);
-        }
-    }
-    MdlDialogOutletService.prototype.setDefaultViewContainerRef = function (vCRef) {
-        this.setViewContainerRef(vCRef);
-    };
-    Object.defineProperty(MdlDialogOutletService.prototype, "viewContainerRef", {
-        get: function () {
-            return this.viewContainerRef_;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MdlDialogOutletService.prototype.setViewContainerRef = function (value) {
-        var _this = this;
-        this.viewContainerRef_ = value;
-        if (this.viewContainerRef_) {
-            var cFactory = this.componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_2__mdl_backdrop_overlay_component__["a" /* MdlBackdropOverlayComponent */]);
-            this.backdropComponent = this.viewContainerRef_.createComponent(cFactory).instance;
-            this.backdropComponent.clickEmitter.subscribe(function () {
-                _this.backdropClickEmitter.emit();
             });
+            return _this;
         }
-    };
-    MdlDialogOutletService.prototype.hideBackdrop = function () {
-        this.backdropComponent.hide();
-    };
-    MdlDialogOutletService.prototype.showBackdropWithZIndex = function (zIndex) {
-        this.backdropComponent.showWithZIndex(zIndex);
-    };
-    return MdlDialogOutletService;
-}());
-
-MdlDialogOutletService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlDialogOutletService.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ApplicationRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */], },
-]; };
-//# sourceMappingURL=mdl-dialog-outlet.service.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_dialog_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mdl_simple_dialog_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-simple-dialog.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mdl_dialog_host_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog-host.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mdl_alert_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-alert.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dialog_outlet_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-
-
-
-
-
-
-var PUBLIC_COMPONENTS = [
-    __WEBPACK_IMPORTED_MODULE_3__mdl_dialog_component__["a" /* MdlDialogComponent */],
-    __WEBPACK_IMPORTED_MODULE_7__mdl_alert_component__["a" /* MdlAlertComponent */]
-];
-var PRIVATE_COMPONENTS = [
-    __WEBPACK_IMPORTED_MODULE_6__mdl_dialog_host_component__["a" /* MdlDialogHostComponent */],
-    __WEBPACK_IMPORTED_MODULE_4__mdl_simple_dialog_component__["a" /* MdlSimpleDialogComponent */]
-];
-var MdlDialogModule = (function () {
-    function MdlDialogModule() {
-    }
-    MdlDialogModule.forRoot = function () {
-        return {
-            ngModule: MdlDialogModule,
-            providers: [__WEBPACK_IMPORTED_MODULE_2__mdl_dialog_service__["d" /* MdlDialogService */]]
-        };
-    };
-    return MdlDialogModule;
-}());
-
-MdlDialogModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [
-                    __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                    __WEBPACK_IMPORTED_MODULE_5__common_index__["a" /* MdlCommonsModule */],
-                    __WEBPACK_IMPORTED_MODULE_9__button_mdl_button_component__["b" /* MdlButtonModule */],
-                    __WEBPACK_IMPORTED_MODULE_8__dialog_outlet_index__["a" /* MdlDialogOutletModule */].forRoot()
-                ],
-                exports: PUBLIC_COMPONENTS.slice(),
-                declarations: PUBLIC_COMPONENTS.concat(PRIVATE_COMPONENTS),
-                entryComponents: PUBLIC_COMPONENTS.concat(PRIVATE_COMPONENTS)
-            },] },
-];
-/** @nocollapse */
-MdlDialogModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/internal-dialog-reference.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InternalMdlDialogReference; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-
-
-/**
- * Internal representation of the dialog ref. the service
- * user should not have access to the created components
- * and internal implementations.
- */
-var InternalMdlDialogReference = (function () {
-    function InternalMdlDialogReference(config) {
-        this.config = config;
-        this.onHideSubject = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__["a" /* Subject */]();
-        this.onVisibleSubject = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__["a" /* Subject */]();
-        this.isModal = false;
-        this.dialogRef = new __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["c" /* MdlDialogReference */](this);
-    }
-    Object.defineProperty(InternalMdlDialogReference.prototype, "hostDialog", {
-        get: function () {
-            return this.hostDialogComponentRef.instance;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    InternalMdlDialogReference.prototype.hide = function (data) {
-        this.onHideSubject.next(data);
-        this.onHideSubject.complete();
-        this.closeCallback();
-    };
-    InternalMdlDialogReference.prototype.visible = function () {
-        this.onVisibleSubject.next();
-        this.onVisibleSubject.complete();
-    };
-    InternalMdlDialogReference.prototype.onHide = function () {
-        return this.onHideSubject.asObservable();
-    };
-    InternalMdlDialogReference.prototype.onVisible = function () {
-        return this.onVisibleSubject.asObservable();
-    };
-    return InternalMdlDialogReference;
-}());
-
-//# sourceMappingURL=internal-dialog-reference.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/mdl-alert.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlAlertComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-
-
-var MdlAlertComponent = (function () {
-    function MdlAlertComponent(mdlDialogService) {
-        this.mdlDialogService = mdlDialogService;
-        this.confirmed = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-    }
-    MdlAlertComponent.prototype.show = function () {
-        var _this = this;
-        this.mdlDialogService.alert(this.message, this.okText, this.title).subscribe(function () {
-            _this.confirmed.emit();
-        });
-    };
-    return MdlAlertComponent;
-}());
-
-MdlAlertComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-alert',
-                host: {
-                    '[style.display]': '"none"'
-                },
-                template: "\n  ",
-                exportAs: 'mdlAlert'
-            },] },
-];
-/** @nocollapse */
-MdlAlertComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["d" /* MdlDialogService */], },
-]; };
-MdlAlertComponent.propDecorators = {
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'message': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'okText': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'confirmed': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */] },],
-};
-//# sourceMappingURL=mdl-alert.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/mdl-dialog-host.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogHostComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__internal_dialog_reference__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/internal-dialog-reference.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_animations__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/animations.js");
-
-
-
-
-
-var enterTransitionDuration = 300;
-var leaveTransitionDuration = 250;
-var enterTransitionEasingCurve = 'cubic-bezier(0.0, 0.0, 0.2, 1)';
-var leaveTransitionEasingCurve = 'cubic-bezier(0.0, 0.0, 0.2, 1)';
-// @experimental
-var MdlDialogHostComponent = (function () {
-    function MdlDialogHostComponent(ngZone, renderer, animations, elementRef, config, internalDialogRef) {
-        this.ngZone = ngZone;
-        this.renderer = renderer;
-        this.animations = animations;
-        this.elementRef = elementRef;
-        this.config = config;
-        this.internalDialogRef = internalDialogRef;
-        this.visible = false;
-        this.showAnimationStartStyle = {
-            top: '38%',
-            opacity: '0'
-        };
-        this.showStyle = {
-            top: '50%',
-            opacity: '1'
-        };
-        this.hideAnimationEndStyle = {
-            top: '63%',
-            opacity: '0'
-        };
-        this.zIndex = __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["b" /* MIN_DIALOG_Z_INDEX */] + 1;
-    }
-    MdlDialogHostComponent.prototype.show = function () {
-        var _this = this;
-        this.visible = true;
-        // give the dialogs time to draw so that a focus can be set
-        setTimeout(function () {
-            _this.internalDialogRef.visible();
-        });
-        if (this.isAnimateEnabled()) {
-            if (this.config.openFrom || this.config.closeTo) {
-                // transform is modified during anmiation and must be part of each animation keyframe.
-                this.showStyle['transform'] = 'translate(0, -50%) scale(1.0)';
-                var targetClientRect = this.elementRef.nativeElement.getBoundingClientRect();
-                var openFromRect = this.getClientRect(this.config.openFrom);
-                var closeToRect = this.config.closeTo ? this.getClientRect(this.config.closeTo) : openFromRect;
-                var centerTarget = this.getCenterInScreen(targetClientRect);
-                var centerFrom = this.getCenterInScreen(openFromRect);
-                var centerTo = this.getCenterInScreen(closeToRect);
-                var translationFrom = {
-                    x: Math.round(centerFrom.cx - centerTarget.cx),
-                    y: Math.round(centerFrom.cy - centerTarget.cy),
-                    scaleX: Math.round(100 * Math.min(0.25, openFromRect.width / targetClientRect.width)) / 100,
-                    scaleY: Math.round(100 * Math.min(0.25, openFromRect.height / targetClientRect.height)) / 100
-                };
-                this.showAnimationStartStyle = {
-                    top: targetClientRect.top + "px",
-                    opacity: '0',
-                    transform: "translate(" + translationFrom.x + "px, " + translationFrom.y + "px) scale(" + translationFrom.scaleX + ", " + translationFrom.scaleY + ")"
-                };
-                var translationTo = {
-                    x: Math.round(centerTo.cx - centerTarget.cx),
-                    y: Math.round(centerTo.cy - centerTarget.cy),
-                    scaleX: Math.round(100 * Math.min(0.25, closeToRect.width / targetClientRect.width)) / 100,
-                    scaleY: Math.round(100 * Math.min(0.25, closeToRect.height / targetClientRect.height)) / 100
-                };
-                this.hideAnimationEndStyle = {
-                    top: targetClientRect.top + "px",
-                    opacity: '0',
-                    transform: "translate(" + translationTo.x + "px, " + translationTo.y + "px) scale(" + translationTo.scaleX + ", " + translationTo.scaleY + ")"
-                };
-            }
-            var animation = this.animations.animate(this.elementRef.nativeElement, [
-                this.showAnimationStartStyle,
-                this.showStyle
-            ], this.config.enterTransitionDuration || enterTransitionDuration, this.config.enterTransitionEasingCurve || enterTransitionEasingCurve);
-            animation.play();
-        }
-    };
-    MdlDialogHostComponent.prototype.hide = function (selfComponentRef) {
-        if (this.isAnimateEnabled()) {
-            var animation = this.animations.animate(this.elementRef.nativeElement, [
-                this.showStyle,
-                this.hideAnimationEndStyle
-            ], this.config.leaveTransitionDuration || leaveTransitionDuration, this.config.leaveTransitionEasingCurve || leaveTransitionEasingCurve);
-            animation.onDone(function () {
-                selfComponentRef.destroy();
-            });
-            animation.play();
-        }
-        else {
-            selfComponentRef.destroy();
-        }
-    };
-    MdlDialogHostComponent.prototype.ngOnInit = function () {
-        this.applyStyle(this.config.styles);
-        this.applyClasses(this.config.classes ? this.config.classes : '');
-    };
-    MdlDialogHostComponent.prototype.applyStyle = function (styles) {
-        if (styles) {
-            for (var style in styles) {
-                this.renderer.setStyle(this.elementRef.nativeElement, style, styles[style]);
-            }
-        }
-    };
-    MdlDialogHostComponent.prototype.applyClasses = function (classes) {
-        var _this = this;
-        classes.split(' ').filter(function (cssClass) { return !!cssClass; }).forEach(function (cssClass) {
-            _this.renderer.addClass(_this.elementRef.nativeElement, cssClass);
-        });
-    };
-    MdlDialogHostComponent.prototype.isAnimateEnabled = function () {
-        // not present?  assume it is true.
-        if (typeof this.config.animate === 'undefined') {
-            return true;
-        }
-        return this.config.animate;
-    };
-    MdlDialogHostComponent.prototype.getClientRect = function (input) {
-        if (input instanceof __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__["a" /* MdlButtonComponent */]) {
-            var elRef = input.elementRef;
-            var rect = elRef.nativeElement.getBoundingClientRect();
-            return this.createOpenCloseRect(rect);
-        }
-        else if (input instanceof MouseEvent) {
-            var evt = input;
-            // just to make it possible to test this code with a fake event - target is
-            // readonly and con not be mutated.
-            var htmlElement = (evt.target || evt['testtarget']);
-            var rect = htmlElement.getBoundingClientRect();
-            return this.createOpenCloseRect(rect);
-        }
-        return input;
-    };
-    MdlDialogHostComponent.prototype.createOpenCloseRect = function (rect) {
-        return {
-            height: rect.top - rect.bottom,
-            left: rect.left,
-            top: rect.top,
-            width: rect.right - rect.left
-        };
-    };
-    MdlDialogHostComponent.prototype.getCenterInScreen = function (rect) {
-        return {
-            cx: Math.round(rect.left + (rect.width / 2)),
-            cy: Math.round(rect.top + (rect.height / 2))
-        };
-    };
-    return MdlDialogHostComponent;
-}());
-
-MdlDialogHostComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-dialog-host-component',
-                host: {
-                    '[class.mdl-dialog]': 'true',
-                    '[class.open]': 'visible',
-                    '[style.zIndex]': 'zIndex',
-                },
-                template: "<div #dialogTarget></div>",
-                styles: [
-                    "\n    mdl-dialog-host-component {\n      width: -moz-fit-content;\n      width: -webkit-fit-content;\n      width: fit-content;\n      height: -moz-fit-content;\n      height: -webkit-fit-content;\n      height: fit-content;\n      padding: 1em;\n      background: white;\n      color: black;\n      opacity: 1;\n      visibility: hidden;\n      display: block;\n      position: fixed;\n      margin: auto;\n      left: 0;\n      right: 0;\n      transition: all;\n      top: 50%;\n      transform: translate(0, -50%);\n    }\n    \n    mdl-dialog-host-component.open {\n      visibility: visible;\n    }\n    \n    "
-                ],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlDialogHostComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_4__common_animations__["a" /* Animations */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["a" /* MDL_CONFIGUARTION */]; }),] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_3__internal_dialog_reference__["a" /* InternalMdlDialogReference */], },
-]; };
-MdlDialogHostComponent.propDecorators = {
-    'dialogTarget': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['dialogTarget', { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */] },] },],
-};
-//# sourceMappingURL=mdl-dialog-host.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlDialogComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-
-
-
-
-var MdlDialogComponent = (function () {
-    function MdlDialogComponent(dialogService) {
-        this.dialogService = dialogService;
-        this.showEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.hideEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.isShown = false;
-        this.dialogRef = null;
-    }
-    Object.defineProperty(MdlDialogComponent.prototype, "modal", {
-        get: function () { return this._modal; },
-        set: function (value) { this._modal = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlDialogComponent.prototype.show = function () {
-        var _this = this;
-        if (this.isShown) {
-            throw new Error('Only one instance of an embedded mdl-dialog can exist!');
-        }
-        this.isShown = true;
-        var mergedConfig = this.config || {};
-        // mdl-modal overwrites config.isModal if present
-        mergedConfig.isModal = typeof this.modal !== 'undefined' ? this.modal : mergedConfig.isModal;
-        // default is true
-        if (typeof mergedConfig.isModal === 'undefined') {
-            mergedConfig.isModal = true;
-        }
-        var result = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["a" /* Subject */]();
-        var p = this.dialogService.showDialogTemplate(this.template, mergedConfig);
-        p.subscribe(function (dialogRef) {
-            _this.dialogRef = dialogRef;
-            _this.dialogRef.onVisible().subscribe(function () {
-                _this.showEmitter.emit(dialogRef);
-                result.next(dialogRef);
-                result.complete();
-            });
-            _this.dialogRef.onHide().subscribe(function () {
-                _this.hideEmitter.emit(null);
-                _this.dialogRef = null;
-                _this.isShown = false;
-            });
-        });
-        return result.asObservable();
-    };
-    MdlDialogComponent.prototype.close = function () {
-        if (this.dialogRef) {
-            this.dialogRef.hide();
-        }
-    };
-    return MdlDialogComponent;
-}());
-
-MdlDialogComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-dialog',
-                template: "\n    <div *dialogTemplate>\n      <ng-content></ng-content>\n    </div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlDialogComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__mdl_dialog_service__["d" /* MdlDialogService */], },
-]; };
-MdlDialogComponent.propDecorators = {
-    'template': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* TemplateRef */],] },],
-    'modal': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-modal',] },],
-    'config': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-dialog-config',] },],
-    'showEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['show',] },],
-    'hideEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['hide',] },],
-};
-//# sourceMappingURL=mdl-dialog.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDL_CONFIGUARTION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MIN_DIALOG_Z_INDEX; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return MdlDialogReference; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return MdlDialogService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_simple_dialog_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-simple-dialog.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mdl_dialog_host_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog-host.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__internal_dialog_reference__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/internal-dialog-reference.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dialog_outlet_mdl_dialog_outlet_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.service.js");
-
-
-
-
-
-
-
-var MDL_CONFIGUARTION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('MDL_CONFIGUARTION');
-var MIN_DIALOG_Z_INDEX = 100000;
-/**
- * The reference to the created and displayed dialog.
- */
-var MdlDialogReference = (function () {
-    function MdlDialogReference(internaleRef) {
-        this.internaleRef = internaleRef;
-        internaleRef.dialogRef = this;
-    }
-    /**
-     * closes the dialog
-     */
-    MdlDialogReference.prototype.hide = function (data) {
-        this.internaleRef.hide(data);
-    };
-    /**
-     * Observable that emits, if the dialog was closed.
-     * @returns {Observable<void>}
-     */
-    MdlDialogReference.prototype.onHide = function () {
-        return this.internaleRef.onHide();
-    };
-    /**
-     * Observable that emits, if the dialog is really visible and not only created.
-     * @returns {Observable<void>}
-     */
-    MdlDialogReference.prototype.onVisible = function () {
-        return this.internaleRef.onVisible();
-    };
-    return MdlDialogReference;
-}());
-
-/**
- * The MdlDialogService is used to open different kind of dialogs. SimpleDialogs and Custom Dialogs.
- * @experimental
-  */
-var MdlDialogService = (function () {
-    function MdlDialogService(componentFactoryResolver, doc, appRef, mdlDialogOutletService) {
-        var _this = this;
-        this.componentFactoryResolver = componentFactoryResolver;
-        this.doc = doc;
-        this.appRef = appRef;
-        this.mdlDialogOutletService = mdlDialogOutletService;
-        this.openDialogs = new Array();
         /**
-         * Emits an event when either all modals are closed, or one gets opened.
-         * @returns A subscribable event emitter that provides a boolean indicating whether a modal is open or not.
+         * Marks the state as initialized and notifies pending subscribers. Should be called at the end
+         * of ngOnInit.
+         * @docs-private
          */
-        this.onDialogsOpenChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.mdlDialogOutletService.backdropClickEmitter.subscribe(function () {
-            _this.onBackdropClick();
-        });
+        /**
+         * Marks the state as initialized and notifies pending subscribers. Should be called at the end
+         * of ngOnInit.
+         * \@docs-private
+         * @return {?}
+         */
+        class_1.prototype._markInitialized = /**
+         * Marks the state as initialized and notifies pending subscribers. Should be called at the end
+         * of ngOnInit.
+         * \@docs-private
+         * @return {?}
+         */
+        function () {
+            if (this._isInitialized) {
+                throw Error('This directive has already been marked as initialized and ' +
+                    'should not be called twice.');
+            }
+            this._isInitialized = true; /** @type {?} */
+            ((this._pendingSubscribers)).forEach(this._notifySubscriber);
+            this._pendingSubscribers = null;
+        };
+        /** Emits and completes the subscriber stream (should only emit once). */
+        /**
+         * Emits and completes the subscriber stream (should only emit once).
+         * @param {?} subscriber
+         * @return {?}
+         */
+        class_1.prototype._notifySubscriber = /**
+         * Emits and completes the subscriber stream (should only emit once).
+         * @param {?} subscriber
+         * @return {?}
+         */
+        function (subscriber) {
+            subscriber.next();
+            subscriber.complete();
+        };
+        return class_1;
+    }(base));
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * InjectionToken for datepicker that can be used to override default locale code.
+ */
+var MAT_DATE_LOCALE = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('MAT_DATE_LOCALE');
+/**
+ * Provider for MAT_DATE_LOCALE injection token.
+ */
+var MAT_DATE_LOCALE_PROVIDER = { provide: MAT_DATE_LOCALE, useExisting: __WEBPACK_IMPORTED_MODULE_0__angular_core__["H" /* LOCALE_ID */] };
+/**
+ * Adapts type `D` to be usable as a date by cdk-based components that work with dates.
+ * @abstract
+ * @template D
+ */
+var DateAdapter = /** @class */ (function () {
+    function DateAdapter() {
+        this._localeChanges = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
+    }
+    Object.defineProperty(DateAdapter.prototype, "localeChanges", {
+        /** A stream that emits when the locale changes. */
+        get: /**
+         * A stream that emits when the locale changes.
+         * @return {?}
+         */
+        function () { return this._localeChanges; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Attempts to deserialize a value to a valid date object. This is different from parsing in that
+     * deserialize should only accept non-ambiguous, locale-independent formats (e.g. a ISO 8601
+     * string). The default implementation does not allow any deserialization, it simply checks that
+     * the given value is already a valid date object or null. The `<mat-datepicker>` will call this
+     * method on all of it's `@Input()` properties that accept dates. It is therefore possible to
+     * support passing values from your backend directly to these properties by overriding this method
+     * to also deserialize the format used by your backend.
+     * @param value The value to be deserialized into a date object.
+     * @returns The deserialized date object, either a valid date, null if the value can be
+     *     deserialized into a null date (e.g. the empty string), or an invalid date.
+     */
+    /**
+     * Attempts to deserialize a value to a valid date object. This is different from parsing in that
+     * deserialize should only accept non-ambiguous, locale-independent formats (e.g. a ISO 8601
+     * string). The default implementation does not allow any deserialization, it simply checks that
+     * the given value is already a valid date object or null. The `<mat-datepicker>` will call this
+     * method on all of it's `\@Input()` properties that accept dates. It is therefore possible to
+     * support passing values from your backend directly to these properties by overriding this method
+     * to also deserialize the format used by your backend.
+     * @param {?} value The value to be deserialized into a date object.
+     * @return {?} The deserialized date object, either a valid date, null if the value can be
+     *     deserialized into a null date (e.g. the empty string), or an invalid date.
+     */
+    DateAdapter.prototype.deserialize = /**
+     * Attempts to deserialize a value to a valid date object. This is different from parsing in that
+     * deserialize should only accept non-ambiguous, locale-independent formats (e.g. a ISO 8601
+     * string). The default implementation does not allow any deserialization, it simply checks that
+     * the given value is already a valid date object or null. The `<mat-datepicker>` will call this
+     * method on all of it's `\@Input()` properties that accept dates. It is therefore possible to
+     * support passing values from your backend directly to these properties by overriding this method
+     * to also deserialize the format used by your backend.
+     * @param {?} value The value to be deserialized into a date object.
+     * @return {?} The deserialized date object, either a valid date, null if the value can be
+     *     deserialized into a null date (e.g. the empty string), or an invalid date.
+     */
+    function (value) {
+        if (value == null || this.isDateInstance(value) && this.isValid(value)) {
+            return value;
+        }
+        return this.invalid();
+    };
+    /**
+     * Sets the locale used for all dates.
+     * @param locale The new locale.
+     */
+    /**
+     * Sets the locale used for all dates.
+     * @param {?} locale The new locale.
+     * @return {?}
+     */
+    DateAdapter.prototype.setLocale = /**
+     * Sets the locale used for all dates.
+     * @param {?} locale The new locale.
+     * @return {?}
+     */
+    function (locale) {
+        this.locale = locale;
+        this._localeChanges.next();
+    };
+    /**
+     * Compares two dates.
+     * @param first The first date to compare.
+     * @param second The second date to compare.
+     * @returns 0 if the dates are equal, a number less than 0 if the first date is earlier,
+     *     a number greater than 0 if the first date is later.
+     */
+    /**
+     * Compares two dates.
+     * @param {?} first The first date to compare.
+     * @param {?} second The second date to compare.
+     * @return {?} 0 if the dates are equal, a number less than 0 if the first date is earlier,
+     *     a number greater than 0 if the first date is later.
+     */
+    DateAdapter.prototype.compareDate = /**
+     * Compares two dates.
+     * @param {?} first The first date to compare.
+     * @param {?} second The second date to compare.
+     * @return {?} 0 if the dates are equal, a number less than 0 if the first date is earlier,
+     *     a number greater than 0 if the first date is later.
+     */
+    function (first, second) {
+        return this.getYear(first) - this.getYear(second) ||
+            this.getMonth(first) - this.getMonth(second) ||
+            this.getDate(first) - this.getDate(second);
+    };
+    /**
+     * Checks if two dates are equal.
+     * @param first The first date to check.
+     * @param second The second date to check.
+     * @returns Whether the two dates are equal.
+     *     Null dates are considered equal to other null dates.
+     */
+    /**
+     * Checks if two dates are equal.
+     * @param {?} first The first date to check.
+     * @param {?} second The second date to check.
+     * @return {?} Whether the two dates are equal.
+     *     Null dates are considered equal to other null dates.
+     */
+    DateAdapter.prototype.sameDate = /**
+     * Checks if two dates are equal.
+     * @param {?} first The first date to check.
+     * @param {?} second The second date to check.
+     * @return {?} Whether the two dates are equal.
+     *     Null dates are considered equal to other null dates.
+     */
+    function (first, second) {
+        if (first && second) {
+            var /** @type {?} */ firstValid = this.isValid(first);
+            var /** @type {?} */ secondValid = this.isValid(second);
+            if (firstValid && secondValid) {
+                return !this.compareDate(first, second);
+            }
+            return firstValid == secondValid;
+        }
+        return first == second;
+    };
+    /**
+     * Clamp the given date between min and max dates.
+     * @param date The date to clamp.
+     * @param min The minimum value to allow. If null or omitted no min is enforced.
+     * @param max The maximum value to allow. If null or omitted no max is enforced.
+     * @returns `min` if `date` is less than `min`, `max` if date is greater than `max`,
+     *     otherwise `date`.
+     */
+    /**
+     * Clamp the given date between min and max dates.
+     * @param {?} date The date to clamp.
+     * @param {?=} min The minimum value to allow. If null or omitted no min is enforced.
+     * @param {?=} max The maximum value to allow. If null or omitted no max is enforced.
+     * @return {?} `min` if `date` is less than `min`, `max` if date is greater than `max`,
+     *     otherwise `date`.
+     */
+    DateAdapter.prototype.clampDate = /**
+     * Clamp the given date between min and max dates.
+     * @param {?} date The date to clamp.
+     * @param {?=} min The minimum value to allow. If null or omitted no min is enforced.
+     * @param {?=} max The maximum value to allow. If null or omitted no max is enforced.
+     * @return {?} `min` if `date` is less than `min`, `max` if date is greater than `max`,
+     *     otherwise `date`.
+     */
+    function (date, min, max) {
+        if (min && this.compareDate(date, min) < 0) {
+            return min;
+        }
+        if (max && this.compareDate(date, max) > 0) {
+            return max;
+        }
+        return date;
+    };
+    return DateAdapter;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MAT_DATE_FORMATS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('mat-date-formats');
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Whether the browser supports the Intl API.
+ */
+var SUPPORTS_INTL_API = typeof Intl != 'undefined';
+/**
+ * The default month names to use if Intl API is not available.
+ */
+var DEFAULT_MONTH_NAMES = {
+    'long': [
+        'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+        'October', 'November', 'December'
+    ],
+    'short': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    'narrow': ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
+};
+var ɵ0$1 = function (i) { return String(i + 1); };
+/**
+ * The default date names to use if Intl API is not available.
+ */
+var DEFAULT_DATE_NAMES = range(31, ɵ0$1);
+/**
+ * The default day of the week names to use if Intl API is not available.
+ */
+var DEFAULT_DAY_OF_WEEK_NAMES = {
+    'long': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    'short': ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    'narrow': ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+};
+/**
+ * Matches strings that have the form of a valid RFC 3339 string
+ * (https://tools.ietf.org/html/rfc3339). Note that the string may not actually be a valid date
+ * because the regex will match strings an with out of bounds month, date, etc.
+ */
+var ISO_8601_REGEX = /^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|(?:(?:\+|-)\d{2}:\d{2}))?)?$/;
+/**
+ * Creates an array and fills it with values.
+ * @template T
+ * @param {?} length
+ * @param {?} valueFunction
+ * @return {?}
+ */
+function range(length, valueFunction) {
+    var /** @type {?} */ valuesArray = Array(length);
+    for (var /** @type {?} */ i = 0; i < length; i++) {
+        valuesArray[i] = valueFunction(i);
+    }
+    return valuesArray;
+}
+/**
+ * Adapts the native JS Date for use with cdk-based components that work with dates.
+ */
+var NativeDateAdapter = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(NativeDateAdapter, _super);
+    function NativeDateAdapter(matDateLocale) {
+        var _this = _super.call(this) || this;
+        _super.prototype.setLocale.call(_this, matDateLocale);
+        // IE does its own time zone correction, so we disable this on IE.
+        // TODO(mmalerba): replace with checks from PLATFORM, logic currently duplicated to avoid
+        // breaking change from injecting the Platform.
+        var /** @type {?} */ isBrowser = typeof document === 'object' && !!document;
+        var /** @type {?} */ isIE = isBrowser && /(msie|trident)/i.test(navigator.userAgent);
+        _this.useUtcForDisplay = !isIE;
+        _this._clampDate = isIE || (isBrowser && /(edge)/i.test(navigator.userAgent));
+        return _this;
     }
     /**
-     * Shows a dialog that is just an alert - e.g. with one button.
-     * @param alertMessage The message that should be displayed.
-     * @param okText The text that the button should have
-     * @param title The optional title of the dialog
-     * @returns An Observable that is called if the user hits the Ok button.
+     * @param {?} date
+     * @return {?}
      */
-    MdlDialogService.prototype.alert = function (alertMessage, okText, title) {
-        if (okText === void 0) { okText = 'Ok'; }
-        var result = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
-        this.showDialog({
-            title: title,
-            message: alertMessage,
-            actions: [
-                { handler: function () {
-                        result.next(null);
-                        result.complete();
-                    }, text: okText }
-            ],
-            isModal: true
-        });
+    NativeDateAdapter.prototype.getYear = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return date.getFullYear();
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getMonth = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return date.getMonth();
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getDate = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return date.getDate();
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getDayOfWeek = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return date.getDay();
+    };
+    /**
+     * @param {?} style
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getMonthNames = /**
+     * @param {?} style
+     * @return {?}
+     */
+    function (style) {
+        var _this = this;
+        if (SUPPORTS_INTL_API) {
+            var /** @type {?} */ dtf_1 = new Intl.DateTimeFormat(this.locale, { month: style, timeZone: 'utc' });
+            return range(12, function (i) {
+                return _this._stripDirectionalityCharacters(_this._format(dtf_1, new Date(2017, i, 1)));
+            });
+        }
+        return DEFAULT_MONTH_NAMES[style];
+    };
+    /**
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getDateNames = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (SUPPORTS_INTL_API) {
+            var /** @type {?} */ dtf_2 = new Intl.DateTimeFormat(this.locale, { day: 'numeric', timeZone: 'utc' });
+            return range(31, function (i) {
+                return _this._stripDirectionalityCharacters(_this._format(dtf_2, new Date(2017, 0, i + 1)));
+            });
+        }
+        return DEFAULT_DATE_NAMES;
+    };
+    /**
+     * @param {?} style
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getDayOfWeekNames = /**
+     * @param {?} style
+     * @return {?}
+     */
+    function (style) {
+        var _this = this;
+        if (SUPPORTS_INTL_API) {
+            var /** @type {?} */ dtf_3 = new Intl.DateTimeFormat(this.locale, { weekday: style, timeZone: 'utc' });
+            return range(7, function (i) {
+                return _this._stripDirectionalityCharacters(_this._format(dtf_3, new Date(2017, 0, i + 1)));
+            });
+        }
+        return DEFAULT_DAY_OF_WEEK_NAMES[style];
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getYearName = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        if (SUPPORTS_INTL_API) {
+            var /** @type {?} */ dtf = new Intl.DateTimeFormat(this.locale, { year: 'numeric', timeZone: 'utc' });
+            return this._stripDirectionalityCharacters(this._format(dtf, date));
+        }
+        return String(this.getYear(date));
+    };
+    /**
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getFirstDayOfWeek = /**
+     * @return {?}
+     */
+    function () {
+        // We can't tell using native JS Date what the first day of the week is, we default to Sunday.
+        return 0;
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.getNumDaysInMonth = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return this.getDate(this._createDateWithOverflow(this.getYear(date), this.getMonth(date) + 1, 0));
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.clone = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return this.createDate(this.getYear(date), this.getMonth(date), this.getDate(date));
+    };
+    /**
+     * @param {?} year
+     * @param {?} month
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.createDate = /**
+     * @param {?} year
+     * @param {?} month
+     * @param {?} date
+     * @return {?}
+     */
+    function (year, month, date) {
+        // Check for invalid month and date (except upper bound on date which we have to check after
+        // creating the Date).
+        if (month < 0 || month > 11) {
+            throw Error("Invalid month index \"" + month + "\". Month index has to be between 0 and 11.");
+        }
+        if (date < 1) {
+            throw Error("Invalid date \"" + date + "\". Date has to be greater than 0.");
+        }
+        var /** @type {?} */ result = this._createDateWithOverflow(year, month, date);
+        // Check that the date wasn't above the upper bound for the month, causing the month to overflow
+        if (result.getMonth() != month) {
+            throw Error("Invalid date \"" + date + "\" for month with index \"" + month + "\".");
+        }
         return result;
     };
     /**
-     * Shows a dialog that is just a confirm message - e.g. with two button.
-     * @param question The question that should be displayed.
-     * @param title The title that should be displayed on top of Question.
-     * @param declineText The text for decline button. defaults to Cancel
-     * @param confirmText The text for the confirm button . defaults to Ok
-     * @returns An Observable that is called if the user hits the Ok button.
+     * @return {?}
      */
-    MdlDialogService.prototype.confirm = function (question, declineText, confirmText, title) {
-        if (declineText === void 0) { declineText = 'Cancel'; }
-        if (confirmText === void 0) { confirmText = 'Ok'; }
-        var result = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
-        this.showDialog({
-            title: title,
-            message: question,
-            actions: [
-                {
-                    handler: function () {
-                        result.next(null);
-                        result.complete();
-                    }, text: confirmText
-                },
-                {
-                    handler: function () {
-                        result.error(null);
-                    }, text: declineText, isClosingAction: true
+    NativeDateAdapter.prototype.today = /**
+     * @return {?}
+     */
+    function () {
+        return new Date();
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.parse = /**
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        // We have no way using the native JS Date to set the parse format or locale, so we ignore these
+        // parameters.
+        if (typeof value == 'number') {
+            return new Date(value);
+        }
+        return value ? new Date(Date.parse(value)) : null;
+    };
+    /**
+     * @param {?} date
+     * @param {?} displayFormat
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.format = /**
+     * @param {?} date
+     * @param {?} displayFormat
+     * @return {?}
+     */
+    function (date, displayFormat) {
+        if (!this.isValid(date)) {
+            throw Error('NativeDateAdapter: Cannot format invalid date.');
+        }
+        if (SUPPORTS_INTL_API) {
+            // On IE and Edge the i18n API will throw a hard error that can crash the entire app
+            // if we attempt to format a date whose year is less than 1 or greater than 9999.
+            if (this._clampDate && (date.getFullYear() < 1 || date.getFullYear() > 9999)) {
+                date = this.clone(date);
+                date.setFullYear(Math.max(1, Math.min(9999, date.getFullYear())));
+            }
+            displayFormat = Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, displayFormat, { timeZone: 'utc' });
+            var /** @type {?} */ dtf = new Intl.DateTimeFormat(this.locale, displayFormat);
+            return this._stripDirectionalityCharacters(this._format(dtf, date));
+        }
+        return this._stripDirectionalityCharacters(date.toDateString());
+    };
+    /**
+     * @param {?} date
+     * @param {?} years
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.addCalendarYears = /**
+     * @param {?} date
+     * @param {?} years
+     * @return {?}
+     */
+    function (date, years) {
+        return this.addCalendarMonths(date, years * 12);
+    };
+    /**
+     * @param {?} date
+     * @param {?} months
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.addCalendarMonths = /**
+     * @param {?} date
+     * @param {?} months
+     * @return {?}
+     */
+    function (date, months) {
+        var /** @type {?} */ newDate = this._createDateWithOverflow(this.getYear(date), this.getMonth(date) + months, this.getDate(date));
+        // It's possible to wind up in the wrong month if the original month has more days than the new
+        // month. In this case we want to go to the last day of the desired month.
+        // Note: the additional + 12 % 12 ensures we end up with a positive number, since JS % doesn't
+        // guarantee this.
+        if (this.getMonth(newDate) != ((this.getMonth(date) + months) % 12 + 12) % 12) {
+            newDate = this._createDateWithOverflow(this.getYear(newDate), this.getMonth(newDate), 0);
+        }
+        return newDate;
+    };
+    /**
+     * @param {?} date
+     * @param {?} days
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.addCalendarDays = /**
+     * @param {?} date
+     * @param {?} days
+     * @return {?}
+     */
+    function (date, days) {
+        return this._createDateWithOverflow(this.getYear(date), this.getMonth(date), this.getDate(date) + days);
+    };
+    /**
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.toIso8601 = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return [
+            date.getUTCFullYear(),
+            this._2digit(date.getUTCMonth() + 1),
+            this._2digit(date.getUTCDate())
+        ].join('-');
+    };
+    /**
+     * Returns the given value if given a valid Date or null. Deserializes valid ISO 8601 strings
+     * (https://www.ietf.org/rfc/rfc3339.txt) into valid Dates and empty string into null. Returns an
+     * invalid date for all other values.
+     */
+    /**
+     * Returns the given value if given a valid Date or null. Deserializes valid ISO 8601 strings
+     * (https://www.ietf.org/rfc/rfc3339.txt) into valid Dates and empty string into null. Returns an
+     * invalid date for all other values.
+     * @param {?} value
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.deserialize = /**
+     * Returns the given value if given a valid Date or null. Deserializes valid ISO 8601 strings
+     * (https://www.ietf.org/rfc/rfc3339.txt) into valid Dates and empty string into null. Returns an
+     * invalid date for all other values.
+     * @param {?} value
+     * @return {?}
+     */
+    function (value) {
+        if (typeof value === 'string') {
+            if (!value) {
+                return null;
+            }
+            // The `Date` constructor accepts formats other than ISO 8601, so we need to make sure the
+            // string is the right format first.
+            if (ISO_8601_REGEX.test(value)) {
+                var /** @type {?} */ date = new Date(value);
+                if (this.isValid(date)) {
+                    return date;
                 }
-            ],
-            isModal: true
-        });
-        return result.asObservable();
+            }
+        }
+        return _super.prototype.deserialize.call(this, value);
     };
     /**
-     * Shows a dialog that is specified by the provided configuration.
-     * @param config The simple dialog configuration.
-     * @returns An Observable that returns the MdlDialogReference.
+     * @param {?} obj
+     * @return {?}
      */
-    MdlDialogService.prototype.showDialog = function (config) {
-        if (config.actions.length === 0) {
-            throw new Error('a dialog mus have at least one action');
-        }
-        var internalDialogRef = new __WEBPACK_IMPORTED_MODULE_5__internal_dialog_reference__["a" /* InternalMdlDialogReference */](config);
-        var providers = [
-            { provide: MdlDialogReference, useValue: new MdlDialogReference(internalDialogRef) },
-            { provide: MDL_CONFIGUARTION, useValue: config }
-        ];
-        var hostComponentRef = this.createHostDialog(internalDialogRef, config);
-        var cRef = this.createComponentInstance(hostComponentRef.instance.dialogTarget, providers, __WEBPACK_IMPORTED_MODULE_3__mdl_simple_dialog_component__["a" /* MdlSimpleDialogComponent */]);
-        return this.showHostDialog(internalDialogRef.dialogRef, hostComponentRef);
+    NativeDateAdapter.prototype.isDateInstance = /**
+     * @param {?} obj
+     * @return {?}
+     */
+    function (obj) {
+        return obj instanceof Date;
     };
     /**
-     * Shows a dialog that is specified by the provided configuration.
-     * @param config The custom dialog configuration.
-     * @returns An Observable that returns the MdlDialogReference.
+     * @param {?} date
+     * @return {?}
      */
-    MdlDialogService.prototype.showCustomDialog = function (config) {
-        var internalDialogRef = new __WEBPACK_IMPORTED_MODULE_5__internal_dialog_reference__["a" /* InternalMdlDialogReference */](config);
-        var providers = [
-            { provide: MdlDialogReference, useValue: new MdlDialogReference(internalDialogRef) }
-        ];
-        if (config.providers) {
-            providers.push.apply(providers, config.providers);
+    NativeDateAdapter.prototype.isValid = /**
+     * @param {?} date
+     * @return {?}
+     */
+    function (date) {
+        return !isNaN(date.getTime());
+    };
+    /**
+     * @return {?}
+     */
+    NativeDateAdapter.prototype.invalid = /**
+     * @return {?}
+     */
+    function () {
+        return new Date(NaN);
+    };
+    /**
+     * Creates a date but allows the month and date to overflow.
+     * @param {?} year
+     * @param {?} month
+     * @param {?} date
+     * @return {?}
+     */
+    NativeDateAdapter.prototype._createDateWithOverflow = /**
+     * Creates a date but allows the month and date to overflow.
+     * @param {?} year
+     * @param {?} month
+     * @param {?} date
+     * @return {?}
+     */
+    function (year, month, date) {
+        var /** @type {?} */ result = new Date(year, month, date);
+        // We need to correct for the fact that JS native Date treats years in range [0, 99] as
+        // abbreviations for 19xx.
+        if (year >= 0 && year < 100) {
+            result.setFullYear(this.getYear(result) - 1900);
         }
-        var hostComponentRef = this.createHostDialog(internalDialogRef, config);
-        this.createComponentInstance(hostComponentRef.instance.dialogTarget, providers, config.component);
-        return this.showHostDialog(internalDialogRef.dialogRef, hostComponentRef);
+        return result;
     };
-    MdlDialogService.prototype.showDialogTemplate = function (template, config) {
-        var internalDialogRef = new __WEBPACK_IMPORTED_MODULE_5__internal_dialog_reference__["a" /* InternalMdlDialogReference */](config);
-        var hostComponentRef = this.createHostDialog(internalDialogRef, config);
-        hostComponentRef.instance.dialogTarget.createEmbeddedView(template);
-        return this.showHostDialog(internalDialogRef.dialogRef, hostComponentRef);
+    /**
+     * Pads a number to make it two digits.
+     * @param {?} n The number to pad.
+     * @return {?} The padded number.
+     */
+    NativeDateAdapter.prototype._2digit = /**
+     * Pads a number to make it two digits.
+     * @param {?} n The number to pad.
+     * @return {?} The padded number.
+     */
+    function (n) {
+        return ('00' + n).slice(-2);
     };
-    MdlDialogService.prototype.showHostDialog = function (dialogRef, hostComponentRef) {
-        var result = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["a" /* Subject */]();
-        setTimeout(function () {
-            result.next(dialogRef);
-            result.complete();
-            hostComponentRef.instance.show();
-        });
-        return result.asObservable();
+    /**
+     * Strip out unicode LTR and RTL characters. Edge and IE insert these into formatted dates while
+     * other browsers do not. We remove them to make output consistent and because they interfere with
+     * date parsing.
+     * @param {?} str The string to strip direction characters from.
+     * @return {?} The stripped string.
+     */
+    NativeDateAdapter.prototype._stripDirectionalityCharacters = /**
+     * Strip out unicode LTR and RTL characters. Edge and IE insert these into formatted dates while
+     * other browsers do not. We remove them to make output consistent and because they interfere with
+     * date parsing.
+     * @param {?} str The string to strip direction characters from.
+     * @return {?} The stripped string.
+     */
+    function (str) {
+        return str.replace(/[\u200e\u200f]/g, '');
     };
-    MdlDialogService.prototype.createHostDialog = function (internalDialogRef, dialogConfig) {
+    /**
+     * When converting Date object to string, javascript built-in functions may return wrong
+     * results because it applies its internal DST rules. The DST rules around the world change
+     * very frequently, and the current valid rule is not always valid in previous years though.
+     * We work around this problem building a new Date object which has its internal UTC
+     * representation with the local date and time.
+     * @param {?} dtf Intl.DateTimeFormat object, containg the desired string format. It must have
+     *    timeZone set to 'utc' to work fine.
+     * @param {?} date Date from which we want to get the string representation according to dtf
+     * @return {?} A Date object with its UTC representation based on the passed in date info
+     */
+    NativeDateAdapter.prototype._format = /**
+     * When converting Date object to string, javascript built-in functions may return wrong
+     * results because it applies its internal DST rules. The DST rules around the world change
+     * very frequently, and the current valid rule is not always valid in previous years though.
+     * We work around this problem building a new Date object which has its internal UTC
+     * representation with the local date and time.
+     * @param {?} dtf Intl.DateTimeFormat object, containg the desired string format. It must have
+     *    timeZone set to 'utc' to work fine.
+     * @param {?} date Date from which we want to get the string representation according to dtf
+     * @return {?} A Date object with its UTC representation based on the passed in date info
+     */
+    function (dtf, date) {
+        var /** @type {?} */ d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()));
+        return dtf.format(d);
+    };
+    NativeDateAdapter.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    NativeDateAdapter.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [MAT_DATE_LOCALE,] },] },
+    ]; };
+    return NativeDateAdapter;
+}(DateAdapter));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MAT_NATIVE_DATE_FORMATS = {
+    parse: {
+        dateInput: null,
+    },
+    display: {
+        dateInput: { year: 'numeric', month: 'numeric', day: 'numeric' },
+        monthYearLabel: { year: 'numeric', month: 'short' },
+        dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+        monthYearA11yLabel: { year: 'numeric', month: 'long' },
+    }
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var NativeDateModule = /** @class */ (function () {
+    function NativeDateModule() {
+    }
+    NativeDateModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    providers: [
+                        { provide: DateAdapter, useClass: NativeDateAdapter },
+                        MAT_DATE_LOCALE_PROVIDER
+                    ],
+                },] },
+    ];
+    /** @nocollapse */
+    NativeDateModule.ctorParameters = function () { return []; };
+    return NativeDateModule;
+}());
+var ɵ0$$1 = MAT_NATIVE_DATE_FORMATS;
+var MatNativeDateModule = /** @class */ (function () {
+    function MatNativeDateModule() {
+    }
+    MatNativeDateModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [NativeDateModule],
+                    providers: [{ provide: MAT_DATE_FORMATS, useValue: ɵ0$$1 }],
+                },] },
+    ];
+    /** @nocollapse */
+    MatNativeDateModule.ctorParameters = function () { return []; };
+    return MatNativeDateModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Error state matcher that matches when a control is invalid and dirty.
+ */
+var ShowOnDirtyErrorStateMatcher = /** @class */ (function () {
+    function ShowOnDirtyErrorStateMatcher() {
+    }
+    /**
+     * @param {?} control
+     * @param {?} form
+     * @return {?}
+     */
+    ShowOnDirtyErrorStateMatcher.prototype.isErrorState = /**
+     * @param {?} control
+     * @param {?} form
+     * @return {?}
+     */
+    function (control, form) {
+        return !!(control && control.invalid && (control.dirty || (form && form.submitted)));
+    };
+    ShowOnDirtyErrorStateMatcher.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ShowOnDirtyErrorStateMatcher.ctorParameters = function () { return []; };
+    return ShowOnDirtyErrorStateMatcher;
+}());
+/**
+ * Provider that defines how form controls behave with regards to displaying error messages.
+ */
+var ErrorStateMatcher = /** @class */ (function () {
+    function ErrorStateMatcher() {
+    }
+    /**
+     * @param {?} control
+     * @param {?} form
+     * @return {?}
+     */
+    ErrorStateMatcher.prototype.isErrorState = /**
+     * @param {?} control
+     * @param {?} form
+     * @return {?}
+     */
+    function (control, form) {
+        return !!(control && control.invalid && (control.touched || (form && form.submitted)));
+    };
+    ErrorStateMatcher.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ErrorStateMatcher.ctorParameters = function () { return []; };
+    return ErrorStateMatcher;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Injection token that can be used to provide options to the Hammerjs instance.
+ * More info at http://hammerjs.github.io/api/.
+ */
+var MAT_HAMMER_OPTIONS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('MAT_HAMMER_OPTIONS');
+/**
+ * Adjusts configuration of our gesture library, Hammer.
+ */
+var GestureConfig = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(GestureConfig, _super);
+    function GestureConfig(_hammerOptions, commonModule) {
+        var _this = _super.call(this) || this;
+        _this._hammerOptions = _hammerOptions;
+        _this._hammer = typeof window !== 'undefined' ? (/** @type {?} */ (window)).Hammer : null;
+        /**
+         * List of new event names to add to the gesture support list
+         */
+        _this.events = _this._hammer ? [
+            'longpress',
+            'slide',
+            'slidestart',
+            'slideend',
+            'slideright',
+            'slideleft'
+        ] : [];
+        if (commonModule) {
+            commonModule._checkHammerIsAvailable();
+        }
+        return _this;
+    }
+    /**
+     * Builds Hammer instance manually to add custom recognizers that match the Material Design spec.
+     *
+     * Our gesture names come from the Material Design gestures spec:
+     * https://www.google.com/design/spec/patterns/gestures.html#gestures-touch-mechanics
+     *
+     * More information on default recognizers can be found in Hammer docs:
+     * http://hammerjs.github.io/recognizer-pan/
+     * http://hammerjs.github.io/recognizer-press/
+     *
+     * @param element Element to which to assign the new HammerJS gestures.
+     * @returns Newly-created HammerJS instance.
+     */
+    /**
+     * Builds Hammer instance manually to add custom recognizers that match the Material Design spec.
+     *
+     * Our gesture names come from the Material Design gestures spec:
+     * https://www.google.com/design/spec/patterns/gestures.html#gestures-touch-mechanics
+     *
+     * More information on default recognizers can be found in Hammer docs:
+     * http://hammerjs.github.io/recognizer-pan/
+     * http://hammerjs.github.io/recognizer-press/
+     *
+     * @param {?} element Element to which to assign the new HammerJS gestures.
+     * @return {?} Newly-created HammerJS instance.
+     */
+    GestureConfig.prototype.buildHammer = /**
+     * Builds Hammer instance manually to add custom recognizers that match the Material Design spec.
+     *
+     * Our gesture names come from the Material Design gestures spec:
+     * https://www.google.com/design/spec/patterns/gestures.html#gestures-touch-mechanics
+     *
+     * More information on default recognizers can be found in Hammer docs:
+     * http://hammerjs.github.io/recognizer-pan/
+     * http://hammerjs.github.io/recognizer-press/
+     *
+     * @param {?} element Element to which to assign the new HammerJS gestures.
+     * @return {?} Newly-created HammerJS instance.
+     */
+    function (element) {
+        var /** @type {?} */ mc = new this._hammer(element, this._hammerOptions || undefined);
+        // Default Hammer Recognizers.
+        var /** @type {?} */ pan = new this._hammer.Pan();
+        var /** @type {?} */ swipe = new this._hammer.Swipe();
+        var /** @type {?} */ press = new this._hammer.Press();
+        // Notice that a HammerJS recognizer can only depend on one other recognizer once.
+        // Otherwise the previous `recognizeWith` will be dropped.
+        // TODO: Confirm threshold numbers with Material Design UX Team
+        var /** @type {?} */ slide = this._createRecognizer(pan, { event: 'slide', threshold: 0 }, swipe);
+        var /** @type {?} */ longpress = this._createRecognizer(press, { event: 'longpress', time: 500 });
+        // Overwrite the default `pan` event to use the swipe event.
+        pan.recognizeWith(swipe);
+        // Add customized gestures to Hammer manager
+        mc.add([swipe, press, pan, slide, longpress]);
+        return /** @type {?} */ (mc);
+    };
+    /**
+     * Creates a new recognizer, without affecting the default recognizers of HammerJS
+     * @param {?} base
+     * @param {?} options
+     * @param {...?} inheritances
+     * @return {?}
+     */
+    GestureConfig.prototype._createRecognizer = /**
+     * Creates a new recognizer, without affecting the default recognizers of HammerJS
+     * @param {?} base
+     * @param {?} options
+     * @param {...?} inheritances
+     * @return {?}
+     */
+    function (base, options) {
+        var inheritances = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            inheritances[_i - 2] = arguments[_i];
+        }
+        var /** @type {?} */ recognizer = new (/** @type {?} */ (base.constructor))(options);
+        inheritances.push(base);
+        inheritances.forEach(function (item) { return recognizer.recognizeWith(item); });
+        return recognizer;
+    };
+    GestureConfig.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    GestureConfig.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [MAT_HAMMER_OPTIONS,] },] },
+        { type: MatCommonModule, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
+    ]; };
+    return GestureConfig;
+}(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["c" /* HammerGestureConfig */]));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Shared directive to count lines inside a text area, such as a list item.
+ * Line elements can be extracted with a \@ContentChildren(MatLine) query, then
+ * counted by checking the query list's length.
+ */
+var MatLine = /** @class */ (function () {
+    function MatLine() {
+    }
+    MatLine.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                    selector: '[mat-line], [matLine]',
+                    host: { 'class': 'mat-line' }
+                },] },
+    ];
+    /** @nocollapse */
+    MatLine.ctorParameters = function () { return []; };
+    return MatLine;
+}());
+/**
+ * Helper that takes a query list of lines and sets the correct class on the host.
+ * \@docs-private
+ */
+var MatLineSetter = /** @class */ (function () {
+    function MatLineSetter(_lines, _element) {
         var _this = this;
-        var viewContainerRef = this.mdlDialogOutletService.viewContainerRef;
-        if (!viewContainerRef) {
-            throw new Error('You did not provide a ViewContainerRef. ' +
-                'Please see https://github.com/mseemann/angular2-mdl/wiki/How-to-use-the-MdlDialogService');
-        }
-        var providers = [
-            { provide: MDL_CONFIGUARTION, useValue: dialogConfig },
-            { provide: __WEBPACK_IMPORTED_MODULE_5__internal_dialog_reference__["a" /* InternalMdlDialogReference */], useValue: internalDialogRef }
-        ];
-        var hostDialogComponent = this.createComponentInstance(viewContainerRef, providers, __WEBPACK_IMPORTED_MODULE_4__mdl_dialog_host_component__["a" /* MdlDialogHostComponent */]);
-        internalDialogRef.hostDialogComponentRef = hostDialogComponent;
-        internalDialogRef.isModal = dialogConfig.isModal;
-        internalDialogRef.closeCallback = function () {
-            _this.popDialog(internalDialogRef);
-            hostDialogComponent.instance.hide(hostDialogComponent);
-        };
-        this.pushDialog(internalDialogRef);
-        return hostDialogComponent;
-    };
-    MdlDialogService.prototype.pushDialog = function (dialogRef) {
-        if (this.openDialogs.length == 0) {
-            this.onDialogsOpenChanged.emit(true);
-        }
-        this.openDialogs.push(dialogRef);
-        this.orderDialogStack();
-    };
-    MdlDialogService.prototype.popDialog = function (dialogRef) {
-        this.openDialogs.splice(this.openDialogs.indexOf(dialogRef), 1);
-        this.orderDialogStack();
-        if (this.openDialogs.length == 0) {
-            this.onDialogsOpenChanged.emit(false);
-        }
-    };
-    MdlDialogService.prototype.orderDialogStack = function () {
-        // +1 because the overlay may have MIN_DIALOG_Z_INDEX if the dialog is modal.
-        var zIndex = MIN_DIALOG_Z_INDEX + 1;
-        this.openDialogs.forEach(function (iDialogRef) {
-            iDialogRef.hostDialog.zIndex = zIndex;
-            // +2 to make room for the overlay if a dialog is modal
-            zIndex += 2;
+        this._lines = _lines;
+        this._element = _element;
+        this._setLineClass(this._lines.length);
+        this._lines.changes.subscribe(function () {
+            _this._setLineClass(_this._lines.length);
         });
-        this.mdlDialogOutletService.hideBackdrop();
-        // if there is a modal dialog append the overloay to the dom - if not remove the overlay from the body
-        var topMostModalDialog = this.getTopMostInternalDialogRef();
-        if (topMostModalDialog) {
-            // move the overlay diredct under the topmos modal dialog
-            this.mdlDialogOutletService.showBackdropWithZIndex(topMostModalDialog.hostDialog.zIndex - 1);
+    }
+    /**
+     * @param {?} count
+     * @return {?}
+     */
+    MatLineSetter.prototype._setLineClass = /**
+     * @param {?} count
+     * @return {?}
+     */
+    function (count) {
+        this._resetClasses();
+        if (count === 2 || count === 3) {
+            this._setClass("mat-" + count + "-line", true);
+        }
+        else if (count > 3) {
+            this._setClass("mat-multi-line", true);
         }
     };
-    MdlDialogService.prototype.getTopMostInternalDialogRef = function () {
-        var topMostModalDialog = null;
-        for (var i = (this.openDialogs.length - 1); i >= 0; i--) {
-            if (this.openDialogs[i].isModal) {
-                topMostModalDialog = this.openDialogs[i];
+    /**
+     * @return {?}
+     */
+    MatLineSetter.prototype._resetClasses = /**
+     * @return {?}
+     */
+    function () {
+        this._setClass('mat-2-line', false);
+        this._setClass('mat-3-line', false);
+        this._setClass('mat-multi-line', false);
+    };
+    /**
+     * @param {?} className
+     * @param {?} isAdd
+     * @return {?}
+     */
+    MatLineSetter.prototype._setClass = /**
+     * @param {?} className
+     * @param {?} isAdd
+     * @return {?}
+     */
+    function (className, isAdd) {
+        if (isAdd) {
+            this._element.nativeElement.classList.add(className);
+        }
+        else {
+            this._element.nativeElement.classList.remove(className);
+        }
+    };
+    return MatLineSetter;
+}());
+var MatLineModule = /** @class */ (function () {
+    function MatLineModule() {
+    }
+    MatLineModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [MatCommonModule],
+                    exports: [MatLine, MatCommonModule],
+                    declarations: [MatLine],
+                },] },
+    ];
+    /** @nocollapse */
+    MatLineModule.ctorParameters = function () { return []; };
+    return MatLineModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/** @enum {number} */
+var RippleState = {
+    FADING_IN: 0,
+    VISIBLE: 1,
+    FADING_OUT: 2,
+    HIDDEN: 3,
+};
+RippleState[RippleState.FADING_IN] = "FADING_IN";
+RippleState[RippleState.VISIBLE] = "VISIBLE";
+RippleState[RippleState.FADING_OUT] = "FADING_OUT";
+RippleState[RippleState.HIDDEN] = "HIDDEN";
+/**
+ * Reference to a previously launched ripple element.
+ */
+var RippleRef = /** @class */ (function () {
+    function RippleRef(_renderer, element, config) {
+        this._renderer = _renderer;
+        this.element = element;
+        this.config = config;
+        /**
+         * Current state of the ripple reference.
+         */
+        this.state = RippleState.HIDDEN;
+    }
+    /** Fades out the ripple element. */
+    /**
+     * Fades out the ripple element.
+     * @return {?}
+     */
+    RippleRef.prototype.fadeOut = /**
+     * Fades out the ripple element.
+     * @return {?}
+     */
+    function () {
+        this._renderer.fadeOutRipple(this);
+    };
+    return RippleRef;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Interface that describes the configuration for the animation of a ripple.
+ * There are two animation phases with different durations for the ripples.
+ * @record
+ */
+
+/**
+ * Interface that describes the target for launching ripples.
+ * It defines the ripple configuration and disabled state for interaction ripples.
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Default ripple animation configuration for ripples without an explicit
+ * animation config specified.
+ */
+var defaultRippleAnimationConfig = {
+    enterDuration: 450,
+    exitDuration: 400
+};
+/**
+ * Timeout for ignoring mouse events. Mouse events will be temporary ignored after touch
+ * events to avoid synthetic mouse events.
+ */
+var ignoreMouseEventsTimeout = 800;
+/**
+ * Helper service that performs DOM manipulations. Not intended to be used outside this module.
+ * The constructor takes a reference to the ripple directive's host element and a map of DOM
+ * event handlers to be installed on the element that triggers ripple animations.
+ * This will eventually become a custom renderer once Angular support exists.
+ * \@docs-private
+ */
+var RippleRenderer = /** @class */ (function () {
+    function RippleRenderer(_target, _ngZone, elementRef, platform) {
+        var _this = this;
+        this._target = _target;
+        this._ngZone = _ngZone;
+        /**
+         * Whether the pointer is currently down or not.
+         */
+        this._isPointerDown = false;
+        /**
+         * Events to be registered on the trigger element.
+         */
+        this._triggerEvents = new Map();
+        /**
+         * Set of currently active ripple references.
+         */
+        this._activeRipples = new Set();
+        /**
+         * Options that apply to all the event listeners that are bound by the renderer.
+         */
+        this._eventOptions = Object(__WEBPACK_IMPORTED_MODULE_8__angular_cdk_platform__["c" /* supportsPassiveEventListeners */])() ? (/** @type {?} */ ({ passive: true })) : false;
+        /**
+         * Function being called whenever the trigger is being pressed using mouse.
+         */
+        this.onMousedown = function (event) {
+            var /** @type {?} */ isSyntheticEvent = _this._lastTouchStartEvent &&
+                Date.now() < _this._lastTouchStartEvent + ignoreMouseEventsTimeout;
+            if (!_this._target.rippleDisabled && !isSyntheticEvent) {
+                _this._isPointerDown = true;
+                _this.fadeInRipple(event.clientX, event.clientY, _this._target.rippleConfig);
+            }
+        };
+        /**
+         * Function being called whenever the trigger is being pressed using touch.
+         */
+        this.onTouchStart = function (event) {
+            if (!_this._target.rippleDisabled) {
+                // Some browsers fire mouse events after a `touchstart` event. Those synthetic mouse
+                // events will launch a second ripple if we don't ignore mouse events for a specific
+                // time after a touchstart event.
+                // Some browsers fire mouse events after a `touchstart` event. Those synthetic mouse
+                // events will launch a second ripple if we don't ignore mouse events for a specific
+                // time after a touchstart event.
+                _this._lastTouchStartEvent = Date.now();
+                _this._isPointerDown = true;
+                _this.fadeInRipple(event.touches[0].clientX, event.touches[0].clientY, _this._target.rippleConfig);
+            }
+        };
+        /**
+         * Function being called whenever the trigger is being released.
+         */
+        this.onPointerUp = function () {
+            if (!_this._isPointerDown) {
+                return;
+            }
+            _this._isPointerDown = false;
+            // Fade-out all ripples that are visible and not persistent.
+            // Fade-out all ripples that are visible and not persistent.
+            _this._activeRipples.forEach(function (ripple) {
+                // By default, only ripples that are completely visible will fade out on pointer release.
+                // If the `terminateOnPointerUp` option is set, ripples that still fade in will also fade out.
+                var /** @type {?} */ isVisible = ripple.state === RippleState.VISIBLE ||
+                    ripple.config.terminateOnPointerUp && ripple.state === RippleState.FADING_IN;
+                if (!ripple.config.persistent && isVisible) {
+                    ripple.fadeOut();
+                }
+            });
+        };
+        // Only do anything if we're on the browser.
+        if (platform.isBrowser) {
+            this._containerElement = elementRef.nativeElement;
+            // Specify events which need to be registered on the trigger.
+            this._triggerEvents.set('mousedown', this.onMousedown);
+            this._triggerEvents.set('mouseup', this.onPointerUp);
+            this._triggerEvents.set('mouseleave', this.onPointerUp);
+            this._triggerEvents.set('touchstart', this.onTouchStart);
+            this._triggerEvents.set('touchend', this.onPointerUp);
+        }
+    }
+    /**
+     * Fades in a ripple at the given coordinates.
+     * @param x Coordinate within the element, along the X axis at which to start the ripple.
+     * @param y Coordinate within the element, along the Y axis at which to start the ripple.
+     * @param config Extra ripple options.
+     */
+    /**
+     * Fades in a ripple at the given coordinates.
+     * @param {?} x Coordinate within the element, along the X axis at which to start the ripple.
+     * @param {?} y Coordinate within the element, along the Y axis at which to start the ripple.
+     * @param {?=} config Extra ripple options.
+     * @return {?}
+     */
+    RippleRenderer.prototype.fadeInRipple = /**
+     * Fades in a ripple at the given coordinates.
+     * @param {?} x Coordinate within the element, along the X axis at which to start the ripple.
+     * @param {?} y Coordinate within the element, along the Y axis at which to start the ripple.
+     * @param {?=} config Extra ripple options.
+     * @return {?}
+     */
+    function (x, y, config) {
+        var _this = this;
+        if (config === void 0) { config = {}; }
+        var /** @type {?} */ containerRect = this._containerElement.getBoundingClientRect();
+        var /** @type {?} */ animationConfig = Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, defaultRippleAnimationConfig, config.animation);
+        if (config.centered) {
+            x = containerRect.left + containerRect.width / 2;
+            y = containerRect.top + containerRect.height / 2;
+        }
+        var /** @type {?} */ radius = config.radius || distanceToFurthestCorner(x, y, containerRect);
+        var /** @type {?} */ offsetX = x - containerRect.left;
+        var /** @type {?} */ offsetY = y - containerRect.top;
+        var /** @type {?} */ duration = animationConfig.enterDuration / (config.speedFactor || 1);
+        var /** @type {?} */ ripple = document.createElement('div');
+        ripple.classList.add('mat-ripple-element');
+        ripple.style.left = offsetX - radius + "px";
+        ripple.style.top = offsetY - radius + "px";
+        ripple.style.height = radius * 2 + "px";
+        ripple.style.width = radius * 2 + "px";
+        // If the color is not set, the default CSS color will be used.
+        ripple.style.backgroundColor = config.color || null;
+        ripple.style.transitionDuration = duration + "ms";
+        this._containerElement.appendChild(ripple);
+        // By default the browser does not recalculate the styles of dynamically created
+        // ripple elements. This is critical because then the `scale` would not animate properly.
+        enforceStyleRecalculation(ripple);
+        ripple.style.transform = 'scale(1)';
+        // Exposed reference to the ripple that will be returned.
+        var /** @type {?} */ rippleRef = new RippleRef(this, ripple, config);
+        rippleRef.state = RippleState.FADING_IN;
+        // Add the ripple reference to the list of all active ripples.
+        this._activeRipples.add(rippleRef);
+        // Wait for the ripple element to be completely faded in.
+        // Once it's faded in, the ripple can be hidden immediately if the mouse is released.
+        this.runTimeoutOutsideZone(function () {
+            rippleRef.state = RippleState.VISIBLE;
+            if (!config.persistent && !_this._isPointerDown) {
+                rippleRef.fadeOut();
+            }
+        }, duration);
+        return rippleRef;
+    };
+    /** Fades out a ripple reference. */
+    /**
+     * Fades out a ripple reference.
+     * @param {?} rippleRef
+     * @return {?}
+     */
+    RippleRenderer.prototype.fadeOutRipple = /**
+     * Fades out a ripple reference.
+     * @param {?} rippleRef
+     * @return {?}
+     */
+    function (rippleRef) {
+        // For ripples that are not active anymore, don't re-un the fade-out animation.
+        if (!this._activeRipples.delete(rippleRef)) {
+            return;
+        }
+        var /** @type {?} */ rippleEl = rippleRef.element;
+        var /** @type {?} */ animationConfig = Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, defaultRippleAnimationConfig, rippleRef.config.animation);
+        rippleEl.style.transitionDuration = animationConfig.exitDuration + "ms";
+        rippleEl.style.opacity = '0';
+        rippleRef.state = RippleState.FADING_OUT;
+        // Once the ripple faded out, the ripple can be safely removed from the DOM.
+        this.runTimeoutOutsideZone(function () {
+            rippleRef.state = RippleState.HIDDEN; /** @type {?} */
+            ((rippleEl.parentNode)).removeChild(rippleEl);
+        }, animationConfig.exitDuration);
+    };
+    /** Fades out all currently active ripples. */
+    /**
+     * Fades out all currently active ripples.
+     * @return {?}
+     */
+    RippleRenderer.prototype.fadeOutAll = /**
+     * Fades out all currently active ripples.
+     * @return {?}
+     */
+    function () {
+        this._activeRipples.forEach(function (ripple) { return ripple.fadeOut(); });
+    };
+    /** Sets up the trigger event listeners */
+    /**
+     * Sets up the trigger event listeners
+     * @param {?} element
+     * @return {?}
+     */
+    RippleRenderer.prototype.setupTriggerEvents = /**
+     * Sets up the trigger event listeners
+     * @param {?} element
+     * @return {?}
+     */
+    function (element) {
+        var _this = this;
+        if (!element || element === this._triggerElement) {
+            return;
+        }
+        // Remove all previously registered event listeners from the trigger element.
+        this._removeTriggerEvents();
+        this._ngZone.runOutsideAngular(function () {
+            _this._triggerEvents.forEach(function (fn, type) {
+                return element.addEventListener(type, fn, _this._eventOptions);
+            });
+        });
+        this._triggerElement = element;
+    };
+    /**
+     * Runs a timeout outside of the Angular zone to avoid triggering the change detection.
+     * @param {?} fn
+     * @param {?=} delay
+     * @return {?}
+     */
+    RippleRenderer.prototype.runTimeoutOutsideZone = /**
+     * Runs a timeout outside of the Angular zone to avoid triggering the change detection.
+     * @param {?} fn
+     * @param {?=} delay
+     * @return {?}
+     */
+    function (fn, delay) {
+        if (delay === void 0) { delay = 0; }
+        this._ngZone.runOutsideAngular(function () { return setTimeout(fn, delay); });
+    };
+    /** Removes previously registered event listeners from the trigger element. */
+    /**
+     * Removes previously registered event listeners from the trigger element.
+     * @return {?}
+     */
+    RippleRenderer.prototype._removeTriggerEvents = /**
+     * Removes previously registered event listeners from the trigger element.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._triggerElement) {
+            this._triggerEvents.forEach(function (fn, type) {
+                /** @type {?} */ ((_this._triggerElement)).removeEventListener(type, fn, _this._eventOptions);
+            });
+        }
+    };
+    return RippleRenderer;
+}());
+/**
+ * Enforces a style recalculation of a DOM element by computing its styles.
+ * @param {?} element
+ * @return {?}
+ */
+function enforceStyleRecalculation(element) {
+    // Enforce a style recalculation by calling `getComputedStyle` and accessing any property.
+    // Calling `getPropertyValue` is important to let optimizers know that this is not a noop.
+    // See: https://gist.github.com/paulirish/5d52fb081b3570c81e3a
+    window.getComputedStyle(element).getPropertyValue('opacity');
+}
+/**
+ * Returns the distance from the point (x, y) to the furthest corner of a rectangle.
+ * @param {?} x
+ * @param {?} y
+ * @param {?} rect
+ * @return {?}
+ */
+function distanceToFurthestCorner(x, y, rect) {
+    var /** @type {?} */ distX = Math.max(Math.abs(x - rect.left), Math.abs(x - rect.right));
+    var /** @type {?} */ distY = Math.max(Math.abs(y - rect.top), Math.abs(y - rect.bottom));
+    return Math.sqrt(distX * distX + distY * distY);
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Configurable options for `matRipple`.
+ * @record
+ */
+
+/**
+ * Injection token that can be used to specify the global ripple options.
+ */
+var MAT_RIPPLE_GLOBAL_OPTIONS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('mat-ripple-global-options');
+var MatRipple = /** @class */ (function () {
+    function MatRipple(_elementRef, ngZone, platform, globalOptions) {
+        this._elementRef = _elementRef;
+        /**
+         * If set, the radius in pixels of foreground ripples when fully expanded. If unset, the radius
+         * will be the distance from the center of the ripple to the furthest corner of the host element's
+         * bounding rectangle.
+         */
+        this.radius = 0;
+        /**
+         * If set, the normal duration of ripple animations is divided by this value. For example,
+         * setting it to 0.5 will cause the animations to take twice as long.
+         * A changed speedFactor will not modify the fade-out duration of the ripples.
+         * @deprecated Use the [matRippleAnimation] binding instead.
+         * \@deletion-target 7.0.0
+         */
+        this.speedFactor = 1;
+        this._disabled = false;
+        /**
+         * Whether ripple directive is initialized and the input bindings are set.
+         */
+        this._isInitialized = false;
+        this._globalOptions = globalOptions || {};
+        this._rippleRenderer = new RippleRenderer(this, ngZone, _elementRef, platform);
+    }
+    Object.defineProperty(MatRipple.prototype, "disabled", {
+        get: /**
+         * Whether click events will not trigger the ripple. Ripples can be still launched manually
+         * by using the `launch()` method.
+         * @return {?}
+         */
+        function () { return this._disabled; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._disabled = value;
+            this._setupTriggerEventsIfEnabled();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatRipple.prototype, "trigger", {
+        get: /**
+         * The element that triggers the ripple when click events are received.
+         * Defaults to the directive's host element.
+         * @return {?}
+         */
+        function () { return this._trigger || this._elementRef.nativeElement; },
+        set: /**
+         * @param {?} trigger
+         * @return {?}
+         */
+        function (trigger) {
+            this._trigger = trigger;
+            this._setupTriggerEventsIfEnabled();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    MatRipple.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this._isInitialized = true;
+        this._setupTriggerEventsIfEnabled();
+    };
+    /**
+     * @return {?}
+     */
+    MatRipple.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._rippleRenderer._removeTriggerEvents();
+    };
+    /** Fades out all currently showing ripple elements. */
+    /**
+     * Fades out all currently showing ripple elements.
+     * @return {?}
+     */
+    MatRipple.prototype.fadeOutAll = /**
+     * Fades out all currently showing ripple elements.
+     * @return {?}
+     */
+    function () {
+        this._rippleRenderer.fadeOutAll();
+    };
+    Object.defineProperty(MatRipple.prototype, "rippleConfig", {
+        /** Ripple configuration from the directive's input values. */
+        get: /**
+         * Ripple configuration from the directive's input values.
+         * @return {?}
+         */
+        function () {
+            return {
+                centered: this.centered,
+                radius: this.radius,
+                color: this.color,
+                animation: Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, this._globalOptions.animation, this.animation),
+                terminateOnPointerUp: this._globalOptions.terminateOnPointerUp,
+                speedFactor: this.speedFactor * (this._globalOptions.baseSpeedFactor || 1),
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatRipple.prototype, "rippleDisabled", {
+        /** Whether ripples on pointer-down are disabled or not. */
+        get: /**
+         * Whether ripples on pointer-down are disabled or not.
+         * @return {?}
+         */
+        function () {
+            return this.disabled || !!this._globalOptions.disabled;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Sets up the the trigger event listeners if ripples are enabled.
+     * @return {?}
+     */
+    MatRipple.prototype._setupTriggerEventsIfEnabled = /**
+     * Sets up the the trigger event listeners if ripples are enabled.
+     * @return {?}
+     */
+    function () {
+        if (!this.disabled && this._isInitialized) {
+            this._rippleRenderer.setupTriggerEvents(this.trigger);
+        }
+    };
+    /** Launches a manual ripple at the specified coordinated or just by the ripple config. */
+    /**
+     * Launches a manual ripple at the specified coordinated or just by the ripple config.
+     * @param {?} configOrX
+     * @param {?=} y
+     * @param {?=} config
+     * @return {?}
+     */
+    MatRipple.prototype.launch = /**
+     * Launches a manual ripple at the specified coordinated or just by the ripple config.
+     * @param {?} configOrX
+     * @param {?=} y
+     * @param {?=} config
+     * @return {?}
+     */
+    function (configOrX, y, config) {
+        if (y === void 0) { y = 0; }
+        if (typeof configOrX === 'number') {
+            return this._rippleRenderer.fadeInRipple(configOrX, y, Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, this.rippleConfig, config));
+        }
+        else {
+            return this._rippleRenderer.fadeInRipple(0, 0, Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["a" /* __assign */])({}, this.rippleConfig, configOrX));
+        }
+    };
+    MatRipple.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                    selector: '[mat-ripple], [matRipple]',
+                    exportAs: 'matRipple',
+                    host: {
+                        'class': 'mat-ripple',
+                        '[class.mat-ripple-unbounded]': 'unbounded'
+                    }
+                },] },
+    ];
+    /** @nocollapse */
+    MatRipple.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_platform__["a" /* Platform */], },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [MAT_RIPPLE_GLOBAL_OPTIONS,] },] },
+    ]; };
+    MatRipple.propDecorators = {
+        "color": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleColor',] },],
+        "unbounded": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleUnbounded',] },],
+        "centered": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleCentered',] },],
+        "radius": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleRadius',] },],
+        "speedFactor": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleSpeedFactor',] },],
+        "animation": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleAnimation',] },],
+        "disabled": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleDisabled',] },],
+        "trigger": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['matRippleTrigger',] },],
+    };
+    return MatRipple;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MatRippleModule = /** @class */ (function () {
+    function MatRippleModule() {
+    }
+    MatRippleModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [MatCommonModule, __WEBPACK_IMPORTED_MODULE_8__angular_cdk_platform__["b" /* PlatformModule */]],
+                    exports: [MatRipple, MatCommonModule],
+                    declarations: [MatRipple],
+                },] },
+    ];
+    /** @nocollapse */
+    MatRippleModule.ctorParameters = function () { return []; };
+    return MatRippleModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Component that shows a simplified checkbox without including any kind of "real" checkbox.
+ * Meant to be used when the checkbox is purely decorative and a large number of them will be
+ * included, such as for the options in a multi-select. Uses no SVGs or complex animations.
+ * Note that theming is meant to be handled by the parent element, e.g.
+ * `mat-primary .mat-pseudo-checkbox`.
+ *
+ * Note that this component will be completely invisible to screen-reader users. This is *not*
+ * interchangeable with `<mat-checkbox>` and should *not* be used if the user would directly
+ * interact with the checkbox. The pseudo-checkbox should only be used as an implementation detail
+ * of more complex components that appropriately handle selected / checked state.
+ * \@docs-private
+ */
+var MatPseudoCheckbox = /** @class */ (function () {
+    function MatPseudoCheckbox() {
+        /**
+         * Display state of the checkbox.
+         */
+        this.state = 'unchecked';
+        /**
+         * Whether the checkbox is disabled.
+         */
+        this.disabled = false;
+    }
+    MatPseudoCheckbox.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    selector: 'mat-pseudo-checkbox',
+                    styles: [".mat-pseudo-checkbox{width:20px;height:20px;border:2px solid;border-radius:2px;cursor:pointer;display:inline-block;vertical-align:middle;box-sizing:border-box;position:relative;flex-shrink:0;transition:border-color 90ms cubic-bezier(0,0,.2,.1),background-color 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox::after{position:absolute;opacity:0;content:'';border-bottom:2px solid currentColor;transition:opacity 90ms cubic-bezier(0,0,.2,.1)}.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate{border:none}.mat-pseudo-checkbox-disabled{cursor:default}.mat-pseudo-checkbox-indeterminate::after{top:9px;left:2px;width:16px;opacity:1}.mat-pseudo-checkbox-checked::after{top:5px;left:3px;width:12px;height:5px;border-left:2px solid currentColor;transform:rotate(-45deg);opacity:1}"],
+                    template: '',
+                    host: {
+                        'class': 'mat-pseudo-checkbox',
+                        '[class.mat-pseudo-checkbox-indeterminate]': 'state === "indeterminate"',
+                        '[class.mat-pseudo-checkbox-checked]': 'state === "checked"',
+                        '[class.mat-pseudo-checkbox-disabled]': 'disabled',
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    MatPseudoCheckbox.ctorParameters = function () { return []; };
+    MatPseudoCheckbox.propDecorators = {
+        "state": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "disabled": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    };
+    return MatPseudoCheckbox;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MatPseudoCheckboxModule = /** @class */ (function () {
+    function MatPseudoCheckboxModule() {
+    }
+    MatPseudoCheckboxModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    exports: [MatPseudoCheckbox],
+                    declarations: [MatPseudoCheckbox]
+                },] },
+    ];
+    /** @nocollapse */
+    MatPseudoCheckboxModule.ctorParameters = function () { return []; };
+    return MatPseudoCheckboxModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ */
+var MatOptgroupBase = /** @class */ (function () {
+    function MatOptgroupBase() {
+    }
+    return MatOptgroupBase;
+}());
+var _MatOptgroupMixinBase = mixinDisabled(MatOptgroupBase);
+// Counter for unique group ids.
+var _uniqueOptgroupIdCounter = 0;
+/**
+ * Component that is used to group instances of `mat-option`.
+ */
+var MatOptgroup = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_2_tslib__["b" /* __extends */])(MatOptgroup, _super);
+    function MatOptgroup() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /**
+         * Unique id for the underlying label.
+         */
+        _this._labelId = "mat-optgroup-label-" + _uniqueOptgroupIdCounter++;
+        return _this;
+    }
+    MatOptgroup.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{selector: 'mat-optgroup',
+                    exportAs: 'matOptgroup',
+                    template: "<label class=\"mat-optgroup-label\" [id]=\"_labelId\">{{ label }}</label><ng-content select=\"mat-option, ng-container\"></ng-content>",
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    inputs: ['disabled'],
+                    styles: [".mat-optgroup-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup-label[disabled]{cursor:default}[dir=rtl] .mat-optgroup-label{text-align:right}.mat-optgroup-label .mat-icon{margin-right:16px;vertical-align:middle}[dir=rtl] .mat-optgroup-label .mat-icon{margin-left:16px;margin-right:0}"],
+                    host: {
+                        'class': 'mat-optgroup',
+                        'role': 'group',
+                        '[class.mat-optgroup-disabled]': 'disabled',
+                        '[attr.aria-disabled]': 'disabled.toString()',
+                        '[attr.aria-labelledby]': '_labelId',
+                    }
+                },] },
+    ];
+    /** @nocollapse */
+    MatOptgroup.ctorParameters = function () { return []; };
+    MatOptgroup.propDecorators = {
+        "label": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    };
+    return MatOptgroup;
+}(_MatOptgroupMixinBase));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Option IDs need to be unique across components, so this counter exists outside of
+ * the component definition.
+ */
+var _uniqueIdCounter = 0;
+/**
+ * Event object emitted by MatOption when selected or deselected.
+ */
+var MatOptionSelectionChange = /** @class */ (function () {
+    function MatOptionSelectionChange(source, isUserInput) {
+        if (isUserInput === void 0) { isUserInput = false; }
+        this.source = source;
+        this.isUserInput = isUserInput;
+    }
+    return MatOptionSelectionChange;
+}());
+/**
+ * Describes a parent component that manages a list of options.
+ * Contains properties that the options can inherit.
+ * \@docs-private
+ * @record
+ */
+
+/**
+ * Injection token used to provide the parent component to options.
+ */
+var MAT_OPTION_PARENT_COMPONENT = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('MAT_OPTION_PARENT_COMPONENT');
+/**
+ * Single option inside of a `<mat-select>` element.
+ */
+var MatOption = /** @class */ (function () {
+    function MatOption(_element, _changeDetectorRef, _parent, group) {
+        this._element = _element;
+        this._changeDetectorRef = _changeDetectorRef;
+        this._parent = _parent;
+        this.group = group;
+        this._selected = false;
+        this._active = false;
+        this._disabled = false;
+        this._id = "mat-option-" + _uniqueIdCounter++;
+        this._mostRecentViewValue = '';
+        /**
+         * Event emitted when the option is selected or deselected.
+         */
+        this.onSelectionChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Emits when the state of the option changes and any parents have to be notified.
+         */
+        this._stateChanges = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
+    }
+    Object.defineProperty(MatOption.prototype, "multiple", {
+        /** Whether the wrapping component is in multiple selection mode. */
+        get: /**
+         * Whether the wrapping component is in multiple selection mode.
+         * @return {?}
+         */
+        function () { return this._parent && this._parent.multiple; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "id", {
+        /** The unique ID of the option. */
+        get: /**
+         * The unique ID of the option.
+         * @return {?}
+         */
+        function () { return this._id; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "selected", {
+        /** Whether or not the option is currently selected. */
+        get: /**
+         * Whether or not the option is currently selected.
+         * @return {?}
+         */
+        function () { return this._selected; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "disabled", {
+        get: /**
+         * Whether the option is disabled.
+         * @return {?}
+         */
+        function () { return (this.group && this.group.disabled) || this._disabled; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_3__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "disableRipple", {
+        /** Whether ripples for the option are disabled. */
+        get: /**
+         * Whether ripples for the option are disabled.
+         * @return {?}
+         */
+        function () { return this._parent && this._parent.disableRipple; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "active", {
+        /**
+         * Whether or not the option is currently active and ready to be selected.
+         * An active option displays styles as if it is focused, but the
+         * focus is actually retained somewhere else. This comes in handy
+         * for components like autocomplete where focus must remain on the input.
+         */
+        get: /**
+         * Whether or not the option is currently active and ready to be selected.
+         * An active option displays styles as if it is focused, but the
+         * focus is actually retained somewhere else. This comes in handy
+         * for components like autocomplete where focus must remain on the input.
+         * @return {?}
+         */
+        function () {
+            return this._active;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatOption.prototype, "viewValue", {
+        /**
+         * The displayed value of the option. It is necessary to show the selected option in the
+         * select's trigger.
+         */
+        get: /**
+         * The displayed value of the option. It is necessary to show the selected option in the
+         * select's trigger.
+         * @return {?}
+         */
+        function () {
+            // TODO(kara): Add input property alternative for node envs.
+            return (this._getHostElement().textContent || '').trim();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /** Selects the option. */
+    /**
+     * Selects the option.
+     * @return {?}
+     */
+    MatOption.prototype.select = /**
+     * Selects the option.
+     * @return {?}
+     */
+    function () {
+        this._selected = true;
+        this._changeDetectorRef.markForCheck();
+        this._emitSelectionChangeEvent();
+    };
+    /** Deselects the option. */
+    /**
+     * Deselects the option.
+     * @return {?}
+     */
+    MatOption.prototype.deselect = /**
+     * Deselects the option.
+     * @return {?}
+     */
+    function () {
+        this._selected = false;
+        this._changeDetectorRef.markForCheck();
+        this._emitSelectionChangeEvent();
+    };
+    /** Sets focus onto this option. */
+    /**
+     * Sets focus onto this option.
+     * @return {?}
+     */
+    MatOption.prototype.focus = /**
+     * Sets focus onto this option.
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ element = this._getHostElement();
+        if (typeof element.focus === 'function') {
+            element.focus();
+        }
+    };
+    /**
+     * This method sets display styles on the option to make it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     */
+    /**
+     * This method sets display styles on the option to make it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     * @return {?}
+     */
+    MatOption.prototype.setActiveStyles = /**
+     * This method sets display styles on the option to make it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     * @return {?}
+     */
+    function () {
+        if (!this._active) {
+            this._active = true;
+            this._changeDetectorRef.markForCheck();
+        }
+    };
+    /**
+     * This method removes display styles on the option that made it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     */
+    /**
+     * This method removes display styles on the option that made it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     * @return {?}
+     */
+    MatOption.prototype.setInactiveStyles = /**
+     * This method removes display styles on the option that made it appear
+     * active. This is used by the ActiveDescendantKeyManager so key
+     * events will display the proper options as active on arrow key events.
+     * @return {?}
+     */
+    function () {
+        if (this._active) {
+            this._active = false;
+            this._changeDetectorRef.markForCheck();
+        }
+    };
+    /** Gets the label to be used when determining whether the option should be focused. */
+    /**
+     * Gets the label to be used when determining whether the option should be focused.
+     * @return {?}
+     */
+    MatOption.prototype.getLabel = /**
+     * Gets the label to be used when determining whether the option should be focused.
+     * @return {?}
+     */
+    function () {
+        return this.viewValue;
+    };
+    /** Ensures the option is selected when activated from the keyboard. */
+    /**
+     * Ensures the option is selected when activated from the keyboard.
+     * @param {?} event
+     * @return {?}
+     */
+    MatOption.prototype._handleKeydown = /**
+     * Ensures the option is selected when activated from the keyboard.
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        if (event.keyCode === __WEBPACK_IMPORTED_MODULE_9__angular_cdk_keycodes__["b" /* ENTER */] || event.keyCode === __WEBPACK_IMPORTED_MODULE_9__angular_cdk_keycodes__["f" /* SPACE */]) {
+            this._selectViaInteraction();
+            // Prevent the page from scrolling down and form submits.
+            event.preventDefault();
+        }
+    };
+    /**
+     * `Selects the option while indicating the selection came from the user. Used to
+     * determine if the select's view -> model callback should be invoked.`
+     */
+    /**
+     * `Selects the option while indicating the selection came from the user. Used to
+     * determine if the select's view -> model callback should be invoked.`
+     * @return {?}
+     */
+    MatOption.prototype._selectViaInteraction = /**
+     * `Selects the option while indicating the selection came from the user. Used to
+     * determine if the select's view -> model callback should be invoked.`
+     * @return {?}
+     */
+    function () {
+        if (!this.disabled) {
+            this._selected = this.multiple ? !this._selected : true;
+            this._changeDetectorRef.markForCheck();
+            this._emitSelectionChangeEvent(true);
+        }
+    };
+    /** Returns the correct tabindex for the option depending on disabled state. */
+    /**
+     * Returns the correct tabindex for the option depending on disabled state.
+     * @return {?}
+     */
+    MatOption.prototype._getTabIndex = /**
+     * Returns the correct tabindex for the option depending on disabled state.
+     * @return {?}
+     */
+    function () {
+        return this.disabled ? '-1' : '0';
+    };
+    /** Gets the host DOM element. */
+    /**
+     * Gets the host DOM element.
+     * @return {?}
+     */
+    MatOption.prototype._getHostElement = /**
+     * Gets the host DOM element.
+     * @return {?}
+     */
+    function () {
+        return this._element.nativeElement;
+    };
+    /**
+     * @return {?}
+     */
+    MatOption.prototype.ngAfterViewChecked = /**
+     * @return {?}
+     */
+    function () {
+        // Since parent components could be using the option's label to display the selected values
+        // (e.g. `mat-select`) and they don't have a way of knowing if the option's label has changed
+        // we have to check for changes in the DOM ourselves and dispatch an event. These checks are
+        // relatively cheap, however we still limit them only to selected options in order to avoid
+        // hitting the DOM too often.
+        if (this._selected) {
+            var /** @type {?} */ viewValue = this.viewValue;
+            if (viewValue !== this._mostRecentViewValue) {
+                this._mostRecentViewValue = viewValue;
+                this._stateChanges.next();
+            }
+        }
+    };
+    /**
+     * Emits the selection change event.
+     * @param {?=} isUserInput
+     * @return {?}
+     */
+    MatOption.prototype._emitSelectionChangeEvent = /**
+     * Emits the selection change event.
+     * @param {?=} isUserInput
+     * @return {?}
+     */
+    function (isUserInput) {
+        if (isUserInput === void 0) { isUserInput = false; }
+        this.onSelectionChange.emit(new MatOptionSelectionChange(this, isUserInput));
+    };
+    MatOption.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{selector: 'mat-option',
+                    exportAs: 'matOption',
+                    host: {
+                        'role': 'option',
+                        '[attr.tabindex]': '_getTabIndex()',
+                        '[class.mat-selected]': 'selected',
+                        '[class.mat-option-multiple]': 'multiple',
+                        '[class.mat-active]': 'active',
+                        '[id]': 'id',
+                        '[attr.aria-selected]': 'selected.toString()',
+                        '[attr.aria-disabled]': 'disabled.toString()',
+                        '[class.mat-option-disabled]': 'disabled',
+                        '(click)': '_selectViaInteraction()',
+                        '(keydown)': '_handleKeydown($event)',
+                        'class': 'mat-option',
+                    },
+                    styles: [".mat-option{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:48px;height:48px;padding:0 16px;text-align:left;text-decoration:none;position:relative;cursor:pointer;outline:0;display:flex;flex-direction:row;max-width:100%;box-sizing:border-box;align-items:center}.mat-option[disabled]{cursor:default}[dir=rtl] .mat-option{text-align:right}.mat-option .mat-icon{margin-right:16px;vertical-align:middle}[dir=rtl] .mat-option .mat-icon{margin-left:16px;margin-right:0}.mat-option[aria-disabled=true]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:32px}[dir=rtl] .mat-optgroup .mat-option:not(.mat-option-multiple){padding-left:16px;padding-right:32px}.mat-option-text{display:inline-block;flex-grow:1;overflow:hidden;text-overflow:ellipsis}.mat-option-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}@media screen and (-ms-high-contrast:active){.mat-option-ripple{opacity:.5}}.mat-option-pseudo-checkbox{margin-right:8px}[dir=rtl] .mat-option-pseudo-checkbox{margin-left:8px;margin-right:0}"],
+                    template: "<mat-pseudo-checkbox *ngIf=\"multiple\" class=\"mat-option-pseudo-checkbox\" [state]=\"selected ? 'checked' : ''\" [disabled]=\"disabled\"></mat-pseudo-checkbox><span class=\"mat-option-text\"><ng-content></ng-content></span><div class=\"mat-option-ripple\" mat-ripple [matRippleTrigger]=\"_getHostElement()\" [matRippleDisabled]=\"disabled || disableRipple\"></div>",
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                },] },
+    ];
+    /** @nocollapse */
+    MatOption.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */], },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [MAT_OPTION_PARENT_COMPONENT,] },] },
+        { type: MatOptgroup, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
+    ]; };
+    MatOption.propDecorators = {
+        "value": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "disabled": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+        "onSelectionChange": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */] },],
+    };
+    return MatOption;
+}());
+/**
+ * Counts the amount of option group labels that precede the specified option.
+ * \@docs-private
+ * @param {?} optionIndex Index of the option at which to start counting.
+ * @param {?} options Flat list of all of the options.
+ * @param {?} optionGroups Flat list of all of the option groups.
+ * @return {?}
+ */
+function _countGroupLabelsBeforeOption(optionIndex, options, optionGroups) {
+    if (optionGroups.length) {
+        var /** @type {?} */ optionsArray = options.toArray();
+        var /** @type {?} */ groups = optionGroups.toArray();
+        var /** @type {?} */ groupCounter = 0;
+        for (var /** @type {?} */ i = 0; i < optionIndex + 1; i++) {
+            if (optionsArray[i].group && optionsArray[i].group === groups[groupCounter]) {
+                groupCounter++;
+            }
+        }
+        return groupCounter;
+    }
+    return 0;
+}
+/**
+ * Determines the position to which to scroll a panel in order for an option to be into view.
+ * \@docs-private
+ * @param {?} optionIndex Index of the option to be scrolled into the view.
+ * @param {?} optionHeight Height of the options.
+ * @param {?} currentScrollPosition Current scroll position of the panel.
+ * @param {?} panelHeight Height of the panel.
+ * @return {?}
+ */
+function _getOptionScrollPosition(optionIndex, optionHeight, currentScrollPosition, panelHeight) {
+    var /** @type {?} */ optionOffset = optionIndex * optionHeight;
+    if (optionOffset < currentScrollPosition) {
+        return optionOffset;
+    }
+    if (optionOffset + optionHeight > currentScrollPosition + panelHeight) {
+        return Math.max(0, optionOffset - panelHeight + optionHeight);
+    }
+    return currentScrollPosition;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MatOptionModule = /** @class */ (function () {
+    function MatOptionModule() {
+    }
+    MatOptionModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
+                    imports: [MatRippleModule, __WEBPACK_IMPORTED_MODULE_7__angular_common__["b" /* CommonModule */], MatPseudoCheckboxModule],
+                    exports: [MatOption, MatOptgroup],
+                    declarations: [MatOption, MatOptgroup]
+                },] },
+    ];
+    /** @nocollapse */
+    MatOptionModule.ctorParameters = function () { return []; };
+    return MatOptionModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * InjectionToken that can be used to specify the global label options.
+ */
+var MAT_LABEL_GLOBAL_OPTIONS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('mat-label-global-options');
+/**
+ * Configurable options for floating labels.
+ * @record
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * When constructing a Date, the month is zero-based. This can be confusing, since people are
+ * used to seeing them one-based. So we create these aliases to make writing the tests easier.
+ */
+var JAN = 0;
+var FEB = 1;
+var MAR = 2;
+var APR = 3;
+var MAY = 4;
+var JUN = 5;
+var JUL = 6;
+var AUG = 7;
+var SEP = 8;
+var OCT = 9;
+var NOV = 10;
+var DEC = 11;
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=core.es5.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@angular/material/esm5/tabs.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export MatInkBar */
+/* unused harmony export MatTabBody */
+/* unused harmony export MatTabBodyPortal */
+/* unused harmony export MatTabHeader */
+/* unused harmony export MatTabLabelWrapper */
+/* unused harmony export MatTab */
+/* unused harmony export MatTabLabel */
+/* unused harmony export MatTabNav */
+/* unused harmony export MatTabLink */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatTabsModule; });
+/* unused harmony export MatTabChangeEvent */
+/* unused harmony export MatTabGroupBase */
+/* unused harmony export _MatTabGroupMixinBase */
+/* unused harmony export MatTabGroup */
+/* unused harmony export matTabsAnimations */
+/* unused harmony export ɵe22 */
+/* unused harmony export ɵf22 */
+/* unused harmony export ɵa22 */
+/* unused harmony export ɵb22 */
+/* unused harmony export ɵc22 */
+/* unused harmony export ɵd22 */
+/* unused harmony export ɵi22 */
+/* unused harmony export ɵg22 */
+/* unused harmony export ɵj22 */
+/* unused harmony export ɵh22 */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_cdk_observers__ = __webpack_require__("./node_modules/@angular/cdk/esm5/observers.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__ = __webpack_require__("./node_modules/@angular/cdk/esm5/portal.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_cdk_scrolling__ = __webpack_require__("./node_modules/@angular/cdk/esm5/scrolling.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material_core__ = __webpack_require__("./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_tslib__ = __webpack_require__("./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_cdk_bidi__ = __webpack_require__("./node_modules/@angular/cdk/esm5/bidi.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_cdk_coercion__ = __webpack_require__("./node_modules/@angular/cdk/esm5/coercion.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_Subscription__ = __webpack_require__("./node_modules/rxjs/_esm5/Subscription.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_observable_merge__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/merge.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__ = __webpack_require__("./node_modules/@angular/cdk/esm5/keycodes.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_observable_of__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_cdk_platform__ = __webpack_require__("./node_modules/@angular/cdk/esm5/platform.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_operators_takeUntil__ = __webpack_require__("./node_modules/rxjs/_esm5/operators/takeUntil.js");
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * The ink-bar is used to display and animate the line underneath the current active tab label.
+ * \@docs-private
+ */
+var MatInkBar = /** @class */ (function () {
+    function MatInkBar(_elementRef, _ngZone) {
+        this._elementRef = _elementRef;
+        this._ngZone = _ngZone;
+    }
+    /**
+     * Calculates the styles from the provided element in order to align the ink-bar to that element.
+     * Shows the ink bar if previously set as hidden.
+     * @param element
+     */
+    /**
+     * Calculates the styles from the provided element in order to align the ink-bar to that element.
+     * Shows the ink bar if previously set as hidden.
+     * @param {?} element
+     * @return {?}
+     */
+    MatInkBar.prototype.alignToElement = /**
+     * Calculates the styles from the provided element in order to align the ink-bar to that element.
+     * Shows the ink bar if previously set as hidden.
+     * @param {?} element
+     * @return {?}
+     */
+    function (element) {
+        var _this = this;
+        this.show();
+        if (typeof requestAnimationFrame !== 'undefined') {
+            this._ngZone.runOutsideAngular(function () {
+                requestAnimationFrame(function () { return _this._setStyles(element); });
+            });
+        }
+        else {
+            this._setStyles(element);
+        }
+    };
+    /** Shows the ink bar. */
+    /**
+     * Shows the ink bar.
+     * @return {?}
+     */
+    MatInkBar.prototype.show = /**
+     * Shows the ink bar.
+     * @return {?}
+     */
+    function () {
+        this._elementRef.nativeElement.style.visibility = 'visible';
+    };
+    /** Hides the ink bar. */
+    /**
+     * Hides the ink bar.
+     * @return {?}
+     */
+    MatInkBar.prototype.hide = /**
+     * Hides the ink bar.
+     * @return {?}
+     */
+    function () {
+        this._elementRef.nativeElement.style.visibility = 'hidden';
+    };
+    /**
+     * Sets the proper styles to the ink bar element.
+     * @param {?} element
+     * @return {?}
+     */
+    MatInkBar.prototype._setStyles = /**
+     * Sets the proper styles to the ink bar element.
+     * @param {?} element
+     * @return {?}
+     */
+    function (element) {
+        var /** @type {?} */ inkBar = this._elementRef.nativeElement;
+        inkBar.style.left = element ? (element.offsetLeft || 0) + 'px' : '0';
+        inkBar.style.width = element ? (element.offsetWidth || 0) + 'px' : '0';
+    };
+    MatInkBar.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["t" /* Directive */], args: [{
+                    selector: 'mat-ink-bar',
+                    host: {
+                        'class': 'mat-ink-bar',
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    MatInkBar.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["O" /* NgZone */], },
+    ]; };
+    return MatInkBar;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Used to flag tab labels for use with the portal directive
+ */
+var MatTabLabel = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabLabel, _super);
+    function MatTabLabel(templateRef, viewContainerRef) {
+        return _super.call(this, templateRef, viewContainerRef) || this;
+    }
+    MatTabLabel.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["t" /* Directive */], args: [{
+                    selector: '[mat-tab-label], [matTabLabel]',
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabLabel.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_7" /* TemplateRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_11" /* ViewContainerRef */], },
+    ]; };
+    return MatTabLabel;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["a" /* CdkPortal */]));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ */
+var MatTabBase = /** @class */ (function () {
+    function MatTabBase() {
+    }
+    return MatTabBase;
+}());
+var _MatTabMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["g" /* mixinDisabled */])(MatTabBase);
+var MatTab = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTab, _super);
+    function MatTab(_viewContainerRef) {
+        var _this = _super.call(this) || this;
+        _this._viewContainerRef = _viewContainerRef;
+        /**
+         * The plain text label for the tab, used when there is no template label.
+         */
+        _this.textLabel = '';
+        /**
+         * The portal that will be the hosted content of the tab
+         */
+        _this._contentPortal = null;
+        /**
+         * Emits whenever the label changes.
+         */
+        _this._labelChange = new __WEBPACK_IMPORTED_MODULE_7_rxjs_Subject__["a" /* Subject */]();
+        /**
+         * Emits whenever the disable changes
+         */
+        _this._disableChange = new __WEBPACK_IMPORTED_MODULE_7_rxjs_Subject__["a" /* Subject */]();
+        /**
+         * The relatively indexed position where 0 represents the center, negative is left, and positive
+         * represents the right.
+         */
+        _this.position = null;
+        /**
+         * The initial relatively index origin of the tab if it was created and selected after there
+         * was already a selected tab. Provides context of what position the tab should originate from.
+         */
+        _this.origin = null;
+        /**
+         * Whether the tab is currently active.
+         */
+        _this.isActive = false;
+        return _this;
+    }
+    Object.defineProperty(MatTab.prototype, "content", {
+        /** @docs-private */
+        get: /**
+         * \@docs-private
+         * @return {?}
+         */
+        function () {
+            return this._contentPortal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    MatTab.prototype.ngOnChanges = /**
+     * @param {?} changes
+     * @return {?}
+     */
+    function (changes) {
+        if (changes.hasOwnProperty('textLabel')) {
+            this._labelChange.next();
+        }
+        if (changes.hasOwnProperty('disabled')) {
+            this._disableChange.next();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    MatTab.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._disableChange.complete();
+        this._labelChange.complete();
+    };
+    /**
+     * @return {?}
+     */
+    MatTab.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this._contentPortal = new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["d" /* TemplatePortal */](this._content, this._viewContainerRef);
+    };
+    MatTab.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */], args: [{selector: 'mat-tab',
+                    template: "<ng-template><ng-content></ng-content></ng-template>",
+                    inputs: ['disabled'],
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    exportAs: 'matTab',
+                },] },
+    ];
+    /** @nocollapse */
+    MatTab.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_11" /* ViewContainerRef */], },
+    ]; };
+    MatTab.propDecorators = {
+        "templateLabel": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["r" /* ContentChild */], args: [MatTabLabel,] },],
+        "_content": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: [__WEBPACK_IMPORTED_MODULE_4__angular_core__["_7" /* TemplateRef */],] },],
+        "textLabel": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */], args: ['label',] },],
+    };
+    return MatTab;
+}(_MatTabMixinBase));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Animations used by the Material tabs.
+ */
+var matTabsAnimations = {
+    /** Animation translates a tab along the X axis. */
+    translateTab: Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["j" /* trigger */])('translateTab', [
+        // Note: transitions to `none` instead of 0, because some browsers might blur the content.
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["g" /* state */])('center, void, left-origin-center, right-origin-center', Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["h" /* style */])({ transform: 'none' })),
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["g" /* state */])('left', Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["h" /* style */])({ transform: 'translate3d(-100%, 0, 0)' })),
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["g" /* state */])('right', Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["h" /* style */])({ transform: 'translate3d(100%, 0, 0)' })),
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["i" /* transition */])('* => left, * => right, left => center, right => center', Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["e" /* animate */])('500ms cubic-bezier(0.35, 0, 0.25, 1)')),
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["i" /* transition */])('void => left-origin-center', [
+            Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["h" /* style */])({ transform: 'translate3d(-100%, 0, 0)' }),
+            Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["e" /* animate */])('500ms cubic-bezier(0.35, 0, 0.25, 1)')
+        ]),
+        Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["i" /* transition */])('void => right-origin-center', [
+            Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["h" /* style */])({ transform: 'translate3d(100%, 0, 0)' }),
+            Object(__WEBPACK_IMPORTED_MODULE_9__angular_animations__["e" /* animate */])('500ms cubic-bezier(0.35, 0, 0.25, 1)')
+        ])
+    ])
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * The portal host directive for the contents of the tab.
+ * \@docs-private
+ */
+var MatTabBodyPortal = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabBodyPortal, _super);
+    function MatTabBodyPortal(_componentFactoryResolver, _viewContainerRef, _host) {
+        var _this = _super.call(this, _componentFactoryResolver, _viewContainerRef) || this;
+        _this._host = _host;
+        return _this;
+    }
+    /** Set initial visibility or set up subscription for changing visibility. */
+    /**
+     * Set initial visibility or set up subscription for changing visibility.
+     * @return {?}
+     */
+    MatTabBodyPortal.prototype.ngOnInit = /**
+     * Set initial visibility or set up subscription for changing visibility.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._host._isCenterPosition(this._host._position)) {
+            this.attach(this._host._content);
+        }
+        this._centeringSub = this._host._beforeCentering.subscribe(function (isCentering) {
+            if (isCentering) {
+                if (!_this.hasAttached()) {
+                    _this.attach(_this._host._content);
+                }
+            }
+        });
+        this._leavingSub = this._host._afterLeavingCenter.subscribe(function () {
+            _this.detach();
+        });
+    };
+    /** Clean up centering subscription. */
+    /**
+     * Clean up centering subscription.
+     * @return {?}
+     */
+    MatTabBodyPortal.prototype.ngOnDestroy = /**
+     * Clean up centering subscription.
+     * @return {?}
+     */
+    function () {
+        if (this._centeringSub && !this._centeringSub.closed) {
+            this._centeringSub.unsubscribe();
+        }
+        if (this._leavingSub && !this._leavingSub.closed) {
+            this._leavingSub.unsubscribe();
+        }
+    };
+    MatTabBodyPortal.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["t" /* Directive */], args: [{
+                    selector: '[matTabBodyHost]'
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabBodyPortal.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["p" /* ComponentFactoryResolver */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_11" /* ViewContainerRef */], },
+        { type: MatTabBody, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["_16" /* forwardRef */])(function () { return MatTabBody; }),] },] },
+    ]; };
+    return MatTabBodyPortal;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["b" /* CdkPortalOutlet */]));
+/**
+ * Wrapper for the contents of a tab.
+ * \@docs-private
+ */
+var MatTabBody = /** @class */ (function () {
+    function MatTabBody(_elementRef, _dir) {
+        this._elementRef = _elementRef;
+        this._dir = _dir;
+        /**
+         * Event emitted when the tab begins to animate towards the center as the active tab.
+         */
+        this._onCentering = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted before the centering of the tab begins.
+         */
+        this._beforeCentering = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted before the centering of the tab begins.
+         */
+        this._afterLeavingCenter = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted when the tab completes its animation towards the center.
+         */
+        this._onCentered = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */](true);
+    }
+    Object.defineProperty(MatTabBody.prototype, "position", {
+        set: /**
+         * The shifted index position of the tab body, where zero represents the active center tab.
+         * @param {?} position
+         * @return {?}
+         */
+        function (position) {
+            if (position < 0) {
+                this._position = this._getLayoutDirection() == 'ltr' ? 'left' : 'right';
+            }
+            else if (position > 0) {
+                this._position = this._getLayoutDirection() == 'ltr' ? 'right' : 'left';
+            }
+            else {
+                this._position = 'center';
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTabBody.prototype, "origin", {
+        set: /**
+         * The origin position from which this tab should appear when it is centered into view.
+         * @param {?} origin
+         * @return {?}
+         */
+        function (origin) {
+            if (origin == null) {
+                return;
+            }
+            var /** @type {?} */ dir = this._getLayoutDirection();
+            if ((dir == 'ltr' && origin <= 0) || (dir == 'rtl' && origin > 0)) {
+                this._origin = 'left';
+            }
+            else {
+                this._origin = 'right';
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * After initialized, check if the content is centered and has an origin. If so, set the
+     * special position states that transition the tab from the left or right before centering.
+     */
+    /**
+     * After initialized, check if the content is centered and has an origin. If so, set the
+     * special position states that transition the tab from the left or right before centering.
+     * @return {?}
+     */
+    MatTabBody.prototype.ngOnInit = /**
+     * After initialized, check if the content is centered and has an origin. If so, set the
+     * special position states that transition the tab from the left or right before centering.
+     * @return {?}
+     */
+    function () {
+        if (this._position == 'center' && this._origin) {
+            this._position = this._origin == 'left' ? 'left-origin-center' : 'right-origin-center';
+        }
+    };
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    MatTabBody.prototype._onTranslateTabStarted = /**
+     * @param {?} e
+     * @return {?}
+     */
+    function (e) {
+        var /** @type {?} */ isCentering = this._isCenterPosition(e.toState);
+        this._beforeCentering.emit(isCentering);
+        if (isCentering) {
+            this._onCentering.emit(this._elementRef.nativeElement.clientHeight);
+        }
+    };
+    /**
+     * @param {?} e
+     * @return {?}
+     */
+    MatTabBody.prototype._onTranslateTabComplete = /**
+     * @param {?} e
+     * @return {?}
+     */
+    function (e) {
+        // If the transition to the center is complete, emit an event.
+        if (this._isCenterPosition(e.toState) && this._isCenterPosition(this._position)) {
+            this._onCentered.emit();
+        }
+        if (this._isCenterPosition(e.fromState) && !this._isCenterPosition(this._position)) {
+            this._afterLeavingCenter.emit();
+        }
+    };
+    /** The text direction of the containing app. */
+    /**
+     * The text direction of the containing app.
+     * @return {?}
+     */
+    MatTabBody.prototype._getLayoutDirection = /**
+     * The text direction of the containing app.
+     * @return {?}
+     */
+    function () {
+        return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
+    };
+    /** Whether the provided position state is considered center, regardless of origin. */
+    /**
+     * Whether the provided position state is considered center, regardless of origin.
+     * @param {?} position
+     * @return {?}
+     */
+    MatTabBody.prototype._isCenterPosition = /**
+     * Whether the provided position state is considered center, regardless of origin.
+     * @param {?} position
+     * @return {?}
+     */
+    function (position) {
+        return position == 'center' ||
+            position == 'left-origin-center' ||
+            position == 'right-origin-center';
+    };
+    MatTabBody.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */], args: [{selector: 'mat-tab-body',
+                    template: "<div class=\"mat-tab-body-content\" #content [@translateTab]=\"_position\" (@translateTab.start)=\"_onTranslateTabStarted($event)\" (@translateTab.done)=\"_onTranslateTabComplete($event)\"><ng-template matTabBodyHost></ng-template></div>",
+                    styles: [".mat-tab-body-content{height:100%;overflow:auto}.mat-tab-group-dynamic-height .mat-tab-body-content{overflow:hidden}"],
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    animations: [matTabsAnimations.translateTab],
+                    host: {
+                        'class': 'mat-tab-body',
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabBody.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_bidi__["b" /* Directionality */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["P" /* Optional */] },] },
+    ]; };
+    MatTabBody.propDecorators = {
+        "_onCentering": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "_beforeCentering": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "_afterLeavingCenter": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "_onCentered": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "_content": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */], args: ['content',] },],
+        "position": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "origin": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+    };
+    return MatTabBody;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * Used to generate unique ID's for each tab component
+ */
+var nextId = 0;
+/**
+ * A simple change event emitted on focus or selection changes.
+ */
+var MatTabChangeEvent = /** @class */ (function () {
+    function MatTabChangeEvent() {
+    }
+    return MatTabChangeEvent;
+}());
+/**
+ * \@docs-private
+ */
+var MatTabGroupBase = /** @class */ (function () {
+    function MatTabGroupBase(_elementRef) {
+        this._elementRef = _elementRef;
+    }
+    return MatTabGroupBase;
+}());
+var _MatTabGroupMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["e" /* mixinColor */])(Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["f" /* mixinDisableRipple */])(MatTabGroupBase), 'primary');
+/**
+ * Material design tab-group component.  Supports basic tab pairs (label + content) and includes
+ * animated ink-bar, keyboard navigation, and screen reader.
+ * See: https://www.google.com/design/spec/components/tabs.html
+ */
+var MatTabGroup = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabGroup, _super);
+    function MatTabGroup(elementRef, _changeDetectorRef) {
+        var _this = _super.call(this, elementRef) || this;
+        _this._changeDetectorRef = _changeDetectorRef;
+        /**
+         * The tab index that should be selected after the content has been checked.
+         */
+        _this._indexToSelect = 0;
+        /**
+         * Snapshot of the height of the tab body wrapper before another tab is activated.
+         */
+        _this._tabBodyWrapperHeight = 0;
+        /**
+         * Subscription to tabs being added/removed.
+         */
+        _this._tabsSubscription = __WEBPACK_IMPORTED_MODULE_11_rxjs_Subscription__["a" /* Subscription */].EMPTY;
+        /**
+         * Subscription to changes in the tab labels.
+         */
+        _this._tabLabelSubscription = __WEBPACK_IMPORTED_MODULE_11_rxjs_Subscription__["a" /* Subscription */].EMPTY;
+        _this._dynamicHeight = false;
+        _this._selectedIndex = null;
+        /**
+         * Position of the tab header.
+         */
+        _this.headerPosition = 'above';
+        /**
+         * Output to enable support for two-way binding on `[(selectedIndex)]`
+         */
+        _this.selectedIndexChange = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted when focus has changed within a tab group.
+         */
+        _this.focusChange = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted when the body animation has completed
+         */
+        _this.animationDone = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted when the tab selection has changed.
+         */
+        _this.selectedTabChange = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */](true);
+        /**
+         * Event emitted when the tab selection has changed.
+         * @deprecated Use `selectedTabChange` instead.
+         * \@deletion-target 6.0.0
+         */
+        _this.selectChange = _this.selectedTabChange;
+        _this._groupId = nextId++;
+        return _this;
+    }
+    Object.defineProperty(MatTabGroup.prototype, "dynamicHeight", {
+        get: /**
+         * Whether the tab group should grow to the size of the active tab.
+         * @return {?}
+         */
+        function () { return this._dynamicHeight; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) { this._dynamicHeight = Object(__WEBPACK_IMPORTED_MODULE_10__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTabGroup.prototype, "_dynamicHeightDeprecated", {
+        get: /**
+         * @deprecated
+         * \@deletion-target 6.0.0
+         * @return {?}
+         */
+        function () { return this._dynamicHeight; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) { this._dynamicHeight = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTabGroup.prototype, "selectedIndex", {
+        get: /**
+         * The index of the active tab.
+         * @return {?}
+         */
+        function () { return this._selectedIndex; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._indexToSelect = Object(__WEBPACK_IMPORTED_MODULE_10__angular_cdk_coercion__["b" /* coerceNumberProperty */])(value, null);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTabGroup.prototype, "backgroundColor", {
+        get: /**
+         * Background color of the tab group.
+         * @return {?}
+         */
+        function () { return this._backgroundColor; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            var /** @type {?} */ nativeElement = this._elementRef.nativeElement;
+            nativeElement.classList.remove("mat-background-" + this.backgroundColor);
+            if (value) {
+                nativeElement.classList.add("mat-background-" + value);
+            }
+            this._backgroundColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * After the content is checked, this component knows what tabs have been defined
+     * and what the selected index should be. This is where we can know exactly what position
+     * each tab should be in according to the new selected index, and additionally we know how
+     * a new selected tab should transition in (from the left or right).
+     */
+    /**
+     * After the content is checked, this component knows what tabs have been defined
+     * and what the selected index should be. This is where we can know exactly what position
+     * each tab should be in according to the new selected index, and additionally we know how
+     * a new selected tab should transition in (from the left or right).
+     * @return {?}
+     */
+    MatTabGroup.prototype.ngAfterContentChecked = /**
+     * After the content is checked, this component knows what tabs have been defined
+     * and what the selected index should be. This is where we can know exactly what position
+     * each tab should be in according to the new selected index, and additionally we know how
+     * a new selected tab should transition in (from the left or right).
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        // Clamp the next selected index to the boundsof 0 and the tabs length.
+        // Note the `|| 0`, which ensures that values like NaN can't get through
+        // and which would otherwise throw the component into an infinite loop
+        // (since Math.max(NaN, 0) === NaN).
+        var /** @type {?} */ indexToSelect = this._indexToSelect =
+            Math.min(this._tabs.length - 1, Math.max(this._indexToSelect || 0, 0));
+        // If there is a change in selected index, emit a change event. Should not trigger if
+        // the selected index has not yet been initialized.
+        if (this._selectedIndex != indexToSelect && this._selectedIndex != null) {
+            var /** @type {?} */ tabChangeEvent = this._createChangeEvent(indexToSelect);
+            this.selectedTabChange.emit(tabChangeEvent);
+            // Emitting this value after change detection has run
+            // since the checked content may contain this variable'
+            Promise.resolve().then(function () { return _this.selectedIndexChange.emit(indexToSelect); });
+        }
+        // Setup the position for each tab and optionally setup an origin on the next selected tab.
+        this._tabs.forEach(function (tab, index) {
+            tab.position = index - indexToSelect;
+            tab.isActive = index === indexToSelect;
+            // If there is already a selected tab, then set up an origin for the next selected tab
+            // if it doesn't have one already.
+            if (_this._selectedIndex != null && tab.position == 0 && !tab.origin) {
+                tab.origin = indexToSelect - _this._selectedIndex;
+            }
+        });
+        if (this._selectedIndex !== indexToSelect) {
+            this._selectedIndex = indexToSelect;
+            this._changeDetectorRef.markForCheck();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    MatTabGroup.prototype.ngAfterContentInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        this._subscribeToTabLabels();
+        // Subscribe to changes in the amount of tabs, in order to be
+        // able to re-render the content as new tabs are added or removed.
+        this._tabsSubscription = this._tabs.changes.subscribe(function () {
+            _this._subscribeToTabLabels();
+            _this._changeDetectorRef.markForCheck();
+        });
+    };
+    /**
+     * @return {?}
+     */
+    MatTabGroup.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._tabsSubscription.unsubscribe();
+        this._tabLabelSubscription.unsubscribe();
+    };
+    /**
+     * @param {?} index
+     * @return {?}
+     */
+    MatTabGroup.prototype._focusChanged = /**
+     * @param {?} index
+     * @return {?}
+     */
+    function (index) {
+        this.focusChange.emit(this._createChangeEvent(index));
+    };
+    /**
+     * @param {?} index
+     * @return {?}
+     */
+    MatTabGroup.prototype._createChangeEvent = /**
+     * @param {?} index
+     * @return {?}
+     */
+    function (index) {
+        var /** @type {?} */ event = new MatTabChangeEvent;
+        event.index = index;
+        if (this._tabs && this._tabs.length) {
+            event.tab = this._tabs.toArray()[index];
+        }
+        return event;
+    };
+    /**
+     * Subscribes to changes in the tab labels. This is needed, because the \@Input for the label is
+     * on the MatTab component, whereas the data binding is inside the MatTabGroup. In order for the
+     * binding to be updated, we need to subscribe to changes in it and trigger change detection
+     * manually.
+     * @return {?}
+     */
+    MatTabGroup.prototype._subscribeToTabLabels = /**
+     * Subscribes to changes in the tab labels. This is needed, because the \@Input for the label is
+     * on the MatTab component, whereas the data binding is inside the MatTabGroup. In order for the
+     * binding to be updated, we need to subscribe to changes in it and trigger change detection
+     * manually.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._tabLabelSubscription) {
+            this._tabLabelSubscription.unsubscribe();
+        }
+        this._tabLabelSubscription = __WEBPACK_IMPORTED_MODULE_12_rxjs_observable_merge__["a" /* merge */].apply(void 0, this._tabs.map(function (tab) { return tab._disableChange; }).concat(this._tabs.map(function (tab) { return tab._labelChange; }))).subscribe(function () {
+            _this._changeDetectorRef.markForCheck();
+        });
+    };
+    /** Returns a unique id for each tab label element */
+    /**
+     * Returns a unique id for each tab label element
+     * @param {?} i
+     * @return {?}
+     */
+    MatTabGroup.prototype._getTabLabelId = /**
+     * Returns a unique id for each tab label element
+     * @param {?} i
+     * @return {?}
+     */
+    function (i) {
+        return "mat-tab-label-" + this._groupId + "-" + i;
+    };
+    /** Returns a unique id for each tab content element */
+    /**
+     * Returns a unique id for each tab content element
+     * @param {?} i
+     * @return {?}
+     */
+    MatTabGroup.prototype._getTabContentId = /**
+     * Returns a unique id for each tab content element
+     * @param {?} i
+     * @return {?}
+     */
+    function (i) {
+        return "mat-tab-content-" + this._groupId + "-" + i;
+    };
+    /**
+     * Sets the height of the body wrapper to the height of the activating tab if dynamic
+     * height property is true.
+     */
+    /**
+     * Sets the height of the body wrapper to the height of the activating tab if dynamic
+     * height property is true.
+     * @param {?} tabHeight
+     * @return {?}
+     */
+    MatTabGroup.prototype._setTabBodyWrapperHeight = /**
+     * Sets the height of the body wrapper to the height of the activating tab if dynamic
+     * height property is true.
+     * @param {?} tabHeight
+     * @return {?}
+     */
+    function (tabHeight) {
+        if (!this._dynamicHeight || !this._tabBodyWrapperHeight) {
+            return;
+        }
+        var /** @type {?} */ wrapper = this._tabBodyWrapper.nativeElement;
+        wrapper.style.height = this._tabBodyWrapperHeight + 'px';
+        // This conditional forces the browser to paint the height so that
+        // the animation to the new height can have an origin.
+        if (this._tabBodyWrapper.nativeElement.offsetHeight) {
+            wrapper.style.height = tabHeight + 'px';
+        }
+    };
+    /** Removes the height of the tab body wrapper. */
+    /**
+     * Removes the height of the tab body wrapper.
+     * @return {?}
+     */
+    MatTabGroup.prototype._removeTabBodyWrapperHeight = /**
+     * Removes the height of the tab body wrapper.
+     * @return {?}
+     */
+    function () {
+        this._tabBodyWrapperHeight = this._tabBodyWrapper.nativeElement.clientHeight;
+        this._tabBodyWrapper.nativeElement.style.height = '';
+        this.animationDone.emit();
+    };
+    /** Handle click events, setting new selected index if appropriate. */
+    /**
+     * Handle click events, setting new selected index if appropriate.
+     * @param {?} tab
+     * @param {?} tabHeader
+     * @param {?} idx
+     * @return {?}
+     */
+    MatTabGroup.prototype._handleClick = /**
+     * Handle click events, setting new selected index if appropriate.
+     * @param {?} tab
+     * @param {?} tabHeader
+     * @param {?} idx
+     * @return {?}
+     */
+    function (tab, tabHeader, idx) {
+        if (!tab.disabled) {
+            this.selectedIndex = tabHeader.focusIndex = idx;
+        }
+    };
+    /** Retrieves the tabindex for the tab. */
+    /**
+     * Retrieves the tabindex for the tab.
+     * @param {?} tab
+     * @param {?} idx
+     * @return {?}
+     */
+    MatTabGroup.prototype._getTabIndex = /**
+     * Retrieves the tabindex for the tab.
+     * @param {?} tab
+     * @param {?} idx
+     * @return {?}
+     */
+    function (tab, idx) {
+        if (tab.disabled) {
+            return null;
+        }
+        return this.selectedIndex === idx ? 0 : -1;
+    };
+    MatTabGroup.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */], args: [{selector: 'mat-tab-group',
+                    exportAs: 'matTabGroup',
+                    template: "<mat-tab-header #tabHeader [selectedIndex]=\"selectedIndex\" [disableRipple]=\"disableRipple\" (indexFocused)=\"_focusChanged($event)\" (selectFocusedIndex)=\"selectedIndex = $event\"><div class=\"mat-tab-label\" role=\"tab\" matTabLabelWrapper mat-ripple *ngFor=\"let tab of _tabs; let i = index\" [id]=\"_getTabLabelId(i)\" [attr.tabIndex]=\"_getTabIndex(tab, i)\" [attr.aria-controls]=\"_getTabContentId(i)\" [attr.aria-selected]=\"selectedIndex == i\" [class.mat-tab-label-active]=\"selectedIndex == i\" [disabled]=\"tab.disabled\" [matRippleDisabled]=\"tab.disabled || disableRipple\" (click)=\"_handleClick(tab, tabHeader, i)\"><div class=\"mat-tab-label-content\"><ng-template [ngIf]=\"tab.templateLabel\"><ng-template [cdkPortalOutlet]=\"tab.templateLabel\"></ng-template></ng-template><ng-template [ngIf]=\"!tab.templateLabel\">{{tab.textLabel}}</ng-template></div></div></mat-tab-header><div class=\"mat-tab-body-wrapper\" #tabBodyWrapper><mat-tab-body role=\"tabpanel\" *ngFor=\"let tab of _tabs; let i = index\" [id]=\"_getTabContentId(i)\" [attr.aria-labelledby]=\"_getTabLabelId(i)\" [class.mat-tab-body-active]=\"selectedIndex == i\" [content]=\"tab.content\" [position]=\"tab.position\" [origin]=\"tab.origin\" (_onCentered)=\"_removeTabBodyWrapperHeight()\" (_onCentering)=\"_setTabBodyWrapperHeight($event)\"></mat-tab-body></div>",
+                    styles: [".mat-tab-group{display:flex;flex-direction:column}.mat-tab-group.mat-tab-group-inverted-header{flex-direction:column-reverse}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:0}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.mat-tab-label.mat-tab-disabled{cursor:default}.mat-tab-label.mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}@media (max-width:599px){.mat-tab-label{padding:0 12px}}@media (max-width:959px){.mat-tab-label{padding:0 12px}}.mat-tab-group[mat-stretch-tabs] .mat-tab-label{flex-basis:0;flex-grow:1}.mat-tab-body-wrapper{position:relative;overflow:hidden;display:flex;transition:height .5s cubic-bezier(.35,0,.25,1)}.mat-tab-body{top:0;left:0;right:0;bottom:0;position:absolute;display:block;overflow:hidden}.mat-tab-body.mat-tab-body-active{position:relative;overflow-x:hidden;overflow-y:auto;z-index:1;flex-grow:1}.mat-tab-group.mat-tab-group-dynamic-height .mat-tab-body.mat-tab-body-active{overflow-y:hidden}"],
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    inputs: ['color', 'disableRipple'],
+                    host: {
+                        'class': 'mat-tab-group',
+                        '[class.mat-tab-group-dynamic-height]': 'dynamicHeight',
+                        '[class.mat-tab-group-inverted-header]': 'headerPosition === "below"',
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabGroup.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["k" /* ChangeDetectorRef */], },
+    ]; };
+    MatTabGroup.propDecorators = {
+        "_tabs": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* ContentChildren */], args: [MatTab,] },],
+        "_tabBodyWrapper": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: ['tabBodyWrapper',] },],
+        "dynamicHeight": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "_dynamicHeightDeprecated": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */], args: ['mat-dynamic-height',] },],
+        "selectedIndex": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "headerPosition": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "backgroundColor": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "selectedIndexChange": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "focusChange": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "animationDone": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "selectedTabChange": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "selectChange": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+    };
+    return MatTabGroup;
+}(_MatTabGroupMixinBase));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * \@docs-private
+ */
+var MatTabLabelWrapperBase = /** @class */ (function () {
+    function MatTabLabelWrapperBase() {
+    }
+    return MatTabLabelWrapperBase;
+}());
+var _MatTabLabelWrapperMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["g" /* mixinDisabled */])(MatTabLabelWrapperBase);
+/**
+ * Used in the `mat-tab-group` view to display tab labels.
+ * \@docs-private
+ */
+var MatTabLabelWrapper = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabLabelWrapper, _super);
+    function MatTabLabelWrapper(elementRef) {
+        var _this = _super.call(this) || this;
+        _this.elementRef = elementRef;
+        return _this;
+    }
+    /** Sets focus on the wrapper element */
+    /**
+     * Sets focus on the wrapper element
+     * @return {?}
+     */
+    MatTabLabelWrapper.prototype.focus = /**
+     * Sets focus on the wrapper element
+     * @return {?}
+     */
+    function () {
+        this.elementRef.nativeElement.focus();
+    };
+    /**
+     * @return {?}
+     */
+    MatTabLabelWrapper.prototype.getOffsetLeft = /**
+     * @return {?}
+     */
+    function () {
+        return this.elementRef.nativeElement.offsetLeft;
+    };
+    /**
+     * @return {?}
+     */
+    MatTabLabelWrapper.prototype.getOffsetWidth = /**
+     * @return {?}
+     */
+    function () {
+        return this.elementRef.nativeElement.offsetWidth;
+    };
+    MatTabLabelWrapper.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["t" /* Directive */], args: [{
+                    selector: '[matTabLabelWrapper]',
+                    inputs: ['disabled'],
+                    host: {
+                        '[class.mat-tab-disabled]': 'disabled'
+                    }
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabLabelWrapper.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+    ]; };
+    return MatTabLabelWrapper;
+}(_MatTabLabelWrapperMixinBase));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * The distance in pixels that will be overshot when scrolling a tab label into view. This helps
+ * provide a small affordance to the label next to it.
+ */
+var EXAGGERATED_OVERSCROLL = 60;
+/**
+ * \@docs-private
+ */
+var MatTabHeaderBase = /** @class */ (function () {
+    function MatTabHeaderBase() {
+    }
+    return MatTabHeaderBase;
+}());
+var _MatTabHeaderMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["f" /* mixinDisableRipple */])(MatTabHeaderBase);
+/**
+ * The header of the tab group which displays a list of all the tabs in the tab group. Includes
+ * an ink bar that follows the currently selected tab. When the tabs list's width exceeds the
+ * width of the header container, then arrows will be displayed to allow the user to scroll
+ * left and right across the header.
+ * \@docs-private
+ */
+var MatTabHeader = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabHeader, _super);
+    function MatTabHeader(_elementRef, _changeDetectorRef, _viewportRuler, _dir) {
+        var _this = _super.call(this) || this;
+        _this._elementRef = _elementRef;
+        _this._changeDetectorRef = _changeDetectorRef;
+        _this._viewportRuler = _viewportRuler;
+        _this._dir = _dir;
+        /**
+         * The tab index that is focused.
+         */
+        _this._focusIndex = 0;
+        /**
+         * The distance in pixels that the tab labels should be translated to the left.
+         */
+        _this._scrollDistance = 0;
+        /**
+         * Whether the header should scroll to the selected index after the view has been checked.
+         */
+        _this._selectedIndexChanged = false;
+        /**
+         * Combines listeners that will re-align the ink bar whenever they're invoked.
+         */
+        _this._realignInkBar = __WEBPACK_IMPORTED_MODULE_11_rxjs_Subscription__["a" /* Subscription */].EMPTY;
+        /**
+         * Whether the controls for pagination should be displayed
+         */
+        _this._showPaginationControls = false;
+        /**
+         * Whether the tab list can be scrolled more towards the end of the tab label list.
+         */
+        _this._disableScrollAfter = true;
+        /**
+         * Whether the tab list can be scrolled more towards the beginning of the tab label list.
+         */
+        _this._disableScrollBefore = true;
+        _this._selectedIndex = 0;
+        /**
+         * Event emitted when the option is selected.
+         */
+        _this.selectFocusedIndex = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        /**
+         * Event emitted when a label is focused.
+         */
+        _this.indexFocused = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["w" /* EventEmitter */]();
+        return _this;
+    }
+    Object.defineProperty(MatTabHeader.prototype, "selectedIndex", {
+        get: /**
+         * The index of the active tab.
+         * @return {?}
+         */
+        function () { return this._selectedIndex; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            value = Object(__WEBPACK_IMPORTED_MODULE_10__angular_cdk_coercion__["b" /* coerceNumberProperty */])(value);
+            this._selectedIndexChanged = this._selectedIndex != value;
+            this._selectedIndex = value;
+            this._focusIndex = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    MatTabHeader.prototype.ngAfterContentChecked = /**
+     * @return {?}
+     */
+    function () {
+        // If the number of tab labels have changed, check if scrolling should be enabled
+        if (this._tabLabelCount != this._labelWrappers.length) {
+            this._updatePagination();
+            this._tabLabelCount = this._labelWrappers.length;
+            this._changeDetectorRef.markForCheck();
+        }
+        // If the selected index has changed, scroll to the label and check if the scrolling controls
+        // should be disabled.
+        if (this._selectedIndexChanged) {
+            this._scrollToLabel(this._selectedIndex);
+            this._checkScrollingControls();
+            this._alignInkBarToSelectedTab();
+            this._selectedIndexChanged = false;
+            this._changeDetectorRef.markForCheck();
+        }
+        // If the scroll distance has been changed (tab selected, focused, scroll controls activated),
+        // then translate the header to reflect this.
+        if (this._scrollDistanceChanged) {
+            this._updateTabScrollPosition();
+            this._scrollDistanceChanged = false;
+            this._changeDetectorRef.markForCheck();
+        }
+    };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    MatTabHeader.prototype._handleKeydown = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        switch (event.keyCode) {
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["e" /* RIGHT_ARROW */]:
+                this._focusNextTab();
+                break;
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["d" /* LEFT_ARROW */]:
+                this._focusPreviousTab();
+                break;
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["c" /* HOME */]:
+                this._focusFirstTab();
+                event.preventDefault();
+                break;
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["a" /* END */]:
+                this._focusLastTab();
+                event.preventDefault();
+                break;
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["b" /* ENTER */]:
+            case __WEBPACK_IMPORTED_MODULE_13__angular_cdk_keycodes__["f" /* SPACE */]:
+                this.selectFocusedIndex.emit(this.focusIndex);
+                event.preventDefault();
+                break;
+        }
+    };
+    /**
+     * Aligns the ink bar to the selected tab on load.
+     */
+    /**
+     * Aligns the ink bar to the selected tab on load.
+     * @return {?}
+     */
+    MatTabHeader.prototype.ngAfterContentInit = /**
+     * Aligns the ink bar to the selected tab on load.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        var /** @type {?} */ dirChange = this._dir ? this._dir.change : Object(__WEBPACK_IMPORTED_MODULE_14_rxjs_observable_of__["a" /* of */])(null);
+        var /** @type {?} */ resize = this._viewportRuler.change(150);
+        var /** @type {?} */ realign = function () {
+            _this._updatePagination();
+            _this._alignInkBarToSelectedTab();
+        };
+        // Defer the first call in order to allow for slower browsers to lay out the elements.
+        // This helps in cases where the user lands directly on a page with paginated tabs.
+        typeof requestAnimationFrame !== 'undefined' ? requestAnimationFrame(realign) : realign();
+        this._realignInkBar = Object(__WEBPACK_IMPORTED_MODULE_12_rxjs_observable_merge__["a" /* merge */])(dirChange, resize).subscribe(realign);
+    };
+    /**
+     * @return {?}
+     */
+    MatTabHeader.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._realignInkBar.unsubscribe();
+    };
+    /**
+     * Callback for when the MutationObserver detects that the content has changed.
+     */
+    /**
+     * Callback for when the MutationObserver detects that the content has changed.
+     * @return {?}
+     */
+    MatTabHeader.prototype._onContentChanges = /**
+     * Callback for when the MutationObserver detects that the content has changed.
+     * @return {?}
+     */
+    function () {
+        this._updatePagination();
+        this._alignInkBarToSelectedTab();
+        this._changeDetectorRef.markForCheck();
+    };
+    /**
+     * Updating the view whether pagination should be enabled or not
+     */
+    /**
+     * Updating the view whether pagination should be enabled or not
+     * @return {?}
+     */
+    MatTabHeader.prototype._updatePagination = /**
+     * Updating the view whether pagination should be enabled or not
+     * @return {?}
+     */
+    function () {
+        this._checkPaginationEnabled();
+        this._checkScrollingControls();
+        this._updateTabScrollPosition();
+    };
+    Object.defineProperty(MatTabHeader.prototype, "focusIndex", {
+        /** Tracks which element has focus; used for keyboard navigation */
+        get: /**
+         * Tracks which element has focus; used for keyboard navigation
+         * @return {?}
+         */
+        function () { return this._focusIndex; },
+        /** When the focus index is set, we must manually send focus to the correct label */
+        set: /**
+         * When the focus index is set, we must manually send focus to the correct label
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            if (!this._isValidIndex(value) || this._focusIndex == value) {
+                return;
+            }
+            this._focusIndex = value;
+            this.indexFocused.emit(value);
+            this._setTabFocus(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Determines if an index is valid.  If the tabs are not ready yet, we assume that the user is
+     * providing a valid index and return true.
+     */
+    /**
+     * Determines if an index is valid.  If the tabs are not ready yet, we assume that the user is
+     * providing a valid index and return true.
+     * @param {?} index
+     * @return {?}
+     */
+    MatTabHeader.prototype._isValidIndex = /**
+     * Determines if an index is valid.  If the tabs are not ready yet, we assume that the user is
+     * providing a valid index and return true.
+     * @param {?} index
+     * @return {?}
+     */
+    function (index) {
+        if (!this._labelWrappers) {
+            return true;
+        }
+        var /** @type {?} */ tab = this._labelWrappers ? this._labelWrappers.toArray()[index] : null;
+        return !!tab && !tab.disabled;
+    };
+    /**
+     * Sets focus on the HTML element for the label wrapper and scrolls it into the view if
+     * scrolling is enabled.
+     */
+    /**
+     * Sets focus on the HTML element for the label wrapper and scrolls it into the view if
+     * scrolling is enabled.
+     * @param {?} tabIndex
+     * @return {?}
+     */
+    MatTabHeader.prototype._setTabFocus = /**
+     * Sets focus on the HTML element for the label wrapper and scrolls it into the view if
+     * scrolling is enabled.
+     * @param {?} tabIndex
+     * @return {?}
+     */
+    function (tabIndex) {
+        if (this._showPaginationControls) {
+            this._scrollToLabel(tabIndex);
+        }
+        if (this._labelWrappers && this._labelWrappers.length) {
+            this._labelWrappers.toArray()[tabIndex].focus();
+            // Do not let the browser manage scrolling to focus the element, this will be handled
+            // by using translation. In LTR, the scroll left should be 0. In RTL, the scroll width
+            // should be the full width minus the offset width.
+            var /** @type {?} */ containerEl = this._tabListContainer.nativeElement;
+            var /** @type {?} */ dir = this._getLayoutDirection();
+            if (dir == 'ltr') {
+                containerEl.scrollLeft = 0;
+            }
+            else {
+                containerEl.scrollLeft = containerEl.scrollWidth - containerEl.offsetWidth;
+            }
+        }
+    };
+    /**
+     * Moves the focus towards the beginning or the end of the list depending on the offset provided.
+     * Valid offsets are 1 and -1.
+     */
+    /**
+     * Moves the focus towards the beginning or the end of the list depending on the offset provided.
+     * Valid offsets are 1 and -1.
+     * @param {?} offset
+     * @return {?}
+     */
+    MatTabHeader.prototype._moveFocus = /**
+     * Moves the focus towards the beginning or the end of the list depending on the offset provided.
+     * Valid offsets are 1 and -1.
+     * @param {?} offset
+     * @return {?}
+     */
+    function (offset) {
+        if (this._labelWrappers) {
+            var /** @type {?} */ tabs = this._labelWrappers.toArray();
+            for (var /** @type {?} */ i = this.focusIndex + offset; i < tabs.length && i >= 0; i += offset) {
+                if (this._isValidIndex(i)) {
+                    this.focusIndex = i;
+                    return;
+                }
+            }
+        }
+    };
+    /** Increment the focus index by 1 until a valid tab is found. */
+    /**
+     * Increment the focus index by 1 until a valid tab is found.
+     * @return {?}
+     */
+    MatTabHeader.prototype._focusNextTab = /**
+     * Increment the focus index by 1 until a valid tab is found.
+     * @return {?}
+     */
+    function () {
+        this._moveFocus(this._getLayoutDirection() == 'ltr' ? 1 : -1);
+    };
+    /** Decrement the focus index by 1 until a valid tab is found. */
+    /**
+     * Decrement the focus index by 1 until a valid tab is found.
+     * @return {?}
+     */
+    MatTabHeader.prototype._focusPreviousTab = /**
+     * Decrement the focus index by 1 until a valid tab is found.
+     * @return {?}
+     */
+    function () {
+        this._moveFocus(this._getLayoutDirection() == 'ltr' ? -1 : 1);
+    };
+    /**
+     * Focuses the first tab.
+     * @return {?}
+     */
+    MatTabHeader.prototype._focusFirstTab = /**
+     * Focuses the first tab.
+     * @return {?}
+     */
+    function () {
+        for (var /** @type {?} */ i = 0; i < this._labelWrappers.length; i++) {
+            if (this._isValidIndex(i)) {
+                this.focusIndex = i;
                 break;
             }
         }
-        return topMostModalDialog;
     };
-    MdlDialogService.prototype.onBackdropClick = function () {
-        var topMostModalDialog = this.getTopMostInternalDialogRef();
-        if (topMostModalDialog.config.clickOutsideToClose) {
-            topMostModalDialog.hide();
-        }
-    };
-    MdlDialogService.prototype.createComponentInstance = function (viewContainerRef, providers, component) {
-        var cFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-        var resolvedProviders = __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* ReflectiveInjector */].resolve(providers);
-        var parentInjector = viewContainerRef.parentInjector;
-        var childInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* ReflectiveInjector */].fromResolvedProviders(resolvedProviders, parentInjector);
-        return viewContainerRef.createComponent(cFactory, viewContainerRef.length, childInjector);
-    };
-    return MdlDialogService;
-}());
-
-MdlDialogService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlDialogService.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DOCUMENT */],] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["g" /* ApplicationRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_6__dialog_outlet_mdl_dialog_outlet_service__["a" /* MdlDialogOutletService */], },
-]; };
-//# sourceMappingURL=mdl-dialog.service.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/dialog/mdl-simple-dialog.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSimpleDialogComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-
-
-
-var MdlSimpleDialogComponent = (function () {
-    // why do i need forwardRef at this point, the demo LoginDialog dosn't need this!?!?
-    function MdlSimpleDialogComponent(dialogConfiguration, dialog) {
-        var _this = this;
-        this.dialogConfiguration = dialogConfiguration;
-        this.dialog = dialog;
-        dialog.onVisible().subscribe(function () {
-            if (_this.buttons) {
-                _this.buttons.first.elementRef.nativeElement.focus();
-            }
-        });
-    }
-    MdlSimpleDialogComponent.prototype.actionClicked = function (action) {
-        action.handler();
-        this.dialog.hide();
-    };
-    MdlSimpleDialogComponent.prototype.onEsc = function () {
-        // run the first action that is marked as closing action
-        var closeAction = this.dialogConfiguration.actions.find(function (action) { return action.isClosingAction; });
-        if (closeAction) {
-            closeAction.handler();
-            this.dialog.hide();
-        }
-    };
-    return MdlSimpleDialogComponent;
-}());
-
-MdlSimpleDialogComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-dialog-component',
-                template: "\n      <h3 class=\"mdl-dialog__title\" *ngIf=\"dialogConfiguration?.title\">{{dialogConfiguration?.title}}</h3>\n      <div class=\"mdl-dialog__content\" [innerHTML]=\"dialogConfiguration?.message\"></div>\n      <div \n        class=\"mdl-dialog__actions\" \n        [ngClass]=\"{'mdl-dialog__actions--full-width': dialogConfiguration?.fullWidthAction}\">\n        <button\n          mdl-button mdl-colored=\"primary\"\n          type=\"button\" \n          *ngFor=\"let action of dialogConfiguration?.actions\" \n          (click)=\"actionClicked(action)\"\n          [ngClass]=\"{'close': action.isClosingAction}\">{{action.text}}</button>\n      </div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSimpleDialogComponent.ctorParameters = function () { return [
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["a" /* MDL_CONFIGUARTION */]; }),] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["c" /* MdlDialogReference */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_dialog_service__["c" /* MdlDialogReference */]; }),] },] },
-]; };
-MdlSimpleDialogComponent.propDecorators = {
-    'buttons': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* ViewChildren */], args: [__WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__["a" /* MdlButtonComponent */],] },],
-    'onEsc': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keydown.esc',] },],
-};
-//# sourceMappingURL=mdl-simple-dialog.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/icon-toggle/mdl-icon-toggle.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlIconToggleComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlIconToggleModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__icon_mdl_icon_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__checkbox_mdl_checkbox_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/checkbox/mdl-checkbox.component.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-
-var MdlIconToggleComponent = (function (_super) {
-    __extends(MdlIconToggleComponent, _super);
-    function MdlIconToggleComponent(elementRef, renderer) {
-        return _super.call(this, elementRef, renderer) || this;
-    }
-    return MdlIconToggleComponent;
-}(__WEBPACK_IMPORTED_MODULE_4__checkbox_mdl_checkbox_component__["a" /* MdlCheckboxComponent */]));
-
-MdlIconToggleComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-icon-toggle',
-                providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-                        useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlIconToggleComponent; }),
-                        multi: true
-                    }],
-                host: {
-                    '(click)': 'onClick()',
-                    '[class.mdl-icon-toggle]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.is-checked]': 'value',
-                    '[class.is-disabled]': 'disabled'
-                },
-                outputs: ['change'],
-                template: "\n  <input type=\"checkbox\" class=\"mdl-icon-toggle__input\" \n    (focus)=\"onFocus()\" \n    (blur)=\"onBlur()\"\n    [disabled]=\"disabled\"\n    [(ngModel)]=\"value\">\n  <mdl-icon class=\"mdl-icon-toggle__label\"><ng-content></ng-content></mdl-icon>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlIconToggleComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-var MDL_ICON_TOGGLE_DIRECTIVES = [MdlIconToggleComponent];
-var MdlIconToggleModule = (function () {
-    function MdlIconToggleModule() {
-    }
-    MdlIconToggleModule.forRoot = function () {
-        return {
-            ngModule: MdlIconToggleModule,
-            providers: []
-        };
-    };
-    return MdlIconToggleModule;
-}());
-
-MdlIconToggleModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_3__icon_mdl_icon_component__["a" /* MdlIconModule */], __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */]],
-                exports: MDL_ICON_TOGGLE_DIRECTIVES,
-                declarations: MDL_ICON_TOGGLE_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlIconToggleModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-icon-toggle.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlIconComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlIconModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlIconComponent = (function () {
-    function MdlIconComponent() {
-    }
-    return MdlIconComponent;
-}());
-
-MdlIconComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-icon',
-                host: {
-                    '[class.material-icons]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlIconComponent.ctorParameters = function () { return []; };
-var MDL_ICON_DIRECTIVES = [MdlIconComponent];
-var MdlIconModule = (function () {
-    function MdlIconModule() {
-    }
-    MdlIconModule.forRoot = function () {
-        return {
-            ngModule: MdlIconModule,
-            providers: []
-        };
-    };
-    return MdlIconModule;
-}());
-
-MdlIconModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_ICON_DIRECTIVES,
-                declarations: MDL_ICON_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlIconModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-icon.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlModule; });
-/* unused harmony export MdlNonRootModule */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_mdl_ripple_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-ripple.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__badge_mdl_badge_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/badge/mdl-badge.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shadow_mdl_shadow_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/shadow/mdl-shadow.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__card_mdl_card_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/card/mdl-card.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__chips_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/chips/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dialog_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dialog_outlet_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__checkbox_mdl_checkbox_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/checkbox/mdl-checkbox.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__radio_mdl_radio_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/radio/mdl-radio.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progress_mdl_progress_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/progress/mdl-progress.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__icon_mdl_icon_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__icon_toggle_mdl_icon_toggle_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon-toggle/mdl-icon-toggle.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__list_mdl_list_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/list/mdl-list.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__spinner_mdl_spinner_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/spinner/mdl-spinner.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__slider_mdl_slider_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/slider/mdl-slider.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__switch_mdl_switch_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/switch/mdl-switch.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__snackbar_mdl_snackbar_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/snackbar/mdl-snackbar.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__tooltip_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tooltip/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__table_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/table/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__menu_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__layout_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__tabs_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__textfield_mdl_textfield_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/textfield/mdl-textfield.component.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__dialog_outlet_mdl_backdrop_overlay_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-backdrop-overlay.component.js");
-/* unused harmony reexport Private1 */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__dialog_mdl_dialog_host_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-dialog-host.component.js");
-/* unused harmony reexport Private2 */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__dialog_mdl_simple_dialog_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog/mdl-simple-dialog.component.js");
-/* unused harmony reexport Private3 */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__common_append_view_container_ref_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/append-view-container-ref-directive.js");
-/* unused harmony reexport Private4 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// AOT :( https://github.com/angular/angular/issues/11606
-
-
-
-
-var MDL_MODULES = [
-    __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__["b" /* MdlButtonModule */],
-    __WEBPACK_IMPORTED_MODULE_22__layout_index__["a" /* MdlLayoutModule */],
-    __WEBPACK_IMPORTED_MODULE_9__checkbox_mdl_checkbox_component__["b" /* MdlCheckboxModule */],
-    __WEBPACK_IMPORTED_MODULE_6__chips_index__["a" /* MdlChipModule */],
-    __WEBPACK_IMPORTED_MODULE_7__dialog_index__["a" /* MdlDialogModule */],
-    __WEBPACK_IMPORTED_MODULE_8__dialog_outlet_index__["a" /* MdlDialogOutletModule */],
-    __WEBPACK_IMPORTED_MODULE_15__spinner_mdl_spinner_component__["a" /* MdlSpinnerModule */],
-    __WEBPACK_IMPORTED_MODULE_1__common_mdl_ripple_directive__["a" /* MdlRippleModule */],
-    __WEBPACK_IMPORTED_MODULE_3__badge_mdl_badge_directive__["a" /* MdlBadgeModule */],
-    __WEBPACK_IMPORTED_MODULE_4__shadow_mdl_shadow_directive__["a" /* MdlShadowModule */],
-    __WEBPACK_IMPORTED_MODULE_5__card_mdl_card_component__["a" /* MdlCardModule */],
-    __WEBPACK_IMPORTED_MODULE_10__radio_mdl_radio_component__["a" /* MdlRadioModule */],
-    __WEBPACK_IMPORTED_MODULE_11__progress_mdl_progress_component__["a" /* MdlProgressModule */],
-    __WEBPACK_IMPORTED_MODULE_12__icon_mdl_icon_component__["a" /* MdlIconModule */],
-    __WEBPACK_IMPORTED_MODULE_13__icon_toggle_mdl_icon_toggle_component__["a" /* MdlIconToggleModule */],
-    __WEBPACK_IMPORTED_MODULE_14__list_mdl_list_component__["a" /* MdlListModule */],
-    __WEBPACK_IMPORTED_MODULE_16__slider_mdl_slider_component__["a" /* MdlSliderModule */],
-    __WEBPACK_IMPORTED_MODULE_17__switch_mdl_switch_component__["a" /* MdlSwitchModule */],
-    __WEBPACK_IMPORTED_MODULE_18__snackbar_mdl_snackbar_service__["a" /* MdlSnackbaModule */],
-    __WEBPACK_IMPORTED_MODULE_19__tooltip_index__["a" /* MdlTooltipModule */],
-    __WEBPACK_IMPORTED_MODULE_20__table_index__["a" /* MdlTableModule */],
-    __WEBPACK_IMPORTED_MODULE_21__menu_index__["a" /* MdlMenuModule */],
-    __WEBPACK_IMPORTED_MODULE_23__tabs_index__["b" /* MdlTabsModule */],
-    __WEBPACK_IMPORTED_MODULE_24__textfield_mdl_textfield_component__["a" /* MdlTextFieldModule */]
-];
-var MdlModule = (function () {
-    function MdlModule() {
-    }
-    return MdlModule;
-}());
-
-MdlModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [
-                    __WEBPACK_IMPORTED_MODULE_2__button_mdl_button_component__["b" /* MdlButtonModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_22__layout_index__["a" /* MdlLayoutModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_9__checkbox_mdl_checkbox_component__["b" /* MdlCheckboxModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_6__chips_index__["a" /* MdlChipModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_7__dialog_index__["a" /* MdlDialogModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_8__dialog_outlet_index__["a" /* MdlDialogOutletModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_15__spinner_mdl_spinner_component__["a" /* MdlSpinnerModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_1__common_mdl_ripple_directive__["a" /* MdlRippleModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_3__badge_mdl_badge_directive__["a" /* MdlBadgeModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_4__shadow_mdl_shadow_directive__["a" /* MdlShadowModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_5__card_mdl_card_component__["a" /* MdlCardModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_10__radio_mdl_radio_component__["a" /* MdlRadioModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_11__progress_mdl_progress_component__["a" /* MdlProgressModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_12__icon_mdl_icon_component__["a" /* MdlIconModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_13__icon_toggle_mdl_icon_toggle_component__["a" /* MdlIconToggleModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_14__list_mdl_list_component__["a" /* MdlListModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_16__slider_mdl_slider_component__["a" /* MdlSliderModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_17__switch_mdl_switch_component__["a" /* MdlSwitchModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_18__snackbar_mdl_snackbar_service__["a" /* MdlSnackbaModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_19__tooltip_index__["a" /* MdlTooltipModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_20__table_index__["a" /* MdlTableModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_21__menu_index__["a" /* MdlMenuModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_23__tabs_index__["b" /* MdlTabsModule */].forRoot(),
-                    __WEBPACK_IMPORTED_MODULE_24__textfield_mdl_textfield_component__["a" /* MdlTextFieldModule */].forRoot()
-                ],
-                exports: MDL_MODULES,
-                providers: []
-            },] },
-];
-/** @nocollapse */
-MdlModule.ctorParameters = function () { return []; };
-var MdlNonRootModule = (function () {
-    function MdlNonRootModule() {
-    }
-    MdlNonRootModule.forRoot = function () {
-        return { ngModule: MdlModule };
-    };
-    return MdlNonRootModule;
-}());
-
-MdlNonRootModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: MDL_MODULES,
-                exports: MDL_MODULES
-            },] },
-];
-/** @nocollapse */
-MdlNonRootModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_layout_header_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-header.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_layout_drawer_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-drawer.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mdl_layout_content_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-content.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mdl_layout_header_transparent_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-header-transparent.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mdl_layout_header_row_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-header-row.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mdl_layout_title_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-title.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__mdl_layout_spacer_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-spacer.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__mdl_layout_tab_panel_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-tab-panel.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__icon_mdl_icon_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__common_mdl_ripple_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-ripple.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__common_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__tabs_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/index.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var MDL_LAYOUT_DIRECTIVES = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["a" /* MdlLayoutComponent */],
-    __WEBPACK_IMPORTED_MODULE_2__mdl_layout_header_component__["a" /* MdlLayoutHeaderComponent */],
-    __WEBPACK_IMPORTED_MODULE_3__mdl_layout_drawer_component__["a" /* MdlLayoutDrawerComponent */],
-    __WEBPACK_IMPORTED_MODULE_4__mdl_layout_content_component__["a" /* MdlLayoutContentComponent */],
-    __WEBPACK_IMPORTED_MODULE_5__mdl_layout_header_transparent_directive__["a" /* MdlLayoutHeaderTransparentDirective */],
-    __WEBPACK_IMPORTED_MODULE_6__mdl_layout_header_row_component__["a" /* MdlLayoutHeaderRowComponent */],
-    __WEBPACK_IMPORTED_MODULE_7__mdl_layout_title_component__["a" /* MdlLayoutTitleComponent */],
-    __WEBPACK_IMPORTED_MODULE_8__mdl_layout_spacer_component__["a" /* MdlLayoutSpacerComponent */],
-    __WEBPACK_IMPORTED_MODULE_9__mdl_layout_tab_panel_component__["a" /* MdlLayoutTabPanelComponent */]
-];
-
-
-
-
-
-
-
-
-
-var MdlLayoutModule = (function () {
-    function MdlLayoutModule() {
-    }
-    MdlLayoutModule.forRoot = function () {
-        return {
-            ngModule: MdlLayoutModule,
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["b" /* MdlScreenSizeService */]
-            ]
-        };
-    };
-    return MdlLayoutModule;
-}());
-
-MdlLayoutModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_10__icon_mdl_icon_component__["a" /* MdlIconModule */], __WEBPACK_IMPORTED_MODULE_11__common_mdl_ripple_directive__["a" /* MdlRippleModule */], __WEBPACK_IMPORTED_MODULE_12__common_index__["a" /* MdlCommonsModule */], __WEBPACK_IMPORTED_MODULE_14__tabs_index__["b" /* MdlTabsModule */], __WEBPACK_IMPORTED_MODULE_13__angular_common__["b" /* CommonModule */]],
-                exports: MDL_LAYOUT_DIRECTIVES,
-                declarations: MDL_LAYOUT_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlLayoutModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-content.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutContentComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_layout_tab_panel_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-tab-panel.component.js");
-
-
-var MdlLayoutContentComponent = (function () {
-    function MdlLayoutContentComponent(elRef) {
-        this.elRef = elRef;
-        this.el = elRef.nativeElement;
-    }
-    return MdlLayoutContentComponent;
-}());
-
-MdlLayoutContentComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-content',
-                host: {
-                    '[class.mdl-layout__content]': 'true',
-                },
-                template: "<ng-content></ng-content>",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
-            },] },
-];
-/** @nocollapse */
-MdlLayoutContentComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-]; };
-MdlLayoutContentComponent.propDecorators = {
-    'tabs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ContentChildren */], args: [__WEBPACK_IMPORTED_MODULE_1__mdl_layout_tab_panel_component__["a" /* MdlLayoutTabPanelComponent */],] },],
-};
-//# sourceMappingURL=mdl-layout-content.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-drawer.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutDrawerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout.component.js");
-
-
-var MdlLayoutDrawerComponent = (function () {
-    function MdlLayoutDrawerComponent(parentLayout) {
-        this.parentLayout = parentLayout;
-        this.isDrawerVisible = false;
-    }
-    MdlLayoutDrawerComponent.prototype.isDrawerDirectChildOf = function (layout) {
-        return this.parentLayout === layout;
-    };
-    return MdlLayoutDrawerComponent;
-}());
-
-MdlLayoutDrawerComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-drawer',
-                host: {
-                    '[class.mdl-layout__drawer]': 'true',
-                    '[class.is-visible]': 'isDrawerVisible'
-                },
-                template: "<ng-content></ng-content>",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutDrawerComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["a" /* MdlLayoutComponent */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["a" /* MdlLayoutComponent */]; }),] },] },
-]; };
-//# sourceMappingURL=mdl-layout-drawer.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-header-row.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutHeaderRowComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlLayoutHeaderRowComponent = (function () {
-    function MdlLayoutHeaderRowComponent() {
-    }
-    return MdlLayoutHeaderRowComponent;
-}());
-
-MdlLayoutHeaderRowComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-header-row',
-                host: {
-                    '[class.mdl-layout__header-row]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutHeaderRowComponent.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-layout-header-row.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-header-transparent.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutHeaderTransparentDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlLayoutHeaderTransparentDirective = (function () {
-    function MdlLayoutHeaderTransparentDirective() {
-    }
-    return MdlLayoutHeaderTransparentDirective;
-}());
-
-MdlLayoutHeaderTransparentDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-layout-header[mdl-layout-header-transparent]',
-                host: {
-                    '[class.mdl-layout__header--transparent]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlLayoutHeaderTransparentDirective.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-layout-header-transparent.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-header.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutHeaderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout.component.js");
-
-
-var MdlLayoutHeaderComponent = (function () {
-    function MdlLayoutHeaderComponent(elementRef, renderer, mdlLayout) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this.mdlLayout = mdlLayout;
-        this.isCompact = false;
-        this.isAnimating = false;
-        this.isSeamed = false;
-        this.isRipple = true;
-        this.el = elementRef.nativeElement;
-    }
-    MdlLayoutHeaderComponent.prototype.onTransitionEnd = function () {
-        this.isAnimating = false;
-    };
-    MdlLayoutHeaderComponent.prototype.onClick = function () {
-        if (this.isCompact) {
-            this.isCompact = false;
-            this.isAnimating = true;
-        }
-    };
-    return MdlLayoutHeaderComponent;
-}());
-
-MdlLayoutHeaderComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-header',
-                host: {
-                    '[class.mdl-layout__header]': 'true',
-                    '[class.is-casting-shadow]': 'mode==="standard" || isCompact',
-                    '[class.mdl-layout__header--seamed]': 'isSeamed',
-                    '[class.mdl-layout__header--waterfall]': 'mode==="waterfall"',
-                    '[class.mdl-layout__header--scroll]': 'mode==="scroll"',
-                    '[class.is-compact]': 'isCompact',
-                    '(transitionend)': 'onTransitionEnd()',
-                    '(click)': 'onClick()'
-                },
-                template: "\n     <ng-content></ng-content>\n     <div *ngIf=\"tabs?.toArray()?.length > 0\" class=\"mdl-layout__tab-bar-container\">\n         <div class=\"mdl-layout__tab-bar is-casting-shadow\">\n           <div *ngFor=\"let tab of tabs.toArray()\" \n                class=\"mdl-layout__tab\" \n                [ngClass]=\"{'is-active': tab.isActive}\"\n                (mouseover)=\"mdlLayout.onTabMouseover(tab)\" \n                (mouseout)=\"mdlLayout.onTabMouseout(tab)\">\n              <div \n                *ngIf=\"tab.titleComponent\" \n                (click)=\"mdlLayout.tabSelected(tab)\"\n                [mdl-ripple]=\"isRipple\"\n                [append-view-container-ref]=\"tab.titleComponent.vcRef\"></div>\n              <a *ngIf=\"!tab.titleComponent\" \n                    href=\"javascript:void(0)\"   \n                    (click)=\"mdlLayout.tabSelected(tab)\"\n                    class=\"mdl-layout__tab\" \n                    [ngClass]=\"{'is-active': tab.isActive}\"\n                    [mdl-ripple]=\"isRipple\"\n                   >{{tab.title}}</a>\n             </div>\n         </div>\n     </div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutHeaderComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["a" /* MdlLayoutComponent */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_layout_component__["a" /* MdlLayoutComponent */]; }),] },] },
-]; };
-//# sourceMappingURL=mdl-layout-header.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-spacer.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutSpacerComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlLayoutSpacerComponent = (function () {
-    function MdlLayoutSpacerComponent() {
-    }
-    return MdlLayoutSpacerComponent;
-}());
-
-MdlLayoutSpacerComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-spacer',
-                host: {
-                    '[class.mdl-layout-spacer]': 'true'
-                },
-                template: '',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutSpacerComponent.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-layout-spacer.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-tab-panel.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutTabPanelComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabs_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/index.js");
-
-
-var MdlLayoutTabPanelComponent = (function () {
-    function MdlLayoutTabPanelComponent() {
-        this.isActive = false;
-    }
-    return MdlLayoutTabPanelComponent;
-}());
-
-MdlLayoutTabPanelComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-tab-panel',
-                host: {
-                    '[class.mdl-layout__tab-panel]': 'true',
-                    '[class.is-active]': 'isActive'
-                },
-                template: "\n   <ng-content *ngIf=\"titleComponent\" select=\"mdl-tab-panel-content\"></ng-content>\n   <ng-content *ngIf=\"!titleComponent\"></ng-content>\n   ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutTabPanelComponent.ctorParameters = function () { return []; };
-MdlLayoutTabPanelComponent.propDecorators = {
-    'titleComponent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_1__tabs_index__["a" /* MdlTabPanelTitleComponent */],] },],
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-tab-panel-title',] },],
-};
-//# sourceMappingURL=mdl-layout-tab-panel.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout-title.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutTitleComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlLayoutTitleComponent = (function () {
-    function MdlLayoutTitleComponent() {
-    }
-    return MdlLayoutTitleComponent;
-}());
-
-MdlLayoutTitleComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout-title',
-                host: {
-                    '[class.mdl-layout-title]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutTitleComponent.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-layout-title.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/layout/mdl-layout.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export LAYOUT_SCREEN_SIZE_THRESHOLD */
-/* unused harmony export MdLUnsupportedLayoutTypeError */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlScreenSizeService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlLayoutComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_number_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/number.property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mdl_layout_header_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-header.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mdl_layout_drawer_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-drawer.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mdl_layout_content_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/layout/mdl-layout-content.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_BehaviorSubject__ = __webpack_require__("./node_modules/rxjs/_esm5/BehaviorSubject.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-
-
-
-
-
-var ESCAPE = 27;
-var STANDARD = 'standard';
-var WATERFALL = 'waterfall';
-var SCROLL = 'scroll';
-/**
- * The LAYOUT_SCREEN_SIZE_THRESHOLD can be changed at the root module. Just provide a value for this InjectionToken:
- *
- * providers: [
- *  {provide:LAYOUT_SCREEN_SIZE_THRESHOLD, useValue: 768 }
- * ]
- *
- * you also need to change the scss variable to the same value: $layout-screen-size-threshold: 768px.
- *
- * It should be clear that this can only be used if you are using the scss and not the pre compiled css from getmdl.io.
- *
- * @type {InjectionToken}
- */
-var LAYOUT_SCREEN_SIZE_THRESHOLD = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('layoutScreenSizeThreshold');
-var MdLUnsupportedLayoutTypeError = (function (_super) {
-    __extends(MdLUnsupportedLayoutTypeError, _super);
-    function MdLUnsupportedLayoutTypeError(type) {
-        /* istanbul ignore next */
-        return _super.call(this, "Layout type \"" + type + "\" isn't supported by mdl-layout (allowed: standard, waterfall, scroll).") || this;
-    }
-    return MdLUnsupportedLayoutTypeError;
-}(__WEBPACK_IMPORTED_MODULE_2__common_mdl_error__["a" /* MdlError */]));
-
-var MdlScreenSizeService = (function () {
-    function MdlScreenSizeService(ngZone, layoutScreenSizeThreshold) {
-        var _this = this;
-        this.layoutScreenSizeThreshold = layoutScreenSizeThreshold;
-        this.sizesSubject = new __WEBPACK_IMPORTED_MODULE_8_rxjs_BehaviorSubject__["a" /* BehaviorSubject */](false);
-        // if no value is injected the default size wil be used. same as $layout-screen-size-threshold in scss
-        if (!this.layoutScreenSizeThreshold) {
-            this.layoutScreenSizeThreshold = 1024;
-        }
-        // do not try to access the window object if rendered on the server
-        if (typeof window === 'object' && 'matchMedia' in window) {
-            var query_1 = window.matchMedia("(max-width: " + this.layoutScreenSizeThreshold + "px)");
-            var queryListener_1 = function () {
-                ngZone.run(function () {
-                    _this.sizesSubject.next(query_1.matches);
-                });
-            };
-            query_1.addListener(queryListener_1);
-            this.windowMediaQueryListener = function () {
-                query_1.removeListener(queryListener_1);
-            };
-            // set the initial state
-            this.sizesSubject.next(query_1.matches);
-        }
-    }
-    MdlScreenSizeService.prototype.isSmallScreen = function () {
-        return this.sizesSubject.value;
-    };
-    MdlScreenSizeService.prototype.sizes = function () {
-        return this.sizesSubject.asObservable();
-    };
-    MdlScreenSizeService.prototype.destroy = function () {
-        if (this.windowMediaQueryListener) {
-            this.windowMediaQueryListener();
-            this.windowMediaQueryListener = null;
-        }
-    };
-    return MdlScreenSizeService;
-}());
-
-MdlScreenSizeService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlScreenSizeService.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* NgZone */], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [LAYOUT_SCREEN_SIZE_THRESHOLD,] },] },
-]; };
-var MdlLayoutComponent = (function () {
-    function MdlLayoutComponent(renderer, evm, el, screenSizeService) {
-        this.renderer = renderer;
-        this.evm = evm;
-        this.el = el;
-        this.screenSizeService = screenSizeService;
-        this.mode = STANDARD;
-        this._isFixedDrawer = false;
-        this._isFixedHeader = false;
-        this._isSeamed = false;
-        this._selectedIndex = 0;
-        this._isNoDrawer = false;
-        this.selectedTabEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.mouseoverTabEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.mouseoutTabEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.onOpen = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.onClose = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.isDrawerVisible = false;
-        this.isSmallScreen = false;
-    }
-    Object.defineProperty(MdlLayoutComponent.prototype, "isFixedDrawer", {
-        get: function () { return this._isFixedDrawer; },
-        set: function (value) { this._isFixedDrawer = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlLayoutComponent.prototype, "isFixedHeader", {
-        get: function () { return this._isFixedHeader; },
-        set: function (value) { this._isFixedHeader = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlLayoutComponent.prototype, "isSeamed", {
-        get: function () { return this._isSeamed; },
-        set: function (value) { this._isSeamed = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlLayoutComponent.prototype, "selectedIndex", {
-        get: function () { return this._selectedIndex; },
-        set: function (value) { this._selectedIndex = Object(__WEBPACK_IMPORTED_MODULE_4__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlLayoutComponent.prototype, "isNoDrawer", {
-        get: function () { return this._isNoDrawer; },
-        set: function (value) { this._isNoDrawer = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlLayoutComponent.prototype.ngAfterContentInit = function () {
-        this.validateMode();
-        if (this.header && this.content && this.content.tabs) {
-            this.header.tabs = this.content.tabs;
-            this.updateSelectedTabIndex();
-        }
-        // set this.drawer to null, if the drawer is not a direct child if this layout. It may be a drywer of a sub layout.
-        if (this.drawer && !this.drawer.isDrawerDirectChildOf(this)) {
-            this.drawer = null;
-        }
-    };
-    MdlLayoutComponent.prototype.ngOnChanges = function (changes) {
-        if (changes['selectedIndex']) {
-            this.updateSelectedTabIndex();
-        }
-    };
-    MdlLayoutComponent.prototype.updateSelectedTabIndex = function () {
-        if (this.header && this.header.tabs) {
-            this.header.tabs.forEach(function (tab) { return tab.isActive = false; });
-            if (this.header.tabs.toArray().length > 0 && this.selectedIndex < this.header.tabs.toArray().length) {
-                this.header.tabs.toArray()[this.selectedIndex].isActive = true;
+    /**
+     * Focuses the last tab.
+     * @return {?}
+     */
+    MatTabHeader.prototype._focusLastTab = /**
+     * Focuses the last tab.
+     * @return {?}
+     */
+    function () {
+        for (var /** @type {?} */ i = this._labelWrappers.length - 1; i > -1; i--) {
+            if (this._isValidIndex(i)) {
+                this.focusIndex = i;
+                break;
             }
         }
     };
-    MdlLayoutComponent.prototype.validateMode = function () {
-        var _this = this;
-        if (this.mode === '') {
-            this.mode = STANDARD;
-        }
-        if ([STANDARD, WATERFALL, SCROLL].indexOf(this.mode) === -1) {
-            throw new MdLUnsupportedLayoutTypeError(this.mode);
-        }
-        if (this.header) {
-            // inform the header about the mode
-            this.header.mode = this.mode;
-            this.header.isSeamed = this.isSeamed;
-        }
-        if (this.content) {
-            this.scrollListener = this.renderer.listen(this.content.el, 'scroll', function (e) {
-                _this.onScroll(_this.content.el.scrollTop);
-                return true;
-            });
-            this.screenSizeService.sizes().subscribe(function (isSmall) {
-                _this.onQueryChange(isSmall);
-            });
-        }
-    };
-    MdlLayoutComponent.prototype.onScroll = function (scrollTop) {
-        if (this.mode !== WATERFALL) {
-            return;
-        }
-        if (this.header.isAnimating) {
-            return;
-        }
-        var headerVisible = !this.isSmallScreen || this.isFixedHeader;
-        if (scrollTop > 0 && !this.header.isCompact) {
-            this.header.isCompact = true;
-            if (headerVisible) {
-                this.header.isAnimating = true;
-            }
-        }
-        else if (scrollTop <= 0 && this.header.isCompact) {
-            this.header.isCompact = false;
-            if (headerVisible) {
-                this.header.isAnimating = true;
-            }
-        }
-    };
-    MdlLayoutComponent.prototype.onQueryChange = function (isSmall) {
-        if (isSmall) {
-            this.isSmallScreen = true;
-        }
-        else {
-            this.isSmallScreen = false;
-            this.closeDrawer();
-        }
-    };
-    MdlLayoutComponent.prototype.toggleDrawer = function () {
-        this.isDrawerVisible = !this.isDrawerVisible;
-        if (this.drawer) {
-            this.setDrawerVisible(this.isDrawerVisible);
-        }
-    };
-    MdlLayoutComponent.prototype.closeDrawer = function () {
-        this.isDrawerVisible = false;
-        if (this.drawer) {
-            this.setDrawerVisible(false);
-        }
-    };
-    MdlLayoutComponent.prototype.openDrawer = function () {
-        this.isDrawerVisible = true;
-        if (this.drawer) {
-            this.setDrawerVisible(true);
-        }
-    };
-    MdlLayoutComponent.prototype.setDrawerVisible = function (visible) {
-        this.drawer.isDrawerVisible = visible;
-        this.drawer.isDrawerVisible ? this.onOpen.emit() : this.onClose.emit();
-    };
-    MdlLayoutComponent.prototype.obfuscatorKeyDown = function ($event) {
-        if ($event.keyCode === ESCAPE) {
-            this.toggleDrawer();
-        }
-    };
-    MdlLayoutComponent.prototype.ngOnDestroy = function () {
-        if (this.scrollListener) {
-            this.scrollListener();
-            this.scrollListener = null;
-        }
-    };
-    // triggered from mdl-layout-header.component
-    MdlLayoutComponent.prototype.tabSelected = function (tab) {
-        var index = this.header.tabs.toArray().indexOf(tab);
-        if (index != this.selectedIndex) {
-            this.selectedIndex = index;
-            this.updateSelectedTabIndex();
-            this.selectedTabEmitter.emit({ index: this.selectedIndex });
-        }
-    };
-    // triggered from mdl-layout-header.component
-    MdlLayoutComponent.prototype.onTabMouseover = function (tab) {
-        var index = this.header.tabs.toArray().indexOf(tab);
-        this.mouseoverTabEmitter.emit({ index: index });
-    };
-    // triggered from mdl-layout-header.component
-    MdlLayoutComponent.prototype.onTabMouseout = function (tab) {
-        var index = this.header.tabs.toArray().indexOf(tab);
-        this.mouseoutTabEmitter.emit({ index: index });
-    };
-    MdlLayoutComponent.prototype.closeDrawerOnSmallScreens = function () {
-        if (this.isSmallScreen && this.isDrawerVisible) {
-            this.closeDrawer();
-        }
-    };
-    MdlLayoutComponent.prototype.openDrawerOnSmallScreens = function () {
-        if (this.isSmallScreen && !this.isDrawerVisible) {
-            this.openDrawer();
-        }
-    };
-    MdlLayoutComponent.prototype.hasDrawer = function () {
-        return !!this.drawer;
-    };
-    return MdlLayoutComponent;
-}());
-
-MdlLayoutComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-layout',
-                template: "\n    <div class=\"mdl-layout__container\" [ngClass]=\"{'has-scrolling-header': mode==='scroll'}\">\n     <div class=\"mdl-layout is-upgraded\"\n          [ngClass]=\"{\n          'is-small-screen': isSmallScreen,\n          'mdl-layout--fixed-drawer': isFixedDrawer,\n          'mdl-layout--fixed-header': isFixedHeader,\n          'mdl-layout--fixed-tabs': 'tabs.toArray().length > 0'\n          }\">\n        <ng-content select=\"mdl-layout-header\"></ng-content>\n        <ng-content select=\"mdl-layout-drawer\"></ng-content>\n        <div *ngIf=\"drawer && isNoDrawer==false\" class=\"mdl-layout__drawer-button\" (click)=\"toggleDrawer()\">\n           <mdl-icon>&#xE5D2;</mdl-icon>\n        </div>\n        <ng-content select=\"mdl-layout-content\"></ng-content>\n        <div class=\"mdl-layout__obfuscator\"\n             [ngClass]=\"{'is-visible':isDrawerVisible}\"\n             (click)=\"toggleDrawer()\"\n             (keydown)=\"obfuscatorKeyDown($event)\"></div>\n     </div>\n    </div>\n  ",
-                exportAs: 'mdlLayout',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlLayoutComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* EventManager */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: MdlScreenSizeService, },
-]; };
-MdlLayoutComponent.propDecorators = {
-    'header': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_5__mdl_layout_header_component__["a" /* MdlLayoutHeaderComponent */],] },],
-    'drawer': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_6__mdl_layout_drawer_component__["a" /* MdlLayoutDrawerComponent */],] },],
-    'content': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_7__mdl_layout_content_component__["a" /* MdlLayoutContentComponent */],] },],
-    'mode': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-mode',] },],
-    'isFixedDrawer': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-fixed-drawer',] },],
-    'isFixedHeader': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-fixed-header',] },],
-    'isSeamed': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-header-seamed',] },],
-    'selectedIndex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-tab-active-index',] },],
-    'isNoDrawer': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-layout-no-drawer-button',] },],
-    'selectedTabEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['mdl-layout-tab-active-changed',] },],
-    'mouseoverTabEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['mdl-layout-tab-mouseover',] },],
-    'mouseoutTabEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['mdl-layout-tab-mouseout',] },],
-    'onOpen': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['open',] },],
-    'onClose': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['close',] },],
-};
-//# sourceMappingURL=mdl-layout.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/list/mdl-list.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlUnsupportedCountOfListItemLinesError */
-/* unused harmony export MdlListComponent */
-/* unused harmony export MdlListItemComponent */
-/* unused harmony export MdlListItemPrimaryContentComponent */
-/* unused harmony export MdlListItemSecondaryContentComponent */
-/* unused harmony export MdlListItemSecondaryActionComponent */
-/* unused harmony export MdlListItemSubTitleComponent */
-/* unused harmony export MdlListItemSecondaryInfoComponent */
-/* unused harmony export MdlListItemTextBodyComponent */
-/* unused harmony export MdlListItemIconDirective */
-/* unused harmony export MdlListItemAvatarDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlListModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_number_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/number.property.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-var MdlUnsupportedCountOfListItemLinesError = (function (_super) {
-    __extends(MdlUnsupportedCountOfListItemLinesError, _super);
-    function MdlUnsupportedCountOfListItemLinesError(lines) {
-        /* istanbul ignore next */
-        return _super.call(this, "\"" + lines + "\" is not supported - max 3 lines please.") || this;
-    }
-    return MdlUnsupportedCountOfListItemLinesError;
-}(__WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["a" /* MdlError */]));
-
-var MdlListComponent = (function () {
-    function MdlListComponent() {
-    }
-    return MdlListComponent;
-}());
-
-MdlListComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list',
-                host: {
-                    '[class.mdl-list]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListComponent.ctorParameters = function () { return []; };
-var MdlListItemComponent = (function () {
-    function MdlListItemComponent() {
-        this._lines = 1;
-    }
-    Object.defineProperty(MdlListItemComponent.prototype, "lines", {
-        get: function () { return this._lines; },
-        set: function (value) { this._lines = Object(__WEBPACK_IMPORTED_MODULE_2__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlListItemComponent.prototype.ngOnChanges = function (changes) {
-        if (this.lines && this.lines > 3) {
-            throw new MdlUnsupportedCountOfListItemLinesError(this.lines);
-        }
-    };
-    return MdlListItemComponent;
-}());
-
-MdlListItemComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item',
-                host: {
-                    '[class.mdl-list__item]': 'true',
-                    '[class.mdl-list__item--two-line]': 'lines==2',
-                    '[class.mdl-list__item--three-line]': 'lines==3'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemComponent.ctorParameters = function () { return []; };
-MdlListItemComponent.propDecorators = {
-    'lines': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MdlListItemPrimaryContentComponent = (function () {
-    function MdlListItemPrimaryContentComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemPrimaryContentComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-primary-content', 'mdl-list-item');
-        }
-    };
-    return MdlListItemPrimaryContentComponent;
-}());
-
-MdlListItemPrimaryContentComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-primary-content',
-                host: {
-                    '[class.mdl-list__item-primary-content]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemPrimaryContentComponent.ctorParameters = function () { return [
-    { type: MdlListItemComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemSecondaryContentComponent = (function () {
-    function MdlListItemSecondaryContentComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemSecondaryContentComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-secondary-content', 'mdl-list-item');
-        }
-    };
-    return MdlListItemSecondaryContentComponent;
-}());
-
-MdlListItemSecondaryContentComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-secondary-content',
-                host: {
-                    '[class.mdl-list__item-secondary-content]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemSecondaryContentComponent.ctorParameters = function () { return [
-    { type: MdlListItemComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemSecondaryActionComponent = (function () {
-    function MdlListItemSecondaryActionComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemSecondaryActionComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-secondary-action', 'mdl-list-item');
-        }
-    };
-    return MdlListItemSecondaryActionComponent;
-}());
-
-MdlListItemSecondaryActionComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-secondary-action',
-                host: {
-                    '[class.mdl-list__item-secondary-action]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemSecondaryActionComponent.ctorParameters = function () { return [
-    { type: MdlListItemComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemSubTitleComponent = (function () {
-    function MdlListItemSubTitleComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemSubTitleComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-sub-title', 'mdl-list-item-primary-content');
-        }
-    };
-    return MdlListItemSubTitleComponent;
-}());
-
-MdlListItemSubTitleComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-sub-title',
-                host: {
-                    '[class.mdl-list__item-sub-title]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemSubTitleComponent.ctorParameters = function () { return [
-    { type: MdlListItemPrimaryContentComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemSecondaryInfoComponent = (function () {
-    function MdlListItemSecondaryInfoComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemSecondaryInfoComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-secondary-info', 'mdl-list-item-secondary-content');
-        }
-    };
-    return MdlListItemSecondaryInfoComponent;
-}());
-
-MdlListItemSecondaryInfoComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-secondary-info',
-                host: {
-                    '[class.mdl-list__item-secondary-info]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemSecondaryInfoComponent.ctorParameters = function () { return [
-    { type: MdlListItemSecondaryContentComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemTextBodyComponent = (function () {
-    function MdlListItemTextBodyComponent(mdlListItemComponent) {
-        this.mdlListItemComponent = mdlListItemComponent;
-    }
-    MdlListItemTextBodyComponent.prototype.ngOnInit = function () {
-        if (this.mdlListItemComponent === null) {
-            throw new __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["b" /* MdlStructureError */]('mdl-list-item-text-body', 'mdl-list-item');
-        }
-    };
-    return MdlListItemTextBodyComponent;
-}());
-
-MdlListItemTextBodyComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-list-item-text-body',
-                host: {
-                    '[class.mdl-list__item-text-body]': 'true'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlListItemTextBodyComponent.ctorParameters = function () { return [
-    { type: MdlListItemComponent, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-var MdlListItemIconDirective = (function () {
-    function MdlListItemIconDirective() {
-    }
-    return MdlListItemIconDirective;
-}());
-
-MdlListItemIconDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-icon[mdl-list-item-icon]',
-                host: {
-                    '[class.mdl-list__item-icon]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlListItemIconDirective.ctorParameters = function () { return []; };
-var MdlListItemAvatarDirective = (function () {
-    function MdlListItemAvatarDirective() {
-    }
-    return MdlListItemAvatarDirective;
-}());
-
-MdlListItemAvatarDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: 'mdl-icon[mdl-list-item-avatar]',
-                host: {
-                    '[class.mdl-list__item-avatar]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlListItemAvatarDirective.ctorParameters = function () { return []; };
-var MDL_LIST_DIRECTIVES = [
-    MdlListComponent,
-    MdlListItemComponent,
-    MdlListItemPrimaryContentComponent,
-    MdlListItemIconDirective,
-    MdlListItemAvatarDirective,
-    MdlListItemSecondaryContentComponent,
-    MdlListItemSecondaryActionComponent,
-    MdlListItemSubTitleComponent,
-    MdlListItemSecondaryInfoComponent,
-    MdlListItemTextBodyComponent
-];
-var MdlListModule = (function () {
-    function MdlListModule() {
-    }
-    MdlListModule.forRoot = function () {
-        return {
-            ngModule: MdlListModule,
-            providers: []
-        };
-    };
-    return MdlListModule;
-}());
-
-MdlListModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_LIST_DIRECTIVES,
-                declarations: MDL_LIST_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlListModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-list.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/menu/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlMenuModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-menu.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_menu_item_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-menu-item.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_menu_item_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-menu-item.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mdl_toggle_menu_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-toggle-menu.directive.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-var MDL_MENU_DIRECTIVES = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__["a" /* MdlMenuComponent */],
-    __WEBPACK_IMPORTED_MODULE_2__mdl_menu_item_component__["a" /* MdlMenuItemComponent */],
-    __WEBPACK_IMPORTED_MODULE_3__mdl_menu_item_directive__["a" /* MdlMenuItemFullBleedDeviderComponent */],
-    __WEBPACK_IMPORTED_MODULE_5__mdl_toggle_menu_directive__["a" /* MdlToggleMenuDirective */]
-];
-
-
-
-var MdlMenuModule = (function () {
-    function MdlMenuModule() {
-    }
-    MdlMenuModule.forRoot = function () {
-        return {
-            ngModule: MdlMenuModule,
-            providers: [__WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__["b" /* MdlMenuRegisty */]]
-        };
-    };
-    return MdlMenuModule;
-}());
-
-MdlMenuModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */]],
-                exports: MDL_MENU_DIRECTIVES,
-                declarations: MDL_MENU_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlMenuModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/menu/mdl-menu-item.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlMenuItemComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-menu.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_native_support__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/native-support.js");
-
-
-
-
-var MdlMenuItemComponent = (function () {
-    // forwardRef is needed because of he circular dependency menu queries menuitems; menuitem needs the parent
-    function MdlMenuItemComponent(elementRef, renderer, mdlMenu) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this.mdlMenu = mdlMenu;
-        this._disabled = false;
-        this.element = elementRef.nativeElement;
-    }
-    Object.defineProperty(MdlMenuItemComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlMenuItemComponent.prototype.onClick = function ($event) {
-        $event.stopPropagation();
-        if (this.disabled) {
-            this.mdlMenu.hide();
-            return;
-        }
-        this.mdlMenu.hideOnItemClicked();
-    };
-    // we need to register a touchstart at the window to get informed if the user taps outside the menu.
-    // But if we register a touchstart event - safari will no longer convert touch events to click events.
-    // So we need to convert touch to click and the user still needs to register a (click) listener to be
-    // informed if the menu item has clicked.
-    MdlMenuItemComponent.prototype.onTouch = function ($event) {
-        // ensure that this event is totally consumed
-        $event.stopPropagation();
-        $event.preventDefault();
-        var event = new MouseEvent('click', { bubbles: true });
-        Object(__WEBPACK_IMPORTED_MODULE_3__common_native_support__["a" /* callNative */])(this.element, 'dispatchEvent', event);
-    };
-    return MdlMenuItemComponent;
-}());
-
-MdlMenuItemComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-menu-item',
-                host: {
-                    '[class.mdl-menu__item]': 'true',
-                    'tabindex': '-1',
-                    '(click)': 'onClick($event)',
-                    '(touchstart)': 'onTouch($event)'
-                },
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlMenuItemComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__["a" /* MdlMenuComponent */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return __WEBPACK_IMPORTED_MODULE_1__mdl_menu_component__["a" /* MdlMenuComponent */]; }),] },] },
-]; };
-MdlMenuItemComponent.propDecorators = {
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-//# sourceMappingURL=mdl-menu-item.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/menu/mdl-menu-item.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlMenuItemFullBleedDeviderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlMenuItemFullBleedDeviderComponent = (function () {
-    function MdlMenuItemFullBleedDeviderComponent() {
-    }
-    return MdlMenuItemFullBleedDeviderComponent;
-}());
-
-MdlMenuItemFullBleedDeviderComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-menu-item-full-bleed-divider]',
-                host: {
-                    '[class.mdl-menu__item--full-bleed-divider]': 'true'
-                }
-            },] },
-];
-/** @nocollapse */
-MdlMenuItemFullBleedDeviderComponent.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-menu-item.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/menu/mdl-menu.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlMenuError */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlMenuRegisty; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlMenuComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_menu_item_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/menu/mdl-menu-item.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-var BOTTOM_LEFT = 'bottom-left';
-var BOTTOM_RIGHT = 'bottom-right';
-var TOP_LEFT = 'top-left';
-var TOP_RIGHT = 'top-right';
-var UNALIGNED = 'unaligned';
-// Total duration of the menu animation.
-var TRANSITION_DURATION_SECONDS = 0.3;
-// The fraction of the total duration we want to use for menu item animations.
-var TRANSITION_DURATION_FRACTION = 0.8;
-// How long the menu stays open after choosing an option (so the user can see
-// the ripple).
-var CLOSE_TIMEOUT = 175;
-var CSS_ALIGN_MAP = {};
-CSS_ALIGN_MAP[BOTTOM_LEFT] = 'mdl-menu--bottom-left';
-CSS_ALIGN_MAP[BOTTOM_RIGHT] = 'mdl-menu--bottom-right';
-CSS_ALIGN_MAP[TOP_LEFT] = 'mdl-menu--top-left';
-CSS_ALIGN_MAP[TOP_RIGHT] = 'mdl-menu--top-right';
-CSS_ALIGN_MAP[UNALIGNED] = 'mdl-menu--unaligned';
-var MdlMenuError = (function (_super) {
-    __extends(MdlMenuError, _super);
-    function MdlMenuError() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return MdlMenuError;
-}(__WEBPACK_IMPORTED_MODULE_2__common_mdl_error__["a" /* MdlError */]));
-
-var MdlMenuRegisty = (function () {
-    function MdlMenuRegisty() {
-        this.menuComponents = [];
-    }
-    MdlMenuRegisty.prototype.add = function (menuComponent) {
-        this.menuComponents.push(menuComponent);
-    };
-    MdlMenuRegisty.prototype.remove = function (menuComponent) {
-        this.menuComponents.slice(this.menuComponents.indexOf(menuComponent), 1);
-    };
-    MdlMenuRegisty.prototype.hideAllExcept = function (menuComponent) {
-        this.menuComponents.forEach(function (component) {
-            if (component !== menuComponent) {
-                component.hide();
-            }
-        });
-    };
-    return MdlMenuRegisty;
-}());
-
-MdlMenuRegisty.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlMenuRegisty.ctorParameters = function () { return []; };
-var MdlMenuComponent = (function () {
-    function MdlMenuComponent(renderer, menuRegistry) {
-        this.renderer = renderer;
-        this.menuRegistry = menuRegistry;
-        this.cssPosition = 'mdl-menu--bottom-left';
-        this.isVisible = false;
-        this.menuRegistry.add(this);
-    }
-    MdlMenuComponent.prototype.ngOnInit = function () {
-        this.cssPosition = CSS_ALIGN_MAP[this.position] || BOTTOM_LEFT;
-    };
-    MdlMenuComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        this.container = this.containerChild.nativeElement;
-        this.menuElement = this.menuElementChild.nativeElement;
-        this.outline = this.outlineChild.nativeElement;
-        // Add a click listener to the document, to close the menu.
-        var callback = function () {
-            if (_this.isVisible) {
-                _this.hide();
-            }
-            return true;
-        };
-        this.renderer.listen('window', 'click', callback);
-        this.renderer.listen('window', 'touchstart', callback);
-    };
-    MdlMenuComponent.prototype.toggle = function (event, mdlButton) {
-        if (!mdlButton) {
-            throw new MdlMenuError("MdlButtonComponent is required");
-        }
-        if (this.isVisible) {
-            this.hide();
-        }
-        else {
-            this.show(event, mdlButton);
-        }
-    };
-    MdlMenuComponent.prototype.hideOnItemClicked = function () {
-        var _this = this;
-        // Wait some time before closing menu, so the user can see the ripple.
-        setTimeout(function () {
-            _this.hide();
-        }, CLOSE_TIMEOUT);
-    };
-    MdlMenuComponent.prototype.hide = function () {
-        // Remove all transition delays; menu items fade out concurrently.
-        this.menuItemComponents.toArray().forEach(function (mi) {
-            mi.element.style.removeProperty('transition-delay');
-        });
-        // Measure the inner element.
-        var rect = this.menuElement.getBoundingClientRect();
-        var height = rect.height;
-        var width = rect.width;
-        // Turn on animation, and apply the final clip. Also make invisible.
-        // This triggers the transitions.
-        this.renderer.addClass(this.menuElement, 'is-animating');
-        this.applyClip(height, width);
-        this.renderer.removeClass(this.container, 'is-visible');
-        // Clean up after the animation is complete.
-        this.addAnimationEndListener();
-        this.isVisible = false;
-    };
-    MdlMenuComponent.prototype.show = function (event, mdlButton) {
-        var _this = this;
-        this.menuRegistry.hideAllExcept(this);
-        event.stopPropagation();
-        var forElement = mdlButton.element;
-        var rect = forElement.getBoundingClientRect();
-        var forRect = forElement.parentElement.getBoundingClientRect();
-        if (this.position == UNALIGNED) {
-            // Do not position the menu automatically. Requires the developer to
-            // manually specify position.
-        }
-        else if (this.position == BOTTOM_RIGHT) {
-            // Position below the "for" element, aligned to its right.
-            this.container.style.right = (forRect.right - rect.right) + 'px';
-            this.container.style.top = forElement.offsetTop + forElement.offsetHeight + 'px';
-        }
-        else if (this.position == TOP_LEFT) {
-            // Position above the "for" element, aligned to its left.
-            this.container.style.left = forElement.offsetLeft + 'px';
-            this.container.style.bottom = (forRect.bottom - rect.top) + 'px';
-        }
-        else if (this.position == TOP_RIGHT) {
-            // Position above the "for" element, aligned to its right.
-            this.container.style.right = (forRect.right - rect.right) + 'px';
-            this.container.style.bottom = (forRect.bottom - rect.top) + 'px';
-        }
-        else {
-            // Default: position below the "for" element, aligned to its left.
-            this.container.style.left = forElement.offsetLeft + 'px';
-            this.container.style.top = forElement.offsetTop + forElement.offsetHeight + 'px';
-        }
-        // Measure the inner element.
-        var height = this.menuElement.getBoundingClientRect().height;
-        var width = this.menuElement.getBoundingClientRect().width;
-        this.container.style.width = width + 'px';
-        this.container.style.height = height + 'px';
-        this.outline.style.width = width + 'px';
-        this.outline.style.height = height + 'px';
-        var transitionDuration = TRANSITION_DURATION_SECONDS * TRANSITION_DURATION_FRACTION;
-        this.menuItemComponents.toArray().forEach(function (mi) {
-            var itemDelay = null;
-            if ((_this.position == TOP_LEFT) || _this.position == TOP_RIGHT) {
-                itemDelay = ((height - mi.element.offsetTop - mi.element.offsetHeight) / height * transitionDuration) + 's';
-            }
-            else {
-                itemDelay = (mi.element.offsetTop / height * transitionDuration) + 's';
-            }
-            mi.element.style.transitionDelay = itemDelay;
-        });
-        // Apply the initial clip to the text before we start animating.
-        this.applyClip(height, width);
-        this.renderer.addClass(this.container, 'is-visible');
-        this.menuElement.style.clip = 'rect(0 ' + width + 'px ' + height + 'px 0)';
-        this.renderer.addClass(this.menuElement, 'is-animating');
-        this.addAnimationEndListener();
-        this.isVisible = true;
-    };
-    MdlMenuComponent.prototype.addAnimationEndListener = function () {
-        var _this = this;
-        this.renderer.listen(this.menuElement, 'transitionend', function () {
-            _this.renderer.removeClass(_this.menuElement, 'is-animating');
-            return true;
-        });
-    };
-    MdlMenuComponent.prototype.applyClip = function (height, width) {
-        if (this.position == UNALIGNED) {
-            // Do not clip.
-            this.menuElement.style.clip = '';
-        }
-        else if (this.position == BOTTOM_RIGHT) {
-            // Clip to the top right corner of the menu.
-            this.menuElement.style.clip = 'rect(0 ' + width + 'px ' + '0 ' + width + 'px)';
-        }
-        else if (this.position == TOP_LEFT) {
-            // Clip to the bottom left corner of the menu.
-            this.menuElement.style.clip = 'rect(' + height + 'px 0 ' + height + 'px 0)';
-        }
-        else if (this.position == TOP_RIGHT) {
-            // Clip to the bottom right corner of the menu.
-            this.menuElement.style.clip = 'rect(' + height + 'px ' + width + 'px ' + height + 'px ' + width + 'px)';
-        }
-        else {
-            // Default: do not clip (same as clipping to the top left corner).
-            this.menuElement.style.clip = '';
-        }
-    };
-    MdlMenuComponent.prototype.ngOnDestroy = function () {
-        this.menuRegistry.remove(this);
-    };
-    return MdlMenuComponent;
-}());
-
-MdlMenuComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-menu',
-                host: {},
-                exportAs: 'mdlMenu',
-                template: "\n   <div #container class=\"mdl-menu__container is-upgraded\">\n      <div #outline class=\"mdl-menu__outline\"\n         [ngClass]=\"cssPosition\"\n      ></div>\n      <div class=\"mdl-menu\" #menuElement>\n         <ng-content></ng-content>\n      </div>\n   </div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlMenuComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: MdlMenuRegisty, },
-]; };
-MdlMenuComponent.propDecorators = {
-    'position': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-menu-position',] },],
-    'containerChild': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['container',] },],
-    'menuElementChild': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['menuElement',] },],
-    'outlineChild': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['outline',] },],
-    'menuItemComponents': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ContentChildren */], args: [__WEBPACK_IMPORTED_MODULE_1__mdl_menu_item_component__["a" /* MdlMenuItemComponent */],] },],
-};
-//# sourceMappingURL=mdl-menu.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/menu/mdl-toggle-menu.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlToggleMenuDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-
-
-var MdlToggleMenuDirective = (function () {
-    function MdlToggleMenuDirective(button) {
-        this.button = button;
-    }
-    MdlToggleMenuDirective.prototype.onClick = function ($event) {
-        this.menu.toggle($event, this.button);
-    };
-    return MdlToggleMenuDirective;
-}());
-
-MdlToggleMenuDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-button][mdl-toggle-menu]'
-            },] },
-];
-/** @nocollapse */
-MdlToggleMenuDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__button_mdl_button_component__["a" /* MdlButtonComponent */], },
-]; };
-MdlToggleMenuDirective.propDecorators = {
-    'menu': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-toggle-menu',] },],
-    'onClick': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['click', ['$event'],] },],
-};
-//# sourceMappingURL=mdl-toggle-menu.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/progress/mdl-progress.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlProgressComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlProgressModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-
-
-
-var MdlProgressComponent = (function () {
-    function MdlProgressComponent() {
-        this.progress = 0;
-        this.buffer = 100;
-        this.aux = 0;
-        this._indeterminate = false;
-    }
-    Object.defineProperty(MdlProgressComponent.prototype, "indeterminate", {
-        get: function () { return this._indeterminate; },
-        set: function (value) { this._indeterminate = Object(__WEBPACK_IMPORTED_MODULE_1__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlProgressComponent.prototype.ngOnChanges = function (changes) {
-        if (changes['buffer']) {
-            this.setBuffer(changes['buffer'].currentValue);
-        }
-    };
-    MdlProgressComponent.prototype.setBuffer = function (b) {
-        this.aux = 100 - b;
-    };
-    return MdlProgressComponent;
-}());
-
-MdlProgressComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-progress',
-                host: {
-                    '[class.mdl-progress]': 'true',
-                    '[class.mdl-progress__indeterminate]': 'indeterminate===true'
-                },
-                template: "\n    <div class=\"progressbar bar bar1\" [style.width]=\"progress + '%'\"></div>\n    <div class=\"bufferbar bar bar2\" [style.width]=\"buffer + '%'\"></div>\n    <div class=\"auxbar bar bar3\" [ngStyle]=\"{'width': aux+'%'}\"></div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None,
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
-            },] },
-];
-/** @nocollapse */
-MdlProgressComponent.ctorParameters = function () { return []; };
-MdlProgressComponent.propDecorators = {
-    'progress': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'buffer': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'aux': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'indeterminate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MDL_PROGRESS_DIRECTIVES = [MdlProgressComponent];
-var MdlProgressModule = (function () {
-    function MdlProgressModule() {
-    }
-    MdlProgressModule.forRoot = function () {
-        return {
-            ngModule: MdlProgressModule,
-            providers: []
-        };
-    };
-    return MdlProgressModule;
-}());
-
-MdlProgressModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
-                exports: MDL_PROGRESS_DIRECTIVES,
-                declarations: MDL_PROGRESS_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlProgressModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-progress.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/radio/mdl-radio.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlRadioGroupRegisty */
-/* unused harmony export MdlRadioComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlRadioModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_noop__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/noop.js");
-
-
-
-
-
-var IS_FOCUSED = 'is-focused';
-// Registry for mdl-readio compnents. Is responsible to keep the
-// right state of the radio buttons of a radio group. It would be
-// easier if i had a mdl-radio-group component. but this would be
-// a big braking change.
-var MdlRadioGroupRegisty = (function () {
-    function MdlRadioGroupRegisty() {
-        this.defaultFormGroup = 'defaultFromGroup';
-        this.radioComponents = [];
-    }
-    MdlRadioGroupRegisty.prototype.add = function (radioComponent, formGroupName) {
-        this.radioComponents.push({
-            radio: radioComponent,
-            group: formGroupName || this.defaultFormGroup
-        });
-    };
-    MdlRadioGroupRegisty.prototype.remove = function (radioComponent) {
-        this.radioComponents = this.radioComponents.filter(function (radioComponentInArray) {
-            return (radioComponentInArray.radio !== radioComponent);
-        });
-    };
-    MdlRadioGroupRegisty.prototype.select = function (radioComponent, formGroupName) {
-        // unselect every radioComponent that is not the provided radiocomponent
-        // and has the same name and is in teh same group.
-        var groupToTest = formGroupName || this.defaultFormGroup;
-        this.radioComponents.forEach(function (component) {
-            if (component.radio.name === radioComponent.name && component.group === groupToTest) {
-                if (component.radio !== radioComponent) {
-                    component.radio.deselect(radioComponent.value);
-                }
-            }
-        });
-    };
-    return MdlRadioGroupRegisty;
-}());
-
-MdlRadioGroupRegisty.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlRadioGroupRegisty.ctorParameters = function () { return []; };
-/*
- <mdl-radio name="group1" value="1" [(ngModel)]="radioOption">Value 1</mdl-radio>
- */
-var MdlRadioComponent = (function () {
-    function MdlRadioComponent(elementRef, renderer, radioGroupRegistry, formGroupName) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this.radioGroupRegistry = radioGroupRegistry;
-        this.formGroupName = formGroupName;
-        this._disabled = false;
-        this.tabindex = null;
-        this.change = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        // the internal state - used to set the underlaying radio button state.
-        this.checked = false;
-        this.onTouchedCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-        this.onChangeCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-        this.el = elementRef.nativeElement;
-    }
-    Object.defineProperty(MdlRadioComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlRadioComponent.prototype.ngOnInit = function () {
-        // we need a name and it must be the same as in the formcontrol.
-        // a radio group without name is useless.
-        this.checkName();
-        // register the radio button - this is the only chance to unselect the
-        // radio button that is no longer active - scope the radio button with it's group
-        // if there is one.
-        this.radioGroupRegistry.add(this, this.formGroupName);
-    };
-    MdlRadioComponent.prototype.ngOnDestroy = function () {
-        this.radioGroupRegistry.remove(this);
-    };
-    MdlRadioComponent.prototype.writeValue = function (optionValue) {
-        this.optionValue = optionValue;
-        this.updateCheckState();
-    };
-    MdlRadioComponent.prototype.deselect = function (value) {
-        // called from the registry. the value is the value of the selected radio button
-        // e.g. the radio button get unselected if it isnÄt the selected one.
-        this.writeValue(value);
-    };
-    MdlRadioComponent.prototype.registerOnChange = function (fn) {
-        var _this = this;
-        // wrap the callback, so that we can call select on the registry
-        this.onChangeCallback = function () {
-            fn(_this.value);
-            _this.radioGroupRegistry.select(_this, _this.formGroupName);
-        };
-    };
-    MdlRadioComponent.prototype.registerOnTouched = function (fn) {
-        this.onTouchedCallback = fn;
-    };
-    MdlRadioComponent.prototype.setDisabledState = function (isDisabled) {
-        this.disabled = isDisabled;
-    };
-    MdlRadioComponent.prototype.onFocus = function () {
-        this.renderer.addClass(this.el, IS_FOCUSED);
-    };
-    MdlRadioComponent.prototype.onBlur = function () {
-        this.renderer.removeClass(this.el, IS_FOCUSED);
-    };
-    MdlRadioComponent.prototype.onClick = function () {
-        if (this.disabled) {
-            return;
-        }
-        this.optionValue = this.value;
-        this.updateCheckState();
-        this.onChangeCallback();
-        this.change.emit(this.optionValue);
-    };
-    MdlRadioComponent.prototype.updateCheckState = function () {
-        this.checked = this.optionValue === this.value;
-    };
-    MdlRadioComponent.prototype.checkName = function () {
-        if (this.name && this.formControlName && this.name !== this.formControlName) {
-            this.throwNameError();
-        }
-        if (!this.name && this.formControlName) {
-            this.name = this.formControlName;
-        }
-    };
-    MdlRadioComponent.prototype.throwNameError = function () {
-        throw new Error("\n      If you define both a name and a formControlName attribute on your radio button, their values\n      must match. Ex: <mdl-radio formControlName=\"food\" name=\"food\"></mdl-radio>\n    ");
-    };
-    MdlRadioComponent.prototype.spaceKeyPress = function (event) {
-        this.checked = false; //in case of space key is pressed radio button value must remain same
-    };
-    return MdlRadioComponent;
-}());
-
-MdlRadioComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-radio',
-                providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-                        useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlRadioComponent; }),
-                        multi: true
-                    }],
-                host: {
-                    '(click)': 'onClick()',
-                    '[class.mdl-radio]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.is-checked]': 'checked',
-                    '[class.is-disabled]': 'disabled'
-                },
-                template: "\n  <input type=\"checkbox\" class=\"mdl-radio__button\" \n    [attr.name]=\"name\"\n    (focus)=\"onFocus()\" \n    (blur)=\"onBlur()\"\n    (keyup.space)=\"spaceKeyPress($event)\"\n    [disabled]=\"disabled\"\n    [attr.tabindex]=\"tabindex\"\n    [(ngModel)]=\"checked\">\n  <span class=\"mdl-radio__label\"><ng-content></ng-content></span>\n  <span class=\"mdl-radio__outer-circle\"></span>\n  <span class=\"mdl-radio__inner-circle\"></span>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlRadioComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: MdlRadioGroupRegisty, },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormGroupName */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] },] },
-]; };
-MdlRadioComponent.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'formControlName': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'tabindex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'change': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */] },],
-};
-var MdlRadioModule = (function () {
-    function MdlRadioModule() {
-    }
-    MdlRadioModule.forRoot = function () {
-        return {
-            ngModule: MdlRadioModule,
-            providers: [MdlRadioGroupRegisty]
-        };
-    };
-    return MdlRadioModule;
-}());
-
-MdlRadioModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormsModule */]],
-                exports: [MdlRadioComponent],
-                declarations: [MdlRadioComponent]
-            },] },
-];
-/** @nocollapse */
-MdlRadioModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-radio.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/shadow/mdl-shadow.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlUnsupportedShadowValueError */
-/* unused harmony export MdlShadowDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlShadowModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_mdl_error__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-error.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_number_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/number.property.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-var MdlUnsupportedShadowValueError = (function (_super) {
-    __extends(MdlUnsupportedShadowValueError, _super);
-    function MdlUnsupportedShadowValueError(value) {
-        /* istanbul ignore next */
-        return _super.call(this, "Shadow value \"" + value + "\" isn't supported (allowed: 2,3,4,6,8,16,24).") || this;
-    }
-    return MdlUnsupportedShadowValueError;
-}(__WEBPACK_IMPORTED_MODULE_1__common_mdl_error__["a" /* MdlError */]));
-
-var MDL_SHADOW_VALUES = [0, 2, 3, 4, 6, 8, 16, 24];
-var MdlShadowDirective = (function () {
-    function MdlShadowDirective(elementRef, renderer) {
-        this.elementRef = elementRef;
-        this.renderer = renderer;
-        this._mdlShadow = 2;
-        this.el = elementRef.nativeElement;
-    }
-    Object.defineProperty(MdlShadowDirective.prototype, "mdlShadow", {
-        get: function () { return this._mdlShadow; },
-        set: function (value) { this._mdlShadow = Object(__WEBPACK_IMPORTED_MODULE_2__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlShadowDirective.prototype.ngOnChanges = function (changes) {
-        if (MDL_SHADOW_VALUES.indexOf(Number(this.mdlShadow)) === -1) {
-            throw new MdlUnsupportedShadowValueError(this.mdlShadow);
-        }
-        var change = changes['mdlShadow'];
-        if (!change.isFirstChange()) {
-            this.renderer.removeClass(this.el, "mdl-shadow--" + change.previousValue + "dp");
-        }
-        this.renderer.addClass(this.el, "mdl-shadow--" + change.currentValue + "dp");
-    };
-    return MdlShadowDirective;
-}());
-
-MdlShadowDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-shadow]'
-            },] },
-];
-/** @nocollapse */
-MdlShadowDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlShadowDirective.propDecorators = {
-    'mdlShadow': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-shadow',] },],
-};
-var MDL_SHADOW_DIRECTIVES = [MdlShadowDirective];
-var MdlShadowModule = (function () {
-    function MdlShadowModule() {
-    }
-    MdlShadowModule.forRoot = function () {
-        return {
-            ngModule: MdlShadowModule,
-            providers: []
-        };
-    };
-    return MdlShadowModule;
-}());
-
-MdlShadowModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_SHADOW_DIRECTIVES,
-                declarations: MDL_SHADOW_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlShadowModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-shadow.directive.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/slider/mdl-slider.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlSliderComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSliderModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_noop__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/noop.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_native_support__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/native-support.js");
-
-
-
-
-
-
-var MdlSliderComponent = (function () {
-    function MdlSliderComponent(renderer, elRef) {
-        this.renderer = renderer;
-        this.elRef = elRef;
-        this._disabled = false;
-        this.onTouchedCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-        this.onChangeCallback = __WEBPACK_IMPORTED_MODULE_4__common_noop__["a" /* noop */];
-    }
-    Object.defineProperty(MdlSliderComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_3__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlSliderComponent.prototype, "value", {
-        get: function () { return this.value_; },
-        set: function (v) {
-            this.value_ = v;
-            this.updateSliderUI();
-            this.onChangeCallback(v);
+    /** The layout direction of the containing app. */
+    /**
+     * The layout direction of the containing app.
+     * @return {?}
+     */
+    MatTabHeader.prototype._getLayoutDirection = /**
+     * The layout direction of the containing app.
+     * @return {?}
+     */
+    function () {
+        return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
+    };
+    /** Performs the CSS transformation on the tab list that will cause the list to scroll. */
+    /**
+     * Performs the CSS transformation on the tab list that will cause the list to scroll.
+     * @return {?}
+     */
+    MatTabHeader.prototype._updateTabScrollPosition = /**
+     * Performs the CSS transformation on the tab list that will cause the list to scroll.
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ scrollDistance = this.scrollDistance;
+        var /** @type {?} */ translateX = this._getLayoutDirection() === 'ltr' ? -scrollDistance : scrollDistance;
+        this._tabList.nativeElement.style.transform = "translate3d(" + translateX + "px, 0, 0)";
+    };
+    Object.defineProperty(MatTabHeader.prototype, "scrollDistance", {
+        /** Sets the distance in pixels that the tab header should be transformed in the X-axis. */
+        get: /**
+         * Sets the distance in pixels that the tab header should be transformed in the X-axis.
+         * @return {?}
+         */
+        function () { return this._scrollDistance; },
+        set: /**
+         * @param {?} v
+         * @return {?}
+         */
+        function (v) {
+            this._scrollDistance = Math.max(0, Math.min(this._getMaxScrollDistance(), v));
+            // Mark that the scroll distance has changed so that after the view is checked, the CSS
+            // transformation can move the header.
+            this._scrollDistanceChanged = true;
+            this._checkScrollingControls();
         },
         enumerable: true,
         configurable: true
     });
-    ;
-    MdlSliderComponent.prototype.writeValue = function (value) {
-        this.value_ = value;
-        this.updateSliderUI();
+    /**
+     * Moves the tab list in the 'before' or 'after' direction (towards the beginning of the list or
+     * the end of the list, respectively). The distance to scroll is computed to be a third of the
+     * length of the tab list view window.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     */
+    /**
+     * Moves the tab list in the 'before' or 'after' direction (towards the beginning of the list or
+     * the end of the list, respectively). The distance to scroll is computed to be a third of the
+     * length of the tab list view window.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @param {?} scrollDir
+     * @return {?}
+     */
+    MatTabHeader.prototype._scrollHeader = /**
+     * Moves the tab list in the 'before' or 'after' direction (towards the beginning of the list or
+     * the end of the list, respectively). The distance to scroll is computed to be a third of the
+     * length of the tab list view window.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @param {?} scrollDir
+     * @return {?}
+     */
+    function (scrollDir) {
+        var /** @type {?} */ viewLength = this._tabListContainer.nativeElement.offsetWidth;
+        // Move the scroll distance one-third the length of the tab list's viewport.
+        this.scrollDistance += (scrollDir == 'before' ? -1 : 1) * viewLength / 3;
     };
-    MdlSliderComponent.prototype.registerOnChange = function (fn) {
-        this.onChangeCallback = fn;
-    };
-    MdlSliderComponent.prototype.registerOnTouched = function (fn) {
-        this.onTouchedCallback = fn;
-    };
-    MdlSliderComponent.prototype.setDisabledState = function (isDisabled) {
-        this.disabled = isDisabled;
-    };
-    MdlSliderComponent.prototype.updateSliderUI = function () {
-        var fraction = (this.value_ - this.min) / (this.max - this.min);
-        if (fraction === 0) {
-            this.renderer.addClass(this.inputEl.nativeElement, 'is-lowest-value');
-        }
-        else {
-            this.renderer.removeClass(this.inputEl.nativeElement, 'is-lowest-value');
-        }
-        this.renderer.setStyle(this.lowerEl.nativeElement, 'flex', '' + fraction);
-        this.renderer.setStyle(this.upperEl.nativeElement, 'flex', '' + (1 - fraction));
-    };
-    MdlSliderComponent.prototype.onMouseUp = function (event) {
-        event.target.blur();
-    };
-    MdlSliderComponent.prototype.onMouseDown = function (event) {
-        if (event.target !== this.elRef.nativeElement) {
+    /**
+     * Moves the tab list such that the desired tab label (marked by index) is moved into view.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     */
+    /**
+     * Moves the tab list such that the desired tab label (marked by index) is moved into view.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @param {?} labelIndex
+     * @return {?}
+     */
+    MatTabHeader.prototype._scrollToLabel = /**
+     * Moves the tab list such that the desired tab label (marked by index) is moved into view.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @param {?} labelIndex
+     * @return {?}
+     */
+    function (labelIndex) {
+        var /** @type {?} */ selectedLabel = this._labelWrappers ? this._labelWrappers.toArray()[labelIndex] : null;
+        if (!selectedLabel) {
             return;
         }
-        // Discard the original event and create a new event that
-        // is on the slider element.
-        event.preventDefault();
-        var newEvent = new MouseEvent('mousedown', {
-            relatedTarget: event.relatedTarget,
-            button: event.button,
-            buttons: event.buttons,
-            clientX: event.clientX,
-            clientY: this.inputEl.nativeElement.getBoundingClientRect().y,
-            screenX: event.screenX,
-            screenY: event.screenY
-        });
-        Object(__WEBPACK_IMPORTED_MODULE_5__common_native_support__["a" /* callNative */])(this.inputEl.nativeElement, 'dispatchEvent', newEvent);
-    };
-    return MdlSliderComponent;
-}());
-
-MdlSliderComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-slider',
-                providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-                        useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlSliderComponent; }),
-                        multi: true
-                    }],
-                host: {
-                    '[class.mdl-slider__container]': 'true',
-                    '(mouseup)': 'onMouseUp($event)',
-                    '(mousedown)': 'onMouseDown($event)'
-                },
-                template: "\n    <input class=\"mdl-slider is-upgraded\" \n            type=\"range\" \n            [min]=\"min\" \n            [max]=\"max\" \n            [step]=\"step\" \n            [(ngModel)]=\"value\" \n            [disabled]=\"disabled\"\n            tabindex=\"0\"\n            #input>\n    <div class=\"mdl-slider__background-flex\">\n      <div class=\"mdl-slider__background-lower\" #lower></div>\n      <div class=\"mdl-slider__background-upper\" #uppper></div>\n  </div>\n  ",
-                styles: [
-                    "\n    :host {\n        height: 22px;\n        user-select: none;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n    }\n    "
-                ],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSliderComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-]; };
-MdlSliderComponent.propDecorators = {
-    'min': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'step': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'lowerEl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['lower',] },],
-    'upperEl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['uppper',] },],
-    'inputEl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['input',] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MDL_SLIDER_DIRECTIVES = [MdlSliderComponent];
-var MdlSliderModule = (function () {
-    function MdlSliderModule() {
-    }
-    MdlSliderModule.forRoot = function () {
-        return {
-            ngModule: MdlSliderModule,
-            providers: []
-        };
-    };
-    return MdlSliderModule;
-}());
-
-MdlSliderModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
-                exports: MDL_SLIDER_DIRECTIVES,
-                declarations: MDL_SLIDER_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlSliderModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-slider.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/snackbar/mdl-snackbar.service.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlSnackbarComponent */
-/* unused harmony export MdlSnackbarService */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSnackbaModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dialog_outlet_mdl_dialog_outlet_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/mdl-dialog-outlet.service.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dialog_outlet_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/dialog-outlet/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__ = __webpack_require__("./node_modules/rxjs/_esm5/Subject.js");
-
-
-
-
-
-var ANIMATION_TIME = 250;
-var MdlSnackbarComponent = (function () {
-    function MdlSnackbarComponent() {
-        this.showIt = false;
-    }
-    MdlSnackbarComponent.prototype.onClick = function () {
-        this.onAction();
-    };
-    MdlSnackbarComponent.prototype.isActive = function () {
-        return this.showIt;
-    };
-    MdlSnackbarComponent.prototype.show = function () {
-        var _this = this;
-        var result = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
-        // wait unit the dom is in place - then showIt will change the css class
-        setTimeout(function () {
-            _this.showIt = true;
-            // fire after the view animation is done
-            setTimeout(function () {
-                result.next(null);
-                result.complete();
-            }, ANIMATION_TIME);
-        }, ANIMATION_TIME);
-        return result.asObservable();
-    };
-    MdlSnackbarComponent.prototype.hide = function () {
-        this.showIt = false;
-        var result = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
-        // fire after the view animation is done
-        setTimeout(function () {
-            result.next(null);
-            result.complete();
-        }, ANIMATION_TIME);
-        return result.asObservable();
-    };
-    return MdlSnackbarComponent;
-}());
-
-MdlSnackbarComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-snackbar-component',
-                template: "\n    <div id=\"demo-toast-example\" class=\" mdl-snackbar\" [ngClass]=\"{'mdl-snackbar--active': showIt }\">\n      <div class=\"mdl-snackbar__text\">{{message}}</div>\n      <button *ngIf=\"onAction\" class=\"mdl-snackbar__action\" type=\"button\" (click)=\"onClick()\" >{{actionText}}</button>\n    </div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSnackbarComponent.ctorParameters = function () { return []; };
-var MdlSnackbarService = (function () {
-    function MdlSnackbarService(componentFactoryResolver, dialogOutletService) {
-        this.componentFactoryResolver = componentFactoryResolver;
-        this.dialogOutletService = dialogOutletService;
-        this.cFactory = this.componentFactoryResolver.resolveComponentFactory(MdlSnackbarComponent);
-    }
-    MdlSnackbarService.prototype.showToast = function (message, timeout) {
-        return this.showSnackbar({
-            message: message,
-            timeout: timeout
-        });
-    };
-    MdlSnackbarService.prototype.showSnackbar = function (snackbarMessage) {
-        var optTimeout = snackbarMessage.timeout || 2750;
-        var closeAfterTimeout = !!snackbarMessage.closeAfterTimeout;
-        var viewContainerRef = this.dialogOutletService.viewContainerRef;
-        if (!viewContainerRef) {
-            throw new Error('You did not provide a ViewContainerRef. ' +
-                'Please see https://github.com/mseemann/angular2-mdl/wiki/How-to-use-the-MdlDialogService');
-        }
-        var cRef = viewContainerRef.createComponent(this.cFactory, viewContainerRef.length);
-        var mdlSnackbarComponent = cRef.instance;
-        mdlSnackbarComponent.message = snackbarMessage.message;
-        if (this.previousSnack) {
-            var previousSnack_1 = this.previousSnack;
-            var subscription_1 = previousSnack_1.component.hide()
-                .subscribe(function () {
-                previousSnack_1.cRef.destroy();
-                subscription_1.unsubscribe();
-            });
-        }
-        this.previousSnack = {
-            component: mdlSnackbarComponent,
-            cRef: cRef
-        };
-        if (snackbarMessage.action) {
-            if (closeAfterTimeout) {
-                this.hideAndDestroySnack(mdlSnackbarComponent, cRef, optTimeout);
-            }
-            mdlSnackbarComponent.actionText = snackbarMessage.action.text;
-            mdlSnackbarComponent.onAction = function () {
-                mdlSnackbarComponent.hide().subscribe(function () {
-                    cRef.destroy();
-                    snackbarMessage.action.handler();
-                });
-            };
+        // The view length is the visible width of the tab labels.
+        var /** @type {?} */ viewLength = this._tabListContainer.nativeElement.offsetWidth;
+        var /** @type {?} */ labelBeforePos, /** @type {?} */ labelAfterPos;
+        if (this._getLayoutDirection() == 'ltr') {
+            labelBeforePos = selectedLabel.getOffsetLeft();
+            labelAfterPos = labelBeforePos + selectedLabel.getOffsetWidth();
         }
         else {
-            this.hideAndDestroySnack(mdlSnackbarComponent, cRef, optTimeout);
+            labelAfterPos = this._tabList.nativeElement.offsetWidth - selectedLabel.getOffsetLeft();
+            labelBeforePos = labelAfterPos - selectedLabel.getOffsetWidth();
         }
-        var result = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["a" /* Subject */]();
-        mdlSnackbarComponent.show().subscribe(function () {
-            result.next(mdlSnackbarComponent);
-            result.complete();
-        });
-        return result.asObservable();
+        var /** @type {?} */ beforeVisiblePos = this.scrollDistance;
+        var /** @type {?} */ afterVisiblePos = this.scrollDistance + viewLength;
+        if (labelBeforePos < beforeVisiblePos) {
+            // Scroll header to move label to the before direction
+            this.scrollDistance -= beforeVisiblePos - labelBeforePos + EXAGGERATED_OVERSCROLL;
+        }
+        else if (labelAfterPos > afterVisiblePos) {
+            // Scroll header to move label to the after direction
+            this.scrollDistance += labelAfterPos - afterVisiblePos + EXAGGERATED_OVERSCROLL;
+        }
     };
-    MdlSnackbarService.prototype.hideAndDestroySnack = function (component, componentRef, timeOut) {
-        setTimeout(function () {
-            component.hide()
-                .subscribe(function () {
-                componentRef.destroy();
-            });
-        }, timeOut);
+    /**
+     * Evaluate whether the pagination controls should be displayed. If the scroll width of the
+     * tab list is wider than the size of the header container, then the pagination controls should
+     * be shown.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     */
+    /**
+     * Evaluate whether the pagination controls should be displayed. If the scroll width of the
+     * tab list is wider than the size of the header container, then the pagination controls should
+     * be shown.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    MatTabHeader.prototype._checkPaginationEnabled = /**
+     * Evaluate whether the pagination controls should be displayed. If the scroll width of the
+     * tab list is wider than the size of the header container, then the pagination controls should
+     * be shown.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ isEnabled = this._tabList.nativeElement.scrollWidth > this._elementRef.nativeElement.offsetWidth;
+        if (!isEnabled) {
+            this.scrollDistance = 0;
+        }
+        if (isEnabled !== this._showPaginationControls) {
+            this._changeDetectorRef.markForCheck();
+        }
+        this._showPaginationControls = isEnabled;
     };
-    return MdlSnackbarService;
-}());
+    /**
+     * Evaluate whether the before and after controls should be enabled or disabled.
+     * If the header is at the beginning of the list (scroll distance is equal to 0) then disable the
+     * before button. If the header is at the end of the list (scroll distance is equal to the
+     * maximum distance we can scroll), then disable the after button.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     */
+    /**
+     * Evaluate whether the before and after controls should be enabled or disabled.
+     * If the header is at the beginning of the list (scroll distance is equal to 0) then disable the
+     * before button. If the header is at the end of the list (scroll distance is equal to the
+     * maximum distance we can scroll), then disable the after button.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    MatTabHeader.prototype._checkScrollingControls = /**
+     * Evaluate whether the before and after controls should be enabled or disabled.
+     * If the header is at the beginning of the list (scroll distance is equal to 0) then disable the
+     * before button. If the header is at the end of the list (scroll distance is equal to the
+     * maximum distance we can scroll), then disable the after button.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    function () {
+        // Check if the pagination arrows should be activated.
+        this._disableScrollBefore = this.scrollDistance == 0;
+        this._disableScrollAfter = this.scrollDistance == this._getMaxScrollDistance();
+        this._changeDetectorRef.markForCheck();
+    };
+    /**
+     * Determines what is the maximum length in pixels that can be set for the scroll distance. This
+     * is equal to the difference in width between the tab list container and tab header container.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     */
+    /**
+     * Determines what is the maximum length in pixels that can be set for the scroll distance. This
+     * is equal to the difference in width between the tab list container and tab header container.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    MatTabHeader.prototype._getMaxScrollDistance = /**
+     * Determines what is the maximum length in pixels that can be set for the scroll distance. This
+     * is equal to the difference in width between the tab list container and tab header container.
+     *
+     * This is an expensive call that forces a layout reflow to compute box and scroll metrics and
+     * should be called sparingly.
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ lengthOfTabList = this._tabList.nativeElement.scrollWidth;
+        var /** @type {?} */ viewLength = this._tabListContainer.nativeElement.offsetWidth;
+        return (lengthOfTabList - viewLength) || 0;
+    };
+    /**
+     * Tells the ink-bar to align itself to the current label wrapper
+     * @return {?}
+     */
+    MatTabHeader.prototype._alignInkBarToSelectedTab = /**
+     * Tells the ink-bar to align itself to the current label wrapper
+     * @return {?}
+     */
+    function () {
+        var /** @type {?} */ selectedLabelWrapper = this._labelWrappers && this._labelWrappers.length ?
+            this._labelWrappers.toArray()[this.selectedIndex].elementRef.nativeElement :
+            null;
+        this._inkBar.alignToElement(selectedLabelWrapper);
+    };
+    MatTabHeader.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */], args: [{selector: 'mat-tab-header',
+                    template: "<div class=\"mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4\" aria-hidden=\"true\" mat-ripple [matRippleDisabled]=\"_disableScrollBefore || disableRipple\" [class.mat-tab-header-pagination-disabled]=\"_disableScrollBefore\" (click)=\"_scrollHeader('before')\"><div class=\"mat-tab-header-pagination-chevron\"></div></div><div class=\"mat-tab-label-container\" #tabListContainer (keydown)=\"_handleKeydown($event)\"><div class=\"mat-tab-list\" #tabList role=\"tablist\" (cdkObserveContent)=\"_onContentChanges()\"><div class=\"mat-tab-labels\"><ng-content></ng-content></div><mat-ink-bar></mat-ink-bar></div></div><div class=\"mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4\" aria-hidden=\"true\" mat-ripple [matRippleDisabled]=\"_disableScrollAfter || disableRipple\" [class.mat-tab-header-pagination-disabled]=\"_disableScrollAfter\" (click)=\"_scrollHeader('after')\"><div class=\"mat-tab-header-pagination-chevron\"></div></div>",
+                    styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:0}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.mat-tab-label.mat-tab-disabled{cursor:default}.mat-tab-label.mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}@media (max-width:599px){.mat-tab-label{min-width:72px}}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:.5s cubic-bezier(.35,0,.25,1)}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}@media screen and (-ms-high-contrast:active){.mat-ink-bar{outline:solid 2px;height:0}}.mat-tab-header-pagination{position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-pagination-after,.mat-tab-header-rtl .mat-tab-header-pagination-before{padding-right:4px}.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:'';height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-label-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}.mat-tab-list{flex-grow:1;position:relative;transition:transform .5s cubic-bezier(.35,0,.25,1)}.mat-tab-labels{display:flex}"],
+                    inputs: ['disableRipple'],
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                    host: {
+                        'class': 'mat-tab-header',
+                        '[class.mat-tab-header-pagination-controls-enabled]': '_showPaginationControls',
+                        '[class.mat-tab-header-rtl]': "_getLayoutDirection() == 'rtl'",
+                    },
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabHeader.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["k" /* ChangeDetectorRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_2__angular_cdk_scrolling__["c" /* ViewportRuler */], },
+        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_bidi__["b" /* Directionality */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["P" /* Optional */] },] },
+    ]; };
+    MatTabHeader.propDecorators = {
+        "_labelWrappers": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* ContentChildren */], args: [MatTabLabelWrapper,] },],
+        "_inkBar": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: [MatInkBar,] },],
+        "_tabListContainer": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: ['tabListContainer',] },],
+        "_tabList": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: ['tabList',] },],
+        "selectedIndex": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "selectFocusedIndex": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+        "indexFocused": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["Q" /* Output */] },],
+    };
+    return MatTabHeader;
+}(_MatTabHeaderMixinBase));
 
-MdlSnackbarService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlSnackbarService.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */], },
-    { type: __WEBPACK_IMPORTED_MODULE_2__dialog_outlet_mdl_dialog_outlet_service__["a" /* MdlDialogOutletService */], },
-]; };
-var MdlSnackbaModule = (function () {
-    function MdlSnackbaModule() {
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * \@docs-private
+ */
+var MatTabNavBase = /** @class */ (function () {
+    function MatTabNavBase(_elementRef) {
+        this._elementRef = _elementRef;
     }
-    MdlSnackbaModule.forRoot = function () {
-        return {
-            ngModule: MdlSnackbaModule,
-            providers: [MdlSnackbarService]
-        };
-    };
-    return MdlSnackbaModule;
+    return MatTabNavBase;
 }());
-
-MdlSnackbaModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_3__dialog_outlet_index__["a" /* MdlDialogOutletModule */].forRoot()],
-                exports: [MdlSnackbarComponent],
-                declarations: [MdlSnackbarComponent],
-                entryComponents: [MdlSnackbarComponent]
-            },] },
-];
-/** @nocollapse */
-MdlSnackbaModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-snackbar.service.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/spinner/mdl-spinner.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlSpinnerComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSpinnerModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-
-
-
-var MdlSpinnerComponent = (function () {
-    function MdlSpinnerComponent() {
-        this.layers = [1, 2, 3, 4];
-        this._active = false;
-        this._singleColor = false;
-    }
-    Object.defineProperty(MdlSpinnerComponent.prototype, "active", {
-        get: function () { return this._active; },
-        set: function (value) { this._active = Object(__WEBPACK_IMPORTED_MODULE_1__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlSpinnerComponent.prototype, "singleColor", {
-        get: function () { return this._singleColor; },
-        set: function (value) { this._singleColor = Object(__WEBPACK_IMPORTED_MODULE_1__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    return MdlSpinnerComponent;
-}());
-
-MdlSpinnerComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-spinner',
-                host: {
-                    '[class.mdl-spinner]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.is-active]': 'active',
-                    '[class.mdl-spinner--single-color]': 'singleColor',
-                },
-                // must be one line - otherwise the spinner is broken in the ui
-                /* tslint:disable */
-                template: "\n    <div *ngFor=\"let layer of layers;\" \n            class=\"mdl-spinner__layer mdl-spinner__layer-{{layer}}\">\n      <div class=\"mdl-spinner__circle-clipper mdl-spinner__left\">\n         <div class=\"mdl-spinner__circle\"></div>\n      </div><div class=\"mdl-spinner__gap-patch\"><div class=\"mdl-spinner__circle\"></div></div><div class=\"mdl-spinner__circle-clipper mdl-spinner__right\"><div class=\"mdl-spinner__circle\"></div></div>\n    </div>\n  "
-                /* tslint:enable */ ,
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSpinnerComponent.ctorParameters = function () { return []; };
-MdlSpinnerComponent.propDecorators = {
-    'active': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'singleColor': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['single-color',] },],
-};
-var MDL_SPINNER_DIRECTIVES = [MdlSpinnerComponent];
-var MdlSpinnerModule = (function () {
-    function MdlSpinnerModule() {
-    }
-    MdlSpinnerModule.forRoot = function () {
-        return {
-            ngModule: MdlSpinnerModule,
-            providers: []
-        };
-    };
-    return MdlSpinnerModule;
-}());
-
-MdlSpinnerModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
-                exports: MDL_SPINNER_DIRECTIVES,
-                declarations: MDL_SPINNER_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlSpinnerModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-spinner.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/switch/mdl-switch.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlSwitchComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSwitchModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkbox_mdl_checkbox_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/checkbox/mdl-checkbox.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-var MdlSwitchComponent = (function (_super) {
-    __extends(MdlSwitchComponent, _super);
-    function MdlSwitchComponent(elementRef, renderer) {
-        return _super.call(this, elementRef, renderer) || this;
-    }
-    return MdlSwitchComponent;
-}(__WEBPACK_IMPORTED_MODULE_2__checkbox_mdl_checkbox_component__["a" /* MdlCheckboxComponent */]));
-
-MdlSwitchComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-switch',
-                providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-                        useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlSwitchComponent; }),
-                        multi: true
-                    }],
-                host: {
-                    '(click)': 'onClick()',
-                    '[class.mdl-switch]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.is-checked]': 'value',
-                    '[class.is-disabled]': 'disabled'
-                },
-                outputs: ['change'],
-                template: "\n    <input type=\"checkbox\" class=\"mdl-switch__input\" \n      (focus)=\"onFocus()\" \n      (blur)=\"onBlur()\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"value\">\n    <span class=\"mdl-switch__label\"><ng-content></ng-content></span>\n    <div class=\"mdl-switch__track\"></div>\n    <div class=\"mdl-switch__thumb\"><span class=\"mdl-switch__focus-helper\"></span></div>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSwitchComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-var MDL_SWITCH_DIRECTIVES = [MdlSwitchComponent];
-var MdlSwitchModule = (function () {
-    function MdlSwitchModule() {
-    }
-    MdlSwitchModule.forRoot = function () {
-        return {
-            ngModule: MdlSwitchModule,
-            providers: []
-        };
-    };
-    return MdlSwitchModule;
-}());
-
-MdlSwitchModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_3__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormsModule */]],
-                exports: MDL_SWITCH_DIRECTIVES,
-                declarations: MDL_SWITCH_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlSwitchModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-switch.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/table/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTableModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_table_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/table/mdl-table.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__checkbox_mdl_checkbox_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/checkbox/mdl-checkbox.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_mdl_ripple_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-ripple.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* unused harmony namespace reexport */
-
-
-
-
-
-
-
-var MDL_TABLE_DIRECTIVES = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_table_component__["b" /* MdlTableComponent */],
-    __WEBPACK_IMPORTED_MODULE_1__mdl_table_component__["a" /* MdlSelectableTableComponent */]
-];
-var MdlTableModule = (function () {
-    function MdlTableModule() {
-    }
-    MdlTableModule.forRoot = function () {
-        return {
-            ngModule: MdlTableModule,
-            providers: []
-        };
-    };
-    return MdlTableModule;
-}());
-
-MdlTableModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_2__checkbox_mdl_checkbox_component__["b" /* MdlCheckboxModule */], __WEBPACK_IMPORTED_MODULE_3__common_mdl_ripple_directive__["a" /* MdlRippleModule */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */], __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* FormsModule */]],
-                exports: MDL_TABLE_DIRECTIVES,
-                declarations: MDL_TABLE_DIRECTIVES,
-            },] },
-];
-/** @nocollapse */
-MdlTableModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/table/mdl-table.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export MdlDefaultTableModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlTableComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSelectableTableComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var MdlDefaultTableModel = (function () {
-    function MdlDefaultTableModel(columns) {
-        this.data = [];
-        this.columns = columns;
-    }
-    MdlDefaultTableModel.prototype.addAll = function (data) {
-        (_a = this.data).push.apply(_a, data);
-        var _a;
-    };
-    return MdlDefaultTableModel;
-}());
-
-var template = "\n        <table class=\"mdl-data-table\">\n           <thead>\n           <tr>\n              <th *ngIf=\"selectable\">\n                 <mdl-checkbox mdl-ripple [ngModel]=\"isAllSelected()\" (ngModelChange)=\"toogleAll()\"></mdl-checkbox>\n              </th>\n              <th *ngFor=\"let column of model.columns\"\n                  [ngClass]=\"{'mdl-data-table__cell--non-numeric': !column.numeric}\">\n                 {{column.name}}\n              </th>\n           </tr>\n           </thead>\n           <tbody>\n           <tr *ngFor=\"let data of model.data; let i = index\" [ngClass]=\"{'is-selected': selectable && data.selected}\">\n              <td *ngIf=\"selectable\">\n                 <mdl-checkbox mdl-ripple\n                      [(ngModel)]=\"data.selected\"\n                      (ngModelChange)=\"selectionChanged(data)\"></mdl-checkbox>\n              </td>\n              <td *ngFor=\"let column of model.columns\"\n                  [ngClass]=\"{'mdl-data-table__cell--non-numeric': !column.numeric}\"\n                  [innerHTML]=\"data[column.key]\">\n              </td>\n           </tr>\n           </tbody>\n        </table>  \n    ";
-var styles = [
-    "\n    :host{\n      display:inline-block;\n    }\n    "
-];
-var MdlTableComponent = (function () {
-    function MdlTableComponent() {
-        this.selectable = false;
-    }
-    return MdlTableComponent;
-}());
-
-MdlTableComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-table',
-                template: template,
-                styles: styles,
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTableComponent.ctorParameters = function () { return []; };
-MdlTableComponent.propDecorators = {
-    'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['table-model',] },],
-};
-var MdlSelectableTableComponent = (function (_super) {
-    __extends(MdlSelectableTableComponent, _super);
-    function MdlSelectableTableComponent() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.selectionChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        _this.selectable = true;
-        _this.allSelected = false;
+var _MatTabNavMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["e" /* mixinColor */])(MatTabNavBase, 'primary');
+/**
+ * Navigation component matching the styles of the tab group header.
+ * Provides anchored navigation with animated ink bar.
+ */
+var MatTabNav = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabNav, _super);
+    function MatTabNav(elementRef, _dir, _ngZone, _changeDetectorRef, _viewportRuler) {
+        var _this = _super.call(this, elementRef) || this;
+        _this._dir = _dir;
+        _this._ngZone = _ngZone;
+        _this._changeDetectorRef = _changeDetectorRef;
+        _this._viewportRuler = _viewportRuler;
+        /**
+         * Subject that emits when the component has been destroyed.
+         */
+        _this._onDestroy = new __WEBPACK_IMPORTED_MODULE_7_rxjs_Subject__["a" /* Subject */]();
+        _this._disableRipple = false;
         return _this;
     }
-    MdlSelectableTableComponent.prototype.isAllSelected = function () {
-        return this.model.data.every(function (data) { return data.selected; });
-    };
-    MdlSelectableTableComponent.prototype.toogleAll = function () {
-        var selected = !this.isAllSelected();
-        this.model.data.forEach(function (data) { return data.selected = selected; });
-        this.updateSelected();
-    };
-    MdlSelectableTableComponent.prototype.updateSelected = function () {
-        this.selected = this.model.data.filter(function (data) { return data.selected; });
-        this.selectionChange.emit({ value: this.selected });
-    };
-    MdlSelectableTableComponent.prototype.selectionChanged = function (data) {
-        this.updateSelected();
-    };
-    return MdlSelectableTableComponent;
-}(MdlTableComponent));
-
-MdlSelectableTableComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-table-selectable',
-                template: template,
-                styles: styles,
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSelectableTableComponent.ctorParameters = function () { return []; };
-MdlSelectableTableComponent.propDecorators = {
-    'model': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['table-model',] },],
-    'selected': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['table-model-selected',] },],
-    'selectionChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['table-model-selectionChanged',] },],
-};
-//# sourceMappingURL=mdl-table.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tabs/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlTabsModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mdl_tabs_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/mdl-tabs.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_tab_panel_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_tab_panel_title_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel-title.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_mdl_ripple_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/mdl-ripple.directive.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_index__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__mdl_tab_panel_title_component__["a"]; });
-
-
-
-
-
-
-
-
-
-
-var MDL_TABS_DIRECTIVES = [
-    __WEBPACK_IMPORTED_MODULE_0__mdl_tabs_component__["a" /* MdlTabsComponent */],
-    __WEBPACK_IMPORTED_MODULE_1__mdl_tab_panel_component__["a" /* MdlTabPanelComponent */],
-    __WEBPACK_IMPORTED_MODULE_2__mdl_tab_panel_title_component__["a" /* MdlTabPanelTitleComponent */],
-    __WEBPACK_IMPORTED_MODULE_1__mdl_tab_panel_component__["b" /* MdlTabPanelContent */]
-];
-var MdlTabsModule = (function () {
-    function MdlTabsModule() {
-    }
-    MdlTabsModule.forRoot = function () {
-        return {
-            ngModule: MdlTabsModule,
-            providers: []
-        };
-    };
-    return MdlTabsModule;
-}());
-
-MdlTabsModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_3__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_4__common_mdl_ripple_directive__["a" /* MdlRippleModule */], __WEBPACK_IMPORTED_MODULE_5__common_index__["a" /* MdlCommonsModule */], __WEBPACK_IMPORTED_MODULE_6__angular_common__["b" /* CommonModule */]],
-                exports: MDL_TABS_DIRECTIVES,
-                declarations: MDL_TABS_DIRECTIVES.slice(),
-            },] },
-];
-/** @nocollapse */
-MdlTabsModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel-title.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTabPanelTitleComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlTabPanelTitleComponent = (function () {
-    function MdlTabPanelTitleComponent(vcRef) {
-        this.vcRef = vcRef;
-    }
-    return MdlTabPanelTitleComponent;
-}());
-
-MdlTabPanelTitleComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-tab-panel-title',
-                template: "\n   <ng-content></ng-content>\n   ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTabPanelTitleComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-]; };
-//# sourceMappingURL=mdl-tab-panel-title.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlTabPanelContent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTabPanelComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_tab_panel_title_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel-title.component.js");
-
-
-var MdlTabPanelContent = (function () {
-    function MdlTabPanelContent() {
-    }
-    return MdlTabPanelContent;
-}());
-
-MdlTabPanelContent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-tab-panel-content',
-                template: '<ng-content></ng-content>',
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTabPanelContent.ctorParameters = function () { return []; };
-var MdlTabPanelComponent = (function () {
-    function MdlTabPanelComponent() {
-        this.isActive = false;
-    }
-    return MdlTabPanelComponent;
-}());
-
-MdlTabPanelComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-tab-panel',
-                host: {
-                    '[class.mdl-tabs__panel]': 'true',
-                    '[class.is-active]': 'isActive'
-                },
-                template: "\n   <ng-content *ngIf=\"titleComponent\" select=\"mdl-tab-panel-content\"></ng-content>\n   <ng-content *ngIf=\"!titleComponent\"></ng-content>\n   ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTabPanelComponent.ctorParameters = function () { return []; };
-MdlTabPanelComponent.propDecorators = {
-    'titleComponent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */], args: [__WEBPACK_IMPORTED_MODULE_1__mdl_tab_panel_title_component__["a" /* MdlTabPanelTitleComponent */],] },],
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tab-panel-title',] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['disabled',] },],
-};
-//# sourceMappingURL=mdl-tab-panel.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tabs/mdl-tabs.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTabsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_number_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/number.property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mdl_tab_panel_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tabs/mdl-tab-panel.component.js");
-
-
-
-
-var MdlTabsComponent = (function () {
-    function MdlTabsComponent() {
-        this._selectedIndex = 0;
-        this._isRipple = false;
-        this.selectedTabEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-    }
-    Object.defineProperty(MdlTabsComponent.prototype, "selectedIndex", {
-        get: function () { return this._selectedIndex; },
-        set: function (value) { this._selectedIndex = Object(__WEBPACK_IMPORTED_MODULE_2__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTabsComponent.prototype, "isRipple", {
-        get: function () { return this._isRipple; },
-        set: function (value) { this._isRipple = Object(__WEBPACK_IMPORTED_MODULE_1__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlTabsComponent.prototype.ngAfterContentInit = function () {
-        var _this = this;
-        // the initial tabs
-        this.updateSelectedTabIndex();
-        // listen to tab changes - this would not be necessary if this would be fixed:
-        // https://github.com/angular/angular/issues/12818
-        this.tabs.changes.subscribe(function () {
-            _this.updateSelectedTabIndex();
-        });
-    };
-    MdlTabsComponent.prototype.ngOnChanges = function (changes) {
-        if (changes['selectedIndex']) {
-            this.updateSelectedTabIndex();
-        }
-    };
-    MdlTabsComponent.prototype.updateSelectedTabIndex = function () {
-        var _this = this;
-        if (this.tabs) {
-            // https://github.com/angular/angular/issues/6005
-            // this would not be necessare if this would be fixed: https://github.com/angular/angular/issues/12818
-            setTimeout(function () {
-                _this.tabs.forEach(function (tab, idx) {
-                    tab.isActive = _this.selectedIndex === idx;
-                });
-            }, 1);
-        }
-    };
-    MdlTabsComponent.prototype.tabSelected = function (tab) {
-        if (tab.disabled) {
-            return;
-        }
-        var index = this.tabs.toArray().indexOf(tab);
-        if (index != this.selectedIndex) {
-            this.selectedIndex = index;
-            this.updateSelectedTabIndex();
-            this.selectedTabEmitter.emit({ index: this.selectedIndex });
-        }
-    };
-    return MdlTabsComponent;
-}());
-
-MdlTabsComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-tabs',
-                host: {
-                    '[class.mdl-tabs]': 'true',
-                    '[class.is-upgraded]': 'true'
-                },
-                template: "\n   <div class=\"mdl-tabs__tab-bar\">\n      <div *ngFor=\"let tab of tabs.toArray()\">\n        <div\n          *ngIf=\"tab.titleComponent\"\n          class=\"mdl-tabs__tab\"\n          (click)=\"tabSelected(tab)\"\n          [mdl-ripple]=\"isRipple && !tab.disabled\"\n          [ngClass]=\"{'is-active': tab.isActive, 'disabled': tab.disabled}\"\n          [append-view-container-ref]=\"tab.titleComponent.vcRef\"></div>\n        <a *ngIf=\"!tab.titleComponent\" href=\"javascript:void(0)\"\n              (click)=\"tabSelected(tab)\"\n              class=\"mdl-tabs__tab\"\n              [mdl-ripple]=\"isRipple && !tab.disabled\"\n              [ngClass]=\"{'is-active': tab.isActive, 'disabled': tab.disabled}\">{{tab.title}}</a>\n       </div>\n  </div>\n  <ng-content></ng-content>\n  ",
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTabsComponent.ctorParameters = function () { return []; };
-MdlTabsComponent.propDecorators = {
-    'selectedIndex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tab-active-index',] },],
-    'isRipple': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-ripple',] },],
-    'selectedTabEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['mdl-tab-active-changed',] },],
-    'tabs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* ContentChildren */], args: [__WEBPACK_IMPORTED_MODULE_3__mdl_tab_panel_component__["a" /* MdlTabPanelComponent */],] },],
-};
-//# sourceMappingURL=mdl-tabs.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/textfield/mdl-textfield.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export DISABLE_NATIVE_VALIDITY_CHECKING */
-/* unused harmony export MdlTextFieldComponent */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTextFieldModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_boolean_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/boolean-property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_number_property__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/number.property.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__button_mdl_button_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/button/mdl-button.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon_mdl_icon_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/icon/mdl-icon.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_noop__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/noop.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_native_support__ = __webpack_require__("./node_modules/@angular-mdl/core/components/common/native-support.js");
-
-
-
-
-
-
-
-
-
-
-var DISABLE_NATIVE_VALIDITY_CHECKING = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* InjectionToken */]('disableNativeValidityChecking');
-var nextId = 0;
-var IS_FOCUSED = 'is-focused';
-var IS_DISABLED = 'is-disabled';
-var IS_INVALID = 'is-invalid';
-var IS_DIRTY = 'is-dirty';
-var MdlTextFieldComponent = (function () {
-    function MdlTextFieldComponent(renderer, elmRef, nativeCheckGlobalDisabled) {
-        this.renderer = renderer;
-        this.elmRef = elmRef;
-        this.nativeCheckGlobalDisabled = nativeCheckGlobalDisabled;
-        this.blurEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.focusEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.keyupEmitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
-        this.type = 'text';
-        this.id = "mdl-textfield-" + nextId++;
-        this._disabled = false;
-        this._readonly = false;
-        this._required = false;
-        this._autofocus = false;
-        this._isFloatingLabel = false;
-        this._rows = null;
-        this._maxrows = -1;
-        this.tabindex = null;
-        this.maxlength = null;
-        // @experimental
-        this._disableNativeValidityChecking = false;
-        this.onTouchedCallback = __WEBPACK_IMPORTED_MODULE_7__common_noop__["a" /* noop */];
-        this.onChangeCallback = __WEBPACK_IMPORTED_MODULE_7__common_noop__["a" /* noop */];
-        this.el = elmRef.nativeElement;
-    }
-    Object.defineProperty(MdlTextFieldComponent.prototype, "value", {
-        get: function () { return this.value_; },
-        set: function (v) {
-            this.value_ = this.type === 'number' ? (v === '' ? null : parseFloat(v)) : v;
-            this.onChangeCallback(this.value);
+    Object.defineProperty(MatTabNav.prototype, "backgroundColor", {
+        get: /**
+         * Background color of the tab nav.
+         * @return {?}
+         */
+        function () { return this._backgroundColor; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            var /** @type {?} */ nativeElement = this._elementRef.nativeElement;
+            nativeElement.classList.remove("mat-background-" + this.backgroundColor);
+            if (value) {
+                nativeElement.classList.add("mat-background-" + value);
+            }
+            this._backgroundColor = value;
         },
         enumerable: true,
         configurable: true
     });
-    ;
-    Object.defineProperty(MdlTextFieldComponent.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (value) { this._disabled = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
+    Object.defineProperty(MatTabNav.prototype, "disableRipple", {
+        get: /**
+         * Whether ripples should be disabled for all links or not.
+         * @return {?}
+         */
+        function () { return this._disableRipple; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._disableRipple = Object(__WEBPACK_IMPORTED_MODULE_10__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value);
+            this._setLinkDisableRipple();
+        },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "readonly", {
-        get: function () { return this._readonly; },
-        set: function (value) { this._readonly = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "required", {
-        get: function () { return this._required; },
-        set: function (value) { this._required = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "autofocus", {
-        get: function () { return this._autofocus; },
-        set: function (value) { this._autofocus = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "isFloatingLabel", {
-        get: function () { return this._isFloatingLabel; },
-        set: function (value) { this._isFloatingLabel = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "rows", {
-        get: function () { return this._rows; },
-        set: function (value) { this._rows = Object(__WEBPACK_IMPORTED_MODULE_3__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "maxrows", {
-        get: function () { return this._maxrows; },
-        set: function (value) { this._maxrows = Object(__WEBPACK_IMPORTED_MODULE_3__common_number_property__["a" /* toNumber */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MdlTextFieldComponent.prototype, "disableNativeValidityChecking", {
-        get: function () { return this._disableNativeValidityChecking; },
-        set: function (value) { this._disableNativeValidityChecking = Object(__WEBPACK_IMPORTED_MODULE_2__common_boolean_property__["a" /* toBoolean */])(value); },
-        enumerable: true,
-        configurable: true
-    });
-    MdlTextFieldComponent.prototype.writeValue = function (value) {
-        this.value_ = value;
-        this.checkDirty();
-    };
-    MdlTextFieldComponent.prototype.registerOnChange = function (fn) {
-        this.onChangeCallback = fn;
-    };
-    MdlTextFieldComponent.prototype.registerOnTouched = function (fn) {
-        this.onTouchedCallback = fn;
-    };
-    MdlTextFieldComponent.prototype.setDisabledState = function (isDisabled) {
-        this.disabled = isDisabled;
-    };
-    MdlTextFieldComponent.prototype.ngOnChanges = function (changes) {
-        this.checkDisabled();
-    };
-    MdlTextFieldComponent.prototype.ngDoCheck = function () {
-        this.checkValidity();
-        this.checkDirty();
-    };
-    MdlTextFieldComponent.prototype.setFocus = function () {
-        if (!this.inputEl) {
-            return;
-        }
-        Object(__WEBPACK_IMPORTED_MODULE_8__common_native_support__["a" /* callNative */])(this.inputEl.nativeElement, 'focus');
-    };
-    MdlTextFieldComponent.prototype.onFocus = function (event) {
-        this.renderer.addClass(this.el, IS_FOCUSED);
-        this.focusEmitter.emit(event);
-    };
-    MdlTextFieldComponent.prototype.onBlur = function (event) {
-        this.renderer.removeClass(this.el, IS_FOCUSED);
-        this.onTouchedCallback();
-        this.blurEmitter.emit(event);
-    };
-    MdlTextFieldComponent.prototype.onKeyup = function (event) {
-        this.keyupEmitter.emit(event);
-    };
-    MdlTextFieldComponent.prototype.checkDisabled = function () {
-        if (this.disabled) {
-            this.renderer.addClass(this.el, IS_DISABLED);
-        }
-        else {
-            this.renderer.removeClass(this.el, IS_DISABLED);
+    /** Notifies the component that the active link has been changed. */
+    /**
+     * Notifies the component that the active link has been changed.
+     * @param {?} element
+     * @return {?}
+     */
+    MatTabNav.prototype.updateActiveLink = /**
+     * Notifies the component that the active link has been changed.
+     * @param {?} element
+     * @return {?}
+     */
+    function (element) {
+        this._activeLinkChanged = this._activeLinkElement != element;
+        this._activeLinkElement = element;
+        if (this._activeLinkChanged) {
+            this._changeDetectorRef.markForCheck();
         }
     };
-    MdlTextFieldComponent.prototype.checkValidity = function () {
-        // check the global setting - if globally disabled do no check
-        if (this.nativeCheckGlobalDisabled === true) {
-            return;
-        }
-        // check local setting - if locally disabled do no check
-        if (this.disableNativeValidityChecking) {
-            return;
-        }
-        if (this.inputEl && this.inputEl.nativeElement.validity) {
-            if (!this.inputEl.nativeElement.validity.valid) {
-                this.renderer.addClass(this.el, IS_INVALID);
-            }
-            else {
-                this.renderer.removeClass(this.el, IS_INVALID);
-            }
-        }
-    };
-    MdlTextFieldComponent.prototype.checkDirty = function () {
-        var dirty = this.inputEl && this.inputEl.nativeElement.value && this.inputEl.nativeElement.value.length > 0;
-        if (dirty) {
-            this.renderer.addClass(this.el, IS_DIRTY);
-        }
-        else {
-            this.renderer.removeClass(this.el, IS_DIRTY);
-        }
-    };
-    MdlTextFieldComponent.prototype.keydownTextarea = function ($event) {
-        var currentRowCount = this.inputEl.nativeElement.value.split('\n').length;
-        if ($event.keyCode === 13) {
-            if (currentRowCount >= this.maxrows && this.maxrows !== -1) {
-                $event.preventDefault();
-            }
-        }
-    };
-    // hm only for test purposes to simulate a change to the input field that will change the
-    // model value.
-    MdlTextFieldComponent.prototype.triggerChange = function (event) {
-        this.value = event.target.value;
-        this.onTouchedCallback();
-    };
-    return MdlTextFieldComponent;
-}());
-
-MdlTextFieldComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-textfield',
-                host: {
-                    '[class.mdl-textfield]': 'true',
-                    '[class.is-upgraded]': 'true',
-                    '[class.mdl-textfield--expandable]': 'icon',
-                    '[class.mdl-textfield--floating-label]': 'isFloatingLabel',
-                    '[class.has-placeholder]': 'placeholder'
-                },
-                template: "\n   <div *ngIf=\"!icon\">\n     <textarea\n        *ngIf=\"rows\"\n        #input\n        [rows]=\"rows\"\n        class=\"mdl-textfield__input\"\n        type=\"text\"\n        [attr.name]=\"name\"\n        [id]=\"id\"\n        [placeholder]=\"placeholder ? placeholder : ''\"\n        (focus)=\"onFocus($event)\"\n        (blur)=\"onBlur($event)\"\n        (keydown)=\"keydownTextarea($event)\"\n        (keyup)=\"onKeyup($event)\"\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [autofocus]=\"autofocus\"\n        [readonly]=\"readonly\"\n        ></textarea>\n     <input\n        *ngIf=\"!rows\"\n        #input\n        class=\"mdl-textfield__input\"\n        [type]=\"type\"\n        [attr.name]=\"name\"\n        [id]=\"id\"\n        [pattern]=\"pattern ? pattern : '.*'\"\n        [attr.min]=\"min\"\n        [attr.max]=\"max\"\n        [attr.step]=\"step\"\n        [placeholder]=\"placeholder ? placeholder : ''\"\n        [autocomplete]=\"autocomplete ? autocomplete : ''\"\n        (focus)=\"onFocus($event)\"\n        (blur)=\"onBlur($event)\"\n        (keyup)=\"onKeyup($event)\"\n        [(ngModel)]=\"value\"\n        [disabled]=\"disabled\"\n        [required]=\"required\"\n        [autofocus]=\"autofocus\"\n        [readonly]=\"readonly\"\n        [attr.tabindex]=\"tabindex\"\n        [maxlength]=\"maxlength\"\n        >\n     <label class=\"mdl-textfield__label\" [attr.for]=\"id\">{{label}}</label>\n     <span class=\"mdl-textfield__error\">{{errorMessage}}</span>\n   </div>\n   <div *ngIf=\"icon\">\n      <button mdl-button mdl-button-type=\"icon\" (click)=\"setFocus()\">\n         <mdl-icon>{{icon}}</mdl-icon>\n      </button>\n      <div class=\"mdl-textfield__expandable-holder\">\n       <input\n          #input\n          class=\"mdl-textfield__input\"\n          [type]=\"type\"\n          [attr.name]=\"name\"\n          [id]=\"id\"\n          [pattern]=\"pattern ? pattern : '.*'\"\n          [attr.min]=\"min\"\n          [attr.max]=\"max\"\n          [attr.step]=\"step\"\n          [placeholder]=\"placeholder ? placeholder : ''\"\n          [autocomplete]=\"autocomplete ? autocomplete : ''\"\n          (focus)=\"onFocus($event)\"\n          (blur)=\"onBlur($event)\"\n          (keyup)=\"onKeyup($event)\"\n          [(ngModel)]=\"value\"\n          [disabled]=\"disabled\"\n          [required]=\"required\"\n          [autofocus]=\"autofocus\"\n          [readonly]=\"readonly\"\n          [attr.tabindex]=\"tabindex\"\n          [maxlength]=\"maxlength\"\n         >\n     <label class=\"mdl-textfield__label\" [attr.for]=\"id\">{{label}}</label>\n     <span class=\"mdl-textfield__error\">{{errorMessage}}</span>\n      </div>\n   </div>\n   ",
-                providers: [{
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["e" /* NG_VALUE_ACCESSOR */],
-                        useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* forwardRef */])(function () { return MdlTextFieldComponent; }),
-                        multi: true
-                    }],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTextFieldComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: Boolean, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Inject */], args: [DISABLE_NATIVE_VALIDITY_CHECKING,] },] },
-]; };
-MdlTextFieldComponent.propDecorators = {
-    'blurEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['blur',] },],
-    'focusEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['focus',] },],
-    'keyupEmitter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Output */], args: ['keyup',] },],
-    'inputEl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */], args: ['input',] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'label': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'pattern': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'min': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'step': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'errorMessage': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['error-msg',] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'readonly': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'required': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'autofocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'isFloatingLabel': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['floating-label',] },],
-    'placeholder': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'autocomplete': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'rows': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'maxrows': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'icon': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'tabindex': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'maxlength': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'disableNativeValidityChecking': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MdlTextFieldModule = (function () {
-    function MdlTextFieldModule() {
-    }
-    MdlTextFieldModule.forRoot = function () {
-        return {
-            ngModule: MdlTextFieldModule,
-            providers: []
-        };
-    };
-    return MdlTextFieldModule;
-}());
-
-MdlTextFieldModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [__WEBPACK_IMPORTED_MODULE_5__icon_mdl_icon_component__["a" /* MdlIconModule */], __WEBPACK_IMPORTED_MODULE_4__button_mdl_button_component__["b" /* MdlButtonModule */], __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* FormsModule */], __WEBPACK_IMPORTED_MODULE_6__angular_common__["b" /* CommonModule */]],
-                exports: [MdlTextFieldComponent],
-                declarations: [MdlTextFieldComponent],
-            },] },
-];
-/** @nocollapse */
-MdlTextFieldModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-textfield.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tooltip/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTooltipModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip.component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mdl_tooltip_directive__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip.directive.js");
-/* unused harmony namespace reexport */
-/* unused harmony namespace reexport */
-
-
-
-var MDL_TOOLTIP_DIRECTIVES = [
-    __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["b" /* MdlTooltipComponent */],
-    __WEBPACK_IMPORTED_MODULE_2__mdl_tooltip_directive__["b" /* MdlTooltipLargeDirective */],
-    __WEBPACK_IMPORTED_MODULE_2__mdl_tooltip_directive__["a" /* MdlTooltipDirective */]
-];
-
-
-var MdlTooltipModule = (function () {
-    function MdlTooltipModule() {
-    }
-    MdlTooltipModule.forRoot = function () {
-        return {
-            ngModule: MdlTooltipModule,
-            providers: []
-        };
-    };
-    return MdlTooltipModule;
-}());
-
-MdlTooltipModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */], args: [{
-                imports: [],
-                exports: MDL_TOOLTIP_DIRECTIVES,
-                declarations: MDL_TOOLTIP_DIRECTIVES.concat([__WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["a" /* MdlSimpleTooltipComponent */]]),
-                entryComponents: [__WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["a" /* MdlSimpleTooltipComponent */]]
-            },] },
-];
-/** @nocollapse */
-MdlTooltipModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip-position.service.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTooltipPositionService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-
-var MdlTooltipPositionService = (function () {
-    function MdlTooltipPositionService() {
-    }
-    MdlTooltipPositionService.prototype.calcStyle = function (offsetWidth, offsetHeight, props, position) {
-        var result = {};
-        var left = props.left + (props.width / 2);
-        var top = props.top + (props.height / 2);
-        var marginLeft = -1 * (offsetWidth / 2);
-        var marginTop = -1 * (offsetHeight / 2);
-        if (position == 'left' || position == 'right') {
-            left = (props.width / 2);
-            if (top + marginTop < 0) {
-                result.top = '0';
-                result.marginTop = '0';
-            }
-            else {
-                result.top = top + 'px';
-                result.marginTop = marginTop + 'px';
-            }
-        }
-        else {
-            if (left + marginLeft < 0) {
-                result.left = '0';
-                result.marginLeft = '0';
-            }
-            else {
-                result.left = left + 'px';
-                result.marginLeft = marginLeft + 'px';
-            }
-        }
-        if (position == 'top') {
-            result.top = props.top - offsetHeight - 10 + 'px';
-        }
-        else if (position == 'right') {
-            result.left = props.left + props.width + 10 + 'px';
-        }
-        else if (position == 'left') {
-            result.left = props.left - offsetWidth - 10 + 'px';
-        }
-        else {
-            result.top = props.top + props.height + 10 + 'px';
-        }
-        return result;
-    };
-    return MdlTooltipPositionService;
-}());
-
-MdlTooltipPositionService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-MdlTooltipPositionService.ctorParameters = function () { return []; };
-//# sourceMappingURL=mdl-tooltip-position.service.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip.component.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlSimpleTooltipComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlTooltipComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_position_service__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip-position.service.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var IS_ACTIVE = 'is-active';
-var host = {
-    '[class.mdl-tooltip]': 'true',
-    '[class.mdl-tooltip--large]': 'large',
-    '[class.mdl-tooltip--left]': 'position=="left"',
-    '[class.mdl-tooltip--right]': 'position=="right"',
-    '[class.mdl-tooltip--top]': 'position=="top"',
-    '[class.mdl-tooltip--bottom]': 'position=="bottom"'
-};
-var MdlSimpleTooltipComponent = (function () {
-    function MdlSimpleTooltipComponent(elRef, renderer, mdlTooltipPositionService) {
-        this.elRef = elRef;
-        this.renderer = renderer;
-        this.mdlTooltipPositionService = mdlTooltipPositionService;
-        this.large = false;
-        this.active = false;
-        this.element = elRef.nativeElement;
-    }
-    MdlSimpleTooltipComponent.prototype.mouseLeave = function () {
-        if (this.delayTimeout) {
-            clearTimeout(this.delayTimeout);
-        }
-        this.setActive(false);
-    };
-    MdlSimpleTooltipComponent.prototype.mouseEnter = function (event) {
+    /**
+     * @return {?}
+     */
+    MatTabNav.prototype.ngAfterContentInit = /**
+     * @return {?}
+     */
+    function () {
         var _this = this;
-        if (this.delay) {
-            this.delayTimeout = setTimeout(function () {
-                _this.show(event.target);
-            }, this.delay);
-        }
-        else {
-            this.show(event.target);
+        this._ngZone.runOutsideAngular(function () {
+            var /** @type {?} */ dirChange = _this._dir ? _this._dir.change : Object(__WEBPACK_IMPORTED_MODULE_14_rxjs_observable_of__["a" /* of */])(null);
+            return Object(__WEBPACK_IMPORTED_MODULE_12_rxjs_observable_merge__["a" /* merge */])(dirChange, _this._viewportRuler.change(10)).pipe(Object(__WEBPACK_IMPORTED_MODULE_16_rxjs_operators_takeUntil__["a" /* takeUntil */])(_this._onDestroy))
+                .subscribe(function () { return _this._alignInkBar(); });
+        });
+        this._setLinkDisableRipple();
+    };
+    /** Checks if the active link has been changed and, if so, will update the ink bar. */
+    /**
+     * Checks if the active link has been changed and, if so, will update the ink bar.
+     * @return {?}
+     */
+    MatTabNav.prototype.ngAfterContentChecked = /**
+     * Checks if the active link has been changed and, if so, will update the ink bar.
+     * @return {?}
+     */
+    function () {
+        if (this._activeLinkChanged) {
+            this._alignInkBar();
+            this._activeLinkChanged = false;
         }
     };
-    MdlSimpleTooltipComponent.prototype.show = function (element) {
-        var props = element.getBoundingClientRect();
-        var offsetWidth = this.element.offsetWidth;
-        var offsetHeight = this.element.offsetHeight;
-        var style = this.mdlTooltipPositionService.calcStyle(offsetWidth, offsetHeight, props, this.position);
-        for (var key in style) {
-            this.renderer.setStyle(this.elRef.nativeElement, key, style[key]);
-        }
-        this.setActive(true);
+    /**
+     * @return {?}
+     */
+    MatTabNav.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._onDestroy.next();
+        this._onDestroy.complete();
     };
-    MdlSimpleTooltipComponent.prototype.setActive = function (active) {
-        this.active = active;
-        if (active) {
-            this.renderer.addClass(this.elRef.nativeElement, IS_ACTIVE);
-        }
-        else {
-            this.renderer.removeClass(this.elRef.nativeElement, IS_ACTIVE);
+    /** Aligns the ink bar to the active link. */
+    /**
+     * Aligns the ink bar to the active link.
+     * @return {?}
+     */
+    MatTabNav.prototype._alignInkBar = /**
+     * Aligns the ink bar to the active link.
+     * @return {?}
+     */
+    function () {
+        if (this._activeLinkElement) {
+            this._inkBar.alignToElement(this._activeLinkElement.nativeElement);
         }
     };
-    MdlSimpleTooltipComponent.prototype.isActive = function () {
-        return this.active;
+    /**
+     * Sets the `disableRipple` property on each link of the navigation bar.
+     * @return {?}
+     */
+    MatTabNav.prototype._setLinkDisableRipple = /**
+     * Sets the `disableRipple` property on each link of the navigation bar.
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        if (this._tabLinks) {
+            this._tabLinks.forEach(function (link) { return link.disableRipple = _this.disableRipple; });
+        }
     };
-    return MdlSimpleTooltipComponent;
+    MatTabNav.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */], args: [{selector: '[mat-tab-nav-bar]',
+                    exportAs: 'matTabNavBar, matTabNav',
+                    inputs: ['color'],
+                    template: "<div class=\"mat-tab-links\" (cdkObserveContent)=\"_alignInkBar()\"><ng-content></ng-content><mat-ink-bar></mat-ink-bar></div>",
+                    styles: [".mat-tab-nav-bar{overflow:hidden;position:relative;flex-shrink:0}.mat-tab-links{position:relative}.mat-tab-link{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;vertical-align:top;text-decoration:none;position:relative;overflow:hidden}.mat-tab-link:focus{outline:0}.mat-tab-link:focus:not(.mat-tab-disabled){opacity:1}.mat-tab-link.mat-tab-disabled{cursor:default}.mat-tab-link.mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}@media (max-width:599px){.mat-tab-link{min-width:72px}}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:.5s cubic-bezier(.35,0,.25,1)}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}@media screen and (-ms-high-contrast:active){.mat-ink-bar{outline:solid 2px;height:0}}"],
+                    host: { 'class': 'mat-tab-nav-bar' },
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_12" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["j" /* ChangeDetectionStrategy */].OnPush,
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabNav.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_bidi__["b" /* Directionality */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["P" /* Optional */] },] },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["O" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["k" /* ChangeDetectorRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_2__angular_cdk_scrolling__["c" /* ViewportRuler */], },
+    ]; };
+    MatTabNav.propDecorators = {
+        "_inkBar": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_10" /* ViewChild */], args: [MatInkBar,] },],
+        "_tabLinks": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["s" /* ContentChildren */], args: [Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["_16" /* forwardRef */])(function () { return MatTabLink; }), { descendants: true },] },],
+        "backgroundColor": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+        "disableRipple": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
+    };
+    return MatTabNav;
+}(_MatTabNavMixinBase));
+var MatTabLinkBase = /** @class */ (function () {
+    function MatTabLinkBase() {
+    }
+    return MatTabLinkBase;
 }());
-
-MdlSimpleTooltipComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-simple-tooltip',
-                host: host,
-                template: '<div>{{tooltipText}}</div>',
-                providers: [__WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_position_service__["a" /* MdlTooltipPositionService */]],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlSimpleTooltipComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_position_service__["a" /* MdlTooltipPositionService */], },
-]; };
-MdlSimpleTooltipComponent.propDecorators = {
-    'delay': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-};
-var MdlTooltipComponent = (function (_super) {
-    __extends(MdlTooltipComponent, _super);
-    function MdlTooltipComponent(elRef, renderer, mdlTooltipPositionService) {
-        return _super.call(this, elRef, renderer, mdlTooltipPositionService) || this;
-    }
-    return MdlTooltipComponent;
-}(MdlSimpleTooltipComponent));
-
-MdlTooltipComponent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
-                selector: 'mdl-tooltip',
-                template: '<div><ng-content></ng-content></div>',
-                exportAs: 'mdlTooltip',
-                host: host,
-                providers: [__WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_position_service__["a" /* MdlTooltipPositionService */]],
-                encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
-            },] },
-];
-/** @nocollapse */
-MdlTooltipComponent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_position_service__["a" /* MdlTooltipPositionService */], },
-]; };
-//# sourceMappingURL=mdl-tooltip.component.js.map
-
-/***/ }),
-
-/***/ "./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip.directive.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export AbstractMdlTooltipDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MdlTooltipDirective; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return MdlTooltipLargeDirective; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__ = __webpack_require__("./node_modules/@angular-mdl/core/components/tooltip/mdl-tooltip.component.js");
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var AbstractMdlTooltipDirective = (function () {
-    function AbstractMdlTooltipDirective(vcRef, large, componentFactoryResolver, renderer) {
-        this.vcRef = vcRef;
-        this.large = large;
-        this.componentFactoryResolver = componentFactoryResolver;
-        this.renderer = renderer;
-    }
-    AbstractMdlTooltipDirective.prototype.ngOnInit = function () {
-        // if the tooltip is not an instance of MdlTooltipComponent
-        // we create a simpleTooltipComponent on the fly.
-        if (!(this.tooltip instanceof __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["b" /* MdlTooltipComponent */])) {
-            var cFactory = this.componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["a" /* MdlSimpleTooltipComponent */]);
-            var cRef = this.vcRef.createComponent(cFactory);
-            this.tooltipComponent = cRef.instance;
-            this.tooltipComponent.tooltipText = this.tooltip;
-            this.configureTooltipComponent();
+var _MatTabLinkMixinBase = Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["h" /* mixinTabIndex */])(Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["f" /* mixinDisableRipple */])(Object(__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["g" /* mixinDisabled */])(MatTabLinkBase)));
+/**
+ * Link inside of a `mat-tab-nav-bar`.
+ */
+var MatTabLink = /** @class */ (function (_super) {
+    Object(__WEBPACK_IMPORTED_MODULE_6_tslib__["b" /* __extends */])(MatTabLink, _super);
+    function MatTabLink(_tabNavBar, _elementRef, ngZone, platform, globalOptions, tabIndex) {
+        var _this = _super.call(this) || this;
+        _this._tabNavBar = _tabNavBar;
+        _this._elementRef = _elementRef;
+        /**
+         * Whether the tab link is active or not.
+         */
+        _this._isActive = false;
+        /**
+         * Ripple configuration for ripples that are launched on pointer down.
+         * \@docs-private
+         */
+        _this.rippleConfig = {};
+        _this._tabLinkRipple = new __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["d" /* RippleRenderer */](_this, ngZone, _elementRef, platform);
+        _this._tabLinkRipple.setupTriggerEvents(_elementRef.nativeElement);
+        _this.tabIndex = parseInt(tabIndex) || 0;
+        if (globalOptions) {
+            _this.rippleConfig = {
+                terminateOnPointerUp: globalOptions.terminateOnPointerUp,
+                speedFactor: globalOptions.baseSpeedFactor,
+                animation: globalOptions.animation,
+            };
         }
-        else {
-            this.tooltipComponent = this.tooltip;
-            this.configureTooltipComponent();
-        }
-    };
-    AbstractMdlTooltipDirective.prototype.ngOnChanges = function (changes) {
-        if (changes['tooltip'] && !changes['tooltip'].isFirstChange()) {
-            if (!(this.tooltip instanceof __WEBPACK_IMPORTED_MODULE_1__mdl_tooltip_component__["b" /* MdlTooltipComponent */])) {
-                this.tooltipComponent.tooltipText = this.tooltip;
+        return _this;
+    }
+    Object.defineProperty(MatTabLink.prototype, "active", {
+        get: /**
+         * Whether the link is active.
+         * @return {?}
+         */
+        function () { return this._isActive; },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._isActive = value;
+            if (value) {
+                this._tabNavBar.updateActiveLink(this._elementRef);
             }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTabLink.prototype, "rippleDisabled", {
+        /**
+         * Whether ripples are disabled on interaction
+         * @docs-private
+         */
+        get: /**
+         * Whether ripples are disabled on interaction
+         * \@docs-private
+         * @return {?}
+         */
+        function () {
+            return this.disabled || this.disableRipple;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    MatTabLink.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this._tabLinkRipple._removeTriggerEvents();
+    };
+    /**
+     * Handles the click event, preventing default navigation if the tab link is disabled.
+     */
+    /**
+     * Handles the click event, preventing default navigation if the tab link is disabled.
+     * @param {?} event
+     * @return {?}
+     */
+    MatTabLink.prototype._handleClick = /**
+     * Handles the click event, preventing default navigation if the tab link is disabled.
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        if (this.disabled) {
+            event.preventDefault();
         }
     };
-    AbstractMdlTooltipDirective.prototype.configureTooltipComponent = function () {
-        this.tooltipComponent.large = this.large;
-        this.tooltipComponent.position = this.position;
+    MatTabLink.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["t" /* Directive */], args: [{
+                    selector: '[mat-tab-link], [matTabLink]',
+                    exportAs: 'matTabLink',
+                    inputs: ['disabled', 'disableRipple', 'tabIndex'],
+                    host: {
+                        'class': 'mat-tab-link',
+                        '[attr.aria-disabled]': 'disabled.toString()',
+                        '[attr.tabIndex]': 'tabIndex',
+                        '[class.mat-tab-disabled]': 'disabled',
+                        '[class.mat-tab-label-active]': 'active',
+                        '(click)': '_handleClick($event)'
+                    }
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabLink.ctorParameters = function () { return [
+        { type: MatTabNav, },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["O" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_15__angular_cdk_platform__["a" /* Platform */], },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["P" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["A" /* Inject */], args: [__WEBPACK_IMPORTED_MODULE_5__angular_material_core__["a" /* MAT_RIPPLE_GLOBAL_OPTIONS */],] },] },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["h" /* Attribute */], args: ['tabindex',] },] },
+    ]; };
+    MatTabLink.propDecorators = {
+        "active": [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["E" /* Input */] },],
     };
-    AbstractMdlTooltipDirective.prototype.onMouseEnter = function (event) {
-        this.tooltipComponent.mouseEnter(event);
-    };
-    AbstractMdlTooltipDirective.prototype.onMouseLeave = function () {
-        this.tooltipComponent.mouseLeave();
-    };
-    return AbstractMdlTooltipDirective;
+    return MatTabLink;
+}(_MatTabLinkMixinBase));
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+var MatTabsModule = /** @class */ (function () {
+    function MatTabsModule() {
+    }
+    MatTabsModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["J" /* NgModule */], args: [{
+                    imports: [
+                        __WEBPACK_IMPORTED_MODULE_3__angular_common__["b" /* CommonModule */],
+                        __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["b" /* MatCommonModule */],
+                        __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["c" /* PortalModule */],
+                        __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["c" /* MatRippleModule */],
+                        __WEBPACK_IMPORTED_MODULE_0__angular_cdk_observers__["a" /* ObserversModule */],
+                        __WEBPACK_IMPORTED_MODULE_2__angular_cdk_scrolling__["a" /* ScrollDispatchModule */],
+                    ],
+                    // Don't export all components because some are only to be used internally.
+                    exports: [
+                        __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["b" /* MatCommonModule */],
+                        MatTabGroup,
+                        MatTabLabel,
+                        MatTab,
+                        MatTabNav,
+                        MatTabLink,
+                    ],
+                    declarations: [
+                        MatTabGroup,
+                        MatTabLabel,
+                        MatTab,
+                        MatInkBar,
+                        MatTabLabelWrapper,
+                        MatTabNav,
+                        MatTabLink,
+                        MatTabBody,
+                        MatTabBodyPortal,
+                        MatTabHeader
+                    ],
+                    providers: [__WEBPACK_IMPORTED_MODULE_2__angular_cdk_scrolling__["b" /* VIEWPORT_RULER_PROVIDER */]],
+                },] },
+    ];
+    /** @nocollapse */
+    MatTabsModule.ctorParameters = function () { return []; };
+    return MatTabsModule;
 }());
 
-AbstractMdlTooltipDirective.propDecorators = {
-    'onMouseLeave': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['window:touchstart',] },],
-};
-var host = {
-    '(mouseenter)': 'onMouseEnter($event)',
-    '(touchend)': 'onMouseEnter($event)',
-    '(mouseleave)': 'onMouseLeave()'
-};
-var MdlTooltipDirective = (function (_super) {
-    __extends(MdlTooltipDirective, _super);
-    function MdlTooltipDirective(vcRef, componentFactoryResolver, renderer) {
-        return _super.call(this, vcRef, false, componentFactoryResolver, renderer) || this;
-    }
-    MdlTooltipDirective.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    MdlTooltipDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    ;
-    return MdlTooltipDirective;
-}(AbstractMdlTooltipDirective));
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 
-MdlTooltipDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-tooltip]',
-                host: host
-            },] },
-];
-/** @nocollapse */
-MdlTooltipDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlTooltipDirective.propDecorators = {
-    'tooltip': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tooltip',] },],
-    'position': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tooltip-position',] },],
-};
-var MdlTooltipLargeDirective = (function (_super) {
-    __extends(MdlTooltipLargeDirective, _super);
-    function MdlTooltipLargeDirective(vcRef, componentFactoryResolver, renderer) {
-        return _super.call(this, vcRef, true, componentFactoryResolver, renderer) || this;
-    }
-    MdlTooltipLargeDirective.prototype.ngOnInit = function () { _super.prototype.ngOnInit.call(this); };
-    MdlTooltipLargeDirective.prototype.ngOnChanges = function (changes) { _super.prototype.ngOnChanges.call(this, changes); };
-    ;
-    return MdlTooltipLargeDirective;
-}(AbstractMdlTooltipDirective));
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 
-MdlTooltipLargeDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[mdl-tooltip-large]',
-                host: host
-            },] },
-];
-/** @nocollapse */
-MdlTooltipLargeDirective.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewContainerRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Y" /* Renderer2 */], },
-]; };
-MdlTooltipLargeDirective.propDecorators = {
-    'tooltip': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tooltip-large',] },],
-    'position': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */], args: ['mdl-tooltip-position',] },],
-};
-//# sourceMappingURL=mdl-tooltip.directive.js.map
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=tabs.es5.js.map
+
 
 /***/ }),
 
@@ -9448,6 +10343,237 @@ var AsyncSubject = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return AsyncSubject;
 }(__WEBPACK_IMPORTED_MODULE_0__Subject__["a" /* Subject */]));
 //# sourceMappingURL=AsyncSubject.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/rxjs/_esm5/observable/FromEventObservable.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FromEventObservable; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_tryCatch__ = __webpack_require__("./node_modules/rxjs/_esm5/util/tryCatch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_isFunction__ = __webpack_require__("./node_modules/rxjs/_esm5/util/isFunction.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_errorObject__ = __webpack_require__("./node_modules/rxjs/_esm5/util/errorObject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Subscription__ = __webpack_require__("./node_modules/rxjs/_esm5/Subscription.js");
+/** PURE_IMPORTS_START .._Observable,.._util_tryCatch,.._util_isFunction,.._util_errorObject,.._Subscription PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+
+var toString = Object.prototype.toString;
+function isNodeStyleEventEmitter(sourceObj) {
+    return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
+}
+function isJQueryStyleEventEmitter(sourceObj) {
+    return !!sourceObj && typeof sourceObj.on === 'function' && typeof sourceObj.off === 'function';
+}
+function isNodeList(sourceObj) {
+    return !!sourceObj && toString.call(sourceObj) === '[object NodeList]';
+}
+function isHTMLCollection(sourceObj) {
+    return !!sourceObj && toString.call(sourceObj) === '[object HTMLCollection]';
+}
+function isEventTarget(sourceObj) {
+    return !!sourceObj && typeof sourceObj.addEventListener === 'function' && typeof sourceObj.removeEventListener === 'function';
+}
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var FromEventObservable = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(FromEventObservable, _super);
+    function FromEventObservable(sourceObj, eventName, selector, options) {
+        _super.call(this);
+        this.sourceObj = sourceObj;
+        this.eventName = eventName;
+        this.selector = selector;
+        this.options = options;
+    }
+    /* tslint:enable:max-line-length */
+    /**
+     * Creates an Observable that emits events of a specific type coming from the
+     * given event target.
+     *
+     * <span class="informal">Creates an Observable from DOM events, or Node.js
+     * EventEmitter events or others.</span>
+     *
+     * <img src="./img/fromEvent.png" width="100%">
+     *
+     * `fromEvent` accepts as a first argument event target, which is an object with methods
+     * for registering event handler functions. As a second argument it takes string that indicates
+     * type of event we want to listen for. `fromEvent` supports selected types of event targets,
+     * which are described in detail below. If your event target does not match any of the ones listed,
+     * you should use {@link fromEventPattern}, which can be used on arbitrary APIs.
+     * When it comes to APIs supported by `fromEvent`, their methods for adding and removing event
+     * handler functions have different names, but they all accept a string describing event type
+     * and function itself, which will be called whenever said event happens.
+     *
+     * Every time resulting Observable is subscribed, event handler function will be registered
+     * to event target on given event type. When that event fires, value
+     * passed as a first argument to registered function will be emitted by output Observable.
+     * When Observable is unsubscribed, function will be unregistered from event target.
+     *
+     * Note that if event target calls registered function with more than one argument, second
+     * and following arguments will not appear in resulting stream. In order to get access to them,
+     * you can pass to `fromEvent` optional project function, which will be called with all arguments
+     * passed to event handler. Output Observable will then emit value returned by project function,
+     * instead of the usual value.
+     *
+     * Remember that event targets listed below are checked via duck typing. It means that
+     * no matter what kind of object you have and no matter what environment you work in,
+     * you can safely use `fromEvent` on that object if it exposes described methods (provided
+     * of course they behave as was described above). So for example if Node.js library exposes
+     * event target which has the same method names as DOM EventTarget, `fromEvent` is still
+     * a good choice.
+     *
+     * If the API you use is more callback then event handler oriented (subscribed
+     * callback function fires only once and thus there is no need to manually
+     * unregister it), you should use {@link bindCallback} or {@link bindNodeCallback}
+     * instead.
+     *
+     * `fromEvent` supports following types of event targets:
+     *
+     * **DOM EventTarget**
+     *
+     * This is an object with `addEventListener` and `removeEventListener` methods.
+     *
+     * In the browser, `addEventListener` accepts - apart from event type string and event
+     * handler function arguments - optional third parameter, which is either an object or boolean,
+     * both used for additional configuration how and when passed function will be called. When
+     * `fromEvent` is used with event target of that type, you can provide this values
+     * as third parameter as well.
+     *
+     * **Node.js EventEmitter**
+     *
+     * An object with `addListener` and `removeListener` methods.
+     *
+     * **JQuery-style event target**
+     *
+     * An object with `on` and `off` methods
+     *
+     * **DOM NodeList**
+     *
+     * List of DOM Nodes, returned for example by `document.querySelectorAll` or `Node.childNodes`.
+     *
+     * Although this collection is not event target in itself, `fromEvent` will iterate over all Nodes
+     * it contains and install event handler function in every of them. When returned Observable
+     * is unsubscribed, function will be removed from all Nodes.
+     *
+     * **DOM HtmlCollection**
+     *
+     * Just as in case of NodeList it is a collection of DOM nodes. Here as well event handler function is
+     * installed and removed in each of elements.
+     *
+     *
+     * @example <caption>Emits clicks happening on the DOM document</caption>
+     * var clicks = Rx.Observable.fromEvent(document, 'click');
+     * clicks.subscribe(x => console.log(x));
+     *
+     * // Results in:
+     * // MouseEvent object logged to console every time a click
+     * // occurs on the document.
+     *
+     *
+     * @example <caption>Use addEventListener with capture option</caption>
+     * var clicksInDocument = Rx.Observable.fromEvent(document, 'click', true); // note optional configuration parameter
+     *                                                                          // which will be passed to addEventListener
+     * var clicksInDiv = Rx.Observable.fromEvent(someDivInDocument, 'click');
+     *
+     * clicksInDocument.subscribe(() => console.log('document'));
+     * clicksInDiv.subscribe(() => console.log('div'));
+     *
+     * // By default events bubble UP in DOM tree, so normally
+     * // when we would click on div in document
+     * // "div" would be logged first and then "document".
+     * // Since we specified optional `capture` option, document
+     * // will catch event when it goes DOWN DOM tree, so console
+     * // will log "document" and then "div".
+     *
+     * @see {@link bindCallback}
+     * @see {@link bindNodeCallback}
+     * @see {@link fromEventPattern}
+     *
+     * @param {EventTargetLike} target The DOM EventTarget, Node.js
+     * EventEmitter, JQuery-like event target, NodeList or HTMLCollection to attach the event handler to.
+     * @param {string} eventName The event name of interest, being emitted by the
+     * `target`.
+     * @param {EventListenerOptions} [options] Options to pass through to addEventListener
+     * @param {SelectorMethodSignature<T>} [selector] An optional function to
+     * post-process results. It takes the arguments from the event handler and
+     * should return a single value.
+     * @return {Observable<T>}
+     * @static true
+     * @name fromEvent
+     * @owner Observable
+     */
+    FromEventObservable.create = function (target, eventName, options, selector) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_2__util_isFunction__["a" /* isFunction */])(options)) {
+            selector = options;
+            options = undefined;
+        }
+        return new FromEventObservable(target, eventName, selector, options);
+    };
+    FromEventObservable.setupSubscription = function (sourceObj, eventName, handler, subscriber, options) {
+        var unsubscribe;
+        if (isNodeList(sourceObj) || isHTMLCollection(sourceObj)) {
+            for (var i = 0, len = sourceObj.length; i < len; i++) {
+                FromEventObservable.setupSubscription(sourceObj[i], eventName, handler, subscriber, options);
+            }
+        }
+        else if (isEventTarget(sourceObj)) {
+            var source_1 = sourceObj;
+            sourceObj.addEventListener(eventName, handler, options);
+            unsubscribe = function () { return source_1.removeEventListener(eventName, handler, options); };
+        }
+        else if (isJQueryStyleEventEmitter(sourceObj)) {
+            var source_2 = sourceObj;
+            sourceObj.on(eventName, handler);
+            unsubscribe = function () { return source_2.off(eventName, handler); };
+        }
+        else if (isNodeStyleEventEmitter(sourceObj)) {
+            var source_3 = sourceObj;
+            sourceObj.addListener(eventName, handler);
+            unsubscribe = function () { return source_3.removeListener(eventName, handler); };
+        }
+        else {
+            throw new TypeError('Invalid event target');
+        }
+        subscriber.add(new __WEBPACK_IMPORTED_MODULE_4__Subscription__["a" /* Subscription */](unsubscribe));
+    };
+    FromEventObservable.prototype._subscribe = function (subscriber) {
+        var sourceObj = this.sourceObj;
+        var eventName = this.eventName;
+        var options = this.options;
+        var selector = this.selector;
+        var handler = selector ? function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i - 0] = arguments[_i];
+            }
+            var result = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(selector).apply(void 0, args);
+            if (result === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
+                subscriber.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
+            }
+            else {
+                subscriber.next(result);
+            }
+        } : function (e) { return subscriber.next(e); };
+        FromEventObservable.setupSubscription(sourceObj, eventName, handler, subscriber, options);
+    };
+    return FromEventObservable;
+}(__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */]));
+//# sourceMappingURL=FromEventObservable.js.map
 
 
 /***/ }),
@@ -9574,6 +10700,20 @@ var TimerObservable = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return TimerObservable;
 }(__WEBPACK_IMPORTED_MODULE_1__Observable__["a" /* Observable */]));
 //# sourceMappingURL=TimerObservable.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/rxjs/_esm5/observable/fromEvent.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return fromEvent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FromEventObservable__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/FromEventObservable.js");
+/** PURE_IMPORTS_START ._FromEventObservable PURE_IMPORTS_END */
+
+var fromEvent = __WEBPACK_IMPORTED_MODULE_0__FromEventObservable__["a" /* FromEventObservable */].create;
+//# sourceMappingURL=fromEvent.js.map
 
 
 /***/ }),
@@ -10150,7 +11290,7 @@ var AuditSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export auditTime */
+/* harmony export (immutable) */ __webpack_exports__["a"] = auditTime;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scheduler_async__ = __webpack_require__("./node_modules/rxjs/_esm5/scheduler/async.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__audit__ = __webpack_require__("./node_modules/rxjs/_esm5/operators/audit.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__observable_timer__ = __webpack_require__("./node_modules/rxjs/_esm5/observable/timer.js");
@@ -16482,7 +17622,7 @@ var TakeSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export takeUntil */
+/* harmony export (immutable) */ __webpack_exports__["a"] = takeUntil;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__ = __webpack_require__("./node_modules/rxjs/_esm5/OuterSubscriber.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_subscribeToResult__ = __webpack_require__("./node_modules/rxjs/_esm5/util/subscribeToResult.js");
 /** PURE_IMPORTS_START .._OuterSubscriber,.._util_subscribeToResult PURE_IMPORTS_END */
@@ -19088,7 +20228,7 @@ var HVideoComponent = (function () {
     HVideoComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-h-video',
-            template: "\n    <div class=\"video-component\" [mdl-shadow]=\"shadow\">\n      <div class=\"mdl-card__title mdl-card--expand\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      </div>\n      <div class=\"video-informations\">\n        {{ video.snippet.title }}\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"video-component\" >\n      <div class=\"mdl-card__title mdl-card--expand\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      </div>\n      <div class=\"video-informations\">\n        {{ video.snippet.title }}\n      </div>\n    </div>\n  ",
             styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 3fr; grid-gap:5px}',]
         }),
         __metadata("design:paramtypes", [])
@@ -19110,7 +20250,7 @@ module.exports = ".map-view-header{\n  background-color: rgb(204, 204, 204);\n  
 /***/ "./src/app/map-view/main-mapview/main-mapview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div mdl-shadow=\"2\">\n    <mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>\n        <mdl-layout-header class=\"map-view-header\">\n            <mdl-layout-header-row>\n                <app-go-home-component class=\"sns-go-home\"></app-go-home-component>\n                <app-user-information></app-user-information>\n            </mdl-layout-header-row>\n        </mdl-layout-header>\n\n        <mdl-layout-content class=\"map-container\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [minZoom]=\"minZoom\" [maxZoom]=\"maxZoom\" [zoom]=\"zoom\" [styles]=\"mainMapStyles\"\n                    (mapClick)=\"mapClicked($event)\">\n                    <agm-marker *ngFor=\"let m of markers; let i = index\" (markerClick)=\"clickedMarker(m.label, i)\" [latitude]=\"m.lat\" [longitude]=\"m.lng\"\n                        [label]=\"m.label\" [markerDraggable]=\"m.draggable\" (dragEnd)=\"markerDragEnd(m, $event)\">\n                        <agm-info-window>\n                            <strong>InfoWindow content</strong>\n                        </agm-info-window>\n                    </agm-marker>\n                    <agm-circle [latitude]=\"lat\" [longitude]=\"lng\" [radius]=\"200000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" (centerChange)=\"circleCenterChanged($event)\"\n                        (radiusChange)=\"circleRadChanged($event)\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div class='sns-map-search'>\n                    <input type=\"text\" id=\"fname\" name=\"fname\" placeholder=\"search recipes ..\">\n                </div>\n                <div class='sns-map-tabs'>\n                    <button mdl-button mdl-ripple (click)=\"browseClicked()\" [disabled]=\"browseTab\" mdl-colored=\"accent\"> Browse</button>\n                    <button mdl-button mdl-ripple (click)=\"filterClicked()\" [disabled]=\"!browseTab\" mdl-colored=\"accent\">Filter</button>\n                </div>\n                <div class=\"map-video\" *ngFor=\"let video of mapVideos\">\n                    <app-h-video [video]=\"video\"></app-h-video>\n                </div>\n            </div>\n            <div class=\"map-footer\"></div>\n        </mdl-layout-content>\n    </mdl-layout>\n</div>"
+module.exports = "<div mdl-shadow=\"2\">\n    <div mdl-layout-fixed-header mdl-layout-header-seamed>\n        <div class=\"map-view-header\">\n            <div class=\"mdl-layout__header-row\">\n                <app-go-home-component class=\"sns-go-home\"></app-go-home-component>\n                <app-user-information></app-user-information>\n            </div>\n        </div>\n\n        <div class=\"map-container mdl-layout__content\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [minZoom]=\"minZoom\" [maxZoom]=\"maxZoom\" [zoom]=\"zoom\" [styles]=\"mainMapStyles\"\n                    (mapClick)=\"mapClicked($event)\">\n                    <agm-marker *ngFor=\"let m of markers; let i = index\" (markerClick)=\"clickedMarker(m.label, i)\" [latitude]=\"m.lat\" [longitude]=\"m.lng\"\n                        [label]=\"m.label\" [markerDraggable]=\"m.draggable\" (dragEnd)=\"markerDragEnd(m, $event)\">\n                        <agm-info-window>\n                            <strong>InfoWindow content</strong>\n                        </agm-info-window>\n                    </agm-marker>\n                    <agm-circle [latitude]=\"lat\" [longitude]=\"lng\" [radius]=\"200000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" (centerChange)=\"circleCenterChanged($event)\"\n                        (radiusChange)=\"circleRadChanged($event)\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div class='sns-map-search'>\n                    <input type=\"text\" id=\"fname\" name=\"fname\" placeholder=\"search recipes ..\">\n                </div>\n                <mat-tab-group>\n                    <mat-tab label=\"Tab 1\">Content 1</mat-tab>\n                    <mat-tab label=\"Tab 2\">Content 2</mat-tab>\n                </mat-tab-group>\n                <div class=\"map-video\" *ngFor=\"let video of mapVideos\">\n                    <app-h-video [video]=\"video\"></app-h-video>\n                </div>\n            </div>\n            <div class=\"map-footer\"></div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -19438,7 +20578,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapViewModule", function() { return MapViewModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_mdl_core__ = __webpack_require__("./node_modules/@angular-mdl/core/components/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_tabs__ = __webpack_require__("./node_modules/@angular/material/esm5/tabs.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_modules_shared_module__ = __webpack_require__("./src/app/shared/modules/shared.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__map_view_routing_module__ = __webpack_require__("./src/app/map-view/map-view-routing.module.ts");
@@ -19453,6 +20593,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
+// import { MdlModule } from '@angular-mdl/core';
 
 
 
@@ -19467,7 +20608,8 @@ var MapViewModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_mdl_core__["a" /* MdlModule */],
+                // MdlModule,
+                __WEBPACK_IMPORTED_MODULE_2__angular_material_tabs__["a" /* MatTabsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__shared_modules_shared_module__["a" /* SharedModule */],
                 __WEBPACK_IMPORTED_MODULE_5__map_view_routing_module__["a" /* MapViewRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_3__agm_core__["a" /* AgmCoreModule */].forRoot({

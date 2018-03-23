@@ -27,11 +27,9 @@ export class IndexDataService {
         let solrUrl = '/api/suggest'
         let params = new URLSearchParams();
         params.set('suggest', 'true');
-        params.set('suggest.build', 'true');
+        // params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
-        // params.set('json.wrf', 'JSONP_CALLBACK');
-
         return this.http
             .get(solrUrl, { search: params })
             .map((response) => {
@@ -56,9 +54,6 @@ export class IndexDataService {
             .map((response) => {
                 let jsonRes = response.json();
                 return jsonRes['response']['docs'];
-                // let ids = jsonRes['response']['docs'][0]['video_id'];
-                // let locations = jsonRes['response']['docs'][0]['location_name'];
-                // return this.getVideos(ids);
             }).toPromise().catch(this.handleError);
     }
 

@@ -196,7 +196,7 @@ var FoodXModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* ReactiveFormsModule */],
                 // MdlModule,
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* JsonpModule */],
                 __WEBPACK_IMPORTED_MODULE_14_ng2_youtube_player__["a" /* YoutubePlayerModule */],
@@ -462,7 +462,7 @@ var FrontpageComponent = (function () {
         this.solrService = solrService;
         this.authService = authService;
         this.showSuggestDropDown = false;
-        this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required] });
+        this.searchForm = this.fb.group({ query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required] });
         this.searchtypes = ['ingredients', 'recipe titles', 'Advanced'];
         this._suggestTimeout = null;
         this.stateCtrl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
@@ -749,7 +749,7 @@ var MainComponent = (function () {
         });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__solr_search_solr_search_component__["a" /* SolrSearchComponent */])
     ], MainComponent.prototype, "solrSearch", void 0);
     MainComponent = __decorate([
@@ -826,7 +826,7 @@ var SolrSearchComponent = (function () {
         this.videosUpdated = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         this.pagenum = 0;
         this.searchForm = this.fb.group({
-            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]
+            query: ["", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["d" /* Validators */].required]
         });
     }
     SolrSearchComponent.prototype.setSearchObject = function (param) {
@@ -877,7 +877,7 @@ var SolrSearchComponent = (function () {
         });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* ViewChild */])('queryinput'),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChild */])('queryinput'),
         __metadata("design:type", Object)
     ], SolrSearchComponent.prototype, "queryinput", void 0);
     __decorate([
@@ -2085,7 +2085,7 @@ var IndexDataService = (function () {
         var solrUrl = '/api/suggest';
         var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* URLSearchParams */]();
         params.set('suggest', 'true');
-        params.set('suggest.build', 'true');
+        // params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
         // params.set('json.wrf', 'JSONP_CALLBACK');
@@ -2508,7 +2508,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_17" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_15" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* FoodXModule */]);
 

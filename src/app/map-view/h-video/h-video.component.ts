@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
     selector: 'app-h-video',
     template: `
-    <div class="video-component" [mdl-shadow]="shadow">
+    <div class="video-component" >
       <div class="mdl-card__title mdl-card--expand" [ngStyle]="{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}">
       </div>
       <div class="video-informations">

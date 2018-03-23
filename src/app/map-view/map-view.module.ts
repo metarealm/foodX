@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdlModule } from '@angular-mdl/core';
+// import { MdlModule } from '@angular-mdl/core';
+import { MatTabsModule } from '@angular/material/tabs';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/modules/shared.module'; 
+import { SharedModule } from '../shared/modules/shared.module';
 import { MapViewRoutingModule } from './map-view-routing.module';
 
 import { MainMapviewComponent } from './main-mapview/main-mapview.component';
@@ -13,7 +14,8 @@ import { MapServiceService } from './map-service.service';
 @NgModule({
     imports: [
         CommonModule,
-        MdlModule,
+        // MdlModule,
+        MatTabsModule,
         SharedModule,
         MapViewRoutingModule,
         AgmCoreModule.forRoot({

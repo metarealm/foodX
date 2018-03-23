@@ -10,7 +10,7 @@ exports.selectFromSolr = function (query) {
         request(options, function (error, response, body) {
             var searchResult = '';
             if (error) {
-                reject(new Error('Failed to load page, status code: ' + response.statusCode));
+                reject(new Error('Failed to load page, status code: ' + error.statusCode));
             } else if (response && body) {
                 resolve(JSON.parse(body));
             }
@@ -27,7 +27,7 @@ exports.suggestFromSolr = function (query) {
         request(options, function (error, response, body) {
             var searchResult = '';
             if (error) {
-                reject(new Error('Failed to load page, status code: ' + response.statusCode));
+                reject(new Error('Failed to load page, status code: ' + error.statusCode));
             } else if (response && body) {
                 resolve(JSON.parse(body));
             }
