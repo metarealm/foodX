@@ -11,7 +11,7 @@ router.get('/apitest', (req, res) => {
 });
 
 router.get('/videoincircle', (req, res) => {
-    console.log(req.query);
+    // console.log(req.query);
     solr.selectFromLocation(req.query)
         .then(result => res.status(200).json(result))
         .catch(error => {

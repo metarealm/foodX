@@ -57,18 +57,18 @@ export class IndexDataService {
             }).toPromise().catch(this.handleError);
     }
 
-    searchVideos(args: SearchObject): Promise<any> {
+    searchVideos(srchObj: SearchObject): Promise<any> {
         let solrUrl = '/api/select';
         let params = new URLSearchParams();
         params.set('wt', 'json');
-        params.set('rows', '' + args.noOfRow);
-        params.set('q', '*:*');
-        params.set('fq', args.searchTerm);
+        params.set('rows', '' + srchObj.noOfRow);
+        params.set('q', srchObj.getRecipeTitlefuzzySearchTerm());
+        // params.set('fq', args.searchTerm);
         params.set('fl', 'youtubevideoID');
-        params.set('start', '' + args.pageNum * args.noOfRow);
+        params.set('start', '' + srchObj.pageNum * srchObj.noOfRow);
         params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
-        console.log(args)
+        console.log(srchObj)
 
         return this.http
             .get(solrUrl, { search: params })
@@ -78,7 +78,7 @@ export class IndexDataService {
                 let suggestions = [];
                 let suggestionObject = jsonRes['response']['docs'];
                 this.facetService.setFaets(jsonRes['facets']);
-                console.log('number of search result for ' + args.searchTerm + '=' + suggestionObject.length);
+                console.log('number of search result for ' + srchObj.searchTerm + '=' + suggestionObject.length);
                 let ids = [];
                 suggestionObject.forEach((item) => {
                     ids.push(item.youtubevideoID);

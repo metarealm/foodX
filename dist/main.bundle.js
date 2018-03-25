@@ -715,12 +715,6 @@ var MainComponent = (function () {
         this.shuffle = val;
         this.repeat = false;
     };
-    // togglePlaylist(): void {
-    //     this.playlistToggle = !this.playlistToggle;
-    //     setTimeout(() => {
-    //         this.playlistNames = !this.playlistNames;
-    //     }, 100);
-    // }
     MainComponent.prototype.toggleFilter = function () {
         this.filterToggle = !this.filterToggle;
     };
@@ -1357,8 +1351,7 @@ var SearchObject = (function () {
         this._pageNum = 0;
         this._noOfRow = 14;
         this._pageNum = pageNum;
-        this._searchTerm = 'recipeTitle:' + '"' + searchTerm + '"';
-        ;
+        this._searchTerm = searchTerm;
     }
     Object.defineProperty(SearchObject.prototype, "pageNum", {
         get: function () {
@@ -1375,11 +1368,17 @@ var SearchObject = (function () {
             return this._searchTerm;
         },
         set: function (searchTerm) {
-            this._searchTerm = 'recipeTitle:' + '"' + searchTerm + '"';
+            this._searchTerm = searchTerm;
         },
         enumerable: true,
         configurable: true
     });
+    SearchObject.prototype.getRecipeTitleExactSearchTerm = function () {
+        return 'recipeTitle:' + '"' + this._searchTerm + '"';
+    };
+    SearchObject.prototype.getRecipeTitlefuzzySearchTerm = function () {
+        return 'recipeTitle:' + this._searchTerm + '~';
+    };
     Object.defineProperty(SearchObject.prototype, "noOfRow", {
         get: function () {
             return this._noOfRow;
@@ -2088,7 +2087,6 @@ var IndexDataService = (function () {
         // params.set('suggest.build', 'true');
         params.set('wt', 'json');
         params.set('suggest.q', term);
-        // params.set('json.wrf', 'JSONP_CALLBACK');
         return this.http
             .get(solrUrl, { search: params })
             .map(function (response) {
@@ -2112,24 +2110,21 @@ var IndexDataService = (function () {
             .map(function (response) {
             var jsonRes = response.json();
             return jsonRes['response']['docs'];
-            // let ids = jsonRes['response']['docs'][0]['video_id'];
-            // let locations = jsonRes['response']['docs'][0]['location_name'];
-            // return this.getVideos(ids);
         }).toPromise().catch(this.handleError);
     };
-    IndexDataService.prototype.searchVideos = function (args) {
+    IndexDataService.prototype.searchVideos = function (srchObj) {
         var _this = this;
         var solrUrl = '/api/select';
         var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* URLSearchParams */]();
         params.set('wt', 'json');
-        params.set('rows', '' + args.noOfRow);
-        params.set('q', '*:*');
-        params.set('fq', args.searchTerm);
+        params.set('rows', '' + srchObj.noOfRow);
+        params.set('q', srchObj.getRecipeTitlefuzzySearchTerm());
+        // params.set('fq', args.searchTerm);
         params.set('fl', 'youtubevideoID');
-        params.set('start', '' + args.pageNum * args.noOfRow);
+        params.set('start', '' + srchObj.pageNum * srchObj.noOfRow);
         params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}');
         console.log('going to search for ');
-        console.log(args);
+        console.log(srchObj);
         return this.http
             .get(solrUrl, { search: params })
             .map(function (response) {
@@ -2138,7 +2133,7 @@ var IndexDataService = (function () {
             var suggestions = [];
             var suggestionObject = jsonRes['response']['docs'];
             _this.facetService.setFaets(jsonRes['facets']);
-            console.log('number of search result for ' + args.searchTerm + '=' + suggestionObject.length);
+            console.log('number of search result for ' + srchObj.searchTerm + '=' + suggestionObject.length);
             var ids = [];
             suggestionObject.forEach(function (item) {
                 ids.push(item.youtubevideoID);

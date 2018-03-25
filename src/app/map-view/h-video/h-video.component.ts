@@ -11,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
       </div>
     </div>
   `,
-    styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 3fr; grid-gap:5px}',]
+    styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 2fr; grid-gap:5px}',]
 })
 export class HVideoComponent implements OnInit {
 

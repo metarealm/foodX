@@ -5,7 +5,7 @@
 .map-container{
     display:grid;
     height: 100vh;
-    grid-template-columns: 7fr 3fr;  
+    grid-template-columns: auto 350px;  
     grid-template-rows: 39fr 1fr; 
     
 }

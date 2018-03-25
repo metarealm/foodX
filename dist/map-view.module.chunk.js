@@ -20229,7 +20229,7 @@ var HVideoComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-h-video',
             template: "\n    <div class=\"video-component\" >\n      <div class=\"mdl-card__title mdl-card--expand\" [ngStyle]=\"{'background': '#000 url(' + video.snippet.thumbnails.high.url + ') center center no-repeat', 'background-size': '90%'}\">\n      </div>\n      <div class=\"video-informations\">\n        {{ video.snippet.title }}\n      </div>\n    </div>\n  ",
-            styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 3fr; grid-gap:5px}',]
+            styles: ['.video-component {height:100%;display:grid;padding-top:2px; grid-template-columns: 2fr 2fr; grid-gap:5px}',]
         }),
         __metadata("design:paramtypes", [])
     ], HVideoComponent);
@@ -20243,14 +20243,14 @@ var HVideoComponent = (function () {
 /***/ "./src/app/map-view/main-mapview/main-mapview.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".map-view-header{\n  background-color: rgb(204, 204, 204);\n  font-family:cursive;\n}\n.map-container{\n    display:-ms-grid;\n    display:grid;\n    height: 100vh;\n    -ms-grid-columns: 7fr 3fr;\n        grid-template-columns: 7fr 3fr;  \n    -ms-grid-rows: 39fr 1fr;  \n        grid-template-rows: 39fr 1fr; \n    \n}\n.map-header{\n    background-color: transparent;\n    text-align: right;\n}\n.map-footer{\n    -ms-grid-column: 1;\n    -ms-grid-column-span: 2;\n    grid-column: 1/3; \n}\n.map{\n    text-align: right;\n}\n.map-videos{\n    overflow: scroll;\n}\n.map-video{\n    height: 100px;\n    padding: 5px;\n}\n.sns-go-home{\n    display: inline-block;\n    width: 80%\n}\n.sns-go-home:hover{\n    cursor: pointer;\n}\n.sns-map-search{\n    width: 100%;\n}\ninput[type=text] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\nagm-map {height: 100%}\n"
+module.exports = ".map-view-header{\n  background-color: rgb(204, 204, 204);\n  font-family:cursive;\n}\n.map-container{\n    display:-ms-grid;\n    display:grid;\n    height: 100vh;\n    -ms-grid-columns: auto 350px;\n        grid-template-columns: auto 350px;  \n    -ms-grid-rows: 39fr 1fr;  \n        grid-template-rows: 39fr 1fr; \n    \n}\n.map-header{\n    background-color: transparent;\n    text-align: right;\n}\n.map-footer{\n    -ms-grid-column: 1;\n    -ms-grid-column-span: 2;\n    grid-column: 1/3; \n}\n.map{\n    text-align: right;\n}\n.map-videos{\n    overflow: scroll;\n}\n.map-video{\n    height: 100px;\n    padding: 5px;\n}\n.sns-go-home{\n    display: inline-block;\n    width: 80%\n}\n.sns-go-home:hover{\n    cursor: pointer;\n}\n.sns-map-search{\n    width: 100%;\n}\ninput[type=text] {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\nagm-map {height: 100%}\n"
 
 /***/ }),
 
 /***/ "./src/app/map-view/main-mapview/main-mapview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div mdl-shadow=\"2\">\n    <div mdl-layout-fixed-header mdl-layout-header-seamed>\n        <div class=\"map-view-header\">\n            <div class=\"mdl-layout__header-row\">\n                <app-go-home-component class=\"sns-go-home\"></app-go-home-component>\n                <app-user-information></app-user-information>\n            </div>\n        </div>\n\n        <div class=\"map-container mdl-layout__content\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [minZoom]=\"minZoom\" [maxZoom]=\"maxZoom\" [zoom]=\"zoom\" [styles]=\"mainMapStyles\"\n                    (mapClick)=\"mapClicked($event)\">\n                    <agm-marker *ngFor=\"let m of markers; let i = index\" (markerClick)=\"clickedMarker(m.label, i)\" [latitude]=\"m.lat\" [longitude]=\"m.lng\"\n                        [label]=\"m.label\" [markerDraggable]=\"m.draggable\" (dragEnd)=\"markerDragEnd(m, $event)\">\n                        <agm-info-window>\n                            <strong>InfoWindow content</strong>\n                        </agm-info-window>\n                    </agm-marker>\n                    <agm-circle [latitude]=\"lat\" [longitude]=\"lng\" [radius]=\"200000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" (centerChange)=\"circleCenterChanged($event)\"\n                        (radiusChange)=\"circleRadChanged($event)\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div class='sns-map-search'>\n                    <input type=\"text\" id=\"fname\" name=\"fname\" placeholder=\"search recipes ..\">\n                </div>\n                <mat-tab-group>\n                    <mat-tab label=\"Tab 1\">Content 1</mat-tab>\n                    <mat-tab label=\"Tab 2\">Content 2</mat-tab>\n                </mat-tab-group>\n                <div class=\"map-video\" *ngFor=\"let video of mapVideos\">\n                    <app-h-video [video]=\"video\"></app-h-video>\n                </div>\n            </div>\n            <div class=\"map-footer\"></div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div mdl-shadow=\"2\">\n    <div mdl-layout-fixed-header mdl-layout-header-seamed>\n        <div class=\"map-view-header\">\n            <div class=\"mdl-layout__header-row\">\n                <app-go-home-component class=\"sns-go-home\"></app-go-home-component>\n                <app-user-information></app-user-information>\n            </div>\n        </div>\n\n        <div class=\"map-container mdl-layout__content\">\n            <div class=\"map\">\n                <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [minZoom]=\"minZoom\" [maxZoom]=\"maxZoom\" [zoom]=\"zoom\" [styles]=\"mainMapStyles\"\n                    (mapClick)=\"mapClicked($event)\">\n                    <agm-marker *ngFor=\"let m of markers; let i = index\" (markerClick)=\"clickedMarker(m.label, i)\" [latitude]=\"m.lat\" [longitude]=\"m.lng\"\n                        [label]=\"m.label\" [markerDraggable]=\"m.draggable\" (dragEnd)=\"markerDragEnd(m, $event)\">\n                        <agm-info-window>\n                            <strong>InfoWindow content</strong>\n                        </agm-info-window>\n                    </agm-marker>\n                    <agm-circle [latitude]=\"lat\" [longitude]=\"lng\" [radius]=\"200000\" [fillColor]=\"'grey'\" [circleDraggable]=\"true\" (centerChange)=\"circleCenterChanged($event)\"\n                        (radiusChange)=\"circleRadChanged($event)\" [editable]=\"true\">\n                    </agm-circle>\n                </agm-map>\n            </div>\n            <div class=\"map-videos\">\n                <div class='sns-map-search'>\n                    <input type=\"text\" id=\"fname\" name=\"fname\" placeholder=\"search recipes ..\">\n                </div>\n                <mat-tab-group>\n                    <mat-tab label=\"Browse\">\n                        <div class=\"map-video\" *ngFor=\"let video of mapVideos\">\n                            <app-h-video [video]=\"video\"></app-h-video>\n                        </div>\n                    </mat-tab>\n                    <mat-tab label=\"Filter\">filters go here</mat-tab>\n                </mat-tab-group>\n\n            </div>\n            <div class=\"map-footer\"></div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -20301,7 +20301,7 @@ var MainMapviewComponent = (function () {
         this.lat = 20.673858;
         this.lng = 85.815982;
         this.mapVideos = [];
-        this.agmCircleCenter = { lat: 20.673858, lng: 85.815982 };
+        this.agmCircleCenter = { lat: 20, lng: 85 };
         this.cirCenter$ = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Subject__["a" /* Subject */]();
         this.agrCircleRad = 200000;
     }
@@ -20324,11 +20324,6 @@ var MainMapviewComponent = (function () {
         console.log("clicked the marker: " + (label || index));
     };
     MainMapviewComponent.prototype.mapClicked = function ($event) {
-        // this.markers.push({
-        //     lat: $event.coords.lat,
-        //     lng: $event.coords.lng,
-        //     draggable: false,
-        // });
     };
     MainMapviewComponent.prototype.browseClicked = function () {
         this.browseTab = true;
@@ -20351,7 +20346,6 @@ var MainMapviewComponent = (function () {
     };
     MainMapviewComponent.prototype.circleCenterChanged = function (latlng) {
         this.cirCenter$.next(latlng);
-        // console.log("center changed");
     };
     MainMapviewComponent.prototype.processCircleData = function (data) {
         var videsIds = [];
@@ -20364,7 +20358,6 @@ var MainMapviewComponent = (function () {
                 label: data[i].id,
                 draggable: false
             });
-            // console.log(this.markers);
         }
         return this.solrService.getVideos(videsIds);
     };

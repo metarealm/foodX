@@ -30,7 +30,7 @@ export class MainMapviewComponent implements OnInit {
     public lng: number = 85.815982;
     public mapVideos = [];
     private mapSearchObject: SearchObject;
-    private agmCircleCenter = { lat: 20.673858, lng: 85.815982 };
+    private agmCircleCenter = { lat: 20, lng: 85 };
     private cirCenter$ = new Subject<LatLngLiteral>();
     private agrCircleRad = 200000;
 
@@ -59,11 +59,6 @@ export class MainMapviewComponent implements OnInit {
         console.log(`clicked the marker: ${label || index}`)
     }
     mapClicked($event: MouseEvent) {
-        // this.markers.push({
-        //     lat: $event.coords.lat,
-        //     lng: $event.coords.lng,
-        //     draggable: false,
-        // });
     }
     browseClicked(){
         this.browseTab = true;
@@ -85,7 +80,6 @@ export class MainMapviewComponent implements OnInit {
     }
     circleCenterChanged(latlng: LatLngLiteral) {
         this.cirCenter$.next(latlng);
-        // console.log("center changed");
     }
 
     processCircleData(data: any) {
@@ -93,13 +87,13 @@ export class MainMapviewComponent implements OnInit {
         this.markers = [];
         for (let i = 0; i < data.length; i++) {
             videsIds.push(data[i]['video_id']);
+
             this.markers.push({
                 lat: parseFloat(data[i].geo_location.split(',')[0]),
                 lng: parseFloat(data[i].geo_location.split(',')[1]),
                 label: data[i].id,
                 draggable: false
             });
-            // console.log(this.markers);
         }
         return this.solrService.getVideos(videsIds);
     }

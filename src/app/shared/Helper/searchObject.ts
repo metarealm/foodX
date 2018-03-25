@@ -5,19 +5,25 @@ export class SearchObject {
 
     constructor(pageNum:number , searchTerm:string){
         this._pageNum = pageNum;
-        this._searchTerm = 'recipeTitle:' + '"'+searchTerm + '"';;
+        this._searchTerm = searchTerm;
     }
     set pageNum(pageNum : number){
         this._pageNum=pageNum;
     }
     set searchTerm(searchTerm : string){
-        this._searchTerm='recipeTitle:' + '"'+searchTerm + '"';
+        this._searchTerm=searchTerm;
     }
     get pageNum():number{
         return this._pageNum;
     }
     get searchTerm(){
         return this._searchTerm;
+    }
+    getRecipeTitleExactSearchTerm(){
+        return 'recipeTitle:' + '"'+this._searchTerm + '"';
+    }
+    getRecipeTitlefuzzySearchTerm(){
+        return 'recipeTitle:' + this._searchTerm + '~';
     }
     get noOfRow(){
         return this._noOfRow;
