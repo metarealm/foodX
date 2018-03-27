@@ -6,7 +6,7 @@
     display:grid;
     height: 100vh;
     grid-template-columns: auto 350px;  
-    grid-template-rows: 39fr 1fr; 
+    grid-template-rows: 38fr 2fr; 
     
 }
 .map-header{

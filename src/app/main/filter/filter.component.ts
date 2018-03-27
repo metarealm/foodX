@@ -20,6 +20,7 @@ export class FilterComponent implements OnInit {
     locationfacets: any;
     ingredientfacets: any;
     contenttypefacets: any;
+    languagefacets:any;
     subscription: Subscription;
     
 
@@ -29,6 +30,7 @@ export class FilterComponent implements OnInit {
             this.locationfacets = message['Recipelocation']['buckets'];
             this.ingredientfacets = message['Ingredients']['buckets'];
             this.contenttypefacets = message['contenttype']['buckets'];
+            this.languagefacets = message['Language']['buckets'];
         });
     }
     getFilterVideos(): void {

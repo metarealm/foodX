@@ -66,7 +66,10 @@ export class IndexDataService {
         // params.set('fq', args.searchTerm);
         params.set('fl', 'youtubevideoID');
         params.set('start', '' + srchObj.pageNum * srchObj.noOfRow);
-        params.set('json.facet', '{contenttype: { terms: { field: food_Content } },Recipelocation: { terms: { field: video_country } },Ingredients: { terms: { field: ingredients } },likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
+        params.set('json.facet', '{contenttype: { terms: { field: food_Content } },'+
+        'Recipelocation: { terms: { field: video_country } },'+
+        'Ingredients: { terms: { field: ingredients } },'+ 'Language: { terms: { field: video_langugages } },' +
+        'likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
         console.log(srchObj)
 

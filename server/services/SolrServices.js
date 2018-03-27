@@ -1,5 +1,5 @@
-var request = require('request');
-var constants = require('./constants');
+const request = require('request');
+const constants = require('./constants');
 
 exports.selectFromSolr = function (query) {
     return new Promise((resolve, reject) => {
@@ -66,7 +66,6 @@ exports.selectFromLocation = function (queryparam) {
             url: constants.SOLR_LOC_URI + '/select?' + query,
             qs: query
         };
-        console.log(options);
         request(options, function (error, response, body) {
             var searchResult = '';
             if (error) {

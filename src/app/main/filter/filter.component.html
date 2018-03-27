@@ -44,6 +44,18 @@
                         </ul>
                     </div>
                     <div class="panel-heading ">
+                        <h6 class="panel-title">Recipie in ...</h6>
+                    </div>
+                    <div id="collapse0" class="panel-collapse collapse in">
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let facet of  languagefacets">
+                                <div class="checkbox">
+                                    <input type="checkbox" value=""> {{facet.val}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-heading ">
                         <h6 class="panel-title">Recipe is liked by ...</h6>
                     </div>
                     <div id="collapse0" class="panel-collapse collapse in">
