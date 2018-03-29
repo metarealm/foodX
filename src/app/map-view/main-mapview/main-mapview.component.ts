@@ -17,6 +17,8 @@ export class MainMapviewComponent implements OnInit {
 
     public mainMapStyles = mpaStyles;
     public browseTab = true;
+    private videsIds = [];
+    private states = [];
     public markers: marker[] = [{
         lat: 20.673858,
         lng: 85.815982,
@@ -32,6 +34,7 @@ export class MainMapviewComponent implements OnInit {
     private mapSearchObject: SearchObject;
     private agmCircleCenter = { lat: 20, lng: 85 };
     private cirCenter$ = new Subject<LatLngLiteral>();
+    private videoId$ = new Subject<string>();
     private agrCircleRad = 200000;
 
     constructor(private solrService: IndexDataService,
@@ -42,13 +45,27 @@ export class MainMapviewComponent implements OnInit {
         this.cirCenter$.pipe(
             debounceTime(500),
             distinctUntilChanged()
-            ).subscribe(result => {
-                return this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
-                    .then(data => {
-                        return this.processCircleData(data);
-                    })
-                    .then(result => this.mapVideos = result);
-            })
+        ).subscribe(result => {
+            this.agmCircleCenter = result;
+            return this.solrService.searchByLocation(result.lat, result.lng, this.agrCircleRad / 1000)
+                .then(data => {
+                    return this.processCircleData(data);
+                })
+                .then(result => this.mapVideos = result)
+                .then(videos => this.processStateData())
+                .then(resultVideos => this.videoId$.next(resultVideos))
+                .catch(error => console.log(error));
+        })
+        this.videoId$.subscribe(result => {
+            this.videsIds.concat(result);
+            if (this.mapVideos.length < 12) {
+                console.log(result);
+                this.solrService.getVideos(result.slice(this.mapVideos.length, 20))
+                    .then(resultVideos => {
+                        this.mapVideos =this.mapVideos.concat(resultVideos);
+                    });
+            }
+        });
         this.cirCenter$.next(this.agmCircleCenter);
     }
     goHome() {
@@ -60,34 +77,36 @@ export class MainMapviewComponent implements OnInit {
     }
     mapClicked($event: MouseEvent) {
     }
-    browseClicked(){
+    browseClicked() {
         this.browseTab = true;
     }
     markerDragEnd(m: marker, $event: MouseEvent) {
         console.log('dragEnd', m, $event);
     }
-    filterClicked(){
+    filterClicked() {
         this.browseTab = false;
     }
     circleRadChanged(radius: number) {
         this.agrCircleRad = radius;
         console.log("radius of the circle changed" + this.agrCircleRad);
         this.solrService.searchByLocation(this.agmCircleCenter.lat, this.agmCircleCenter.lng, this.agrCircleRad / 1000)
-            .then(data => {
-                return this.processCircleData(data);
-            })
-            .then(result => this.mapVideos = result);
+            .then(data => this.processCircleData(data))
+            .then(result => this.mapVideos = result)
+            .then(videos => this.processStateData())
+            .then(resultVideos => this.videoId$.next(resultVideos))
+            .catch(error => console.log(error));
     }
     circleCenterChanged(latlng: LatLngLiteral) {
         this.cirCenter$.next(latlng);
     }
 
     processCircleData(data: any) {
-        let videsIds = [];
+        this.videsIds = [];
+        this.states = [];
         this.markers = [];
         for (let i = 0; i < data.length; i++) {
-            videsIds.push(data[i]['video_id']);
-
+            if (data[i]['video_id'] !== undefined) this.videsIds = this.videsIds.concat(data[i]['video_id']);
+            this.states.push(data[i]['state_name']);
             this.markers.push({
                 lat: parseFloat(data[i].geo_location.split(',')[0]),
                 lng: parseFloat(data[i].geo_location.split(',')[1]),
@@ -95,7 +114,12 @@ export class MainMapviewComponent implements OnInit {
                 draggable: false
             });
         }
-        return this.solrService.getVideos(videsIds);
+        return this.solrService.getVideos(this.videsIds.slice(0, 12));
+    }
+    processStateData() {
+        console.log('going to process state datas');
+        this.mapSearchObject = new SearchObject(0, 'video_state:' + this.states[0]);
+        return this.solrService.searchStateVideos(this.mapSearchObject);
     }
 }
 

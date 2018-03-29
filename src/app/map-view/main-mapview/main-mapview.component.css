@@ -1,10 +1,11 @@
 .map-view-header{
   background-color: rgb(204, 204, 204);
   font-family:cursive;
+  height:60px;
 }
 .map-container{
     display:grid;
-    height: 100vh;
+    height: calc(100vh - 60px);
     grid-template-columns: auto 350px;  
     grid-template-rows: 38fr 2fr; 
     

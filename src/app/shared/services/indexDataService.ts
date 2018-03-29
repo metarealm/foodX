@@ -56,7 +56,31 @@ export class IndexDataService {
                 return jsonRes['response']['docs'];
             }).toPromise().catch(this.handleError);
     }
-
+    searchStateVideos(srchObj: SearchObject): Promise<any> {
+        let solrUrl = '/api/select';
+        let params = new URLSearchParams();
+        params.set('wt', 'json');
+        params.set('rows', '' + srchObj.noOfRow);
+        params.set('q', 'recipe');
+        params.set('fq', srchObj.searchTerm);
+        params.set('fl', 'youtubevideoID');
+        params.set('start', '' + srchObj.pageNum * srchObj.noOfRow);
+        console.log('going to search for ');
+        console.log(srchObj)
+        return this.http
+            .get(solrUrl, { search: params })
+            .map((response) => {
+                let jsonRes = response.json();
+                let suggestions = [];
+                let suggestionObject = jsonRes['response']['docs'];
+                console.log('number of search result for ' + srchObj.searchTerm + '=' + suggestionObject.length);
+                let ids = [];
+                suggestionObject.forEach((item) => {
+                    ids.push(item.youtubevideoID);
+                });
+                return ids;
+            }).toPromise().catch(this.handleError);
+    }
     searchVideos(srchObj: SearchObject): Promise<any> {
         let solrUrl = '/api/select';
         let params = new URLSearchParams();
@@ -66,10 +90,10 @@ export class IndexDataService {
         // params.set('fq', args.searchTerm);
         params.set('fl', 'youtubevideoID');
         params.set('start', '' + srchObj.pageNum * srchObj.noOfRow);
-        params.set('json.facet', '{contenttype: { terms: { field: food_Content } },'+
-        'Recipelocation: { terms: { field: video_country } },'+
-        'Ingredients: { terms: { field: ingredients } },'+ 'Language: { terms: { field: video_langugages } },' +
-        'likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
+        params.set('json.facet', '{contenttype: { terms: { field: food_Content } },' +
+            'Recipelocation: { terms: { field: video_country } },' +
+            'Ingredients: { terms: { field: ingredients } },' + 'Language: { terms: { field: video_langugages } },' +
+            'likes: { range: { field: likes, start: 0, end: 1000, gap: 200 } }}')
         console.log('going to search for ');
         console.log(srchObj)
 
