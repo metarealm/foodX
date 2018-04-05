@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
-  template: `
-    <p>
-      The Idea About PeekNMake to give people find relevant recipe searches
-    </p>
-  `,
-  styles: []
+    selector: 'app-about',
+    templateUrl: 'about.component.html',
+    styleUrls: ['about.component.css']
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
